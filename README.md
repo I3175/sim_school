@@ -15,7 +15,7 @@ Không cần npm, backend, API key hoặc mạng để chơi. Sprite và ảnh n
 ## Thay đổi
 
 - Màn bắt đầu mang chủ đề đời sống học sinh, bỏ logo/phím chữ và nội dung Type Run tại màn này. Hoạt động chạy trong sân thể thao vẫn được giữ.
-- Bộ nút chung, HUD và thanh công cụ dùng bảng màu xanh ngọc, icon nét vẽ bằng Canvas; joystick trong mờ bên trái, nút tiện ích bên phải.
+- Bộ nút và HUD dùng khung gọn; icon Canvas có màu riêng theo vật thể (cặp sách xanh, sao vàng, căn tin cam, nhiệm vụ tím), chỉ tô phần biểu tượng trên nền trong suốt để không dính nền ảnh. Joystick trong mờ bên trái, nút tiện ích bên phải.
 - Vùng chết joystick, tốc độ analog, chuẩn hóa đi chéo, bước kiểm tra va chạm nhỏ và trượt dọc tường. Bước chân/animation chỉ tiến khi nhân vật thực sự di chuyển.
 - Hướng nhìn đi chéo có hysteresis để không giật hướng; không cho ngón tay thứ hai chiếm joystick. Vùng chạm âm thanh màn đầu khớp nút hiển thị.
 - Giải phóng điều khiển khi hủy chạm, mất pointer capture, mất focus, ẩn trang hoặc đổi kích thước.

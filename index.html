@@ -576,12 +576,12 @@ function enter(d){sndDoor();if(d.id==='lib')openPanel('lib');else if(d.id==='cla
 function hud(){
  rr(12,10,220,70,16,'#f5f8ef','#bbcebd',1);rr(20,18,54,54,12,'#dde9dc');spr(47,79,'down','idle',0,.48);tx(G.name,88,31,17,'#203d35');tx('Học sinh · Cấp '+G.lv,88,53,12,'#637d70');
  rr(242,10,204,70,16,'#f5f8ef','#bbcebd',1);tx('Năng lượng',258,30,12,'#637d70');tx(G.energy+'%',430,30,13,'#286052','right');rr(258,49,172,8,4,'#dce6d9');rr(258,49,Math.max(4,172*G.energy/100),8,4,'#5a9371');
- [[654,'coin',G.coins],[804,'gem',G.gems]].forEach(([x,n,v])=>{rr(x,10,138,44,14,'#f5f8ef','#bbcebd',1);icon(n,x+19,32,21,'#286052');tx(String(v),x+72,32,16,'#203d35','center');icon('plus',x+118,30,15,'#286052')});
- [[583,'sound',605],[971,'help',993]].forEach(([x,n,c])=>{rr(x,7,44,44,13,'#f5f8ef','#bbcebd',1);icon(n==='sound'&&AUDIO.mode===2?'mute':n,c,29,21,'#286052')});
- rr(14,94,192,128,14,'#f5f8ef','#bbcebd',1);icon('quest',34,114,18,'#286052');tx('Hôm nay đến lớp',51,114,13,'#203d35');tx('Học từ mới: '+G.q.vocab+' / 5',28,143,12,'#637d70');tx('Khám phá các tòa nhà',28,170,12,'#637d70');tx('Chạm gợi ý để bước vào',28,196,11,'#637d70');
+ [[654,'coin',G.coins],[804,'gem',G.gems]].forEach(([x,n,v])=>{rr(x,10,138,44,14,'#f5f8ef','#bbcebd',1);icon(n,x+19,32,24);tx(String(v),x+72,32,16,'#203d35','center');icon('plus',x+118,30,15,'#286052')});
+ [[583,'sound',605],[971,'help',993]].forEach(([x,n,c])=>{rr(x,7,44,44,13,'#f5f8ef','#bbcebd',1);icon(n==='sound'&&AUDIO.mode===2?'mute':n,c,29,23)});
+ rr(14,94,192,128,14,'#f5f8ef','#bbcebd',1);icon('quest',34,114,19);tx('Hôm nay đến lớp',51,114,13,'#203d35');tx('Học từ mới: '+G.q.vocab+' / 5',28,143,12,'#637d70');tx('Khám phá các tòa nhà',28,170,12,'#637d70');tx('Chạm gợi ý để bước vào',28,196,11,'#637d70');
  // Cover the old baked-in toolbar before drawing the unified touch controls.
 
- ['bag','star','shop','quest'].forEach((n,i)=>{const x=636+i*92;rr(x,492,82,64,15,hov(x,492,82,64)?'#deebdc':'#f5f8ef','#bbcebd',1);icon(n,x+41,514,23,'#286052');tx(['Cặp sách','Thành tích','Căn tin','Nhiệm vụ'][i],x+41,542,11,'#38594f','center')});
+ ['bag','star','shop','quest'].forEach((n,i)=>{const x=636+i*92;rr(x,492,82,64,15,hov(x,492,82,64)?'#deebdc':'#f5f8ef','#bbcebd',1);icon(n,x+41,514,29);tx(['Cặp sách','Thành tích','Căn tin','Nhiệm vụ'][i],x+41,542,11,'#38594f','center')});
  g.save();g.globalAlpha=joy.on?.48:.22;cc(JC[0],JC[1],62,'#f5f8ef');g.strokeStyle='#38594f';g.lineWidth=1.5;g.stroke();cc(JC[0]+joy.x*35,JC[1]+joy.y*35,23,'#38594f');g.restore();
  tx('Di chuyển',JC[0],JC[1]+80,11,'#38594f','center');
 }
@@ -2210,9 +2210,65 @@ try{const o=JSON.parse(localStorage.getItem('typerun_char')||'null');if(o&&CH[o.
 cv.addEventListener('pointermove',e=>MP=pt(e));
 const hov=(x,y,w,h)=>inR(MP,x,y,w,h);
 
-function icon(name,x,y,size,color){g.save();g.translate(x,y);g.scale(size/24,size/24);g.strokeStyle=color;g.lineWidth=1.8;g.lineCap='round';g.lineJoin='round';
- const paths={book:[[-9,-8,-2,-8,0,-6,2,-8,9,-8,9,8,2,8,0,10,-2,8,-9,8,-9,-8],[0,-6,0,10]],bag:[[-8,-5,8,-5,9,9,-9,9,-8,-5],[-4,-5,-4,-9,4,-9,4,-5],[-5,1,5,1]],star:[[0,-10,3,-3,10,-3,5,2,7,9,0,5,-7,9,-5,2,-10,-3,-3,-3,0,-10]],shop:[[-9,-3,-7,-9,7,-9,9,-3,-9,-3],[-8,-3,-8,9,8,9,8,-3],[-2,9,-2,3,3,3,3,9]],quest:[[-5,-8,-8,-8,-8,10,8,10,8,-8,5,-8],[-4,-10,4,-10,4,-5,-4,-5,-4,-10],[-4,1,4,1],[-4,5,2,5]],arrow:[[-8,0,8,0,2,-6],[8,0,2,6]],sound:[[-9,-3,-5,-3,1,-8,1,8,-5,3,-9,3,-9,-3],[5,-5,8,-2,8,2,5,5]],mute:[[-9,-3,-5,-3,1,-8,1,8,-5,3,-9,3,-9,-3],[5,-3,10,3],[10,-3,5,3]],help:[[0,5,0,6],[-4,-4,-4,-6,0,-8,4,-6,4,-2,0,1,0,2]],plus:[[-6,0,6,0],[0,-6,0,6]],coin:[[0,-6,0,6],[-3,-4,3,-4,3,0,-3,0,-3,4,3,4]],gem:[[0,-9,9,-2,0,10,-9,-2,0,-9],[-9,-2,9,-2],[0,-9,-3,-2,0,10,3,-2,0,-9]]};
- for(const p of paths[name]||paths.help){g.beginPath();for(let i=0;i<p.length;i+=2)i?g.lineTo(p[i],p[i+1]):g.moveTo(p[i],p[i+1]);g.stroke()}g.restore()}
+// Icons are drawn on the transparent canvas: only the symbol has a fill.
+// Keep individual object colors while sharing stroke weight and optical size.
+function icon(name,x,y,size,color){
+ g.save();g.translate(x,y);g.scale(size/24,size/24);
+ g.lineWidth=1.6;g.lineCap='round';g.lineJoin='round';
+ const shape=(points,fill,stroke)=>{g.beginPath();points.forEach((p,i)=>i?g.lineTo(...p):g.moveTo(...p));if(fill){g.closePath();g.fillStyle=fill;g.fill()}if(stroke){g.strokeStyle=stroke;g.stroke()}};
+ const line=(points,stroke)=>shape(points,null,stroke);
+ const box=(x,y,w,h,r,fill,stroke)=>rr(x,y,w,h,r,fill,stroke,1.6);
+ const disc=(x,y,r,fill,stroke)=>{cc(x,y,r,fill);if(stroke){g.strokeStyle=stroke;g.stroke()}};
+ const ink=color||'#486478';
+ switch(name){
+ case 'bag':
+  line([[-4,-6],[-4,-9],[4,-9],[4,-6]],'#945b38');
+  box(-8,-6,16,16,4,'#5a9cdb','#2f618d');
+  box(-5,2,10,6,2,'#b5dcf3','#2f618d');
+  line([[-6,-2],[6,-2]],'#d9effb');
+  box(-1,-3,2,3,.7,'#edbd68');break;
+ case 'star':
+  shape([[0,-10],[3,-3],[10,-3],[5,2],[7,9],[0,5],[-7,9],[-5,2],[-10,-3],[-3,-3]],'#f6c44e','#b77a24');
+  line([[-4,-1],[0,-6],[2,-2]],'#fff0ad');break;
+ case 'shop':
+  box(-8,-3,16,13,1.5,'#ffedce','#8f6047');
+  box(1,3,4,7,1,'#83c5c3','#4a8788');
+  box(-6,2,4,4,.7,'#9fd6de','#4a8788');
+  shape([[-10,-3],[-7,-9],[7,-9],[10,-3]],'#e7836e','#a44f42');
+  shape([[-4,-9],[-5,-3],[0,-3],[0,-9]],'#fff3dd');
+  shape([[4,-9],[5,-3],[9,-3],[7,-9]],'#fff3dd');
+  line([[-10,-3],[10,-3]],'#a44f42');break;
+ case 'quest':
+  box(-8,-8,16,19,2,'#f7f0e3','#7c6ba3');
+  box(-4,-10,8,5,1.4,'#ac96d0','#7c6ba3');
+  line([[-5,0],[-3,2],[0,-1]],'#4c9d7b');
+  line([[2,1],[5,1]],'#8e80a6');line([[-4,6],[5,6]],'#8e80a6');break;
+ case 'coin':
+  disc(0,0,10,'#efbd50','#b57e28');disc(0,0,7,'#ffdc7c','#d49a32');
+  line([[2,-4],[-2,-4],[-3,-1],[2,1],[2,4],[-3,4]],'#a66e1d');
+  line([[0,-6],[0,-4]],'#a66e1d');line([[0,4],[0,6]],'#a66e1d');break;
+ case 'gem':
+  shape([[-6,-8],[6,-8],[11,-2],[0,11],[-11,-2]],'#7fcbd9','#388a9f');
+  shape([[-5,-2],[0,11],[5,-2]],'#ade7ec');
+  shape([[-6,-8],[-5,-2],[5,-2],[6,-8]],'#d5f5f5');
+  line([[-11,-2],[11,-2]],'#388a9f');
+  line([[-6,-8],[-5,-2],[0,11],[5,-2],[6,-8]],'#388a9f');break;
+ case 'book':
+  shape([[-10,-8],[-3,-8],[0,-5],[3,-8],[10,-8],[10,8],[3,8],[0,10],[-3,8],[-10,8]],'#fff4d9','#557e9c');
+  line([[0,-5],[0,10]],'#557e9c');
+  line([[-7,-3],[-3,-3]],'#c89a61');line([[3,-3],[7,-3]],'#c89a61');break;
+ case 'sound':case 'mute':
+  shape([[-10,-3],[-6,-3],[0,-8],[0,8],[-6,3],[-10,3]],'#86b7dc','#477799');
+  if(name==='mute'){line([[5,-3],[10,3]],'#bd655e');line([[10,-3],[5,3]],'#bd655e')}
+  else {line([[4,-4],[6,-2],[6,2],[4,4]],'#477799');line([[8,-7],[11,-3],[11,3],[8,7]],'#86b7dc')}break;
+ case 'help':
+  disc(0,0,10,'#8db9df','#4e7eaa');
+  line([[-3,-4],[-3,-5],[0,-6],[3,-5],[3,-2],[0,0],[0,2]],'#fff');disc(0,6,.85,'#fff');break;
+ case 'plus':line([[-6,0],[6,0]],ink);line([[0,-6],[0,6]],ink);break;
+ case 'arrow':line([[-8,0],[8,0],[2,-6]],ink);line([[8,0],[2,6]],ink);break;
+ }
+ g.restore();
+}
 function btn(x,y,w,h,t,f,s,sz,hl){const on=hov(x,y,w,h);const primary=/Bắt đầu|Tiếp tục|Xác nhận|Chơi lại/.test(t);rr(x,y+3,w,h,14,'rgba(12,42,33,.15)');rr(x,y,w,h,14,primary?(on?'#357563':'#286052'):(on?'#e2ece0':'#f5f8ef'),'#b8ccbd',1);tx(t.replace(/[▶❓]/gu,'').trim(),x+w/2,y+h/2,sz,primary?'#fff':'#286052','center')}
 
 function dimBG(a){const gr=g.createLinearGradient(0,0,0,576);gr.addColorStop(0,'#1d3f7a');gr.addColorStop(1,'#0e1f3c');g.fillStyle=gr;g.fillRect(0,0,1024,576);try{g.filter='blur(2px)'}catch(e){}g.drawImage(BG,262,142,500,281,0,0,1024,576);g.filter='none';g.fillStyle='rgba(10,24,56,'+a+')';g.fillRect(0,0,1024,576)}
@@ -2223,14 +2279,14 @@ function drawWelcome(){
  g.fillStyle='#edf3e9';g.fillRect(0,0,1024,576);
  g.save();g.beginPath();g.roundRect(470,24,530,528,30);g.clip();g.drawImage(BG,230,55,600,370,470,24,690,528);
  const fade=g.createLinearGradient(470,0,790,0);fade.addColorStop(0,'#edf3e9');fade.addColorStop(1,'rgba(237,243,233,0)');g.fillStyle=fade;g.fillRect(470,24,530,528);g.restore();
- rr(56,48,172,32,16,'#dce9db');icon('book',76,64,17,'#286052');tx('MỘT THỜI ÁO TRẮNG',151,64,10,'#286052','center');
+ rr(56,48,172,32,16,'#dce9db');icon('book',76,64,17);tx('MỘT THỜI ÁO TRẮNG',151,64,10,'#286052','center');
  tx('SIM',54,151,66,'#203d35');tx('SCHOOL',54,219,66,'#203d35');
  rr(57,266,42,4,2,'#dba968');tx('Một ngày đi học. Ngàn điều để khám phá.',56,302,18,'#38594f');
  tx('Đến lớp, kết bạn và tự viết câu chuyện của bạn',56,336,14,'#6a8075');tx('trong ngôi trường nhỏ của riêng mình.',56,359,14,'#6a8075');
  btn(56,410,300,60,'Bắt đầu ngày mới','#286052',null,20,'#357563');icon('arrow',326,440,20,'#fff');
- icon('book',69,505,18,'#587467');tx('Cách chơi',90,505,14,'#587467');
+ icon('book',69,505,18);tx('Cách chơi',90,505,14,'#587467');
  rr(676,374,192,140,22,'rgba(248,251,242,.94)','#fff',2);spr(772,478,'down','idle',0,.85);tx('Hẹn bạn ở sân trường!',772,497,12,'#38594f','center');
- rr(950,28,48,44,14,'#f7faf3','#cadbce',1);icon(AUDIO.mode===2?'mute':'sound',974,50,21,'#286052');
+ rr(950,28,48,44,14,'#f7faf3','#cadbce',1);icon(AUDIO.mode===2?'mute':'sound',974,50,23);
  tx('KHÁM PHÁ • HỌC TẬP • KẾT BẠN',56,554,10,'#6a8075');
 }
 function welcomePtr(p){if(inR(p,950,28,48,44))return toggleAudioMode();if(inR(p,56,410,300,60)){sndClick();goGender('welcome')}else if(inR(p,52,480,160,48)){sndClick();openPanel('help')}}
