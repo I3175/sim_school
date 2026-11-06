@@ -1,0 +1,22 @@
+{
+  "id": "farmhand_kid",
+  "name": "Bé Mận",
+  "scene": "farm",
+  "tile": [
+    54,
+    30
+  ],
+  "appearance": {
+    "hair": "pigtails",
+    "body": "child",
+    "outfit": "shorts",
+    "hairColor": "#653e3c",
+    "skin": "#f1bc98",
+    "cloth": "#df783b",
+    "prop": "can"
+  },
+  "dialogue": [
+    "Em đem bình nhỏ để tưới cây con.",
+    "Hôm nay em đếm được nhiều mầm mới lắm."
+  ]
+}

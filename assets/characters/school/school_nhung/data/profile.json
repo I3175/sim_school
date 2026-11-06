@@ -1,0 +1,22 @@
+{
+  "id": "school_nhung",
+  "name": "Cô Nhung",
+  "scene": "art",
+  "tile": [
+    10,
+    5
+  ],
+  "appearance": {
+    "hair": "pixie",
+    "body": "slim",
+    "outfit": "apron",
+    "hairColor": "#8b4539",
+    "skin": "#f0b992",
+    "cloth": "#759187",
+    "prop": "palette"
+  },
+  "dialogue": [
+    "Thử pha một màu ấm trước, rồi thêm điểm lạnh.",
+    "Giá vẽ gần cửa là nơi em có thể thử màu."
+  ]
+}

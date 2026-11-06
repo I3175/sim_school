@@ -1,0 +1,22 @@
+{
+  "id": "school_thao",
+  "name": "Cô Thảo",
+  "scene": "dormitory",
+  "tile": [
+    21,
+    27
+  ],
+  "appearance": {
+    "hair": "silverpart",
+    "body": "square",
+    "outfit": "cardigan",
+    "hairColor": "#62565a",
+    "skin": "#c38c6f",
+    "cloth": "#b3844e",
+    "prop": "keys"
+  },
+  "dialogue": [
+    "Khu giặt ở cuối hành lang phía trái.",
+    "Tối đến, mình nói nhỏ để các bạn còn nghỉ."
+  ]
+}

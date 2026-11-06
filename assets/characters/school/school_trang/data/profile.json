@@ -1,0 +1,22 @@
+{
+  "id": "school_trang",
+  "name": "Trang",
+  "scene": "school",
+  "tile": [
+    72,
+    49
+  ],
+  "appearance": {
+    "hair": "bow",
+    "body": "petite",
+    "outfit": "dress",
+    "hairColor": "#68433a",
+    "skin": "#ecc09d",
+    "cloth": "#d7798e",
+    "prop": "sling"
+  },
+  "dialogue": [
+    "Bảng tin ở cạnh sân chào cờ.",
+    "Muốn sang farm, đi theo đường lớn về phía đông."
+  ]
+}

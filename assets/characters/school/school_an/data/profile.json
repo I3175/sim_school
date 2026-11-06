@@ -1,0 +1,22 @@
+{
+  "id": "school_an",
+  "name": "An",
+  "scene": "library",
+  "tile": [
+    9,
+    16
+  ],
+  "appearance": {
+    "hair": "round",
+    "body": "petite",
+    "outfit": "sweater",
+    "hairColor": "#443c37",
+    "skin": "#e9b287",
+    "cloth": "#78a8b5",
+    "prop": "books"
+  },
+  "dialogue": [
+    "Mình vừa tìm thấy một truyện về bốn mùa.",
+    "Có chỗ đọc ở chiếc bàn giữa thư viện."
+  ]
+}

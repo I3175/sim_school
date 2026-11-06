@@ -1,0 +1,22 @@
+{
+  "id": "school_yen",
+  "name": "Chị Yến",
+  "scene": "cafeteria",
+  "tile": [
+    8,
+    8
+  ],
+  "appearance": {
+    "hair": "wrap",
+    "body": "square",
+    "outfit": "apron",
+    "hairColor": "#53413a",
+    "skin": "#d29671",
+    "cloth": "#4d9a8b",
+    "prop": "tray"
+  },
+  "dialogue": [
+    "Hôm nay có phở ở quầy giữa căn tin.",
+    "Ăn xong bạn nhớ để khay đúng chỗ nhé."
+  ]
+}

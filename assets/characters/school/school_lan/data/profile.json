@@ -1,0 +1,22 @@
+{
+  "id": "school_lan",
+  "name": "Lan",
+  "scene": "art",
+  "tile": [
+    8,
+    10
+  ],
+  "appearance": {
+    "hair": "asym",
+    "body": "petite",
+    "outfit": "scarf",
+    "hairColor": "#654278",
+    "skin": "#f1c3a1",
+    "cloth": "#8b6a9d",
+    "prop": "sketch"
+  },
+  "dialogue": [
+    "Mùa thu mình hay dùng tím mận với vàng lá.",
+    "Bạn có thể thử chọn màu ở giá vẽ bên trái."
+  ]
+}

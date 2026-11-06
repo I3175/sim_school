@@ -1,0 +1,22 @@
+{
+  "id": "school_hoa",
+  "name": "Cô Hoa",
+  "scene": "school-greenhouse",
+  "tile": [
+    11,
+    6
+  ],
+  "appearance": {
+    "hair": "roll",
+    "body": "tall",
+    "outfit": "aodai",
+    "hairColor": "#433b36",
+    "skin": "#ce956d",
+    "cloth": "#608f5d",
+    "prop": "botany"
+  },
+  "dialogue": [
+    "Mỗi mùa có cây thích hợp với nhiệt độ khác nhau.",
+    "Nhìn lá non là biết cây vừa bén rễ."
+  ]
+}

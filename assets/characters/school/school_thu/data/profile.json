@@ -1,0 +1,22 @@
+{
+  "id": "school_thu",
+  "name": "Cô Thu",
+  "scene": "main",
+  "tile": [
+    12,
+    18
+  ],
+  "appearance": {
+    "hair": "partlong",
+    "body": "square",
+    "outfit": "vest",
+    "hairColor": "#463738",
+    "skin": "#edb589",
+    "cloth": "#c19b72",
+    "prop": "clipboard"
+  },
+  "dialogue": [
+    "Cửa lớp ở cuối hành lang giữa.",
+    "Nếu lạc đường, xem bảng sơ đồ trong nhật ký."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "fisher",
+  "name": "Bác Tư",
+  "scene": "farm",
+  "tile": [
+    140,
+    85
+  ],
+  "appearance": {
+    "hair": "cone",
+    "body": "slim",
+    "outfit": "shirt",
+    "hairColor": "#5c4c43",
+    "skin": "#c58f66",
+    "cloth": "#40979d",
+    "prop": "rod"
+  },
+  "dialogue": [
+    "Chọn cần câu bằng phím 4 rồi đến bến.",
+    "Khi vạch vào vùng xanh, nhấn E để giật cần."
+  ]
+}

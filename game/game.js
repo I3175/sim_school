@@ -4,10 +4,7 @@
   const season=K.SEASONS[C.season]||K.SEASONS.spring;
   const canvas=$('world'),g=canvas.getContext('2d'),mini=$('minimap'),mg=mini.getContext('2d');
   const {maps, rooms, plots, version: layoutVersion} = window.WORLD_LAYOUT;
-  const characterFiles = [
-    'sprite_A_blonde_red.png', 'sprite_B_black_green.png', 'sprite_C_silver_purple.png',
-    'sprite_D_orange_teal.png', 'sprite_E_pink_navy.png', 'sprite_F_dark_skin_gray.png',
-  ];
+  const playerSprite = 'assets/characters/sprite_A_blonde_red.png';
   let state = newGame();
   const roomStack = [];
   try {
@@ -15,9 +12,9 @@
     const map = maps[saved?.map === 'farm' ? 'farm' : 'school'];
     state = K.restore(saved, {...C, worldWidth:map.width, worldHeight:map.height});
     const scene = maps[state.map];
-    if (saved?.layoutVersion !== layoutVersion ||
-        K.collides(state.player.x, state.player.y, 12, scene.collision)) {
-      state.player = {...scene.spawn};
+    if (saved?.layoutVersion !== layoutVersion) state.player = {...scene.spawn};
+    else if (K.collides(state.player.x, state.player.y, 12, scene.collision)) {
+      state.player = {...(scene.id === 'farm' ? scene.busSpawn : scene.spawn)};
     }
   } catch {
     // Local storage can be unavailable. The game still starts at the entrance.
@@ -46,7 +43,7 @@
   function groundLayer() {
     const scene = current();
     if (!groundLayers.has(scene.id)) {
-      groundLayers.set(scene.id, buildGround(scene, season, C.season));
+      groundLayers.set(scene.id, buildGround(scene, season, C.season, farmSheets.get('ground:palette')?.image));
     }
     return groundLayers.get(scene.id);
   }
@@ -96,8 +93,8 @@
   }
   addEventListener('resize',resize);new ResizeObserver(resize).observe(canvas);
   function loadImage(src){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('Không tải được '+src));im.src=src;});}
-  async function load(){let done=0;const total=ASSET_MANIFEST.length+characterFiles.length+Object.keys(FARM_ART).length;const jobs=ASSET_MANIFEST.map(async a=>{const im=await loadImage(a.image);images.set(a.id,im);for(const f of a.frames){const c=document.createElement('canvas');c.width=f.width;c.height=f.height;const ctx=c.getContext('2d');ctx.drawImage(im,f.x,f.y,f.width,f.height,0,0,f.width,f.height);let crop={x:0,y:0,w:f.width,h:f.height};try{const pixels=ctx.getImageData(0,0,c.width,c.height),d=pixels.data;let minX=c.width,minY=c.height,maxX=0,maxY=0;for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++){const i=(y*c.width+x)*4;if(d[i+3]<150){d[i+3]=0;continue;}d[i+3]=255;minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y);}ctx.putImageData(pixels,0,0);if(maxX>=minX)crop={x:minX,y:minY,w:maxX-minX+1,h:maxY-minY+1};}catch{/* file:// may restrict pixel access; the untrimmed frame still renders. */}sprites.set(a.id+':'+f.id,{image:c,...crop});}done++;$('loading-detail').textContent=`Đã chuẩn bị ${done}/${total} bộ hình`;});
-    characterFiles.forEach((name,i)=>jobs.push(loadImage('assets/characters/'+name).then(im=>{images.set('character'+i,im);done++;})));
+  async function load(){let done=0;const total=ASSET_MANIFEST.length+1+Object.keys(FARM_ART).length;const jobs=ASSET_MANIFEST.map(async a=>{const im=await loadImage(a.image);images.set(a.id,im);for(const f of a.frames){const c=document.createElement('canvas');c.width=f.width;c.height=f.height;const ctx=c.getContext('2d');ctx.drawImage(im,f.x,f.y,f.width,f.height,0,0,f.width,f.height);let crop={x:0,y:0,w:f.width,h:f.height};try{const pixels=ctx.getImageData(0,0,c.width,c.height),d=pixels.data;let minX=c.width,minY=c.height,maxX=0,maxY=0;for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++){const i=(y*c.width+x)*4;if(d[i+3]<150){d[i+3]=0;continue;}d[i+3]=255;minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y);}ctx.putImageData(pixels,0,0);if(maxX>=minX)crop={x:minX,y:minY,w:maxX-minX+1,h:maxY-minY+1};}catch{/* file:// may restrict pixel access; the untrimmed frame still renders. */}sprites.set(a.id+':'+f.id,{image:c,...crop});}done++;$('loading-detail').textContent=`Đã chuẩn bị ${done}/${total} bộ hình`;});
+    jobs.push(loadImage(playerSprite).then(image=>{images.set('character0',image);done++;}));
     for (const [id, frame] of Object.entries(FARM_ART)) {
       jobs.push(loadImage(frame.path).then(image => {
         if (image.width < frame.sourceX + frame.width || image.height < frame.height) {
@@ -162,12 +159,19 @@
   function burst(x,y,color,count=16){for(let i=0;i<count;i++)particles.push({x,y,vx:(Math.random()-.5)*100,vy:-30-Math.random()*70,life:.7+Math.random()*.5,max:1.2,color});}
   function showDialog(title,body,buttons=[],tag='MỘT ĐIỀU NHỎ MỖI NGÀY'){setMenu(false);$('dialog-title').textContent=title;$('dialog-tag').textContent=tag;$('dialog-body').innerHTML=body;$('dialog-actions').replaceChildren();for(const b of buttons){const el=document.createElement('button');el.textContent=b.label;el.className=b.secondary?'secondary':'';el.disabled=!!b.disabled;el.onclick=b.click;$('dialog-actions').append(el);}if(!dialog.open)dialog.showModal();}
   function closeDialog(){fishing=null;if(dialog.open)dialog.close();keys.clear();canvas.focus({preventScroll:true});}
-  function art(id){const s=sprites.get(id);if(!s)return;const c=document.createElement('canvas');c.className='modal-art';c.width=180;c.height=120;const cx=c.getContext('2d');cx.imageSmoothingEnabled=false;const scale=Math.min(150/s.w,110/s.h);cx.drawImage(s.image,s.x,s.y,s.w,s.h,(180-s.w*scale)/2,120-s.h*scale,s.w*scale,s.h*scale);$('dialog-body').prepend(c);}
+  function art(id){const s=artSource(id);if(!s)return;const c=document.createElement('canvas');c.className='modal-art';c.width=180;c.height=120;const cx=c.getContext('2d');cx.imageSmoothingEnabled=false;const scale=Math.min(150/s.w,110/s.h);cx.drawImage(s.image,s.x,s.y,s.w,s.h,(180-s.w*scale)/2,120-s.h*scale,s.w*scale,s.h*scale);$('dialog-body').prepend(c);}
   function finishVisit(key,xp,text){if(state.visits[key]===state.day){toast('Bạn đã hoàn thành hoạt động này hôm nay.');return;}state.visits[key]=state.day;state.xp+=xp;K.complete(state,key);closeDialog();updateUI();save(false);toast(text);burst(state.player.x,state.player.y-30,'#f6dc82');beep(880);}
-  function interact(target=nearest){if(!ready||paused||dialog.open||!menu.hidden||!target)return;actionUntil=time+.45;const a=target.action;
+  function interact(target=nearestObject()){if(!ready||paused||dialog.open||!menu.hidden||!target)return;actionUntil=time+.45;const a=target.action;
     if (a==='fish') { startFishing(target); return; }
     if (a==='talk') {
-      showDialog(target.label,'<p>'+target.line+'</p>',[{label:'Chào bạn',click:closeDialog}],'NÔNG TRẠI');
+      const npc = current().npcs.find(actor => actor.id === target.id);
+      const line = npc.lines[npc.nextLine];
+      npc.nextLine = (npc.nextLine + 1) % npc.lines.length;
+      const dx = state.player.x - npc.x, dy = state.player.y - npc.y;
+      npc.face = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 2 : 1) : (dy > 0 ? 0 : 3);
+      npc.walking = false;
+      showDialog(target.label,'<p>'+line+'</p>',[{label:'Chào bạn',click:closeDialog}],state.map==='farm' ? 'NÔNG TRẠI' : 'TRƯỜNG BÌNH MINH');
+      art(npc.portrait);
       return;
     }
     if (a==='pet') {
@@ -179,7 +183,7 @@
     if(a==='exit'){exitRoom();return;}
     if(a==='plot'){const result=K.plotAction(state,target.index,state.tool);toast(result.message);if(result.ok){burst(target.x+39,target.y+25,result.kind==='water'?'#b8eaff':result.kind==='harvest'?'#f5d681':'#bde58a');beep(650);save(false);updateUI();}return;}
     if(a==='travel'){travel(state.map==='school'?'farm':'school');return;}
-    if(a==='lesson'){const done=state.visits.lesson===state.day;showDialog('Tiết học: Một hạt mầm',`<p>${done?'Bạn đã hoàn thành tiết học hôm nay. Hãy ghé thư viện hoặc đến vườn thực hành.':'Cô Mai: “Cây cần gì để lớn lên khỏe mạnh?”'}</p>`+(done?'':'<div id="quiz"></div>'),[{label:'Đóng',click:closeDialog,secondary:true}],'TÒA NHÀ CHÍNH');art('classroom:student-desk');if(!done){['Ánh sáng, nước và chất dinh dưỡng','Chỉ cần bóng tối','Không cần tưới nước'].forEach((label,i)=>{const b=document.createElement('button');b.className='quiz-option';b.textContent=label;b.onclick=()=>{if(i===0)finishVisit('lesson',15,'Chính xác! +25 kiến thức. Hãy thử trồng cây ở farm.');else{b.disabled=true;b.textContent='Thử lại nhé — hãy nghĩ về ánh nắng và nước!';}};$('quiz').append(b);});}return;}
+    if(a==='lesson'){const done=state.visits.lesson===state.day;showDialog('Tiết học: Một hạt mầm',`<p>${done?'Bạn đã hoàn thành tiết học hôm nay. Hãy ghé thư viện hoặc đến vườn thực hành.':'Thầy Bình: “Cây cần gì để lớn lên khỏe mạnh?”'}</p>`+(done?'':'<div id="quiz"></div>'),[{label:'Đóng',click:closeDialog,secondary:true}],'TÒA NHÀ CHÍNH');art('portrait:school_binh');if(!done){['Ánh sáng, nước và chất dinh dưỡng','Chỉ cần bóng tối','Không cần tưới nước'].forEach((label,i)=>{const b=document.createElement('button');b.className='quiz-option';b.textContent=label;b.onclick=()=>{if(i===0)finishVisit('lesson',15,'Chính xác! +25 kiến thức. Hãy thử trồng cây ở farm.');else{b.disabled=true;b.textContent='Thử lại nhé — hãy nghĩ về ánh nắng và nước!';}};$('quiz').append(b);});}return;}
     if(a==='library'){showDialog('Thư viện yên tĩnh','<p>Cuốn sách “Bốn mùa trong khu vườn” kể rằng: mỗi mùa có một màu sắc riêng. Mùa xuân gieo cà rốt, mùa hè trồng cà chua, mùa thu có bí ngô và mùa đông chăm củ cải.</p>',[{label:state.visits.library===state.day?'Đã đọc hôm nay':'Đọc sách · +20 kiến thức',disabled:state.visits.library===state.day,click:()=>finishVisit('library',10,'Một trang sách mới. +20 kiến thức!')},{label:'Để sau',secondary:true,click:closeDialog}],'THƯ VIỆN');art('special-rooms:reading-table');return;}
     if(a==='gym'){showDialog('Một nhịp vận động','<p>Nhấn nút đúng lúc vạch chạy nằm trong vùng xanh để hoàn thành bài tập phản xạ.</p><div style="height:22px;background:#e6e8db;position:relative;border-radius:6px;overflow:hidden"><span style="position:absolute;left:38%;width:24%;height:100%;background:#91af77"></span><i id="gym-marker" style="position:absolute;top:0;height:100%;width:5px;background:#b77849"></i></div>',[{label:'Bắt nhịp',click:()=>{const v=(Math.sin(time*3)+1)/2;if(v>=.38&&v<=.62){finishVisit('gym',15,'Bắt nhịp thành công! +15 kiến thức.');}else toast('Chưa đúng nhịp. Thử lại khi vạch vào vùng xanh.');}},{label:'Rời sân',secondary:true,click:closeDialog}],'NHÀ THỂ CHẤT');if(state.visits.gym===state.day){closeDialog();toast('Bạn đã luyện tập hôm nay.');}return;}
     if(a==='shop'){showShop();return;}
@@ -268,15 +272,15 @@
       .map(o => ({...o, ix:o.x, iy:o.y + (o.asset ? 20 : 0)}));
     if (scene.id === 'farm') {
       candidates.push(...plots.map(p => ({...p, ix:p.x+39, iy:p.y+35})));
-      candidates.push(...scene.npcs.filter(n => n.sheet).map(n => ({
-        ...n, label:n.name, action:n.animal ? 'pet' : 'talk', ix:n.x, iy:n.y
-      })));
     }
+    candidates.push(...scene.npcs.map(n => ({
+      ...n, label:n.name, action:n.animal ? 'pet' : 'talk', ix:n.x, iy:n.y
+    })));
     let best = null, distance = Infinity;
     for (const object of candidates) {
       const dx = state.player.x - object.ix, dy = state.player.y - object.iy;
       const d = Math.hypot(dx, dy);
-      const range = scene.floor || object.sheet ? 44 : object.action === 'plot' ? 78 : 88;
+      const range = object.portrait ? 34 : scene.floor || object.sheet ? 44 : object.action === 'plot' ? 78 : 88;
       if (d < range && d < distance) {
         best = object;
         distance = d;
@@ -284,10 +288,34 @@
     }
     return best;
   }
-  function tick(dt){time+=dt;if(time>toastUntil)$('toast').classList.remove('show');if(!ready)return;const active=!paused&&!dialog.open&&menu.hidden&&!document.hidden;if(active){const dx=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0),dy=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0);moving=K.move(state.player,dx,dy,dt,C.playerSpeed*(keys.has('shift')?C.runMultiplier:1),bounds(),current().width,current().height);if(dx||dy)facing=Math.abs(dx)>Math.abs(dy)?dx>0?2:1:dy>0?0:3;if(moving)walkPhase+=dt*(keys.has('shift')?12:8);K.grow(state,dt,C.cropGrowthSeconds*season.growth);state.clock+=dt;if(state.clock>=C.dayLengthSeconds){state.clock=0;state.day++;toast('Chào ngày mới!');}for(const n of current().npcs){const phase = time * (n.animal ? .8 : .35) + n.origin;
-      const next=n.origin+Math.sin(phase)*(n.animal ? 26 : 24);
-      if (!K.collides(next,n.y,12,bounds())) n.x=next;
-      n.face=Math.cos(phase)>0?2:1;}}else moving=false;
+  function updateActors(dt) {
+    const scene = current();
+    for (const npc of scene.npcs) {
+      if (!npc.portrait) {
+        const phase = time * (npc.animal ? .8 : .35) + npc.origin;
+        const next = npc.origin + Math.sin(phase) * (npc.animal ? 26 : 24);
+        if (!K.collides(next,npc.y,12,scene.collision)) npc.x = next;
+        npc.face = Math.cos(phase)>0 ? 2 : 1;
+        continue;
+      }
+      npc.routeTime = (npc.routeTime || 0) + dt;
+      const phase = npc.routeTime % 12;
+      const leg = Math.floor(phase / 3);
+      const span = npc.routeSpan;
+      const distance = Math.min(1,(phase % 3) / 2) * span;
+      const steps = [[distance,0,2],[span,distance,0],[span-distance,span,1],[0,span-distance,3]];
+      const [dx,dy,face] = steps[leg];
+      const nextX = npc.origin+dx, nextY = npc.originY+dy;
+      npc.walking = !K.collides(nextX,nextY,12,scene.collision) &&
+        Math.hypot(npc.x-nextX,npc.y-nextY) > .01;
+      if (npc.walking) {
+        npc.x = nextX;
+        npc.y = nextY;
+        npc.face = face;
+      }
+    }
+  }
+  function tick(dt){time+=dt;if(time>toastUntil)$('toast').classList.remove('show');if(!ready)return;const active=!paused&&!dialog.open&&menu.hidden&&!document.hidden;if(active){const dx=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0),dy=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0);moving=K.move(state.player,dx,dy,dt,C.playerSpeed*(keys.has('shift')?C.runMultiplier:1),bounds(),current().width,current().height);if(dx||dy)facing=Math.abs(dx)>Math.abs(dy)?dx>0?2:1:dy>0?0:3;if(moving)walkPhase+=dt*(keys.has('shift')?12:8);K.grow(state,dt,C.cropGrowthSeconds*season.growth);state.clock+=dt;if(state.clock>=C.dayLengthSeconds){state.clock=0;state.day++;toast('Chào ngày mới!');}updateActors(dt);}else moving=false;
     nearest=nearestObject();$('interaction').style.display=nearest&&!dialog.open&&!paused&&menu.hidden?'flex':'none';if(nearest){$('interaction-title').textContent=nearest.label;$('interaction-desc').textContent=nearest.action==='plot'?(state.plots[nearest.index].stage===2?'Đã chín · Thu hoạch':state.plots[nearest.index].watered?'Đang lớn · '+Math.floor(state.plots[nearest.index].growth/(C.cropGrowthSeconds*season.growth)*100)+'%':'Gieo hạt / tưới nước'):'Nhấn E để khám phá';}
     for(const p of particles){p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=80*dt;p.life-=dt;}particles=particles.filter(p=>p.life>0);transition=Math.max(0,transition-dt*2.5);
     const target = cameraTarget();
@@ -321,17 +349,16 @@
   }
   function drawLake(scene) {
     const {x,y,w,h} = scene.waterfall;
-    rect(x-5,y,w+10,h,'#57645a');
-    rect(x,y,w,h,'#59b4c0');
-    rect(x+7,y,w-14,h,'#78c9cf');
-    for (let i=0;i<14;i++) {
-      const yy = y + ((time*142+i*47) % h);
-      rect(x+5+i%6*9,yy,3,12+i%4*5,i%3?'#b6e9e1':'#e2f5df');
+    const flow = farmSheets.get('water:fall').image;
+    const foam = farmSheets.get('water:foam').image;
+    const frame = Math.floor(time*8);
+    const band = 64;
+    for (let yy=0;yy<h;yy+=band) {
+      const height = Math.min(band,h-yy);
+      g.drawImage(flow,(frame%6)*16,0,16,height/2,x,y+yy,w,height);
     }
-    for (let i=0;i<10;i++) {
-      const offset = (time*18+i*9)%32;
-      rect(x-14+i*9,y+h-12+offset,9,3,'#def5e0a8');
-    }
+    g.drawImage(foam,frame%4*48,0,48,16,x-16,y-9,w+32,21);
+    g.drawImage(foam,frame%4*48,0,48,16,x-42,y+h-13,w+84,35);
     const lake = scene.lake;
     for (let i=0;i<14;i++) {
       const drift = Math.sin(time*1.4+i)*6;
@@ -360,14 +387,12 @@
   }
   function drawPlot(p){
     const s=state.plots[p.index];
-    const prefix=s.watered ? 'ground:soil-wet-' : 'ground:soil-';
-    const edges=['nw','n','ne','w','c','e','sw','s','se'];
-    for (let i=0;i<edges.length;i++) {
-      const tile=farmSheets.get(prefix+edges[i]);
+    const soil=farmSheets.get('ground:soil').image;
+    for (let i=0;i<9;i++) {
       const col=i%3,row=Math.floor(i/3);
       const x=p.x+Math.round(col*p.w/3),y=p.y+Math.round(row*p.h/3);
       const w=p.x+Math.round((col+1)*p.w/3)-x,h=p.y+Math.round((row+1)*p.h/3)-y;
-      g.drawImage(tile.image,0,0,16,16,x,y,w,h);
+      g.drawImage(soil,i*16,s.watered?16:0,16,16,x,y,w,h);
     }
     if(nearest?.id===p.id){g.strokeStyle='#fff0b5';g.lineWidth=2;g.strokeRect(p.x-5,p.y-5,p.w+10,p.h+10);}if(s.stage){const progress=s.stage===2?1:Math.max(.15,s.growth/(C.cropGrowthSeconds*season.growth));for(let k=0;k<4;k++){const x=p.x+21+(k%2)*33,y=p.y+25+Math.floor(k/2)*29,sway=Math.sin(time*2+k)*1.8;rect(x-1,y-8-progress*8,3,12+progress*4,'#658c3e');ellipse(x-5+sway,y-9-progress*6,6+progress*2,3,'#89b84b');ellipse(x+5+sway,y-12-progress*6,6+progress*2,3,'#b1d16c');if(progress>.6){const col={spring:'#e5a158',summer:'#d96e50',autumn:'#d99543',winter:'#eee8cc'}[C.season]||'#e5a158';ellipse(x,y,5+progress*3,6+progress*3,col);}}if(s.stage===2){g.fillStyle='#fff0a6';g.font='bold 15px Segoe UI';g.fillText('✦',p.x+58,p.y-5+Math.sin(time*3)*3);}}
   }
@@ -387,7 +412,7 @@
       sprite(o.asset,0,0,o.w,o.h);
     } else if (o.orchard) {
       const sheet = farmSheets.get(o.asset);
-      const frame = {spring:2,summer:4,autumn:5,winter:6}[C.season] ?? 2;
+      const frame = {spring:0,summer:1,autumn:2,winter:3}[C.season] ?? 0;
       g.drawImage(sheet.image,frame*32,0,32,48,o.x-o.w/2,o.y-o.h,o.w,o.h);
     } else {
       sprite(o.asset,o.x,o.y,o.w,o.h);
@@ -402,14 +427,14 @@
       g.fillText(o.label,o.x,o.y+23);
     }
     if(o.bees)for(let i=0;i<4;i++){const x=o.x+Math.sin(time*2+i*2)*42,y=o.y-70+Math.cos(time*2.5+i)*25;ellipse(x,y,3,2,'#ffe591');rect(x,y-2,1,4,'#5b4938');}if(o.steam)for(let i=0;i<3;i++){const t=(time*.4+i*.3)%1;ellipse(o.x-20+Math.sin(t*9)*8,o.y-115-t*40,4+t*6,5+t*8,`rgba(255,248,217,${(1-t)*.45})`);}}
-  function drawFarmActor(n) {
-    const sheet = farmSheets.get(n.sheet);
-    const size = n.size || 68;
+  function drawSceneActor(n) {
+    const phase = time * .8 + n.origin;
+    const walking = n.portrait ? n.walking && !dialog.open : Math.abs(Math.cos(phase)) > .32;
+    const sheet = farmSheets.get(!walking && n.idleSheet ? n.idleSheet : n.sheet);
+    const size = n.size || (current().floor ? 48 : 64);
     const w = size * sheet.w / sheet.h;
-    const phase = time * (n.animal ? .8 : .35) + n.origin;
-    const walking = Math.abs(Math.cos(phase)) > .32;
-    const row = walking ? (n.face === 2 ? 2 : 3) : n.animal ? 4 : 0;
-    const col = walking ? Math.floor(time * 7) % 4 : (n.animal ? 0 : 4) + Math.floor(time*2)%2;
+    const row = n.portrait ? [0,3,2,1][n.face] : walking ? (n.face === 2 ? 2 : 3) : 4;
+    const col = walking ? Math.floor(time * 7) % 4 : Math.floor(time*2)%2;
     ellipse(n.x,n.y-2,w*.32,4,'#344a3433');
     g.drawImage(sheet.image,col*sheet.w,row*sheet.h,sheet.w,sheet.h,n.x-w/2,n.y-size,w,size);
     if (!n.animal) {
@@ -434,7 +459,7 @@
       if (object.layer === 'ground' || object.layer === 'wall') drawObject(object);
       else drawables.push({y:object.y + (object.layer === 'display' ? 24 : 0),draw:()=>drawObject(object)});
     }
-    for(const n of current().npcs)drawables.push({y:n.y,draw:()=>n.sheet ? drawFarmActor(n) : actor(n.x,n.y,n.face,time*5,true,n.color,n.name)});drawables.push({y:state.player.y,draw:()=>actor(state.player.x,state.player.y,facing,walkPhase,moving,0,'Bạn')});drawables.sort((a,b)=>a.y-b.y).forEach(d=>d.draw());for(const p of particles){g.globalAlpha=Math.min(1,p.life);rect(p.x,p.y,4,4,p.color);}g.globalAlpha=1;g.restore();
+    for(const n of current().npcs)drawables.push({y:n.y,draw:()=>drawSceneActor(n)});drawables.push({y:state.player.y,draw:()=>actor(state.player.x,state.player.y,facing,walkPhase,moving,0,'Bạn')});drawables.sort((a,b)=>a.y-b.y).forEach(d=>d.draw());for(const p of particles){g.globalAlpha=Math.min(1,p.life);rect(p.x,p.y,4,4,p.color);}g.globalAlpha=1;g.restore();
     if (!scene.floor) for(let i=0;i<25;i++){const x=(i*127+time*(C.season==='winter'?9:17)+Math.sin(time*.6+i)*20)%(W+30)-15,y=(i*79+time*(C.season==='winter'?23:12))%(H+30)-15;g.save();g.translate(x,y);g.rotate(time+i);g.globalAlpha=C.season==='summer'?.25:.55;rect(-2,-1,C.season==='winter'?3:5,3,season.particle);g.restore();}
     if(paused){rect(0,0,W,H,'#15352b77');g.textAlign='center';g.fillStyle='#fff9df';g.font='28px Georgia';g.fillText('Một chút nghỉ ngơi',W/2,H/2);g.font='13px Segoe UI';g.fillText('Nhấn Esc hoặc Tiếp tục',W/2,H/2+30);}if(transition)rect(0,0,W,H,`rgba(250,246,226,${transition})`);if(!menu.hidden)drawMini();}
   function drawMini() {

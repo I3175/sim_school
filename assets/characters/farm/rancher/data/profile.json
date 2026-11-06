@@ -1,0 +1,22 @@
+{
+  "id": "rancher",
+  "name": "Chú Cường",
+  "scene": "farm",
+  "tile": [
+    62,
+    80
+  ],
+  "appearance": {
+    "hair": "straw",
+    "body": "broad",
+    "outfit": "jacket",
+    "hairColor": "#62443a",
+    "skin": "#a8694b",
+    "cloth": "#b95c49",
+    "prop": "glove"
+  },
+  "dialogue": [
+    "Đi qua cổng mở để vào đồng cỏ.",
+    "Đến gần vật nuôi rồi nhấn E để vuốt ve."
+  ]
+}

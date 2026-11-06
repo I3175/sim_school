@@ -1,0 +1,22 @@
+{
+  "id": "school_minh",
+  "name": "Minh",
+  "scene": "school",
+  "tile": [
+    93,
+    84
+  ],
+  "appearance": {
+    "hair": "curls",
+    "body": "sport",
+    "outfit": "shorts",
+    "hairColor": "#523939",
+    "skin": "#ab6f51",
+    "cloth": "#cea14e",
+    "prop": "rope"
+  },
+  "dialogue": [
+    "Bạn thích xích đu hay bập bênh hơn?",
+    "Mình chơi thêm một lượt rồi nhường bạn nhé."
+  ]
+}

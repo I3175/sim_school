@@ -1,0 +1,22 @@
+{
+  "id": "school_hai",
+  "name": "Thầy Hải",
+  "scene": "lab",
+  "tile": [
+    11,
+    10
+  ],
+  "appearance": {
+    "hair": "shortcurl",
+    "body": "tall",
+    "outfit": "lab",
+    "hairColor": "#34363f",
+    "skin": "#a46c51",
+    "cloth": "#dbe5d9",
+    "prop": "vial"
+  },
+  "dialogue": [
+    "Mô hình kia giúp hình dung các phần của nguyên tử.",
+    "Ống nghiệm màu lam dùng để quan sát ở bàn thực hành."
+  ]
+}

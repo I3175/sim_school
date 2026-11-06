@@ -1,0 +1,22 @@
+{
+  "id": "school_mai",
+  "name": "Mai",
+  "scene": "classroom",
+  "tile": [
+    6,
+    12
+  ],
+  "appearance": {
+    "hair": "long",
+    "body": "petite",
+    "outfit": "uniform",
+    "hairColor": "#263942",
+    "skin": "#edbc93",
+    "cloth": "#4b8b89",
+    "prop": "journal"
+  },
+  "dialogue": [
+    "Mình ghi lại câu hỏi khó vào sổ vàng.",
+    "Thầy Bình ở phía trước. Bạn có thể làm bài ở bàn giáo viên."
+  ]
+}

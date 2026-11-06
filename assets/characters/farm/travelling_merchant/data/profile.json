@@ -1,0 +1,22 @@
+{
+  "id": "travelling_merchant",
+  "name": "Cô Liên",
+  "scene": "farm",
+  "tile": [
+    17,
+    45
+  ],
+  "appearance": {
+    "hair": "braid",
+    "body": "tall",
+    "outfit": "coat",
+    "hairColor": "#3c3249",
+    "skin": "#bf8468",
+    "cloth": "#56689a",
+    "prop": "pack"
+  },
+  "dialogue": [
+    "Bạn vừa từ trường sang à? Quầy ở phía đông.",
+    "Mình hay ngồi xe qua lại để mang hàng tới chợ."
+  ]
+}

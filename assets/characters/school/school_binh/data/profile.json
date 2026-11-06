@@ -1,0 +1,22 @@
+{
+  "id": "school_binh",
+  "name": "Thầy Bình",
+  "scene": "classroom",
+  "tile": [
+    13,
+    6
+  ],
+  "appearance": {
+    "hair": "part",
+    "body": "tall",
+    "outfit": "shirt",
+    "hairColor": "#57525c",
+    "skin": "#d99e7a",
+    "cloth": "#dedcce",
+    "prop": "lesson"
+  },
+  "dialogue": [
+    "Hãy nghĩ xem cây lấy nước từ đâu.",
+    "Em có thể trả lời tại bàn giáo viên."
+  ]
+}

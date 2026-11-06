@@ -24,7 +24,8 @@ const assert = require('node:assert/strict');
       await page.evaluate(id => {
         const game = __game;
         if (game.nearestObject()?.id === id) return;
-        const objects = [...game.current().objects, ...(game.current().id === 'farm' ? game.plots : [])];
+        const objects = [...game.current().objects, ...game.current().npcs,
+          ...(game.current().id === 'farm' ? game.plots : [])];
         const target = objects.find(object => object.id === id);
         if (!target) throw new Error('Missing interaction ' + id);
         const original = game.state.player;
@@ -55,6 +56,7 @@ const assert = require('node:assert/strict');
       const failures = await page.evaluate(() => {
         const game = __game, scene = game.current();
         const targets = scene.objects.filter(o => o.action);
+        targets.push(...scene.npcs.filter(n => n.portrait));
         if (scene.id === 'farm') targets.push(...game.plots);
         const missing = new Set(targets.map(o => o.id));
         const old = game.state.player;
@@ -80,6 +82,20 @@ const assert = require('node:assert/strict');
       await use('exit');
       assert.equal(await scene(), expected);
     }
+    const greeted = new Set();
+    async function verifyNpcDialogs() {
+      const ids = await page.evaluate(() => __game.current().npcs.filter(n=>n.portrait).map(n=>n.id));
+      for (const id of ids) {
+        await use(id);
+        await page.locator('#dialog .modal-art').waitFor({state:'visible'});
+        const first = await page.locator('#dialog-body p').textContent();
+        await page.keyboard.press('Escape');
+        await use(id);
+        assert.notEqual(await page.locator('#dialog-body p').textContent(),first);
+        await page.keyboard.press('Escape');
+        greeted.add(id);
+      }
+    }
     async function switchMap(name, id) {
       await page.keyboard.press('j');
       await page.getByRole('button',{name,exact:true}).click();
@@ -92,25 +108,29 @@ const assert = require('node:assert/strict');
     const coverage = await page.evaluate(() => {
       const scenes = [...Object.values(__game.maps), ...Object.values(__game.rooms)];
       const assets = new Set(scenes.flatMap(s => s.objects.map(o => o.asset).filter(Boolean)));
-      const npcColors = new Set(scenes.flatMap(s => s.npcs.map(n => n.color).filter(Number.isInteger)));
+      const npcs = scenes.flatMap(s => s.npcs.filter(n => n.portrait));
       return {used:[...assets].filter(id => __game.sprites.has(id)).length, loaded:__game.sprites.size,
         invalid:[...assets].filter(id => !__game.sprites.has(id) && !__game.farmSheets.has(id)),
-        npcColors:[...npcColors].sort()};
+        npcCount:npcs.length, uniqueNpcs:new Set(npcs.map(n=>n.id)).size,
+        missingNpcArt:npcs.filter(n=>[n.sheet,n.idleSheet,n.portrait].some(id=>!__game.farmSheets.has(id))).map(n=>n.id)};
     });
-    assert.deepEqual(coverage,{used:112,loaded:112,invalid:[],npcColors:[1,2,3,4,5]});
+    assert.deepEqual(coverage,{used:112,loaded:112,invalid:[],npcCount:32,uniqueNpcs:32,missingNpcArt:[]});
     await verifyReachability();
     const x = await page.evaluate(() => __game.state.player.x);
     await page.keyboard.down('d');
     await page.waitForTimeout(400);
     await page.keyboard.up('d');
     assert.ok(await page.evaluate(() => __game.state.player.x) > x + 30);
+    await verifyNpcDialogs();
     const rooms = await page.evaluate(() => __game.maps.school.objects.filter(o => o.room).map(o => [o.id,o.room]));
     for (const [door,room] of rooms) {
       await enter(door,room);
       await verifyReachability();
+      await verifyNpcDialogs();
       if (room === 'main') {
         await enter('classroom:door','classroom');
         await verifyReachability();
+        await verifyNpcDialogs();
         await use('lesson-desk');
         await page.getByRole('button',{name:'Ánh sáng, nước và chất dinh dưỡng',exact:true}).click();
         await exit('main');
@@ -130,8 +150,18 @@ const assert = require('node:assert/strict');
     await use('school-bus');
     assert.equal(await scene(),'farm');
     await verifyReachability();
+    await verifyNpcDialogs();
+    assert.equal(await page.evaluate(() => {
+      const farm=__game.maps.farm;
+      return !GameCore.collides(1952,1056,12,farm.collision) &&
+        !GameCore.collides(2192,1240,12,farm.collision) &&
+        GameCore.collides(2208,1090,12,farm.collision) &&
+        GameCore.collides(2150,580,12,farm.collision);
+    }),true,'dock planks are passable, lake and cliff remain blocked');
     await enter('farm-house','farm-greenhouse');
     await verifyReachability();
+    await verifyNpcDialogs();
+    assert.equal(greeted.size,32);
     await exit('farm');
     await use('farm-bus');
     assert.equal(await scene(),'school');
@@ -158,9 +188,14 @@ const assert = require('node:assert/strict');
     await page.keyboard.press('3');
     await use('plot-0');
     assert.equal(await page.evaluate(() => __game.state.plots[0].watered),true);
-    await page.evaluate(() => {for(let i=0;i<400;i++) __game.tick(.05);});
+    await page.evaluate(() => {
+      const steps = Math.ceil(GAME_CONFIG.cropGrowthSeconds * __game.season.growth / .05) + 1;
+      for(let i=0;i<steps;i++) __game.tick(.05);
+    });
+    assert.equal(await page.evaluate(() => __game.state.plots[0].stage),2);
     await page.keyboard.press('1');
     await use('plot-0');
+    assert.equal(await page.evaluate(() => __game.state.crops),1);
     await use('farm-stall');
     await page.getByRole('button',{name:/Bán tất cả/}).click();
     assert.equal(await page.evaluate(() => Object.values(__game.state.quests).filter(Boolean).length),6);
@@ -203,7 +238,7 @@ const assert = require('node:assert/strict');
     for (const [season,name] of [['spring','Mùa xuân'],['summer','Mùa hè'],['autumn','Mùa thu'],['winter','Mùa đông']]) {
       await page.route('**/game/config.js',async route => {
         const response = await route.fetch();
-        const body = (await response.text()).replace("season: 'spring'","season: '" + season + "'");
+        const body = (await response.text()).replace(/season: '\w+'/, "season: '" + season + "'");
         await route.fulfill({response,body});
       });
       await page.reload();
@@ -221,7 +256,7 @@ const assert = require('node:assert/strict');
       await page.keyboard.press('Escape');
     }
     assert.deepEqual(errors,[]);
-    console.log('PASS: original atlas coverage, 14 interiors, 6 quests, reachable fishing docks, catch/bait/sale, travel, saves, four seasons, two desktop sizes');
+    console.log('PASS: 32 unique NPCs and dialogs, atlas coverage, 14 interiors, 6 quests, fishing, travel, saves, four seasons, two desktop sizes');
   } finally {
     await browser.close();
   }

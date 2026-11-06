@@ -1,0 +1,22 @@
+{
+  "id": "farm_manager",
+  "name": "Bác Năm",
+  "scene": "farm-greenhouse",
+  "tile": [
+    12,
+    10
+  ],
+  "appearance": {
+    "hair": "silverpart",
+    "body": "elder",
+    "outfit": "shirt",
+    "hairColor": "#c8c0c1",
+    "skin": "#b68162",
+    "cloth": "#4d6681",
+    "prop": "ledger"
+  },
+  "dialogue": [
+    "Mỗi mùa, bác đổi loại hạt ở bàn ươm.",
+    "Cây con cần đủ nước, nhưng đừng tưới ngập nhé."
+  ]
+}

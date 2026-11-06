@@ -1,0 +1,22 @@
+{
+  "id": "farm_mechanic",
+  "name": "Chú Kiên",
+  "scene": "farm",
+  "tile": [
+    15,
+    64
+  ],
+  "appearance": {
+    "hair": "helmet",
+    "body": "square",
+    "outfit": "work",
+    "hairColor": "#4a3736",
+    "skin": "#be8361",
+    "cloth": "#537d91",
+    "prop": "wrench"
+  },
+  "dialogue": [
+    "Kho bên này chứa đồ dùng để sửa máy.",
+    "Máy ép ở cạnh quầy phía đông, dễ nhận ra bằng tay quay."
+  ]
+}

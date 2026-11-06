@@ -61,7 +61,11 @@ Dùng các atlas farm-workshop, School-Life-RPG đợt 1 và 2 đã tạo; nhân
 
 Trường Bình Minh rộng 144 × 104 ô và farm rộng 164 × 112 ô, với 16 px mỗi ô. Dữ liệu trong `scenes.js` bố trí hai map ngoài trời và 14 phòng đi lại được. Nhấn E trước cửa để vào phòng hoặc trên thảm lối ra để quay lại. Một số phòng dành cho khám phá, còn các hoạt động có thưởng nằm ở bàn giáo viên, bàn đọc, sân tập và quầy ăn. Nông sản và nguyên liệu chế biến được quy đổi chung theo mùa.
 
-Đất, hàng rào và một số cây cỏ dùng [Cozy Farm Lite của Bramble & Byte](https://opengameart.org/content/cozy-farm-lite-16x16-top-down-farm-tiles-crops-farmer-hen) theo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Game chọn và co giãn các ô khi vẽ. NPC, vật nuôi, cây ăn quả và dụng cụ câu cá lấy từ [Farm & Ranch Life của Michel Clauwaert](https://michelclauwaertgmailcom.itch.io/farm-ranch-life-free-16x16-top-down-pixel-art-asset-pack). Xem [danh mục và giấy phép](../assets/farm-reference/README.md).
+Bộ Mầm Xanh trong `assets/mam-xanh` có địa hình 16×16, thác 6 frame, bọt 4 frame và cây theo mùa. Có thể tái xuất PNG bằng `python game/draw-mam-xanh.py` với Pillow. Hai bến có phần ván đi được.
+
+Trường có 20 NPC, farm có 12 NPC. Mỗi người có điểm gặp riêng và hai câu thoại luân phiên. Nhấn E gần NPC để trò chuyện và xem chân dung. Xem [cấu trúc thư mục asset nhân vật](../assets/characters/README.md).
+
+Bụi cây, hoa và đá trang trí dùng [Cozy Farm Lite của Bramble & Byte](https://opengameart.org/content/cozy-farm-lite-16x16-top-down-farm-tiles-crops-farmer-hen) theo [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), với kích thước được điều chỉnh khi vẽ. Vật nuôi và dụng cụ câu cá dùng [Farm & Ranch Life của Michel Clauwaert](https://michelclauwaertgmailcom.itch.io/farm-ranch-life-free-16x16-top-down-pixel-art-asset-pack). Xem [danh mục và giấy phép](../assets/farm-reference/README.md).
 
 ## Kiểm thử
 

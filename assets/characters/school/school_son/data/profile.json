@@ -1,0 +1,22 @@
+{
+  "id": "school_son",
+  "name": "Sơn",
+  "scene": "gym",
+  "tile": [
+    25,
+    18
+  ],
+  "appearance": {
+    "hair": "spikes",
+    "body": "sport",
+    "outfit": "sports",
+    "hairColor": "#b37536",
+    "skin": "#e4a47a",
+    "cloth": "#ce5955",
+    "prop": "ball"
+  },
+  "dialogue": [
+    "Bạn thử bài phản xạ cạnh rổ chưa?",
+    "Mình đang tập ném trúng ba lần liên tiếp."
+  ]
+}

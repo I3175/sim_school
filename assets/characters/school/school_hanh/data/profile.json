@@ -1,0 +1,22 @@
+{
+  "id": "school_hanh",
+  "name": "Cô Hạnh",
+  "scene": "infirmary",
+  "tile": [
+    11,
+    9
+  ],
+  "appearance": {
+    "hair": "pony",
+    "body": "slim",
+    "outfit": "coat",
+    "hairColor": "#583741",
+    "skin": "#edb793",
+    "cloth": "#e0c7a9",
+    "prop": "aid"
+  },
+  "dialogue": [
+    "Nếu thấy mệt sau khi tập, em cứ ngồi nghỉ một lát.",
+    "Giường nghỉ ở bên trái, tủ thuốc ở bên phải."
+  ]
+}

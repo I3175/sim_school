@@ -1,0 +1,22 @@
+{
+  "id": "school_quan",
+  "name": "Anh Quân",
+  "scene": "auditorium",
+  "tile": [
+    23,
+    13
+  ],
+  "appearance": {
+    "hair": "undercut",
+    "body": "tall",
+    "outfit": "vest",
+    "hairColor": "#39313e",
+    "skin": "#d69672",
+    "cloth": "#555d85",
+    "prop": "cable"
+  },
+  "dialogue": [
+    "Đừng vấp dây cạnh bục nhé.",
+    "Mình đang thử âm thanh cho buổi diễn tới."
+  ]
+}

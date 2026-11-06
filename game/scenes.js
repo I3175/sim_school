@@ -15,7 +15,6 @@
     id, ...point(x, y), label, action, noCollision: true, ...options
   });
   const activity = (id, label, action, options = {}) => ({id, label, action, ...options});
-  const npc = (name, x, y, color) => ({name, ...point(x,y), origin: x * tile, color, face: 0});
   const wall = {noCollision:true, layer:'wall'};
   const overlay = {noCollision:true, layer:'display'};
   const classroom = (...args) => sprite('classroom:' + args[0], ...args.slice(1));
@@ -39,9 +38,6 @@
   }
   const animal = (id, family, name, x, y, size) =>
     ({id, sheet:'animal:'+family, name, ...point(x,y), size, origin:x*tile, face:2, animal:true});
-  const farmNpc = (id, name, x, y, line) =>
-    ({id, sheet:'npc:'+id, name, ...point(x,y), origin:x*tile, face:2, line});
-
   const maps = {
     school: {
       id:'school', name:'Trường học Bình Minh', tag:'KHUÔN VIÊN',
@@ -92,7 +88,7 @@
         outdoor('flower-bed',81,36,8,4),
         outdoor('flower-bed',119,91,8,4),
       ],
-      npcs:[npc('Cô Mai',70,48,1),npc('An',54,58,4),npc('Bác Lâm',133,68,5)]
+      npcs:[]
     },
     farm: {
       id:'farm', name:'Nông trại Mầm Xanh', tag:'VƯỜN THỰC HÀNH',
@@ -109,7 +105,8 @@
       pond:box(15,66,19,8),
       lake:box(120,53,34,27),
       ridge:box(119,12,36,42),
-      waterfall:box(134,39,4,21),
+      waterfall:box(134,43,4,14),
+      docks:[box(118,64,6,4),box(135,76,4,6)],
       pasture:box(44,82,37,21),
       objects:[
         farmProp('greenhouse',27,27,18,18,activity('farm-house','Nhà kính','enter',{room:'farm-greenhouse'})),
@@ -137,6 +134,9 @@
         ...[
           ['apple',26,88],['apple',32,88],['cherry',26,96],['cherry',32,96],
           ['orange',88,91],['orange',94,95],['apple',101,96],['cherry',106,91],
+          ['cherry',132,17],['apple',142,20],['orange',145,25],
+          ['apple',129,33],['cherry',145,34],['orange',153,47],
+          ['cherry',155,73],['apple',157,77],
         ].map(([name,x,y]) => sprite('orchard:'+name,x,y,4,6,{orchard:true})),
         ...[
           ['bush',112,50],['flowers',114,58],['rock',117,41],
@@ -147,13 +147,6 @@
         ].map(([name,x,y]) => sprite('nature:'+name,x,y,2,2,{noCollision:true})),
       ],
       npcs:[
-        npc('Chú Nam',86,39,3),
-        farmNpc('fisher','Bác Tư',140,85,'Chọn cần câu bằng phím 4. Ra bến, thả câu rồi giật cần khi vạch chạy vào vùng xanh.'),
-        farmNpc('beekeeper','Cô Hương',86,64,'Ong ở phía đông vườn. Mỗi ngày bạn có thể thu một hũ mật.'),
-        farmNpc('seed_seller','Chị Sen',86,35,'Quầy có hạt giống và mồi. Bạn cũng có thể bán cá tại đây.'),
-        farmNpc('rancher','Chú Sơn',62,80,'Đi qua cổng mở để vào đồng cỏ. Bạn có thể nhấn E khi đến gần vật nuôi.'),
-        farmNpc('farmhand_kid','Bé Mận',54,30,'Luống đất sẫm màu là luống đã được tưới nước.'),
-        farmNpc('travelling_merchant','Cô Liên',108,79,'Lối đất phía đông dẫn tới hồ câu và thác nước.'),
         animal('cow-1','cow','Bò sữa',53,90,56),
         animal('sheep-1','sheep','Cừu nâu',67,90,52),
         animal('goat-1','goat','Dê núi',73,95,50),
@@ -190,7 +183,7 @@
       support('coffee-machine',33,7,3,4),
       classroom('door',18,12,3,4,{...wall,label:'Vào lớp học',action:'enter',room:'classroom'}),
       classroom('noticeboard',30,17,5,3,wall),
-    ],{walls:[box(1,11,14,1),box(21,11,14,1)],npcs:[npc('Cô Mai',16,17,1)]}),
+    ],{walls:[box(1,11,14,1),box(21,11,14,1)]}),
     classroom:room('classroom','Phòng học',20,15,'wood',[
       classroom('chalkboard',10,4,7,3,wall),
       classroom('whiteboard',16,4,4,3,wall),
@@ -210,14 +203,14 @@
       special('reading-table',13,12,6,4,activity('read-table','Bàn đọc sách','library')),
       special('reading-chair',8,12,3,3), special('reading-chair',18,12,3,3),
       classroom('low-bookshelf',24,16,5,3),
-    ],{npcs:[npc('An',9,16,4)]}),
+    ]),
     lab:room('lab','Phòng thí nghiệm',20,15,'stone',[
       special('lab-bench',10,7,9,4),
       special('microscope',7,6,3,3,overlay),
       special('test-tubes',10,6,3,3,overlay),
       special('atom-model',13,6,3,3,overlay),
       cafe('handwash-sink',16,9,3,3),
-    ],{npcs:[npc('Thầy Hải',6,10,2)]}),
+    ]),
     art:room('art','Phòng nghệ thuật',20,15,'wood',[
       special('easel',6,7,4,5,activity('art-easel','Giá vẽ','art')),
       special('paint-palette',6,8,2,2,overlay),
@@ -276,11 +269,41 @@
     id:'plot-'+index, index, x:845+(index%3)*95, y:600+Math.floor(index/3)*95,
     w:78, h:70, label:'Luống '+(index+1), action:'plot'
   }));
+  // Shared terrain rows keep the stepped shoreline and collision in agreement.
+  function terrainRows(area, insets) {
+    return insets.map(([left,right],i)=>({
+      x:area.x+left*tile,y:area.y+i*tile,w:area.w-(left+right)*tile,h:tile
+    }));
+  }
+  function withoutDock(row,dock) {
+    const left = Math.max(row.x,dock.x), right = Math.min(row.x+row.w,dock.x+dock.w);
+    const top = Math.max(row.y,dock.y), bottom = Math.min(row.y+row.h,dock.y+dock.h);
+    if (right<=left || bottom<=top) return [row];
+    return [
+      {x:row.x,y:row.y,w:row.w,h:top-row.y},
+      {x:row.x,y:bottom,w:row.w,h:row.y+row.h-bottom},
+      {x:row.x,y:top,w:left-row.x,h:bottom-top},
+      {x:right,y:top,w:row.x+row.w-right,h:bottom-top}
+    ].filter(part=>part.w>0 && part.h>0);
+  }
+  const farm = maps.farm;
+  farm.waterRows = terrainRows(farm.lake,Array.from({length:27},(_,i)=>{
+    const edge = Math.min(i,26-i);
+    return edge<4 ? [5-edge,5-edge] : [i>19?1:0,i<9?1:0];
+  }));
+  farm.rockRows = terrainRows(farm.ridge,Array.from({length:42},(_,i)=>{
+    const tier=Math.floor(i/14), step=Math.floor((i%14)/4);
+    return [Math.max(0,10-tier*4-step), Math.max(0,9-tier*4-step)+(i%14<3?1:0)];
+  }));
+  const lakeCollision = farm.docks.reduce(
+    (rows,dock)=>rows.flatMap(row=>withoutDock(row,dock)),farm.waterRows
+  );
   function sceneBounds(scene) {
     const footprints = scene.objects.filter(o => !o.noCollision).map(o => o.footprint || ({
       x:o.x-o.w*.39, y:o.y-o.h*.27, w:o.w*.78, h:o.h*.25
     }));
-    return footprints.concat(scene.walls || [], [scene.pond, scene.water, scene.lake, scene.ridge].filter(Boolean));
+    return footprints.concat(scene.walls || [], [scene.pond, scene.water].filter(Boolean),
+      scene.id==='farm' ? [...scene.rockRows,...lakeCollision] : []);
   }
   for (const scene of [...Object.values(maps), ...Object.values(rooms)]) {
     if (!scene.floor) {
@@ -297,6 +320,20 @@
       }
     }
     scene.collision = sceneBounds(scene);
+  }
+  for (const profile of window.NPC_CATALOG) {
+    const scene = maps[profile.scene] || rooms[profile.scene];
+    if (!scene) throw new Error('Unknown NPC scene: ' + profile.scene);
+    const origin = point(...profile.tile);
+    const radius = 12;
+    const clear = span => !GameCore.collides(origin.x+span/2,origin.y+span/2,
+      radius+span/2,scene.collision);
+    const routeSpan = [20,12,0].find(clear) ?? 0;
+    scene.npcs.push({
+      id:profile.id, name:profile.name, ...origin, origin:origin.x, originY:origin.y,
+      face:0, routeSpan, sheet:'npc:'+profile.id, idleSheet:'npc-idle:'+profile.id,
+      portrait:'portrait:'+profile.id, lines:profile.dialogue, nextLine:0
+    });
   }
   window.WORLD_LAYOUT = {version:2, maps, rooms, plots};
 })();

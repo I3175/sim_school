@@ -1,0 +1,22 @@
+{
+  "id": "seed_seller",
+  "name": "Chị Sen",
+  "scene": "farm",
+  "tile": [
+    86,
+    35
+  ],
+  "appearance": {
+    "hair": "bob",
+    "body": "slim",
+    "outfit": "dress",
+    "hairColor": "#51323e",
+    "skin": "#e7aa83",
+    "cloth": "#885882",
+    "prop": "seed"
+  },
+  "dialogue": [
+    "Quầy có hạt giống và mồi câu.",
+    "Luống đã tưới có màu sẫm hơn."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "orchard_keeper",
+  "name": "Bà Sáu",
+  "scene": "farm",
+  "tile": [
+    30,
+    92
+  ],
+  "appearance": {
+    "hair": "scarf",
+    "body": "elder",
+    "outfit": "dress",
+    "hairColor": "#bfb2bb",
+    "skin": "#d7a27f",
+    "cloth": "#749051",
+    "prop": "fruit"
+  },
+  "dialogue": [
+    "Bà trồng táo, cam và anh đào quanh đồng cỏ.",
+    "Đầu xuân bà hay ra đây ngắm hoa nở."
+  ]
+}

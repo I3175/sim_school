@@ -1,0 +1,22 @@
+{
+  "id": "school_diep",
+  "name": "Cô Diệp",
+  "scene": "library",
+  "tile": [
+    20,
+    9
+  ],
+  "appearance": {
+    "hair": "bun",
+    "body": "slim",
+    "outfit": "cardigan",
+    "hairColor": "#4f3743",
+    "skin": "#d6a080",
+    "cloth": "#875371",
+    "prop": "card"
+  },
+  "dialogue": [
+    "Nếu muốn đọc tại chỗ, bàn giữa còn trống.",
+    "Khi mượn sách, đem thẻ qua quầy nhé."
+  ]
+}

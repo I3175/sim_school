@@ -1,0 +1,22 @@
+{
+  "id": "nam",
+  "name": "Chú Nam",
+  "scene": "farm",
+  "tile": [
+    86,
+    39
+  ],
+  "appearance": {
+    "hair": "band",
+    "body": "broad",
+    "outfit": "apron",
+    "hairColor": "#51372f",
+    "skin": "#bd7e57",
+    "cloth": "#946044",
+    "prop": "scale"
+  },
+  "dialogue": [
+    "Có cá hoặc rau mới hái thì đem đến quầy nhé.",
+    "Chú để riêng một giỏ cho những quả đẹp nhất."
+  ]
+}

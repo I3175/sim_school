@@ -1,0 +1,22 @@
+{
+  "id": "school_hung",
+  "name": "Hùng",
+  "scene": "lab",
+  "tile": [
+    6,
+    10
+  ],
+  "appearance": {
+    "hair": "swept",
+    "body": "slim",
+    "outfit": "vest",
+    "hairColor": "#283949",
+    "skin": "#be815d",
+    "cloth": "#4e7ead",
+    "prop": "tablet"
+  },
+  "dialogue": [
+    "Mình muốn ghi số liệu thí nghiệm lên máy này.",
+    "Nhớ rửa tay khi làm xong nhé."
+  ]
+}

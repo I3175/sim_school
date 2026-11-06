@@ -1,0 +1,22 @@
+{
+  "id": "school_khai",
+  "name": "Thầy Khải",
+  "scene": "gym",
+  "tile": [
+    16,
+    12
+  ],
+  "appearance": {
+    "hair": "buzz",
+    "body": "broad",
+    "outfit": "jacket",
+    "hairColor": "#33463e",
+    "skin": "#b87854",
+    "cloth": "#4f895b",
+    "prop": "score"
+  },
+  "dialogue": [
+    "Canh vạch vào vùng xanh rồi bấm để bắt nhịp.",
+    "Khởi động một chút trước khi vào sân nhé."
+  ]
+}

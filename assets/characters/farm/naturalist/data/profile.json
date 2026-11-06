@@ -1,0 +1,22 @@
+{
+  "id": "naturalist",
+  "name": "Chị Vân",
+  "scene": "farm",
+  "tile": [
+    113,
+    48
+  ],
+  "appearance": {
+    "hair": "wavy",
+    "body": "slim",
+    "outfit": "coat",
+    "hairColor": "#554151",
+    "skin": "#e8b393",
+    "cloth": "#587d80",
+    "prop": "notebook"
+  },
+  "dialogue": [
+    "Từ lối này bạn có thể thấy suối dẫn tới miệng thác.",
+    "Mình đang ghi lại các cây mọc ở bờ hồ."
+  ]
+}

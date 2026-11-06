@@ -1,0 +1,22 @@
+{
+  "id": "school_lam",
+  "name": "Bác Lâm",
+  "scene": "school",
+  "tile": [
+    132,
+    68
+  ],
+  "appearance": {
+    "hair": "cap",
+    "body": "broad",
+    "outfit": "coat",
+    "hairColor": "#a8a3a3",
+    "skin": "#bc805d",
+    "cloth": "#536a52",
+    "prop": "ring"
+  },
+  "dialogue": [
+    "Xe đưa đón đợi bên kia bãi xe đạp.",
+    "Bạn để xe sát giá cho lối đi được thoáng nhé."
+  ]
+}

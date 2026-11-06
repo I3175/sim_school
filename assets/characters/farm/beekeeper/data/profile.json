@@ -1,0 +1,22 @@
+{
+  "id": "beekeeper",
+  "name": "Cô Hương",
+  "scene": "farm",
+  "tile": [
+    86,
+    64
+  ],
+  "appearance": {
+    "hair": "veil",
+    "body": "square",
+    "outfit": "coat",
+    "hairColor": "#633b38",
+    "skin": "#f1b888",
+    "cloth": "#d9a341",
+    "prop": "honey"
+  },
+  "dialogue": [
+    "Mỗi ngày bạn có thể thu một hũ mật.",
+    "Cô hay đứng gần đám hoa để nghe ong về."
+  ]
+}

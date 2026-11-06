@@ -1,0 +1,22 @@
+{
+  "id": "school_phuc",
+  "name": "Anh Phúc",
+  "scene": "pool",
+  "tile": [
+    28,
+    14
+  ],
+  "appearance": {
+    "hair": "swim",
+    "body": "sport",
+    "outfit": "rescue",
+    "hairColor": "#3d435f",
+    "skin": "#bc8460",
+    "cloth": "#dc774e",
+    "prop": "float"
+  },
+  "dialogue": [
+    "Đứng ở thành hồ khi chưa đến lượt.",
+    "Khu tắm ở phía bên trái."
+  ]
+}

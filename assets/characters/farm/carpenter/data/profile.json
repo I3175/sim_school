@@ -1,0 +1,22 @@
+{
+  "id": "carpenter",
+  "name": "Anh Đạt",
+  "scene": "farm",
+  "tile": [
+    115,
+    69
+  ],
+  "appearance": {
+    "hair": "crop",
+    "body": "broad",
+    "outfit": "work",
+    "hairColor": "#603d31",
+    "skin": "#c48762",
+    "cloth": "#ac784d",
+    "prop": "hammer"
+  },
+  "dialogue": [
+    "Anh vừa thay ván ở bến phía tây.",
+    "Bạn có thể đi ra đầu bến trên phần ván."
+  ]
+}
