@@ -1,0 +1,203 @@
+{
+  "image": "farm-workshop-atlas.png",
+  "width": 1254,
+  "height": 1254,
+  "columns": 4,
+  "rows": 4,
+  "animated": false,
+  "native16px": false,
+  "frames": [
+    {
+      "id": "greenhouse",
+      "name": "Nhà kính",
+      "x": 0,
+      "y": 0,
+      "width": 314,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "potting-bench",
+      "name": "Bàn làm vườn",
+      "x": 314,
+      "y": 0,
+      "width": 313,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "compost-bin",
+      "name": "Thùng ủ phân",
+      "x": 627,
+      "y": 0,
+      "width": 314,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "rain-barrel",
+      "name": "Thùng nước mưa",
+      "x": 941,
+      "y": 0,
+      "width": 313,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "cider-press",
+      "name": "Máy ép táo",
+      "x": 0,
+      "y": 314,
+      "width": 314,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "jam-stove",
+      "name": "Bếp nấu mứt",
+      "x": 314,
+      "y": 314,
+      "width": 313,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "beehive",
+      "name": "Thùng nuôi ong",
+      "x": 627,
+      "y": 314,
+      "width": 314,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "seedling-tray",
+      "name": "Khay ươm cây",
+      "x": 941,
+      "y": 314,
+      "width": 313,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "farm-stall",
+      "name": "Quầy nông sản",
+      "x": 0,
+      "y": 627,
+      "width": 314,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "pumpkin-wheelbarrow",
+      "name": "Xe chở bí ngô",
+      "x": 314,
+      "y": 627,
+      "width": 313,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "scarecrow",
+      "name": "Bù nhìn",
+      "x": 627,
+      "y": 627,
+      "width": 314,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "tool-rack",
+      "name": "Giá dụng cụ",
+      "x": 941,
+      "y": 627,
+      "width": 313,
+      "height": 314,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "strawberry-crate",
+      "name": "Thùng dâu tây",
+      "x": 0,
+      "y": 941,
+      "width": 314,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "carrot-basket",
+      "name": "Giỏ cà rốt",
+      "x": 314,
+      "y": 941,
+      "width": 313,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "watering-can",
+      "name": "Bình tưới",
+      "x": 627,
+      "y": 941,
+      "width": 314,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    {
+      "id": "seed-sacks",
+      "name": "Bao hạt giống",
+      "x": 941,
+      "y": 941,
+      "width": 313,
+      "height": 313,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    }
+  ]
+}

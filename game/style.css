@@ -1,0 +1,113 @@
+:root {
+  --ink: #51301d;
+  --edge: #60381f;
+  --wood: #ba713d;
+  --rim: #f4bd73;
+  --paper: #ffdda2;
+  --slot: #ebb476;
+  --focus: #ffef9e;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; overflow: hidden; color: var(--ink); background: #3e612e; font: 15px/1.45 'Segoe UI', sans-serif; }
+button { font: inherit; cursor: pointer; color: inherit; }
+button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+button:disabled { opacity: .55; cursor: default; }
+h1, h2, p { margin: 0; }
+.game-shell { position: relative; width: 100%; height: 100dvh; overflow: hidden; background: #759747; }
+#world { display: block; width: 100%; height: 100%; outline: none; image-rendering: pixelated; }
+.wood {
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--edge);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px var(--rim), inset 0 -4px 0 #cd8c51, 0 3px 0 #462b2080;
+}
+.world-top { position: absolute; top: 18px; left: 18px; pointer-events: none; }
+.world-top h1 { padding: 6px 12px; background: #263f26dd; border: 2px solid #cfda9c77; color: #fff3cb; font: bold 14px Georgia, serif; text-shadow: 1px 2px #1d341c; }
+.hud { position: absolute; right: 18px; top: 16px; width: 184px; display: grid; gap: 6px; }
+.clock-panel { padding: 8px 11px; display: flex; align-items: center; gap: 11px; }
+#season-icon { display: grid; place-items: center; width: 36px; height: 36px; background: #eab16b; border: 2px solid #a66a3c; color: #7c522e; font-size: 25px; }
+.clock-panel small { display: block; font-size: 12px; }
+.clock-panel b { display: block; font-size: 15px; font-variant-numeric: tabular-nums; }
+.money-panel { display: flex; align-items: center; gap: 8px; padding: 3px 11px; }
+.money-panel span { color: #bf7c25; text-shadow: 1px 1px #f8edaa; }
+.money-panel b { margin-left: auto; font-variant-numeric: tabular-nums; }
+.journal-toggle { justify-self: end; font-size: 12px; font-weight: 700; padding: 5px 8px; }
+.journal-toggle span { margin-left: 4px; color: #805636; }
+kbd { font: bold 11px 'Segoe UI', sans-serif; display: inline-block; padding: 1px 4px; border: 1px solid #aa7046; background: #ffe8b7; border-radius: 2px; }
+.toolbar { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; padding: 5px; gap: 3px; background: var(--wood); }
+.tool-label { position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); white-space: nowrap; color: #fff5cc; font-size: 13px; text-shadow: 1px 2px #492f21, -1px -1px #492f21; }
+.tool { width: 57px; height: 56px; position: relative; display: grid; place-items: center; background: var(--slot); border: 2px solid #85502c; box-shadow: inset 2px 2px #c68248, inset -2px -2px #f4cc91; }
+.tool.active { border-color: #a13f26; outline: 2px solid #fff0a3; outline-offset: -4px; background: #ffcf86; }
+.tool kbd { position: absolute; top: 2px; left: 3px; padding: 0; border: 0; background: none; }
+.tool span { font-size: 24px; }
+.tool canvas { width: 36px; height: 36px; image-rendering: pixelated; }
+.tool b { position: absolute; bottom: 1px; right: 4px; color: #52331e; font-size: 13px; text-shadow: 1px 1px #ffe9b4; }
+.harvest { margin-left: 4px; background: #dfaa6d; }
+.quick-controls { position: absolute; bottom: 18px; right: 18px; display: flex; gap: 6px; }
+.quick-controls button { width: 33px; height: 34px; font-weight: 700; }
+.interaction { display: none; align-items: center; gap: 9px; position: absolute; bottom: 116px; left: 50%; transform: translateX(-50%); padding: 6px 12px; max-width: 90vw; }
+.interaction small { display: block; }
+#toast { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); padding: 7px 12px; max-width: min(44vw, 520px); opacity: 0; pointer-events: none; text-align: center; font-size: 13px; }
+#toast.show { opacity: 1; }
+.game-menu { position: absolute; z-index: 2; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: min(670px, 94vw); max-height: 82dvh; overflow: auto; padding: 20px; box-shadow: inset 0 0 0 3px var(--rim), 0 0 0 100vmax #25170977; }
+.eyebrow { font-size: 10px; font-weight: 800; letter-spacing: .12em; color: #85532e; }
+h2 { font: bold 25px Georgia, serif; margin: 4px 0 12px; }
+.close { position: absolute; right: 8px; top: 8px; width: 27px; height: 27px; padding: 0; line-height: 1; font-size: 21px; }
+.menu-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.profile { display: flex; flex-wrap: wrap; gap: 5px 12px; font-size: 12px; }
+.quest { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid #b983494d; }
+.quest small { display: block; font-size: 11px; }
+.quest-check { display: grid; place-items: center; width: 17px; height: 17px; flex: none; border: 1px solid #a87948; background: #ffedbe; margin-top: 3px; }
+.quest.done .quest-check { background: #758940; color: #fff7d9; }
+.progress { height: 6px; margin-top: 8px; background: #d6a269; }
+.progress i { display: block; height: 100%; background: #758940; }
+#minimap { width: 100%; display: block; border: 2px solid #975e39; image-rendering: pixelated; }
+nav, .menu-actions, #dialog-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; align-items: center; }
+nav button, .menu-actions button, dialog button, .close { background: #f1ba78; border: 2px solid #9a5f36; box-shadow: inset 1px 1px #ffe2a8; padding: 4px 8px; }
+nav button.active { background: #d2d68b; border-color: #778044; }
+.menu-actions small { font-size: 11px; }
+.tip { font-size: 12px; margin-top: 10px; }
+.tip p { margin-top: 4px; }
+#loading { position: absolute; inset: 0; z-index: 4; display: grid; place-content: center; text-align: center; background: #ffdda2; }
+.loader { margin: 0 auto 10px; border: 3px solid #e3a45d; border-top-color: var(--ink); border-radius: 50%; width: 28px; height: 28px; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+dialog { width: min(520px, 92vw); padding: 24px; max-height: 85dvh; }
+dialog::backdrop { background: #27190d77; }
+dialog p { margin: 9px 0; }
+.fishing-meter {
+  position: relative;
+  height: 22px;
+  overflow: hidden;
+  border: 2px solid #85502c;
+  background: #c39562;
+}
+.fishing-meter span {
+  position: absolute;
+  inset: 0 auto 0 42%;
+  width: 20%;
+  background: #71904a;
+}
+.fishing-meter i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #fff4cf;
+  border: 1px solid #51301d;
+}
+dialog .close, .game-menu .close { padding: 0; }
+dialog .secondary, .menu-actions .secondary { background: #ffe6b3; }
+.modal-art { height: 110px; display: block; margin: auto; image-rendering: pixelated; }
+.quiz-option { display: block; width: 100%; margin: 7px 0; text-align: left; }
+@media (max-width: 600px) {
+  .world-top { top: 8px; left: 8px; max-width: 45vw; }
+  .hud { top: 8px; right: 8px; width: 152px; }
+  .toolbar { bottom: 12px; }
+  .tool { width: 45px; height: 48px; }
+  .tool canvas { width: 29px; height: 29px; }
+  .quick-controls { right: 8px; bottom: 88px; }
+  #toast { top: 150px; max-width: 80vw; }
+  .menu-columns { grid-template-columns: 1fr; }
+}
