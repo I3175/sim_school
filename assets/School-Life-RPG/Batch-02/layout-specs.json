@@ -1,0 +1,95 @@
+{
+  "tileSize": 16,
+  "status": "specification_only_not_built_maps",
+  "source": "../../school_building.md",
+  "areas": [
+    {
+      "id": "classroom",
+      "name": "Phòng học",
+      "widthTiles": 20,
+      "heightTiles": 15,
+      "widthPixels": 320,
+      "heightPixels": 240
+    },
+    {
+      "id": "library",
+      "name": "Thư viện",
+      "widthTiles": 30,
+      "heightTiles": 20,
+      "widthPixels": 480,
+      "heightPixels": 320
+    },
+    {
+      "id": "science-lab",
+      "name": "Phòng thí nghiệm",
+      "widthTiles": 20,
+      "heightTiles": 15,
+      "widthPixels": 320,
+      "heightPixels": 240
+    },
+    {
+      "id": "art-room",
+      "name": "Phòng nghệ thuật",
+      "widthTiles": 20,
+      "heightTiles": 15,
+      "widthPixels": 320,
+      "heightPixels": 240
+    },
+    {
+      "id": "gym",
+      "name": "Nhà thi đấu",
+      "widthTiles": 40,
+      "heightTiles": 30,
+      "widthPixels": 640,
+      "heightPixels": 480
+    },
+    {
+      "id": "cafeteria",
+      "name": "Căn tin",
+      "widthTiles": 30,
+      "heightTiles": 20,
+      "widthPixels": 480,
+      "heightPixels": 320
+    },
+    {
+      "id": "pool",
+      "name": "Hồ bơi",
+      "widthTiles": 35,
+      "heightTiles": 25,
+      "widthPixels": 560,
+      "heightPixels": 400
+    },
+    {
+      "id": "auditorium",
+      "name": "Hội trường",
+      "widthTiles": 40,
+      "heightTiles": 30,
+      "widthPixels": 640,
+      "heightPixels": 480
+    },
+    {
+      "id": "dormitory-floor",
+      "name": "Ký túc xá mỗi tầng",
+      "widthTiles": 30,
+      "heightTiles": 40,
+      "widthPixels": 480,
+      "heightPixels": 640
+    },
+    {
+      "id": "school-yard",
+      "name": "Sân trường",
+      "widthTiles": 100,
+      "heightTiles": 80,
+      "widthPixels": 1600,
+      "heightPixels": 1280
+    },
+    {
+      "id": "garden",
+      "name": "Vườn trường",
+      "widthTiles": 30,
+      "heightTiles": 20,
+      "widthPixels": 480,
+      "heightPixels": 320
+    }
+  ]
+}

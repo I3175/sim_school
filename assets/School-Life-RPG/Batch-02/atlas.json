@@ -1,0 +1,281 @@
+{
+  "batch": 2,
+  "source": "../../school_building.md",
+  "generator": "built-in image_gen",
+  "nativePixelSize": null,
+  "animated": false,
+  "atlases": [
+    {
+      "id": "campus-buildings",
+      "image": "campus-buildings.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        {
+          "id": "main-building",
+          "name": "Tòa nhà chính",
+          "x": 0,
+          "y": 0,
+          "width": 314,
+          "height": 350
+        },
+        {
+          "id": "library-building",
+          "name": "Thư viện",
+          "x": 314,
+          "y": 0,
+          "width": 313,
+          "height": 350
+        },
+        {
+          "id": "science-building",
+          "name": "Khu thí nghiệm",
+          "x": 627,
+          "y": 0,
+          "width": 314,
+          "height": 350
+        },
+        {
+          "id": "art-building",
+          "name": "Phòng nghệ thuật",
+          "x": 941,
+          "y": 0,
+          "width": 313,
+          "height": 350
+        },
+        {
+          "id": "gym-building",
+          "name": "Nhà thi đấu",
+          "x": 0,
+          "y": 350,
+          "width": 314,
+          "height": 350
+        },
+        {
+          "id": "cafeteria-building",
+          "name": "Căn tin",
+          "x": 314,
+          "y": 350,
+          "width": 313,
+          "height": 350
+        },
+        {
+          "id": "pool-complex",
+          "name": "Khu hồ bơi",
+          "x": 627,
+          "y": 350,
+          "width": 314,
+          "height": 350
+        },
+        {
+          "id": "dormitory",
+          "name": "Ký túc xá",
+          "x": 941,
+          "y": 350,
+          "width": 313,
+          "height": 350
+        },
+        {
+          "id": "auditorium",
+          "name": "Hội trường",
+          "x": 0,
+          "y": 700,
+          "width": 314,
+          "height": 305
+        },
+        {
+          "id": "infirmary",
+          "name": "Phòng y tế",
+          "x": 314,
+          "y": 700,
+          "width": 313,
+          "height": 305
+        },
+        {
+          "id": "restroom-building",
+          "name": "Nhà vệ sinh",
+          "x": 627,
+          "y": 700,
+          "width": 314,
+          "height": 305
+        },
+        {
+          "id": "bicycle-shelter",
+          "name": "Nhà để xe đạp",
+          "x": 941,
+          "y": 700,
+          "width": 313,
+          "height": 305
+        },
+        {
+          "id": "storage-shed",
+          "name": "Nhà kho",
+          "x": 0,
+          "y": 1005,
+          "width": 314,
+          "height": 249
+        },
+        {
+          "id": "guardhouse",
+          "name": "Trạm bảo vệ",
+          "x": 314,
+          "y": 1005,
+          "width": 313,
+          "height": 249
+        },
+        {
+          "id": "bus-shelter",
+          "name": "Trạm xe buýt",
+          "x": 627,
+          "y": 1005,
+          "width": 314,
+          "height": 249
+        },
+        {
+          "id": "greenhouse",
+          "name": "Nhà kính",
+          "x": 941,
+          "y": 1005,
+          "width": 313,
+          "height": 249
+        }
+      ]
+    },
+    {
+      "id": "support-interiors",
+      "image": "support-interiors.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        {
+          "id": "reception-desk",
+          "name": "Bàn lễ tân",
+          "x": 0,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "principal-desk",
+          "name": "Bàn hiệu trưởng",
+          "x": 314,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "office-chair",
+          "name": "Ghế xoay",
+          "x": 627,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "filing-cabinet",
+          "name": "Tủ hồ sơ",
+          "x": 941,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "printer",
+          "name": "Máy in",
+          "x": 0,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "safe",
+          "name": "Két sắt",
+          "x": 314,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "medical-bed",
+          "name": "Giường y tế",
+          "x": 627,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "medicine-cabinet",
+          "name": "Tủ thuốc",
+          "x": 941,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "meeting-table",
+          "name": "Bàn họp kèm ghế",
+          "x": 0,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "coffee-machine",
+          "name": "Máy pha cà phê",
+          "x": 314,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "bunk-bed",
+          "name": "Giường tầng",
+          "x": 627,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "washing-machine",
+          "name": "Máy giặt",
+          "x": 941,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "shower",
+          "name": "Buồng tắm",
+          "x": 0,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "lifeguard-chair",
+          "name": "Ghế cứu hộ",
+          "x": 314,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "stage",
+          "name": "Sân khấu có rèm",
+          "x": 627,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "podium",
+          "name": "Bục phát biểu",
+          "x": 941,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        }
+      ]
+    }
+  ]
+}

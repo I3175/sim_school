@@ -1,29 +1,45 @@
-# Sim School — Mobile landscape
+# School & Sprout — Desktop Playtest
 
-Game HTML/Canvas dành cho điện thoại xoay ngang, chỉnh từ `sim_school_v3.html` người dùng cung cấp.
+Bản game HTML/Canvas cho máy tính, gồm hai map trường học và nông trại, dùng các asset đã tạo trong dự án.
 
 ## Chạy
 
-Mở `index.html` trực tiếp trong trình duyệt, hoặc chạy tại thư mục repository:
+Nhấp đúp **RUN_GAME.cmd** (cần Python 3). Hoặc:
 
-```sh
-python3 -m http.server 8000
+```powershell
+python -m http.server 8937 --bind 127.0.0.1
 ```
 
-Không cần npm, backend, API key hoặc mạng để chơi. Sprite và ảnh nền đã được nhúng trong HTML. `assets/characters/` giữ các sprite và metadata gốc để phát triển tiếp.
+Mở **http://127.0.0.1:8937**. Không cần npm, backend, API key hoặc internet để chơi.
 
-## Thay đổi
+## Điều khiển
 
-- Màn bắt đầu mang chủ đề đời sống học sinh, bỏ logo/phím chữ và nội dung Type Run tại màn này. Hoạt động chạy trong sân thể thao vẫn được giữ.
-- Bộ nút và HUD dùng khung gọn; icon Canvas có màu riêng theo vật thể (cặp sách xanh, sao vàng, căn tin cam, nhiệm vụ tím), chỉ tô phần biểu tượng trên nền trong suốt để không dính nền ảnh. Joystick trong mờ bên trái, nút tiện ích bên phải.
-- Vùng chết joystick, tốc độ analog, chuẩn hóa đi chéo, bước kiểm tra va chạm nhỏ và trượt dọc tường. Bước chân/animation chỉ tiến khi nhân vật thực sự di chuyển.
-- Hướng nhìn đi chéo có hysteresis để không giật hướng; không cho ngón tay thứ hai chiếm joystick. Vùng chạm âm thanh màn đầu khớp nút hiển thị.
-- Giải phóng điều khiển khi hủy chạm, mất pointer capture, mất focus, ẩn trang hoặc đổi kích thước.
-- Tích hợp sáu sheet 1152×640, 9×5 ô 128px trong pack; giữ các nhân vật cũ. Chọn ngoại hình phân trang 5 nhân vật bằng hai mũi tên.
-- Thông báo xoay ngang khi dùng điện thoại dọc.
+WASD / mũi tên để đi, Shift chạy, E tương tác. Phím 1/2/3/4 chọn bàn tay, hạt giống, bình tưới và cần câu. J mở nhật ký, nơi có bản đồ nhỏ và nút đổi khu vực. Bạn cũng có thể đi xe đưa đón để đổi map. Esc đóng menu hoặc tạm dừng.
 
-## Kiểm tra đã thực hiện
+## Có thể test
 
-Chromium/Playwright: bắt đầu → chọn nhân vật → vào sân trường; tải đủ sáu sheet; không có lỗi JavaScript trong luồng kiểm tra. Đi thẳng/chéo cùng quãng đường 17.5px trong 0.1 giây; va chạm tường chặn nhân vật; mất focus và hủy touch trả điều khiển về nghỉ; thông báo xoay ngang hiển thị ở 390×844. Đã xuất và xem ảnh Canvas của màn bắt đầu, chọn nhân vật và sân trường.
+- Trường: tiết học trắc nghiệm, đọc sách, bài tập phản xạ tại gym, căn tin, phòng nghệ thuật, sân chơi và nghỉ sang ngày mới.
+- Farm: 9 luống gieo–tưới–lớn–thu hoạch, mua hạt, bán nông sản, bón phân, lấy mật, chế biến mứt/nước ép.
+- Nhật ký 6 nhiệm vụ liên kết hai map, xu, kiến thức, cấp độ, mini-map, camera, va chạm, tự lưu và tải lại tiến độ.
+- Animation nhân vật idle/walk/run, NPC đi lại, cây đung đưa, nước, ong, hơi bếp và particle mùa/hành động.
 
-Chưa kiểm tra trên thiết bị Android/iOS thật và chưa kiểm thử toàn bộ các minigame có sẵn.
+## Đặt mùa trực tiếp trong code
+
+Sửa `season` trong **game/config.js** thành `spring`, `summer`, `autumn` hoặc `winter`, rồi tải lại trang. Mùa ảnh hưởng màu cảnh, hiệu ứng, cây trồng, tốc độ lớn và giá bán. Không có nút đổi mùa trong giao diện. Save không ghi đè mùa đã cấu hình.
+
+Hai map ngoài trời kết nối với 14 cảnh nội thất. Dùng E trước cửa để vào phòng và trên thảm lối ra để quay lại. Xem **game/PLAYTEST.md** để biết luồng chơi và kiểm thử.
+
+## File chính
+
+- `index.html`: giao diện desktop.
+- `game/style.css`: bố cục desktop.
+- `game/config.js`: cấu hình mùa, thời gian, tốc độ.
+- `game/assets.js`: đường dẫn và tọa độ atlas.
+- `game/core.js`: trạng thái, cây trồng, kinh tế, va chạm.
+- `game/scenes.js`: dữ liệu hai map, phòng, cửa và vùng va chạm.
+- `game/game.js`: camera, animation, chuyển cảnh và tương tác.
+- `legacy-mobile.html`, `README-mobile.md`: bản mobile trước khi thay giao diện.
+
+## Kiểm tra
+
+`node game/test-core.cjs` kiểm thử logic. `node game/test-browser.cjs` kiểm thử trên Chrome/Playwright với server cổng 8937. Đã qua hai map, 6 nhiệm vụ, save/reload, pause, bốn mùa, màn hình 1280px và không có lỗi JavaScript/tải asset. Chi tiết thư viện kiểm thử trong game/PLAYTEST.md.

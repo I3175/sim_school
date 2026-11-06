@@ -1,0 +1,559 @@
+{
+  "version": 1,
+  "batch": 1,
+  "source": "../cozy-farm-school/school_asset.md",
+  "generator": "built-in image_gen",
+  "nativePixelSize": null,
+  "animated": false,
+  "notes": "Generated high-resolution pixel-art style atlases. Grid frames are provisional; native 16/32 px cleanup, anchors, collisions and animation remain pending.",
+  "atlases": [
+    {
+      "id": "classroom",
+      "folder": "Classroom",
+      "image": "Tilesets/Classroom/classroom.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        {
+          "id": "student-desk",
+          "name": "Bàn học đơn",
+          "x": 0,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "double-desk",
+          "name": "Bàn học đôi",
+          "x": 314,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "student-chair",
+          "name": "Ghế học sinh",
+          "x": 627,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "teacher-desk",
+          "name": "Bàn giáo viên",
+          "x": 941,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "chalkboard",
+          "name": "Bảng đen",
+          "x": 0,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "whiteboard",
+          "name": "Bảng trắng",
+          "x": 314,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "noticeboard",
+          "name": "Bảng thông báo",
+          "x": 627,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "bookcase",
+          "name": "Tủ sách",
+          "x": 941,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "low-bookshelf",
+          "name": "Kệ sách thấp",
+          "x": 0,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "projector",
+          "name": "Máy chiếu",
+          "x": 314,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "clock",
+          "name": "Đồng hồ",
+          "x": 627,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "ceiling-fan",
+          "name": "Quạt trần",
+          "x": 941,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "air-conditioner",
+          "name": "Điều hòa",
+          "x": 0,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "trash-bin",
+          "name": "Thùng rác",
+          "x": 314,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "window",
+          "name": "Cửa sổ",
+          "x": 627,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "door",
+          "name": "Cửa ra vào",
+          "x": 941,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        }
+      ]
+    },
+    {
+      "id": "special-rooms",
+      "folder": "SpecialRooms",
+      "image": "Tilesets/SpecialRooms/special-rooms.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        {
+          "id": "library-shelves",
+          "name": "Kệ sách lớn",
+          "x": 0,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "reading-table",
+          "name": "Bàn đọc sách",
+          "x": 314,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "reading-chair",
+          "name": "Ghế đọc sách",
+          "x": 627,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "lookup-computer",
+          "name": "Máy tính tra cứu",
+          "x": 941,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "lab-bench",
+          "name": "Bàn thí nghiệm",
+          "x": 0,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "microscope",
+          "name": "Kính hiển vi",
+          "x": 314,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "test-tubes",
+          "name": "Giá ống nghiệm",
+          "x": 627,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "atom-model",
+          "name": "Mô hình nguyên tử",
+          "x": 941,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "easel",
+          "name": "Giá vẽ",
+          "x": 0,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "paint-palette",
+          "name": "Bảng màu và cọ",
+          "x": 314,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "plaster-bust",
+          "name": "Tượng thạch cao",
+          "x": 627,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "pottery-wheel",
+          "name": "Bàn xoay gốm",
+          "x": 941,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "basketball-hoop",
+          "name": "Cột bóng rổ",
+          "x": 0,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "bleachers",
+          "name": "Khán đài",
+          "x": 314,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "exercise-mat",
+          "name": "Thảm tập",
+          "x": 627,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "badminton-racket",
+          "name": "Vợt cầu lông",
+          "x": 941,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        }
+      ]
+    },
+    {
+      "id": "cafeteria-hallway",
+      "folder": "CafeteriaHallway",
+      "image": "Tilesets/CafeteriaHallway/cafeteria-hallway.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        {
+          "id": "dining-table",
+          "name": "Bàn ăn dài",
+          "x": 0,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "dining-chair",
+          "name": "Ghế ăn",
+          "x": 314,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "food-counter",
+          "name": "Quầy thức ăn",
+          "x": 627,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "refrigerator",
+          "name": "Tủ lạnh",
+          "x": 941,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "microwave",
+          "name": "Lò vi sóng",
+          "x": 0,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "drink-machine",
+          "name": "Máy bán nước",
+          "x": 314,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "lockers",
+          "name": "Tủ locker",
+          "x": 627,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "bench",
+          "name": "Ghế dài",
+          "x": 941,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "handwash-sink",
+          "name": "Bồn rửa tay",
+          "x": 0,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "water-dispenser",
+          "name": "Bình nước uống",
+          "x": 314,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "lunch-tray",
+          "name": "Khay cơm",
+          "x": 627,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "pho-bowl",
+          "name": "Tô phở",
+          "x": 941,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "banh-mi",
+          "name": "Bánh mì",
+          "x": 0,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "sandwich",
+          "name": "Sandwich",
+          "x": 314,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "milk-and-juice",
+          "name": "Sữa và nước ép",
+          "x": 627,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "fruit-basket",
+          "name": "Giỏ trái cây",
+          "x": 941,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        }
+      ]
+    },
+    {
+      "id": "outdoor",
+      "folder": "Outdoor",
+      "image": "Tilesets/Outdoor/outdoor.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        {
+          "id": "school-gate",
+          "name": "Cổng trường",
+          "x": 0,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "flagpole",
+          "name": "Cột cờ",
+          "x": 314,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "flower-bed",
+          "name": "Bồn hoa",
+          "x": 627,
+          "y": 0,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "tree",
+          "name": "Cây xanh",
+          "x": 941,
+          "y": 0,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "stone-bench",
+          "name": "Ghế đá",
+          "x": 0,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "path-patch",
+          "name": "Mảng đường đi",
+          "x": 314,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "grass-patch",
+          "name": "Mảng cỏ",
+          "x": 627,
+          "y": 314,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "mini-soccer-field",
+          "name": "Sân bóng mini",
+          "x": 941,
+          "y": 314,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "swing",
+          "name": "Xích đu",
+          "x": 0,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "slide",
+          "name": "Cầu trượt",
+          "x": 314,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "seesaw",
+          "name": "Bập bênh",
+          "x": 627,
+          "y": 627,
+          "width": 314,
+          "height": 314
+        },
+        {
+          "id": "climbing-frame",
+          "name": "Thang leo",
+          "x": 941,
+          "y": 627,
+          "width": 313,
+          "height": 314
+        },
+        {
+          "id": "sandbox",
+          "name": "Bể cát",
+          "x": 0,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "bicycle",
+          "name": "Xe đạp",
+          "x": 314,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "motorbike",
+          "name": "Xe máy",
+          "x": 627,
+          "y": 941,
+          "width": 314,
+          "height": 313
+        },
+        {
+          "id": "school-shuttle",
+          "name": "Xe đưa đón",
+          "x": 941,
+          "y": 941,
+          "width": 313,
+          "height": 313
+        }
+      ]
+    }
+  ]
+}
