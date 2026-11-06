@@ -28,6 +28,7 @@ Mùa thay đổi nền cỏ/đường, màu cây, particle (cánh hoa/nắng/lá
 - E: tương tác với điểm gần nhất; gợi ý hiện ở dưới khung game.
 - 1 chọn bàn tay, 2 chọn hạt giống, 3 chọn bình tưới và 4 chọn cần câu.
 - J mở nhật ký, bản đồ nhỏ và nút chuyển khu vực. Cây và đồng hồ dừng khi nhật ký mở.
+- M bật/tắt bản đồ nhỏ trực tiếp trên màn chơi; K lưu nhanh. Thẻ mục tiêu hiển thị việc chưa hoàn thành tiếp theo và mở nhật ký khi nhấn.
 - Esc đóng nhật ký hoặc hộp thoại. Khi đang ở map, Esc tạm dừng hoặc tiếp tục.
 - Chuyển map trong nhật ký hoặc tương tác xe đưa đón.
 - Nút ? mở hướng dẫn; ♪ bật/tắt hiệu ứng âm thanh; ⛶ toàn màn hình khung game.

@@ -16,6 +16,8 @@ Mở **http://127.0.0.1:8937**. Không cần npm, backend, API key hoặc intern
 
 WASD / mũi tên để đi, Shift chạy, E tương tác. Phím 1/2/3/4 chọn bàn tay, hạt giống, bình tưới và cần câu. J mở nhật ký, nơi có bản đồ nhỏ và nút đổi khu vực. Bạn cũng có thể đi xe đưa đón để đổi map. Esc đóng menu hoặc tạm dừng.
 
+Thẻ mục tiêu ở góc trái cho biết nhiệm vụ tiếp theo và tiến độ hiện tại; nhấn thẻ để mở nhật ký. Nhấn M hoặc nút ▣ để bật/tắt bản đồ nhỏ khi đang chơi. Nhấn K hoặc nút ▤ để lưu nhanh. Esc cũng đóng bản đồ nhỏ nếu đang mở.
+
 ## Có thể test
 
 - Trường: tiết học trắc nghiệm, đọc sách, bài tập phản xạ tại gym, căn tin, phòng nghệ thuật, sân chơi và nghỉ sang ngày mới.

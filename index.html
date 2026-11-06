@@ -16,6 +16,14 @@
     <p id="location-description" hidden></p>
   </div>
 
+  <button id="quest-tracker" class="wood quest-tracker" aria-label="Mở nhật ký nhiệm vụ" aria-controls="game-menu">
+    <span class="tracker-heading"><span>✦ MỤC TIÊU TIẾP THEO</span><kbd>J</kbd></span>
+    <b id="tracker-title">Đang chuẩn bị hành trình</b>
+    <small id="tracker-detail">Xem nhật ký để biết việc cần làm</small>
+    <span class="tracker-progress"><i id="tracker-progress"></i></span>
+    <span id="tracker-count" class="tracker-count">0/6 hoàn thành</span>
+  </button>
+
   <section class="hud" aria-label="Lịch và tiền">
     <div class="clock-panel wood">
       <span id="season-icon" aria-hidden="true">✿</span>
@@ -40,10 +48,18 @@
   <div class="interaction wood" id="interaction"><kbd>E</kbd><div><b id="interaction-title"></b><small id="interaction-desc"></small></div></div>
   <div id="toast" class="wood" role="status" aria-live="polite"></div>
   <div class="quick-controls">
+    <button id="quick-map" class="wood" aria-label="Hiện bản đồ nhỏ" aria-controls="field-map" aria-expanded="false" title="Bản đồ nhỏ · M">▣</button>
+    <button id="quick-save" class="wood" aria-label="Lưu nhanh" title="Lưu nhanh · K">▤</button>
     <button id="help" class="wood" aria-label="Hướng dẫn" title="Hướng dẫn">?</button>
     <button id="sound" class="wood" aria-label="Bật âm thanh" title="Âm thanh">♪</button>
     <button id="fullscreen" class="wood" aria-label="Toàn màn hình" title="Toàn màn hình">⛶</button>
   </div>
+
+  <aside id="field-map" class="wood field-map" aria-label="Bản đồ nhỏ" hidden>
+    <div class="field-map-title"><b>▣ BẢN ĐỒ</b><span id="field-map-area">Trường học</span></div>
+    <canvas id="field-map-canvas" width="300" height="200" aria-label="Vị trí của bạn trên bản đồ"></canvas>
+    <small>Chấm sáng: vị trí của bạn · <kbd>M</kbd> để đóng</small>
+  </aside>
 
   <aside id="game-menu" class="wood game-menu" aria-labelledby="menu-title" hidden>
     <button id="menu-close" class="close" aria-label="Đóng nhật ký">×</button>

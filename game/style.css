@@ -35,6 +35,15 @@ h1, h2, p { margin: 0; }
 .money-panel b { margin-left: auto; font-variant-numeric: tabular-nums; }
 .journal-toggle { justify-self: end; font-size: 12px; font-weight: 700; padding: 5px 8px; }
 .journal-toggle span { margin-left: 4px; color: #805636; }
+.quest-tracker { position: absolute; top: 70px; left: 18px; width: min(260px, 34vw); padding: 9px 11px 8px; text-align: left; }
+.quest-tracker:hover, .quick-controls button:hover { filter: brightness(1.06); }
+.tracker-heading { display: flex; justify-content: space-between; align-items: center; color: #795028; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.quest-tracker b, .quest-tracker small { display: block; }
+.quest-tracker b { margin-top: 5px; font: bold 16px Georgia, serif; line-height: 1.15; }
+.quest-tracker small { margin-top: 3px; font-size: 11px; line-height: 1.25; }
+.tracker-progress { display: block; height: 7px; margin-top: 8px; border: 1px solid #975e39; background: #d6a269; }
+.tracker-progress i { display: block; height: 100%; background: #778d46; }
+.tracker-count { display: block; margin-top: 3px; font-size: 10px; font-weight: 700; text-align: right; color: #795028; }
 kbd { font: bold 11px 'Segoe UI', sans-serif; display: inline-block; padding: 1px 4px; border: 1px solid #aa7046; background: #ffe8b7; border-radius: 2px; }
 .toolbar { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; padding: 5px; gap: 3px; background: var(--wood); }
 .tool-label { position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); white-space: nowrap; color: #fff5cc; font-size: 13px; text-shadow: 1px 2px #492f21, -1px -1px #492f21; }
@@ -47,6 +56,12 @@ kbd { font: bold 11px 'Segoe UI', sans-serif; display: inline-block; padding: 1p
 .harvest { margin-left: 4px; background: #dfaa6d; }
 .quick-controls { position: absolute; bottom: 18px; right: 18px; display: flex; gap: 6px; }
 .quick-controls button { width: 33px; height: 34px; font-weight: 700; }
+.quick-controls button[aria-expanded="true"], .quick-controls button[aria-pressed="true"] { background: #dce7af; }
+.field-map { position: absolute; bottom: 64px; left: 18px; width: 224px; padding: 8px; }
+.field-map-title { display: flex; justify-content: space-between; gap: 5px; align-items: center; margin-bottom: 6px; font-size: 11px; }
+.field-map-title b { color: #795028; font-size: 10px; letter-spacing: .08em; }
+.field-map canvas { display: block; width: 100%; aspect-ratio: 3 / 2; border: 2px solid #975e39; image-rendering: pixelated; }
+.field-map small { display: block; padding-top: 5px; font-size: 10px; }
 .interaction { display: none; align-items: center; gap: 9px; position: absolute; bottom: 116px; left: 50%; transform: translateX(-50%); padding: 6px 12px; max-width: 90vw; }
 .interaction small { display: block; }
 #toast { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); padding: 7px 12px; max-width: min(44vw, 520px); opacity: 0; pointer-events: none; text-align: center; font-size: 13px; }
@@ -108,6 +123,11 @@ dialog .secondary, .menu-actions .secondary { background: #ffe6b3; }
   .tool { width: 45px; height: 48px; }
   .tool canvas { width: 29px; height: 29px; }
   .quick-controls { right: 8px; bottom: 88px; }
+  .quest-tracker { top: auto; bottom: 145px; left: 8px; width: min(210px, 48vw); padding: 6px 8px; }
+  .quest-tracker b { font-size: 13px; }
+  .quest-tracker small, .tracker-progress, .tracker-count { display: none; }
+  .field-map { bottom: 146px; left: 8px; width: min(210px, 48vw); }
+  .map-open .quest-tracker { display: none; }
   #toast { top: 150px; max-width: 80vw; }
   .menu-columns { grid-template-columns: 1fr; }
 }
