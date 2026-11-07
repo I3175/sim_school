@@ -1,0 +1,915 @@
+[
+  {
+    "id": "literature_0001",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0001_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0001_HINT",
+    "explanation_key": "Q_LITERATURE_0001_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0002",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0002_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0002_HINT",
+    "explanation_key": "Q_LITERATURE_0002_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0003",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0003_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0003_HINT",
+    "explanation_key": "Q_LITERATURE_0003_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0004",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0004_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0004_HINT",
+    "explanation_key": "Q_LITERATURE_0004_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0005",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0005_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0005_HINT",
+    "explanation_key": "Q_LITERATURE_0005_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0006",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0006_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0006_HINT",
+    "explanation_key": "Q_LITERATURE_0006_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0007",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0007_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0007_HINT",
+    "explanation_key": "Q_LITERATURE_0007_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0008",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0008_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0008_HINT",
+    "explanation_key": "Q_LITERATURE_0008_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0009",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0009_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0009_HINT",
+    "explanation_key": "Q_LITERATURE_0009_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0010",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0010_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0010_HINT",
+    "explanation_key": "Q_LITERATURE_0010_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0011",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0011_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0011_HINT",
+    "explanation_key": "Q_LITERATURE_0011_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0012",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0012_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0012_HINT",
+    "explanation_key": "Q_LITERATURE_0012_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0013",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0013_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0013_HINT",
+    "explanation_key": "Q_LITERATURE_0013_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0014",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0014_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0014_HINT",
+    "explanation_key": "Q_LITERATURE_0014_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0015",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0015_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0015_HINT",
+    "explanation_key": "Q_LITERATURE_0015_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0016",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0016_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0016_HINT",
+    "explanation_key": "Q_LITERATURE_0016_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0017",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0017_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0017_HINT",
+    "explanation_key": "Q_LITERATURE_0017_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0018",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0018_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0018_HINT",
+    "explanation_key": "Q_LITERATURE_0018_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0019",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0019_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0019_HINT",
+    "explanation_key": "Q_LITERATURE_0019_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0020",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0020_PROMPT",
+    "answer": "danh từ",
+    "hint_key": "Q_LITERATURE_0020_HINT",
+    "explanation_key": "Q_LITERATURE_0020_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0021",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0021_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0021_HINT",
+    "explanation_key": "Q_LITERATURE_0021_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0022",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0022_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0022_HINT",
+    "explanation_key": "Q_LITERATURE_0022_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0023",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0023_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0023_HINT",
+    "explanation_key": "Q_LITERATURE_0023_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0024",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0024_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0024_HINT",
+    "explanation_key": "Q_LITERATURE_0024_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0025",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0025_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0025_HINT",
+    "explanation_key": "Q_LITERATURE_0025_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0026",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0026_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0026_HINT",
+    "explanation_key": "Q_LITERATURE_0026_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0027",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0027_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0027_HINT",
+    "explanation_key": "Q_LITERATURE_0027_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0028",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0028_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0028_HINT",
+    "explanation_key": "Q_LITERATURE_0028_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0029",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0029_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0029_HINT",
+    "explanation_key": "Q_LITERATURE_0029_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0030",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0030_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0030_HINT",
+    "explanation_key": "Q_LITERATURE_0030_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0031",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0031_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0031_HINT",
+    "explanation_key": "Q_LITERATURE_0031_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0032",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0032_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0032_HINT",
+    "explanation_key": "Q_LITERATURE_0032_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0033",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0033_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0033_HINT",
+    "explanation_key": "Q_LITERATURE_0033_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0034",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0034_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0034_HINT",
+    "explanation_key": "Q_LITERATURE_0034_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0035",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0035_PROMPT",
+    "answer": "động từ",
+    "hint_key": "Q_LITERATURE_0035_HINT",
+    "explanation_key": "Q_LITERATURE_0035_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0036",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0036_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0036_HINT",
+    "explanation_key": "Q_LITERATURE_0036_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0037",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0037_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0037_HINT",
+    "explanation_key": "Q_LITERATURE_0037_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0038",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0038_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0038_HINT",
+    "explanation_key": "Q_LITERATURE_0038_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0039",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0039_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0039_HINT",
+    "explanation_key": "Q_LITERATURE_0039_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0040",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0040_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0040_HINT",
+    "explanation_key": "Q_LITERATURE_0040_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0041",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0041_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0041_HINT",
+    "explanation_key": "Q_LITERATURE_0041_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0042",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0042_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0042_HINT",
+    "explanation_key": "Q_LITERATURE_0042_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0043",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0043_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0043_HINT",
+    "explanation_key": "Q_LITERATURE_0043_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0044",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0044_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0044_HINT",
+    "explanation_key": "Q_LITERATURE_0044_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0045",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0045_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0045_HINT",
+    "explanation_key": "Q_LITERATURE_0045_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0046",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0046_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0046_HINT",
+    "explanation_key": "Q_LITERATURE_0046_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0047",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0047_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0047_HINT",
+    "explanation_key": "Q_LITERATURE_0047_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0048",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0048_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0048_HINT",
+    "explanation_key": "Q_LITERATURE_0048_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0049",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0049_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0049_HINT",
+    "explanation_key": "Q_LITERATURE_0049_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0050",
+    "subject": "literature",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0050_PROMPT",
+    "answer": "tính từ",
+    "hint_key": "Q_LITERATURE_0050_HINT",
+    "explanation_key": "Q_LITERATURE_0050_EXPLAIN",
+    "options": [
+      "danh từ",
+      "động từ",
+      "tính từ"
+    ]
+  },
+  {
+    "id": "literature_0051",
+    "subject": "literature",
+    "type": "fill_blank",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_LITERATURE_0051_PROMPT",
+    "answer": "kim",
+    "hint_key": "Q_LITERATURE_0051_HINT",
+    "explanation_key": "Q_LITERATURE_0051_EXPLAIN"
+  }
+]

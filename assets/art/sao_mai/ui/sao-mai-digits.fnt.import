@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bpjsiy8jr6l22"
+path="res://.godot/imported/sao-mai-digits.fnt-d517d1826337a231166a05b487b070b1.fontdata"
+
+[deps]
+
+source_file="res://assets/art/sao_mai/ui/sao-mai-digits.fnt"
+dest_files=["res://.godot/imported/sao-mai-digits.fnt-d517d1826337a231166a05b487b070b1.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

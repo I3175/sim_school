@@ -1,0 +1,9 @@
+~ start
+Bé Na: Chào cháu, rất vui được gặp cháu ở Sao Mai.
+=> END
+~ rain
+Bé Na: Mưa rồi, mình tìm chỗ trú nhé.
+=> END
+~ friendly
+Bé Na: Cảm ơn cháu đã ghé thăm!
+=> END

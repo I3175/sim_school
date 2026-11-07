@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AnimalData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/animal_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "chicken"
+display_name = "Gà"
+building = "coop"
+price = 400
+maturity_days = 3
+food_per_day = 1
+product_id = "egg"
+farming_xp = 6

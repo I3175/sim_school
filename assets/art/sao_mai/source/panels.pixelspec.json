@@ -1,0 +1,202 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "panels",
+  "canvas": [
+    9,
+    9
+  ],
+  "palette": {
+    "i": "#2B1B17",
+    "d": "#5A3A2A",
+    "w": "#8B5E3C",
+    "h": "#B98554",
+    "p": "#F4E4BC",
+    "c": "#FFF6DA",
+    "g": "#6DB04A",
+    "G": "#3E7B3A",
+    "r": "#D94A4A",
+    "R": "#8E2D3A",
+    "y": "#F2C14E",
+    "b": "#4A86C5",
+    "v": "#8A64B8",
+    "o": "#E8884A",
+    "l": "#E58FA8",
+    "s": "#8C8578",
+    "a": "#5A3A2A",
+    "t": "#8B5E3C",
+    "u": "#8C8578",
+    "q": "#C9A24A"
+  },
+  "layers": [
+    {
+      "name": "ink",
+      "rows": [
+        "."
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "name": "panel_wood",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".iiiiiii.",
+            "ihhhhhhhi",
+            "ihtttttdi",
+            "ihtttttdi",
+            "ihtttttdi",
+            "ihtttttdi",
+            "ihtttttdi",
+            "ihddddddi",
+            ".iiiiiii."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_paper",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".iiiiiii.",
+            "iwwwwwwwi",
+            "iwpppppwi",
+            "iwpppppwi",
+            "iwpppppwi",
+            "iwpppppwi",
+            "iwpppppwi",
+            "iwwwwwwwi",
+            ".iiiiiii."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_slot",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".iiiiiii.",
+            "idddddddi",
+            "idaaaaahi",
+            "idaaaaahi",
+            "idaaaaahi",
+            "idaaaaahi",
+            "idaaaaahi",
+            "idhhhhhhi",
+            ".iiiiiii."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_tab",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".iiiiiii.",
+            "ihhhhhhhi",
+            "ihttttppi",
+            "ihttttppi",
+            "ihttttppi",
+            "ihttttppi",
+            "ihttttppi",
+            "ihddddddi",
+            ".iiiiiii."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_pressed",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".iiiiiii.",
+            "idddddddi",
+            "idddddddi",
+            "idddddddi",
+            "idddddddi",
+            "idddddddi",
+            "idddddddi",
+            "idddddddi",
+            ".iiiiiii."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_disabled",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".iiiiiii.",
+            "iuuuuuuui",
+            "iuuuuuuui",
+            "iuuuuuuui",
+            "iuuuuuuui",
+            "iuuuuuuui",
+            "iuuuuuuui",
+            "iuuuuuuui",
+            ".iiiiiii."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_hover",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".iiiiiii.",
+            "ihhhhhhdi",
+            "ihhhhhhdi",
+            "ihhhhhhdi",
+            "ihhhhhhdi",
+            "ihhhhhhdi",
+            "ihhhhhhdi",
+            "idddddddi",
+            ".iiiiiii."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_focus",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".yyyyyyy.",
+            "yhhhhhhhy",
+            "yhtttttdy",
+            "yhtttttdy",
+            "yhtttttdy",
+            "yhtttttdy",
+            "yhtttttdy",
+            "yhddddddy",
+            ".yyyyyyy."
+          ]
+        }
+      }
+    },
+    {
+      "name": "panel_warning",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".rrrrrrr.",
+            "rhhhhhhhr",
+            "rhtttttdr",
+            "rhtttttdr",
+            "rhtttttdr",
+            "rhtttttdr",
+            "rhtttttdr",
+            "rhddddddr",
+            ".rrrrrrr."
+          ]
+        }
+      }
+    }
+  ]
+}

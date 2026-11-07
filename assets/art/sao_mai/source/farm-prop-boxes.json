@@ -1,0 +1,41 @@
+{
+  "schema": "forge-crop-boxes/v1",
+  "items": [
+    {
+      "id": "farmhouse",
+      "box": [
+        12,
+        112,
+        627,
+        616
+      ]
+    },
+    {
+      "id": "fruit-tree",
+      "box": [
+        635,
+        60,
+        1240,
+        624
+      ]
+    },
+    {
+      "id": "moss-rocks",
+      "box": [
+        64,
+        786,
+        567,
+        1110
+      ]
+    },
+    {
+      "id": "shipping-chest",
+      "box": [
+        665,
+        773,
+        1205,
+        1140
+      ]
+    }
+  ]
+}

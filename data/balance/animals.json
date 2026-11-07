@@ -1,0 +1,62 @@
+{
+  "hunger_per_hour": 4,
+  "thirst_per_hour": 5,
+  "pet_happiness": 10,
+  "grass_happiness": 20,
+  "hungry_penalty": 50,
+  "night_outside_penalty": 100,
+  "sick_health_loss": 10,
+  "quality_bands": [
+    {
+      "minimum": 0,
+      "weights": [
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "minimum": 300,
+      "weights": [
+        85,
+        15,
+        0,
+        0
+      ]
+    },
+    {
+      "minimum": 600,
+      "weights": [
+        55,
+        35,
+        10,
+        0
+      ]
+    },
+    {
+      "minimum": 800,
+      "weights": [
+        30,
+        40,
+        25,
+        5
+      ]
+    }
+  ],
+  "buildings": {
+    "coop": {
+      "capacity": 4,
+      "coins": 4000,
+      "wood": 300,
+      "stone": 100
+    },
+    "barn": {
+      "capacity": 4,
+      "coins": 8000,
+      "wood": 400,
+      "stone": 150
+    }
+  },
+  "hay_price": 50
+}

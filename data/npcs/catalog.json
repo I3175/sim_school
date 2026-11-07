@@ -49,7 +49,35 @@
     "hated": []
   },
   "thu_thu": {
-    "name": "Thủ thư",
+    "name": "Bà Tư",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "ong_sau": {
+    "name": "Ông Sáu",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "be_na": {
+    "name": "Bé Na",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "anh_khoa": {
+    "name": "Anh Khoa",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "marco": {
+    "name": "Thuyền trưởng Marco",
     "shop": "",
     "loved": [],
     "liked": [],

@@ -1,0 +1,434 @@
+{
+  "schema": "generate2dmap.prop_pack.v2",
+  "tool": {
+    "name": "extract_prop_pack",
+    "version": "0.4.0"
+  },
+  "input": "../../assets/art/sao_mai/source/farm-props.png",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "source_sha256": "f7f9fa186582da1dbfad0b226c88e4176eaccb5fb676e6fc1e95ee8b93ca472b",
+  "source_mode": "RGBA",
+  "layout_mode": "grid",
+  "boxes_file": null,
+  "labels_file": null,
+  "background_mode": "native_alpha",
+  "art_source": "host_image",
+  "rows": 2,
+  "cols": 2,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "despill_radius": 0,
+  "despill": {
+    "mode": "off",
+    "applied": "off",
+    "radius": 0,
+    "margin": 12,
+    "changed_px": 0
+  },
+  "hygiene": {
+    "mode": "both",
+    "floor": 4,
+    "solid_min": 32,
+    "attach_radius": 2,
+    "connectivity": 8,
+    "floor_px": 44464,
+    "detached_px": 21,
+    "detached_components": 13,
+    "max_removed_alpha": 6
+  },
+  "alpha_floor": 4,
+  "alpha_floor_pixels_removed": 44464,
+  "trim_border": 0,
+  "edge_clean_depth": 0,
+  "component_mode": "all",
+  "component_padding": 8,
+  "min_component_area": "auto",
+  "edge_touch_margin": 0,
+  "geometry": {
+    "connectivity": 8,
+    "alpha_geometry_threshold": 16,
+    "anchor_mode": "stance",
+    "support_band_fraction": 0.25,
+    "anchor_rounding": "whole pixels, half-up",
+    "grid_rounding": "exact",
+    "keep_canvas": false,
+    "world_scale": null
+  },
+  "accepted": [
+    {
+      "index": 0,
+      "label": "farmhouse",
+      "display_name": "farmhouse",
+      "status": "accepted",
+      "image": "farmhouse/prop.png",
+      "sha256": "087236ae4d70a173b6af50ba0adc789a8e6c68e139d74ddea20f4de70f3e2ae4",
+      "output_size": [
+        603,
+        482
+      ],
+      "grid": [
+        0,
+        0
+      ],
+      "cell_box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "source_box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "source_rect": [
+        24,
+        124,
+        627,
+        606
+      ],
+      "trim_offset": [
+        24,
+        124
+      ],
+      "padding": [
+        8,
+        8,
+        4,
+        8
+      ],
+      "anchor_px": [
+        294,
+        474
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        32,
+        132,
+        623,
+        598
+      ],
+      "padded_crop_bbox": [
+        24,
+        124,
+        627,
+        606
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 227339,
+      "dropped_components": 38,
+      "dropped_area": 203,
+      "edge_touch": false
+    },
+    {
+      "index": 1,
+      "label": "fruit-tree",
+      "display_name": "fruit_tree",
+      "status": "accepted",
+      "image": "fruit-tree/prop.png",
+      "sha256": "bab7207640f5a1b7d314f49ac7d904f3eac9abd51905a1d5172c23dfe0362719",
+      "output_size": [
+        585,
+        541
+      ],
+      "grid": [
+        0,
+        1
+      ],
+      "cell_box": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "source_box": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "source_rect": [
+        647,
+        74,
+        1232,
+        615
+      ],
+      "trim_offset": [
+        20,
+        74
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        290,
+        531
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        28,
+        82,
+        597,
+        607
+      ],
+      "padded_crop_bbox": [
+        20,
+        74,
+        605,
+        615
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 179155,
+      "dropped_components": 99,
+      "dropped_area": 378,
+      "edge_touch": false
+    },
+    {
+      "index": 2,
+      "label": "moss-rocks",
+      "display_name": "moss_rocks",
+      "status": "accepted",
+      "image": "moss-rocks/prop.png",
+      "sha256": "bc8696fea3b88d4ddc543d94489a9eb7e3203ad3f9e8d64bc772918ea607286c",
+      "output_size": [
+        469,
+        297
+      ],
+      "grid": [
+        1,
+        0
+      ],
+      "cell_box": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "source_box": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "source_rect": [
+        82,
+        799,
+        551,
+        1096
+      ],
+      "trim_offset": [
+        82,
+        172
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        234,
+        289
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        90,
+        180,
+        543,
+        461
+      ],
+      "padded_crop_bbox": [
+        82,
+        172,
+        551,
+        469
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 90333,
+      "dropped_components": 28,
+      "dropped_area": 83,
+      "edge_touch": false
+    },
+    {
+      "index": 3,
+      "label": "shipping-chest",
+      "display_name": "shipping_chest",
+      "status": "accepted",
+      "image": "shipping-chest/prop.png",
+      "sha256": "5dac2820859c7a80d471b9731be6a6eadce1783c8bf30b622c59d864b2bd83f9",
+      "output_size": [
+        517,
+        342
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "cell_box": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "source_box": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "source_rect": [
+        679,
+        787,
+        1196,
+        1129
+      ],
+      "trim_offset": [
+        52,
+        160
+      ],
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "anchor_px": [
+        258,
+        334
+      ],
+      "anchor_source": "measured",
+      "component_mode": "all",
+      "component_count": 1,
+      "min_component_area": 100,
+      "trim_applied": 0,
+      "crop_bbox": [
+        60,
+        168,
+        561,
+        494
+      ],
+      "padded_crop_bbox": [
+        52,
+        160,
+        569,
+        502
+      ],
+      "selected_component_area": null,
+      "selected_component_bbox": null,
+      "kept_area": 144663,
+      "dropped_components": 38,
+      "dropped_area": 211,
+      "edge_touch": false
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": [],
+  "warnings": [
+    "tall or wide props in a square grid (aspect > 1.6): ['moss-rocks 453x281']; generate them one by one or in custom cells, or extract with --auto-boxes"
+  ],
+  "qa": {
+    "status": "warn",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 4,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "farmhouse": 0.0009,
+          "fruit-tree": 0.0021,
+          "moss-rocks": 0.0009,
+          "shipping-chest": 0.0015
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "warn",
+        "value": [
+          "moss-rocks 453x281"
+        ],
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../../assets/art/sao_mai/source/farm-props.png",
+        "sha256": "f7f9fa186582da1dbfad0b226c88e4176eaccb5fb676e6fc1e95ee8b93ca472b",
+        "bytes": 1301246
+      }
+    ],
+    "outputs": [
+      {
+        "path": "farmhouse/prop.png",
+        "sha256": "087236ae4d70a173b6af50ba0adc789a8e6c68e139d74ddea20f4de70f3e2ae4",
+        "bytes": 452096
+      },
+      {
+        "path": "fruit-tree/prop.png",
+        "sha256": "bab7207640f5a1b7d314f49ac7d904f3eac9abd51905a1d5172c23dfe0362719",
+        "bytes": 393717
+      },
+      {
+        "path": "moss-rocks/prop.png",
+        "sha256": "bc8696fea3b88d4ddc543d94489a9eb7e3203ad3f9e8d64bc772918ea607286c",
+        "bytes": 176194
+      },
+      {
+        "path": "shipping-chest/prop.png",
+        "sha256": "5dac2820859c7a80d471b9731be6a6eadce1783c8bf30b622c59d864b2bd83f9",
+        "bytes": 251640
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cq2n14s36a5mo"
+
+[deps]
+
+files=["res://localization/questions.vi.translation", "res://localization/questions.en.translation"]
+
+source_file="res://localization/questions.csv"
+dest_files=["res://localization/questions.vi.translation", "res://localization/questions.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -10,6 +10,8 @@ var curtain: ColorRect
 var transitioning: bool = false
 
 func _ready() -> void:
+	EventBus.forced_sleep_triggered.connect(_forced_sleep)
+	EventBus.player_fainted.connect(_player_fainted)
 	EventBus.map_change_requested.connect(request_transition)
 	EventBus.flag_unlocked.connect(func(flag: String) -> void: flags[flag] = true)
 	EventBus.state_save_requested.connect(_save_state)
@@ -113,11 +115,52 @@ func _add_portals(map: Node2D, map_id: String) -> void:
 func _sleep_at_bed() -> void:
 	var minute := GameClock.model.minute_of_day()
 	if minute >= 1200 or minute < 360 or player.stamina <= 0:
-		EventBus.sleep_requested.emit()
-		player.stamina = float(player.balance.stamina_max)
-		EventBus.save_requested.emit(0)
+		if not GameClock.model.pauses.is_empty():
+			return
+		var dialog := ConfirmationDialog.new()
+		dialog.theme = preload("res://assets/art/ui/inventory_theme.tres")
+		dialog.title = "Kết thúc ngày"
+		dialog.dialog_text = "Ngủ và bắt đầu ngày mới?"
+		dialog.ok_button_text = "Ngủ"
+		dialog.cancel_button_text = "Chưa ngủ"
+		dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+		add_child(dialog)
+		var close := func() -> void:
+			EventBus.pause_requested.emit("sleep_confirmation", false)
+			get_tree().paused = not GameClock.model.pauses.is_empty()
+			dialog.queue_free()
+		dialog.canceled.connect(close)
+		dialog.confirmed.connect(func() -> void:
+			close.call()
+			_finish_sleep(false))
+		EventBus.pause_requested.emit("sleep_confirmation", true)
+		get_tree().paused = true
+		dialog.popup_centered(Vector2i(260, 100))
 	else:
 		EventBus.notice_requested.emit("Có thể ngủ sau 20:00 hoặc khi kiệt sức")
+
+func _forced_sleep() -> void:
+	# Calendar signals may still be dispatching the old day's hour events.
+	if is_instance_valid(player) and is_instance_valid(host):
+		_finish_sleep.call_deferred(true)
+
+func _finish_sleep(forced: bool) -> void:
+	if not is_instance_valid(player):
+		return
+	var recovery := SleepRules.recovery(GameClock.model.minute_of_day())
+	var loss := 0
+	if forced:
+		loss = SleepRules.faint_penalty(InventoryManager.coins)
+		var response := {}
+		EventBus.inventory_transaction_requested.emit({"coins": -loss}, response)
+	EventBus.sleep_requested.emit()
+	_activate("player_house", Vector2(112, 128))
+	player.stamina = player.maximum_stamina() * (0.5 if forced else recovery)
+	player.health = player.maximum_health() * (0.75 if forced else recovery)
+	player.poison_seconds = 0.0
+	player.poison_tick = 0.0
+	EventBus.save_requested.emit(0)
+	EventBus.notice_requested.emit("Đã được đưa về nhà: -%d Xu, hồi 50%% thể lực và 75%% HP." % loss if forced else "Ngày mới bắt đầu. Đã lưu game.")
 
 func _save_state(state: Dictionary) -> void:
 	state.scene = {"map_id": current_map_id, "flags": flags.duplicate(true)}
@@ -144,3 +187,15 @@ func _add_navigation(map: Node2D, definition: Dictionary) -> void:
 	polygon.add_polygon(PackedInt32Array([0, 1, 2, 3]))
 	region.navigation_polygon = polygon
 	map.add_child(region)
+
+func _player_fainted() -> void:
+	if not is_instance_valid(player):
+		return
+	var penalty: int = mini(1000, floori(InventoryManager.coins * 0.1))
+	var response := {}
+	EventBus.inventory_transaction_requested.emit({"coins": -penalty}, response)
+	player.health = player.maximum_health() * 0.75
+	player.stamina = player.maximum_stamina() * 0.5
+	player.poison_seconds = 0.0
+	_activate("farm_main", Vector2(640, 480))
+	EventBus.notice_requested.emit("Được đưa về nhà. Mất %d Xu, giữ nguyên đồ." % penalty)

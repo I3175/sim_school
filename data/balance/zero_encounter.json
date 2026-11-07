@@ -1,0 +1,15 @@
+{
+  "status": "prototype encounter timings; review during M13 balance",
+  "dodge_seconds": 6.0,
+  "fall_interval": 1.0,
+  "warning_seconds": 0.7,
+  "impact_seconds": 0.25,
+  "damage": 10,
+  "player_speed": 64.0,
+  "attack_radius": 24.0,
+  "rounds": [
+    {"prompt": "8 + 4 = ?", "answers": [10, 12, 14], "correct": 1},
+    {"prompt": "15 - 6 = ?", "answers": [9, 8, 11], "correct": 0},
+    {"prompt": "7 + 6 = ?", "answers": [12, 14, 13], "correct": 2}
+  ]
+}

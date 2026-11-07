@@ -1,0 +1,137 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+---  GUT  ---
+[1m[INFO]:  [0musing [C:/Users/SKYSOFT/AppData/Roaming/Godot/app_userdata/Làng Sao Mai] for temporary output.
+Godot version:  4.7.2
+GUT version:  9.7.1
+[4m
+
+res://tests/unit/test_animals.gd
+[0m* test_chicken_cow_seven_days_and_quality_bands
+* test_building_capacity_sickness_and_save
+[1m2/2 passed.
+[0m[4m
+
+res://tests/unit/test_calendar_weather.gd
+[0m* test_time_conversion_and_forced_sleep_once
+* test_calendar_boundaries_and_nested_pause
+* test_weather_determinism_and_constraints_over_four_years
+* test_clock_json_roundtrip
+[1m4/4 passed.
+[0m[4m
+
+res://tests/unit/test_combat.gd
+[0m* test_damage_scaling_minimum_and_arc
+* test_all_five_monsters_xp_and_seeded_loot
+* test_player_invulnerability_and_xp_level
+[1m3/3 passed.
+[0m[4m
+
+res://tests/unit/test_farming.gd
+[0m* test_three_day_greens_cycle_and_no_duplicate_day
+* test_drought_rain_regrowth_and_season_change
+* test_wrong_season_and_greenhouse_exception
+* test_live_three_day_plant_harvest_ship_and_reload
+[1m4/4 passed.
+[0m[4m
+
+res://tests/unit/test_fishing.gd
+[0m* test_every_fish_can_appear_only_with_required_conditions
+* test_bite_timeout_catch_and_perfect_reward
+[1m2/2 passed.
+[0m[4m
+
+res://tests/unit/test_inventory.gd
+[0m* test_stack_limits_partial_add_and_quality
+* test_split_merge_swap_and_self_drop_preserve_count
+* test_invalid_restore_is_atomic_and_removal_is_atomic
+* test_save_store_roundtrip_and_corruption
+* test_full_save_load_and_bad_inventory_does_not_mutate_world
+[1m5/5 passed.
+[0m[4m
+
+res://tests/unit/test_knowledge.gd
+[0m* test_banks_select_five_unique_questions_and_answers
+* test_adaptation_stars_and_leitner
+* test_practice_does_not_award_xp_and_story_help_after_three_failures
+[1m3/3 passed.
+[0m[4m
+
+res://tests/unit/test_maps.gd
+[0m* test_opening_hours_overnight_and_unlock
+* test_all_maps_build_and_farm_cache_preserves_crops
+[1m2/2 passed.
+[0m[4m
+
+res://tests/unit/test_pixel_scale.gd
+[0m* test_integer_scaling_and_letterboxing
+* test_small_and_invalid_dimensions
+* test_project_boot_and_autoloads
+[1m3/3 passed.
+[0m[4m
+
+res://tests/unit/test_player.gd
+[0m* test_diagonal_does_not_move_faster
+* test_animation_layers_and_snapshot_roundtrip
+* test_stamina_drains_only_running_and_recovers_after_delay
+* test_farm_collision_and_camera
+[1m4/4 passed.
+[0m[4m
+
+res://tests/unit/test_quests.gd
+[0m* test_all_eight_types_accept_complete_claim_exactly_once
+* test_expiry_repeat_and_hidden_prerequisite
+[1m2/2 passed.
+[0m[4m
+
+res://tests/unit/test_sleep.gd
+[0m* test_midnight_recovery_boundaries
+* test_forced_sleep_loss_has_a_separate_cap_from_combat_fainting
+* test_two_am_returns_home_advances_day_and_autosaves_recovered_state
+[1m3/3 passed.
+[0m[4m
+
+res://tests/unit/test_social.gd
+[0m* test_rain_schedule_and_once_daily_friendship
+* test_dialogue_manager_parses_and_branches
+* test_purchase_transaction_never_charges_when_bag_full
+[1m3/3 passed.
+[0m[4m
+
+res://tests/unit/test_story.gd
+[0m* test_chapters_require_previous_completion_and_minimum_absolute_day
+* test_final_returns_each_winter_and_ending_follows_development
+* test_festival_boundaries_and_malformed_saves
+[1m3/3 passed.
+[0m[4m
+
+res://tests/unit/test_ui_gallery.gd
+[0m* test_gallery_widgets_stay_in_logical_viewport
+* test_vietnamese_font_coverage_and_learning_examples
+[1m2/2 passed.
+[0m[4m
+
+res://tests/unit/test_zero_encounter.gd
+[0m* test_combat_phase_cannot_be_skipped_by_attacking
+* test_three_puzzles_required_and_help_after_three_mistakes
+* test_telegraphed_fall_can_be_evaded_and_only_hits_once
+[1m3/3 passed.
+[0m
+
+
+
+[33m==============================================
+[0m[33m= Run Summary
+[0m[33m==============================================
+[0m
+Totals
+------
+Scripts              16
+Tests                48
+Passing Tests        48
+Asserts            2747
+Time              2.492s
+
+
+[32m---- All tests passed! ----
+[0m

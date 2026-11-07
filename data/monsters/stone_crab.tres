@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/monster_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "stone_crab"
+display_name = "Cua Đá"
+level = 5
+health = 70.0
+attack = 10.0
+defense = 8.0
+speed = 25.0
+base_xp = 20
+telegraph = 0.5
+behavior = "claw"
+loot = Array[Dictionary]([{"id": "crab_claw", "chance": 0.6, "amount": 1}, {"id": "shell", "chance": 0.4, "amount": 1}])

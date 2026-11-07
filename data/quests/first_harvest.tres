@@ -8,5 +8,5 @@ quest_type = "main"
 prerequisites = {}
 objectives = Array[Dictionary]([{"type": "harvest", "target": "greens", "amount": 1, "optional": false}])
 time_limit_days = 0
-rewards = {"coins": 800, "xp": 200, "items": [], "flags": ["chapter_1"]}
+rewards = {"coins": 800, "xp": 200, "items": [], "flags": []}
 repeatable = false

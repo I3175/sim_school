@@ -87,6 +87,8 @@ func _use_tool(key: String, player: VillagePlayer) -> void:
 			EventBus.notice_requested.emit("Cần đất đã cuốc, đúng mùa và nơi trồng")
 	if success:
 		player.stamina -= cost
+		if id == "hoe": EventBus.farm_action_completed.emit("till")
+		elif id.begins_with("seed_"): EventBus.farm_action_completed.emit("plant")
 		_on_weather_changed(WeatherSystem.current_weather)
 
 func _harvest(key: String) -> void:

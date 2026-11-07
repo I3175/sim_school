@@ -1,0 +1,47 @@
+{
+  "base_attack": 5,
+  "base_defense": 0,
+  "critical_chance": 0.05,
+  "critical_multiplier": 1.5,
+  "variance_min": 0.9,
+  "variance_max": 1.1,
+  "invulnerability": 0.6,
+  "regeneration_delay": 8.0,
+  "regeneration_interval": 3.0,
+  "attack_cost": 1.0,
+  "detection_radius": 112.0,
+  "leash_radius": 192.0,
+  "alert_seconds": 0.4,
+  "recover_seconds": 0.8,
+  "death_seconds": 0.6,
+  "xp_tier_multipliers": [
+    1,
+    2.5,
+    4,
+    10,
+    25
+  ],
+  "combat_xp_ratio": 0.6,
+  "hp_per_floor": 0.12,
+  "attack_per_floor": 0.08,
+  "weapons": {
+    "sword": {
+      "attack": 8,
+      "range": 24,
+      "cooldown": 0.35,
+      "arc_degrees": 90
+    },
+    "spear": {
+      "attack": 10,
+      "range": 40,
+      "cooldown": 0.5,
+      "arc_degrees": 30
+    },
+    "hammer": {
+      "attack": 14,
+      "range": 32,
+      "cooldown": 0.8,
+      "arc_degrees": 360
+    }
+  }
+}

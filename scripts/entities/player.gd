@@ -14,9 +14,18 @@ var input_enabled: bool = true
 var resident_xp: int = 0
 var resident_level: int = 1
 var health: float = 100.0
+var combat_xp: int = 0
+var hurt_cooldown: float = 0.0
+var no_damage_seconds: float = 0.0
+var regeneration_seconds: float = 0.0
+var poison_seconds: float = 0.0
+var poison_tick: float = 0.0
+var combat_rules: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/balance/combat.json"))
 @onready var animator: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	EventBus.player_damage_requested.connect(take_damage)
+	EventBus.combat_xp_awarded.connect(func(amount: int) -> void: combat_xp += amount)
 	EventBus.resident_xp_awarded.connect(award_xp)
 	EventBus.state_save_requested.connect(func(state: Dictionary) -> void: state.player = snapshot())
 	EventBus.state_validate_requested.connect(_validate_saved_player)
@@ -28,6 +37,7 @@ static func movement_velocity(direction: Vector2, speed: float) -> Vector2:
 	return direction.limit_length() * speed
 
 func _physics_process(delta: float) -> void:
+	_update_health(delta)
 	var direction := Vector2.ZERO
 	if input_enabled:
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -93,9 +103,10 @@ func _create_animations() -> void:
 	animator.add_animation_library("", library)
 
 func snapshot() -> Dictionary:
-	return {"x": position.x, "y": position.y, "stamina": stamina, "direction": direction_index, "facing_right": facing_right, "resident_xp": resident_xp, "health": health}
+	return {"x": position.x, "y": position.y, "stamina": stamina, "direction": direction_index, "facing_right": facing_right, "resident_xp": resident_xp, "health": health, "combat_xp": combat_xp}
 
 func restore(state: Dictionary) -> void:
+	combat_xp = maxi(0, int(state.get("combat_xp", 0)))
 	resident_xp = maxi(0, int(state.get("resident_xp", 0)))
 	resident_level = level_for_xp(resident_xp)
 	health = clampf(float(state.get("health", 100)), 0.0, maximum_health())
@@ -151,3 +162,32 @@ func award_xp(amount: int) -> void:
 		stamina = maximum_stamina()
 		health = maximum_health()
 		EventBus.notice_requested.emit("Cấp Cư Dân %d" % resident_level)
+
+func take_damage(amount: int, status: String = "") -> void:
+	if hurt_cooldown > 0 or health <= 0:
+		return
+	health = maxf(0.0, health - maxi(1, amount))
+	hurt_cooldown = float(combat_rules.invulnerability)
+	no_damage_seconds = 0.0
+	regeneration_seconds = 0.0
+	if status == "poison":
+		poison_seconds = 12.0
+		poison_tick = 0.0
+	if health <= 0:
+		EventBus.player_fainted.emit()
+
+func _update_health(delta: float) -> void:
+	hurt_cooldown = maxf(0.0, hurt_cooldown - delta)
+	no_damage_seconds += delta
+	if no_damage_seconds >= float(combat_rules.regeneration_delay):
+		regeneration_seconds += delta
+		if regeneration_seconds >= float(combat_rules.regeneration_interval):
+			regeneration_seconds -= float(combat_rules.regeneration_interval)
+			health = minf(maximum_health(), health + 1)
+	if poison_seconds > 0:
+		poison_seconds -= delta
+		poison_tick += delta
+		if poison_tick >= 2.0:
+			poison_tick -= 2.0
+			take_damage(1)
+	$Visuals.modulate = Color(1, 1, 1, 0.5 if hurt_cooldown > 0 else 1.0)

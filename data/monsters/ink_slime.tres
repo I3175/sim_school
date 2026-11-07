@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/monster_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "ink_slime"
+display_name = "Slime Mực"
+level = 1
+health = 30.0
+attack = 6.0
+defense = 0.0
+speed = 28.0
+base_xp = 8
+telegraph = 0.5
+behavior = "leap"
+loot = Array[Dictionary]([{"id": "forgotten_ink", "chance": 0.8, "amount": 1}, {"id": "gel", "chance": 0.3, "amount": 1}, {"id": "rare_seed", "chance": 0.05, "amount": 1}])

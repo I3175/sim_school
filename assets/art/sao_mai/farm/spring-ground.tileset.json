@@ -1,0 +1,3121 @@
+{
+  "schema": "generate2dmap.tileset.v1",
+  "id": "spring-ground",
+  "image": "spring-ground.png",
+  "sha256": "61ce34fbdce001e3d227d7eabfc1ed5fb09d4602d65dbd56acbb06661f6287b7",
+  "tile_size": 16,
+  "columns": 16,
+  "tilecount": 128,
+  "kind": "wang_corner",
+  "materials": [
+    "grass",
+    "dirt"
+  ],
+  "variants": 8,
+  "seamless_verified": true,
+  "seam_proof": {
+    "method": "Tiles assembled from the atlas by key, compared pixel for pixel (RGBA) with an independent global render: noise evaluated at map coordinates, every pixel classified from its own cell, band and face look-ups read at their true positions across tile edges. Cases: every 2x2 tile block (all 3x3 corner lattices) (512 configurations, 8 variant passes); a seeded random 30x20 map.",
+    "pixels_compared": 4347904,
+    "mismatches": 0
+  },
+  "repetition_index": 0.1679,
+  "wangset": {
+    "type": "corner",
+    "colors": [
+      {
+        "name": "grass",
+        "color": "#a2b970"
+      },
+      {
+        "name": "dirt",
+        "color": "#cca576"
+      }
+    ]
+  },
+  "plateau": 2,
+  "art_source": "code",
+  "generator": {
+    "name": "codeart2d/autotile_build",
+    "version": "0.4.0"
+  },
+  "spec_sha256": "93ea2cc3aecdda490a2fc1bd24fc2147f8fd688c2093f2c9315688d7f574acab",
+  "qa": {
+    "path": "autotile-qa.json",
+    "sha256": "4267dd9b44b653b6b1ab31dbc6053dc3b8edce0f000308d84166b4af04b9b6ad",
+    "bytes": 6228
+  },
+  "tiles": [
+    {
+      "index": 0,
+      "variant": 0,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 1,
+      "variant": 0,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 2,
+      "variant": 0,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 3,
+      "variant": 0,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 4,
+      "variant": 0,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 5,
+      "variant": 0,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 6,
+      "variant": 0,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 7,
+      "variant": 0,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 8,
+      "variant": 0,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 9,
+      "variant": 0,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 10,
+      "variant": 0,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 11,
+      "variant": 0,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 12,
+      "variant": 0,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 13,
+      "variant": 0,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 14,
+      "variant": 0,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 15,
+      "variant": 0,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 16,
+      "variant": 1,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 17,
+      "variant": 1,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 18,
+      "variant": 1,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 19,
+      "variant": 1,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 20,
+      "variant": 1,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 21,
+      "variant": 1,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 22,
+      "variant": 1,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 23,
+      "variant": 1,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 24,
+      "variant": 1,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 25,
+      "variant": 1,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 26,
+      "variant": 1,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 27,
+      "variant": 1,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 28,
+      "variant": 1,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 29,
+      "variant": 1,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 30,
+      "variant": 1,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 31,
+      "variant": 1,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 32,
+      "variant": 2,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 33,
+      "variant": 2,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 34,
+      "variant": 2,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 35,
+      "variant": 2,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 36,
+      "variant": 2,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 37,
+      "variant": 2,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 38,
+      "variant": 2,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 39,
+      "variant": 2,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 40,
+      "variant": 2,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 41,
+      "variant": 2,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 42,
+      "variant": 2,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 43,
+      "variant": 2,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 44,
+      "variant": 2,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 45,
+      "variant": 2,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 46,
+      "variant": 2,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 47,
+      "variant": 2,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 48,
+      "variant": 3,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 49,
+      "variant": 3,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 50,
+      "variant": 3,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 51,
+      "variant": 3,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 52,
+      "variant": 3,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 53,
+      "variant": 3,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 54,
+      "variant": 3,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 55,
+      "variant": 3,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 56,
+      "variant": 3,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 57,
+      "variant": 3,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 58,
+      "variant": 3,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 59,
+      "variant": 3,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 60,
+      "variant": 3,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 61,
+      "variant": 3,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 62,
+      "variant": 3,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 63,
+      "variant": 3,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 64,
+      "variant": 4,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 65,
+      "variant": 4,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 66,
+      "variant": 4,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 67,
+      "variant": 4,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 68,
+      "variant": 4,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 69,
+      "variant": 4,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 70,
+      "variant": 4,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 71,
+      "variant": 4,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 72,
+      "variant": 4,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 73,
+      "variant": 4,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 74,
+      "variant": 4,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 75,
+      "variant": 4,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 76,
+      "variant": 4,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 77,
+      "variant": 4,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 78,
+      "variant": 4,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 79,
+      "variant": 4,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 80,
+      "variant": 5,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 81,
+      "variant": 5,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 82,
+      "variant": 5,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 83,
+      "variant": 5,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 84,
+      "variant": 5,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 85,
+      "variant": 5,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 86,
+      "variant": 5,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 87,
+      "variant": 5,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 88,
+      "variant": 5,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 89,
+      "variant": 5,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 90,
+      "variant": 5,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 91,
+      "variant": 5,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 92,
+      "variant": 5,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 93,
+      "variant": 5,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 94,
+      "variant": 5,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 95,
+      "variant": 5,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 96,
+      "variant": 6,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 97,
+      "variant": 6,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 98,
+      "variant": 6,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 99,
+      "variant": 6,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 100,
+      "variant": 6,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 101,
+      "variant": 6,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 102,
+      "variant": 6,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 103,
+      "variant": 6,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 104,
+      "variant": 6,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 105,
+      "variant": 6,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 106,
+      "variant": 6,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 107,
+      "variant": 6,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 108,
+      "variant": 6,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 109,
+      "variant": 6,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 110,
+      "variant": 6,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 111,
+      "variant": 6,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 112,
+      "variant": 7,
+      "wang": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 113,
+      "variant": 7,
+      "wang": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 114,
+      "variant": 7,
+      "wang": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 115,
+      "variant": 7,
+      "wang": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 116,
+      "variant": 7,
+      "wang": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 117,
+      "variant": 7,
+      "wang": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 118,
+      "variant": 7,
+      "wang": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 119,
+      "variant": 7,
+      "wang": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 120,
+      "variant": 7,
+      "wang": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 121,
+      "variant": 7,
+      "wang": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 122,
+      "variant": 7,
+      "wang": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 123,
+      "variant": 7,
+      "wang": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 124,
+      "variant": 7,
+      "wang": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 125,
+      "variant": 7,
+      "wang": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 126,
+      "variant": 7,
+      "wang": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    },
+    {
+      "index": 127,
+      "variant": 7,
+      "wang": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "wangid": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "collision": [],
+      "properties": {
+        "walkable": true
+      }
+    }
+  ]
+}

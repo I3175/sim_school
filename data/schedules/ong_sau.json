@@ -1,0 +1,46 @@
+{
+  "weekday": [
+    {
+      "start_minute": 360,
+      "map_id": "mirror_lake",
+      "position_marker": [
+        360,
+        320
+      ],
+      "activity": "Gặp gỡ dân làng"
+    }
+  ],
+  "weekend": [
+    {
+      "start_minute": 360,
+      "map_id": "mirror_lake",
+      "position_marker": [
+        360,
+        320
+      ],
+      "activity": "Gặp gỡ dân làng"
+    }
+  ],
+  "rain": [
+    {
+      "start_minute": 360,
+      "map_id": "mirror_lake",
+      "position_marker": [
+        360,
+        320
+      ],
+      "activity": "Gặp gỡ dân làng"
+    }
+  ],
+  "festival": [
+    {
+      "start_minute": 360,
+      "map_id": "town_square",
+      "position_marker": [
+        360,
+        320
+      ],
+      "activity": "Gặp gỡ dân làng"
+    }
+  ]
+}

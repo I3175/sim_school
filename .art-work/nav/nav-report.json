@@ -1,0 +1,306 @@
+{
+  "schema": "generate2dmap.nav_report.v1",
+  "status": "pass",
+  "method": "plan Appendix C validity (centre + 8 footprint samples against walk regions, solids, object footprints scaled once, tile collision and material classes) on a grid of cell max(1, round(r/2)) px; 4-neighbour moves open when segmentClear holds between node centres (samples every cell/2, plus the exact thin-gap centre path and one_way direction); BFS from every spawn and portal arrival to every interaction, exit, anchor slot and approach point",
+  "notProven": [
+    "that the collision data matches the painted art",
+    "positions closer than one grid cell to a blocker (the grid samples cell centres)",
+    "runtime movement code: map-runtime.mjs parity is tested during integration",
+    "links to maps not passed with --link"
+  ],
+  "checks": [
+    {
+      "id": "starts_valid",
+      "status": "pass",
+      "value": {
+        "starts": 1,
+        "blocked": []
+      },
+      "threshold": {
+        "blocked": 0
+      }
+    },
+    {
+      "id": "targets_reachable",
+      "status": "pass",
+      "value": {
+        "reachable": 8,
+        "total": 8,
+        "unreachable": []
+      },
+      "threshold": {
+        "unreachable": 0
+      }
+    },
+    {
+      "id": "portals_inside_world",
+      "status": "pass",
+      "value": {
+        "outside": []
+      },
+      "threshold": {
+        "outside": 0
+      }
+    },
+    {
+      "id": "arrivals_outside_triggers",
+      "status": "pass",
+      "value": {
+        "problems": 0
+      },
+      "threshold": {
+        "problems": 0
+      }
+    },
+    {
+      "id": "reciprocal_links",
+      "status": "pass",
+      "value": {
+        "links": [],
+        "notChecked": []
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "thin_gaps",
+      "status": "pass",
+      "value": 0,
+      "threshold": "reported: moves the thin-gap rule closed although every footprint sample was valid"
+    },
+    {
+      "id": "unreachable_walkable_area",
+      "status": "pass",
+      "value": {
+        "pockets": 0,
+        "cells": 0
+      },
+      "threshold": "reported"
+    },
+    {
+      "id": "blocked_rects_union",
+      "status": "pass",
+      "value": {
+        "rects": 37,
+        "blockedCells": 12702
+      },
+      "threshold": "union == blocked cells"
+    },
+    {
+      "id": "footprints_scaled_once",
+      "status": "pass",
+      "value": {
+        "objectSolids": 11
+      },
+      "threshold": "object footprint x scale, never inflated by the actor radius"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../assets/art/sao_mai/farm/map-bundle.json",
+      "sha256": "4a88554b95a261b4ab6ab24010b2a17242a8ac7edc61a4f8482b954fb276da67",
+      "bytes": 7953
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/spring-ground.tileset.json",
+      "sha256": "dbf3f56bdfefa6d249de7741beeb457b12ad70635729023a1d3c31d2b2485db9",
+      "bytes": 41379
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/spring-ground.png",
+      "sha256": "9332ba00006b189bbf488872e978e20f8d6a76491cfe6fc4c58f86937a60d26d",
+      "bytes": 2654
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/ground-tiles.json",
+      "sha256": "b3fcbbd11d1e5a355ffc721b7d90e397bbb09108a529ac33e5309a550a39004c",
+      "bytes": 15155
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/farmhouse.png",
+      "sha256": "90cea6179b9148ba7eef0ea102237b40c2c7e9e4a47330f7a40c0b152bc9a9a7",
+      "bytes": 6500
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/fruit-tree.png",
+      "sha256": "2ba7050d6546c81f896e927520146bfa3e0ec8f3aaa7c300dc6bedef3b985555",
+      "bytes": 2410
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/moss-rocks.png",
+      "sha256": "d944e2e27acb4d6517aae32aac6167cce3088b9bc3e0a11511882237127181a9",
+      "bytes": 711
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/shipping-chest.png",
+      "sha256": "6415638e24eb7f48e94c0fb546bd1c5cbae72d9a23211d380ed53a6c9a647789",
+      "bytes": 572
+    }
+  ],
+  "outputs": [
+    {
+      "path": "nav-grid.json",
+      "sha256": "75b2ed659c9675b0e7834324d11cc8516b47d58bdb72db36883ff0ce19f1be43",
+      "bytes": 625236
+    },
+    {
+      "path": "nav-debug.png",
+      "sha256": "affbf73e7c72901656a398a3e4bdc4815c70bca12d84b517de9b0ee90c369657",
+      "bytes": 68876
+    }
+  ],
+  "tool": {
+    "name": "map_nav.py",
+    "version": "0.4.0"
+  },
+  "map": "farm_main",
+  "cell": 2,
+  "starts": [
+    {
+      "kind": "spawn",
+      "id": "new-game",
+      "point": [
+        640.0,
+        480.0
+      ],
+      "reachable": true,
+      "steps": 0,
+      "node": [
+        639.0,
+        479.0
+      ],
+      "reason": null
+    }
+  ],
+  "targets": [
+    {
+      "kind": "interaction",
+      "id": "to-market_street",
+      "point": [
+        532.0,
+        544.0
+      ],
+      "reachable": true,
+      "steps": 74,
+      "node": [
+        539.0,
+        535.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "to-ranch",
+      "point": [
+        604.0,
+        544.0
+      ],
+      "reachable": true,
+      "steps": 38,
+      "node": [
+        611.0,
+        535.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "to-whispering_forest",
+      "point": [
+        676.0,
+        544.0
+      ],
+      "reachable": true,
+      "steps": 37,
+      "node": [
+        669.0,
+        535.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "to-player_house",
+      "point": [
+        748.0,
+        544.0
+      ],
+      "reachable": true,
+      "steps": 73,
+      "node": [
+        741.0,
+        535.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "to-coop",
+      "point": [
+        532.0,
+        592.0
+      ],
+      "reachable": true,
+      "steps": 98,
+      "node": [
+        539.0,
+        583.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "to-barn",
+      "point": [
+        604.0,
+        592.0
+      ],
+      "reachable": true,
+      "steps": 62,
+      "node": [
+        611.0,
+        583.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "to-greenhouse",
+      "point": [
+        676.0,
+        592.0
+      ],
+      "reachable": true,
+      "steps": 61,
+      "node": [
+        669.0,
+        583.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "shipping",
+      "point": [
+        712.0,
+        480.0
+      ],
+      "reachable": true,
+      "steps": 20,
+      "node": [
+        685.0,
+        483.0
+      ],
+      "reason": null
+    }
+  ],
+  "links": [],
+  "thinGaps": [],
+  "unreachablePockets": [],
+  "bundleNav": {
+    "cell": 2,
+    "grid": "nav-grid.json"
+  },
+  "problems": []
+}

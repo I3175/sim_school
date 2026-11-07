@@ -1,0 +1,19 @@
+{
+  "cast_cost": 3.0,
+  "wait_min": 0.5,
+  "wait_max": 3.0,
+  "bite_window": 1.0,
+  "bar_width": 0.25,
+  "bar_speed": 0.5,
+  "progress_gain": 0.25,
+  "progress_loss": 0.17,
+  "initial_progress": 0.3,
+  "quality_perfect": 1,
+  "perfect_xp_multiplier": 1.5,
+  "tide_period": 360,
+  "trap_items": [
+    "crab",
+    "shrimp",
+    "clam"
+  ]
+}

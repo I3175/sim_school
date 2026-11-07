@@ -1,0 +1,5 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://scenes/core/boot.tscn" id="1"]
+[ext_resource type="Script" path="res://tests/scenes/test_m9.gd" id="2"]
+[node name="M9AnimalsTest" instance=ExtResource("1")]
+script = ExtResource("2")

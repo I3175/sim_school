@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bckqpmiu5bwj5"
+path="res://.godot/imported/sao-mai-10.fnt-bf3ef93a8b0dad79825f4f1355bcb0a4.fontdata"
+
+[deps]
+
+source_file="res://assets/art/sao_mai/ui/sao-mai-10.fnt"
+dest_files=["res://.godot/imported/sao-mai-10.fnt-bf3ef93a8b0dad79825f4f1355bcb0a4.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

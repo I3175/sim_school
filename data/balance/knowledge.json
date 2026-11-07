@@ -1,0 +1,24 @@
+{
+  "subjects": [
+    "math",
+    "literature",
+    "english",
+    "science",
+    "history_geo"
+  ],
+  "subject_names": [
+    "Số · Toán",
+    "Chữ · Ngữ văn",
+    "Ngữ · Tiếng Anh",
+    "Vật · Khoa học",
+    "Ký · Sử–Địa"
+  ],
+  "session_size": 5,
+  "knowledge_xp_per_correct": 5,
+  "resident_xp_per_star": 5,
+  "daily_reward": {
+    "id": "wood",
+    "amount": 1
+  },
+  "content_status": "development bank; educational review and difficulty calibration pending"
+}

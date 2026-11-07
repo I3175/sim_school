@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/monster_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "poison_mushroom"
+display_name = "Nấm Độc"
+level = 4
+health = 55.0
+attack = 9.0
+defense = 2.0
+speed = 18.0
+base_xp = 16
+telegraph = 0.4
+behavior = "spore"
+loot = Array[Dictionary]([{"id": "spore", "chance": 0.6, "amount": 1}, {"id": "mushroom", "chance": 0.5, "amount": 1}, {"id": "herb", "chance": 0.25, "amount": 1}])

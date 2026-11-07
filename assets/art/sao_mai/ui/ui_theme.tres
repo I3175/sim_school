@@ -1,0 +1,142 @@
+[gd_resource type="Theme" load_steps=20 format=3]
+
+[ext_resource type="FontFile" path="res://assets/art/sao_mai/ui/sao-mai-8.fnt" id="font"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_wood.png" id="tex_wood"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_paper.png" id="tex_paper"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_slot.png" id="tex_slot"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_tab.png" id="tex_tab"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_focus.png" id="tex_focus"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_warning.png" id="tex_warning"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_pressed.png" id="tex_pressed"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_disabled.png" id="tex_disabled"]
+[ext_resource type="Texture2D" path="res://assets/art/sao_mai/ui/panel_hover.png" id="tex_hover"]
+
+[sub_resource type="StyleBoxTexture" id="wood"]
+texture = ExtResource("tex_wood")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="paper"]
+texture = ExtResource("tex_paper")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="slot"]
+texture = ExtResource("tex_slot")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="tab"]
+texture = ExtResource("tex_tab")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="focus"]
+texture = ExtResource("tex_focus")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="warning"]
+texture = ExtResource("tex_warning")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="pressed"]
+texture = ExtResource("tex_pressed")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+content_margin_top = 3.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="disabled"]
+texture = ExtResource("tex_disabled")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="hover"]
+texture = ExtResource("tex_hover")
+texture_margin_left = 3.0
+content_margin_left = 2.0
+texture_margin_top = 3.0
+content_margin_top = 2.0
+texture_margin_right = 3.0
+content_margin_right = 2.0
+texture_margin_bottom = 3.0
+content_margin_bottom = 2.0
+
+[resource]
+default_font = ExtResource("font")
+default_font_size = 8
+WoodPanel/base_type = &"Panel"
+PaperPanel/base_type = &"Panel"
+SlotPanel/base_type = &"Panel"
+TabPanel/base_type = &"Panel"
+AlertButton/base_type = &"Button"
+PanelContainer/styles/panel = SubResource("wood")
+WoodPanel/styles/panel = SubResource("wood")
+PaperPanel/styles/panel = SubResource("paper")
+SlotPanel/styles/panel = SubResource("slot")
+TabPanel/styles/panel = SubResource("tab")
+Button/styles/normal = SubResource("wood")
+Button/styles/hover = SubResource("hover")
+Button/styles/focus = SubResource("focus")
+Button/styles/pressed = SubResource("pressed")
+Button/styles/disabled = SubResource("disabled")
+AlertButton/styles/focus = SubResource("warning")
+LineEdit/styles/normal = SubResource("paper")
+LineEdit/styles/focus = SubResource("focus")
+LineEdit/styles/read_only = SubResource("disabled")
+ProgressBar/styles/background = SubResource("slot")
+ProgressBar/styles/fill = SubResource("focus")
+Button/colors/font_color = Color(1, 0.965, 0.855, 1)
+Button/colors/font_focus_color = Color(1, 0.965, 0.855, 1)
+Button/colors/font_disabled_color = Color(0.78, 0.76, 0.71, 1)
+LineEdit/colors/font_color = Color(0.169, 0.106, 0.090, 1)

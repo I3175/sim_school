@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cupbjqnydlgcm"
+path="res://.godot/imported/sao-mai-8.fnt-8e7fc1257597a5324d2fff7fcc1170fd.fontdata"
+
+[deps]
+
+source_file="res://assets/art/sao_mai/ui/sao-mai-8.fnt"
+dest_files=["res://.godot/imported/sao-mai-8.fnt-8e7fc1257597a5324d2fff7fcc1170fd.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

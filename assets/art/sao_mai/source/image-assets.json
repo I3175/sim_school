@@ -1,0 +1,242 @@
+{
+  "route": "host_image",
+  "tool": "Codex Image Gen",
+  "model": null,
+  "estimateUsd": null,
+  "prompts": "image-gen-prompts.json",
+  "inputs": {
+    "di_nam.png": {
+      "sha256": "85fc3c39225fc17329440dee7bf7b8e8a40b1466ce60670716d8224bfe30f1dc",
+      "size": [
+        1312,
+        1199
+      ]
+    },
+    "farm-props.png": {
+      "sha256": "f7f9fa186582da1dbfad0b226c88e4176eaccb5fb676e6fc1e95ee8b93ca472b",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "title.png": {
+      "sha256": "b2feceed55366de2705ddf60b48a434a3a39048e1aa81b906d62da88639325dd",
+      "size": [
+        1672,
+        941
+      ]
+    }
+  },
+  "portrait_qa": {
+    "status": "pass",
+    "method": "generate2dsprite process geometry v2: alpha above the geometry threshold, 8- or 4-connected components, ground-line anchors, one shared sampling grid with whole-pixel offsets, output-space scale metrics, forge_matte.matte_qa key residue",
+    "notProven": [
+      "pose quality, anatomy, identity and facing",
+      "loop seam, phase order and timing at game size",
+      "colour fidelity of keyed edges beyond the matte_qa residue counts",
+      "that the subject is complete where it does not touch a cell edge"
+    ],
+    "checks": [
+      {
+        "id": "empty_frames",
+        "status": "pass",
+        "value": [],
+        "threshold": []
+      },
+      {
+        "id": "paste_clamped_frames",
+        "status": "pass",
+        "value": [],
+        "threshold": []
+      },
+      {
+        "id": "output_edge_touch_frames",
+        "status": "pass",
+        "value": [],
+        "threshold": []
+      },
+      {
+        "id": "source_edge_touch_frames",
+        "status": "pass",
+        "value": [],
+        "threshold": []
+      },
+      {
+        "id": "body_scale_cv",
+        "status": "skipped",
+        "value": 0.0,
+        "threshold": null
+      },
+      {
+        "id": "anchor_y_std",
+        "status": "skipped",
+        "value": 0.0,
+        "threshold": null
+      }
+    ],
+    "inputs": [
+      {
+        "path": "raw.png",
+        "sha256": "85fc3c39225fc17329440dee7bf7b8e8a40b1466ce60670716d8224bfe30f1dc",
+        "bytes": 811241
+      }
+    ],
+    "outputs": [
+      {
+        "path": "clean.png",
+        "sha256": "bfe224fbcf925766f6fe62d21bbeae691613e2ef5030afc7ad218074491990b4",
+        "bytes": 4092
+      }
+    ],
+    "tool": {
+      "name": "generate2dsprite.py process",
+      "version": "0.4.0"
+    }
+  },
+  "prop_qa": {
+    "status": "pass",
+    "method": "native alpha, not keyed; alpha hygiene both; 8-connected components (all); checks measured on the published pixels",
+    "notProven": [
+      "that each label names the art in its cell or box",
+      "that a prop is complete: clipping is detected only where art meets the cell edge",
+      "keyed-edge quality beyond the edge fringe count",
+      "that anchors and suggested footprints match gameplay contact (both are measured from alpha)",
+      "runtime placement, collision or occlusion"
+    ],
+    "checks": [
+      {
+        "id": "accepted",
+        "status": "pass",
+        "value": 4,
+        "threshold": ">= 1"
+      },
+      {
+        "id": "edge_touch",
+        "status": "pass",
+        "value": [],
+        "threshold": 0
+      },
+      {
+        "id": "dropped_area",
+        "status": "pass",
+        "value": {
+          "farmhouse": 0.0009,
+          "fruit-tree": 0.0021,
+          "moss-rocks": 0.0009,
+          "shipping-chest": 0.0015
+        },
+        "threshold": 0.01
+      },
+      {
+        "id": "strategy_aspect",
+        "status": "skipped",
+        "value": null,
+        "threshold": 1.6
+      },
+      {
+        "id": "edge_fringe",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0.02
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../../assets/art/sao_mai/source/farm-props.png",
+        "sha256": "f7f9fa186582da1dbfad0b226c88e4176eaccb5fb676e6fc1e95ee8b93ca472b",
+        "bytes": 1301246
+      },
+      {
+        "path": "../../assets/art/sao_mai/source/farm-prop-boxes.json",
+        "sha256": "816808abf67a56c5b1374a667c3d644ae5034f0ccaa9de3c8b59f7964d562b19",
+        "bytes": 552
+      }
+    ],
+    "outputs": [
+      {
+        "path": "farmhouse/prop.png",
+        "sha256": "087236ae4d70a173b6af50ba0adc789a8e6c68e139d74ddea20f4de70f3e2ae4",
+        "bytes": 452096
+      },
+      {
+        "path": "fruit-tree/prop.png",
+        "sha256": "bab7207640f5a1b7d314f49ac7d904f3eac9abd51905a1d5172c23dfe0362719",
+        "bytes": 393717
+      },
+      {
+        "path": "moss-rocks/prop.png",
+        "sha256": "bc8696fea3b88d4ddc543d94489a9eb7e3203ad3f9e8d64bc772918ea607286c",
+        "bytes": 176194
+      },
+      {
+        "path": "shipping-chest/prop.png",
+        "sha256": "5dac2820859c7a80d471b9731be6a6eadce1783c8bf30b622c59d864b2bd83f9",
+        "bytes": 251640
+      }
+    ],
+    "tool": {
+      "name": "extract_prop_pack",
+      "version": "0.4.0"
+    }
+  },
+  "art": {
+    "ui/title.png": {
+      "sha256": "3f911f9d494a23ec50d92f2bb604735c544449ff9b82e65b37c8d3c38885fac5",
+      "size": [
+        320,
+        180
+      ]
+    },
+    "ui/di_nam.png": {
+      "sha256": "bfe224fbcf925766f6fe62d21bbeae691613e2ef5030afc7ad218074491990b4",
+      "size": [
+        48,
+        48
+      ]
+    },
+    "farm/farmhouse.png": {
+      "sha256": "90cea6179b9148ba7eef0ea102237b40c2c7e9e4a47330f7a40c0b152bc9a9a7",
+      "size": [
+        56,
+        44
+      ],
+      "anchor_px": [
+        27,
+        44
+      ]
+    },
+    "farm/fruit-tree.png": {
+      "sha256": "2ba7050d6546c81f896e927520146bfa3e0ec8f3aaa7c300dc6bedef3b985555",
+      "size": [
+        32,
+        29
+      ],
+      "anchor_px": [
+        16,
+        29
+      ]
+    },
+    "farm/moss-rocks.png": {
+      "sha256": "d944e2e27acb4d6517aae32aac6167cce3088b9bc3e0a11511882237127181a9",
+      "size": [
+        18,
+        11
+      ],
+      "anchor_px": [
+        9,
+        11
+      ]
+    },
+    "farm/shipping-chest.png": {
+      "sha256": "6415638e24eb7f48e94c0fb546bd1c5cbae72d9a23211d380ed53a6c9a647789",
+      "size": [
+        16,
+        10
+      ],
+      "anchor_px": [
+        8,
+        10
+      ]
+    }
+  }
+}

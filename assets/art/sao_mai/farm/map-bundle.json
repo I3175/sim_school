@@ -1,0 +1,418 @@
+{
+  "schema": "generate2dmap.map_bundle.v2",
+  "id": "farm_main",
+  "name": "Nông trại Mầm Xanh",
+  "art_source": "mixed",
+  "world": {
+    "width": 1280,
+    "height": 960,
+    "unit": "px"
+  },
+  "tile_size": 16,
+  "tilesets": [
+    {
+      "id": "spring-ground",
+      "manifest": "spring-ground.tileset.json",
+      "sha256": "42050f1be244e73a48f7750a01ae01b1083fc5ded76d1a53dcec3673d12f8252"
+    }
+  ],
+  "layers": [
+    {
+      "name": "ground",
+      "kind": "tiles",
+      "data": "ground-tiles.json",
+      "tileset": "spring-ground",
+      "sha256": "610e7db1ee49dd1dc3323ab55bcce571e470e81a415073fefca9276fdcd3dd97"
+    },
+    {
+      "name": "props",
+      "kind": "objects"
+    }
+  ],
+  "props": {
+    "farmhouse": {
+      "image": "farmhouse.png",
+      "sha256": "90cea6179b9148ba7eef0ea102237b40c2c7e9e4a47330f7a40c0b152bc9a9a7",
+      "anchor_px": [
+        27,
+        44
+      ]
+    },
+    "fruit-tree": {
+      "image": "fruit-tree.png",
+      "sha256": "2ba7050d6546c81f896e927520146bfa3e0ec8f3aaa7c300dc6bedef3b985555",
+      "anchor_px": [
+        16,
+        29
+      ]
+    },
+    "moss-rocks": {
+      "image": "moss-rocks.png",
+      "sha256": "d944e2e27acb4d6517aae32aac6167cce3088b9bc3e0a11511882237127181a9",
+      "anchor_px": [
+        9,
+        11
+      ]
+    },
+    "shipping-chest": {
+      "image": "shipping-chest.png",
+      "sha256": "6415638e24eb7f48e94c0fb546bd1c5cbae72d9a23211d380ed53a6c9a647789",
+      "anchor_px": [
+        8,
+        10
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "farmhouse-1",
+      "prop": "farmhouse",
+      "x": 608,
+      "y": 336,
+      "anchor_px": [
+        27,
+        44
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 44,
+        "depth": 14,
+        "offset": [
+          0,
+          -7.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "fruit-tree-1",
+      "prop": "fruit-tree",
+      "x": 560,
+      "y": 440,
+      "anchor_px": [
+        16,
+        29
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 8,
+        "depth": 6,
+        "offset": [
+          0,
+          -3.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "fruit-tree-2",
+      "prop": "fruit-tree",
+      "x": 592,
+      "y": 440,
+      "anchor_px": [
+        16,
+        29
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 8,
+        "depth": 6,
+        "offset": [
+          0,
+          -3.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "fruit-tree-3",
+      "prop": "fruit-tree",
+      "x": 704,
+      "y": 464,
+      "anchor_px": [
+        16,
+        29
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 8,
+        "depth": 6,
+        "offset": [
+          0,
+          -3.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "fruit-tree-4",
+      "prop": "fruit-tree",
+      "x": 736,
+      "y": 464,
+      "anchor_px": [
+        16,
+        29
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 8,
+        "depth": 6,
+        "offset": [
+          0,
+          -3.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "fruit-tree-5",
+      "prop": "fruit-tree",
+      "x": 480,
+      "y": 520,
+      "anchor_px": [
+        16,
+        29
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 8,
+        "depth": 6,
+        "offset": [
+          0,
+          -3.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "fruit-tree-6",
+      "prop": "fruit-tree",
+      "x": 784,
+      "y": 536,
+      "anchor_px": [
+        16,
+        29
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 8,
+        "depth": 6,
+        "offset": [
+          0,
+          -3.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "fruit-tree-7",
+      "prop": "fruit-tree",
+      "x": 528,
+      "y": 600,
+      "anchor_px": [
+        16,
+        29
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 8,
+        "depth": 6,
+        "offset": [
+          0,
+          -3.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "tall",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "moss-rocks-1",
+      "prop": "moss-rocks",
+      "x": 576,
+      "y": 560,
+      "anchor_px": [
+        9,
+        11
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 12,
+        "depth": 8,
+        "offset": [
+          0,
+          -4.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "low",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "moss-rocks-2",
+      "prop": "moss-rocks",
+      "x": 704,
+      "y": 592,
+      "anchor_px": [
+        9,
+        11
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 12,
+        "depth": 8,
+        "offset": [
+          0,
+          -4.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "low",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    },
+    {
+      "id": "shipping-chest-1",
+      "prop": "shipping-chest",
+      "x": 680,
+      "y": 480,
+      "anchor_px": [
+        8,
+        10
+      ],
+      "footprint": {
+        "shape": "rect",
+        "width": 14,
+        "depth": 8,
+        "offset": [
+          0,
+          -4.0
+        ],
+        "basis": "world_px"
+      },
+      "occlusion_class": "low",
+      "occupant_policy": "y_sort",
+      "layer": "props"
+    }
+  ],
+  "collision": {
+    "actorRadius": 4,
+    "ySquash": 0.625,
+    "rects": [
+      [
+        0,
+        0,
+        1280,
+        8
+      ],
+      [
+        0,
+        952,
+        1280,
+        8
+      ],
+      [
+        0,
+        0,
+        8,
+        960
+      ],
+      [
+        1272,
+        0,
+        8,
+        960
+      ]
+    ]
+  },
+  "spawns": [
+    {
+      "id": "new-game",
+      "x": 640,
+      "y": 480,
+      "facing": "down"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "to-market_street",
+      "x": 532,
+      "y": 544,
+      "reach": 12
+    },
+    {
+      "id": "to-ranch",
+      "x": 604,
+      "y": 544,
+      "reach": 12
+    },
+    {
+      "id": "to-whispering_forest",
+      "x": 676,
+      "y": 544,
+      "reach": 12
+    },
+    {
+      "id": "to-player_house",
+      "x": 748,
+      "y": 544,
+      "reach": 12
+    },
+    {
+      "id": "to-coop",
+      "x": 532,
+      "y": 592,
+      "reach": 12
+    },
+    {
+      "id": "to-barn",
+      "x": 604,
+      "y": 592,
+      "reach": 12
+    },
+    {
+      "id": "to-greenhouse",
+      "x": 676,
+      "y": 592,
+      "reach": 12
+    },
+    {
+      "id": "shipping",
+      "x": 712,
+      "y": 480,
+      "reach": 28
+    }
+  ],
+  "camera": {
+    "pixelToWorld": 1,
+    "bounds": [
+      0,
+      0,
+      1280,
+      960
+    ]
+  }
+}

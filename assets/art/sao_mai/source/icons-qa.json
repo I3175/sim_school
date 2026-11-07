@@ -1,0 +1,831 @@
+{
+  "schema": "codeart2d.codeart_meta.v1",
+  "art_source": "code",
+  "placeholder": false,
+  "disclosure": "code-drawn, no image model",
+  "generator": "render_pixelspec.py",
+  "spec_sha256": "7f84b5253caee1feba459e00a628460f00c0fd620730ee14959af41012c471fc",
+  "renderer": {
+    "name": "codeart_core.render_pixelspec",
+    "version": "1.1"
+  },
+  "palette": {
+    "colors": {
+      "i": "#2b1b17",
+      "d": "#5a3a2a",
+      "w": "#8b5e3c",
+      "h": "#b98554",
+      "p": "#f4e4bc",
+      "c": "#fff6da",
+      "g": "#6db04a",
+      "G": "#3e7b3a",
+      "r": "#d94a4a",
+      "R": "#8e2d3a",
+      "y": "#f2c14e",
+      "b": "#4a86c5",
+      "v": "#8a64b8",
+      "o": "#e8884a",
+      "l": "#e58fa8",
+      "s": "#8c8578",
+      "a": "#5a3a2a",
+      "t": "#8b5e3c",
+      "u": "#8c8578",
+      "q": "#c9a24a"
+    },
+    "variants": {}
+  },
+  "outputs": [
+    {
+      "path": "base/frames/sun.png",
+      "sha256": "74c22778eac63c288d5942bdd8577dbb4811a8d483c1781c7a9aff8197ea278f",
+      "bytes": 106
+    },
+    {
+      "path": "base/frames/coin.png",
+      "sha256": "b1b231e67345c7db9c72ed27245e998f1e7290e6dc58f20f280d744b65936b5a",
+      "bytes": 130
+    },
+    {
+      "path": "base/frames/heart.png",
+      "sha256": "5c242d363ce05b30540d6e4c6846639a9044cc0ae1a3e322879a68351e4b62dd",
+      "bytes": 140
+    },
+    {
+      "path": "base/frames/bolt.png",
+      "sha256": "dd1f718f90cd4f8d8c122e731351a9774c4a1bb7d0daaf344c180800e97e83a2",
+      "bytes": 96
+    },
+    {
+      "path": "base/frames/book.png",
+      "sha256": "968613e466b2c9ecd01accc52bcdf991da02d95d4f7c42dd207a464488d50d0f",
+      "bytes": 135
+    },
+    {
+      "path": "base/frames/bag.png",
+      "sha256": "9024db16c3a2e8d907c3b7a8ad8bc9c25f66769fdc2bd958c84e57b155c79418",
+      "bytes": 157
+    },
+    {
+      "path": "base/frames/map.png",
+      "sha256": "e75dcde362248d78cb47a1ede0f0e8f97c00948b7ccd2a62de6d345ab9c73e00",
+      "bytes": 120
+    },
+    {
+      "path": "base/frames/leaf.png",
+      "sha256": "8193291a0bfcf6b8ce0a4345e209ec64e687eead76e90ecf585ba1340a72c8cf",
+      "bytes": 119
+    },
+    {
+      "path": "base/frames/fish.png",
+      "sha256": "d9f6314b8de7167254fa6b92b05d1476886f494e730597eafcdcd14e222314bf",
+      "bytes": 134
+    },
+    {
+      "path": "base/frames/spark.png",
+      "sha256": "04f6af4df075adfa05f2369db16dbc7779a888006ec93bffe074c3c86e299c61",
+      "bytes": 108
+    },
+    {
+      "path": "base/frames/gear.png",
+      "sha256": "3a6c146d2633ddcea155039f329e35cb7de94d3930c9faadfe192c2abaa3967c",
+      "bytes": 148
+    },
+    {
+      "path": "base/frames/sword.png",
+      "sha256": "45580c36161f0691dfdf3cdac643402c595db2877ad84b1038133f366f9ae8c7",
+      "bytes": 123
+    },
+    {
+      "path": "base/frames/letter.png",
+      "sha256": "2e815f9bdf5781b3d44330bc5c07b3c069688d7783c866a4dcaa44910b45586f",
+      "bytes": 110
+    },
+    {
+      "path": "base/frames/cloud.png",
+      "sha256": "67a12f8e672bcf7c9c5d874b40e883cbb7b36c1222152948a35ec53034dc8948",
+      "bytes": 105
+    },
+    {
+      "path": "base/frames/lock.png",
+      "sha256": "5d6c2ca171b8425730bcebdbd0d64c6ff76455001d9e304dab9dc29b60b20dda",
+      "bytes": 116
+    },
+    {
+      "path": "base/frames/clock.png",
+      "sha256": "cb445606981862a10bb1258d36b135baf7897dc945b47ab726dacf785fef952f",
+      "bytes": 157
+    },
+    {
+      "path": "base/frames/hand.png",
+      "sha256": "df886d6dcfc951e6d79fe124621104514b9f05ff6f52ff263b787666739724be",
+      "bytes": 110
+    },
+    {
+      "path": "base/frames/pen.png",
+      "sha256": "21c4dce9691593d7bfe1435f3ca680ba2824c24103ae02cf644aee4f7310ee8f",
+      "bytes": 105
+    },
+    {
+      "path": "base/frames/flask.png",
+      "sha256": "b38388e789ab3df51f241aee94543ecdc64ca57e7950b5209db6329a8611e6d6",
+      "bytes": 129
+    },
+    {
+      "path": "base/frames/dialogue.png",
+      "sha256": "88847cbe1e82351d02e106592756a1f8306f0f8a6d1346d512975d765e9c3a10",
+      "bytes": 119
+    },
+    {
+      "path": "base/frames/history.png",
+      "sha256": "03bb343d12b70a5f43b900fb42da8f05f2b29e638b5899aac65e970acc0ecc64",
+      "bytes": 153
+    },
+    {
+      "path": "base/frames/calculator.png",
+      "sha256": "5233465ab6676d2763bdff1a48a80a4ed8a6399d9378e7e8c1950cc6ddee267c",
+      "bytes": 119
+    }
+  ],
+  "qa": {
+    "status": "pass",
+    "method": "render_pixelspec.py: every published frame PNG is read back and measured with codeart_core.qa_pixels against the resolved palette of its variant (alpha census, exact palette lookup and, with an outline, 4-neighbour outline gaps and L-corners); each check is the worst frame against its gate in codeart_core.QA_PIXEL_GATES",
+    "notProven": [
+      "Readability, silhouette and appeal at game scale; check them on a review sheet (pixel_qa.py --review).",
+      "Motion, timing and spacing between frames; numbers do not judge animation quality.",
+      "That the art matches the brief and the intent of the spec.",
+      "Outline continuity and L-corners: the spec has no outline, so they were not measured."
+    ],
+    "checks": [
+      {
+        "id": "partial_alpha",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "off_palette",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "outline_gaps",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0
+      },
+      {
+        "id": "l_corners",
+        "status": "skipped",
+        "value": null,
+        "threshold": 10
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../../assets/art/sao_mai/source/icons.pixelspec.json",
+        "sha256": "7f84b5253caee1feba459e00a628460f00c0fd620730ee14959af41012c471fc",
+        "bytes": 7165
+      }
+    ],
+    "outputs": [
+      {
+        "path": "base/frames/sun.png",
+        "sha256": "74c22778eac63c288d5942bdd8577dbb4811a8d483c1781c7a9aff8197ea278f",
+        "bytes": 106
+      },
+      {
+        "path": "base/frames/coin.png",
+        "sha256": "b1b231e67345c7db9c72ed27245e998f1e7290e6dc58f20f280d744b65936b5a",
+        "bytes": 130
+      },
+      {
+        "path": "base/frames/heart.png",
+        "sha256": "5c242d363ce05b30540d6e4c6846639a9044cc0ae1a3e322879a68351e4b62dd",
+        "bytes": 140
+      },
+      {
+        "path": "base/frames/bolt.png",
+        "sha256": "dd1f718f90cd4f8d8c122e731351a9774c4a1bb7d0daaf344c180800e97e83a2",
+        "bytes": 96
+      },
+      {
+        "path": "base/frames/book.png",
+        "sha256": "968613e466b2c9ecd01accc52bcdf991da02d95d4f7c42dd207a464488d50d0f",
+        "bytes": 135
+      },
+      {
+        "path": "base/frames/bag.png",
+        "sha256": "9024db16c3a2e8d907c3b7a8ad8bc9c25f66769fdc2bd958c84e57b155c79418",
+        "bytes": 157
+      },
+      {
+        "path": "base/frames/map.png",
+        "sha256": "e75dcde362248d78cb47a1ede0f0e8f97c00948b7ccd2a62de6d345ab9c73e00",
+        "bytes": 120
+      },
+      {
+        "path": "base/frames/leaf.png",
+        "sha256": "8193291a0bfcf6b8ce0a4345e209ec64e687eead76e90ecf585ba1340a72c8cf",
+        "bytes": 119
+      },
+      {
+        "path": "base/frames/fish.png",
+        "sha256": "d9f6314b8de7167254fa6b92b05d1476886f494e730597eafcdcd14e222314bf",
+        "bytes": 134
+      },
+      {
+        "path": "base/frames/spark.png",
+        "sha256": "04f6af4df075adfa05f2369db16dbc7779a888006ec93bffe074c3c86e299c61",
+        "bytes": 108
+      },
+      {
+        "path": "base/frames/gear.png",
+        "sha256": "3a6c146d2633ddcea155039f329e35cb7de94d3930c9faadfe192c2abaa3967c",
+        "bytes": 148
+      },
+      {
+        "path": "base/frames/sword.png",
+        "sha256": "45580c36161f0691dfdf3cdac643402c595db2877ad84b1038133f366f9ae8c7",
+        "bytes": 123
+      },
+      {
+        "path": "base/frames/letter.png",
+        "sha256": "2e815f9bdf5781b3d44330bc5c07b3c069688d7783c866a4dcaa44910b45586f",
+        "bytes": 110
+      },
+      {
+        "path": "base/frames/cloud.png",
+        "sha256": "67a12f8e672bcf7c9c5d874b40e883cbb7b36c1222152948a35ec53034dc8948",
+        "bytes": 105
+      },
+      {
+        "path": "base/frames/lock.png",
+        "sha256": "5d6c2ca171b8425730bcebdbd0d64c6ff76455001d9e304dab9dc29b60b20dda",
+        "bytes": 116
+      },
+      {
+        "path": "base/frames/clock.png",
+        "sha256": "cb445606981862a10bb1258d36b135baf7897dc945b47ab726dacf785fef952f",
+        "bytes": 157
+      },
+      {
+        "path": "base/frames/hand.png",
+        "sha256": "df886d6dcfc951e6d79fe124621104514b9f05ff6f52ff263b787666739724be",
+        "bytes": 110
+      },
+      {
+        "path": "base/frames/pen.png",
+        "sha256": "21c4dce9691593d7bfe1435f3ca680ba2824c24103ae02cf644aee4f7310ee8f",
+        "bytes": 105
+      },
+      {
+        "path": "base/frames/flask.png",
+        "sha256": "b38388e789ab3df51f241aee94543ecdc64ca57e7950b5209db6329a8611e6d6",
+        "bytes": 129
+      },
+      {
+        "path": "base/frames/dialogue.png",
+        "sha256": "88847cbe1e82351d02e106592756a1f8306f0f8a6d1346d512975d765e9c3a10",
+        "bytes": 119
+      },
+      {
+        "path": "base/frames/history.png",
+        "sha256": "03bb343d12b70a5f43b900fb42da8f05f2b29e638b5899aac65e970acc0ecc64",
+        "bytes": 153
+      },
+      {
+        "path": "base/frames/calculator.png",
+        "sha256": "5233465ab6676d2763bdff1a48a80a4ed8a6399d9378e7e8c1950cc6ddee267c",
+        "bytes": 119
+      }
+    ],
+    "tool": {
+      "name": "render_pixelspec.py",
+      "version": "0.4.0"
+    },
+    "frames": [
+      {
+        "file": "base/frames/sun.png",
+        "variant": "base",
+        "frame": "sun",
+        "visible": 21,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 1,
+        "orphans": 4,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/coin.png",
+        "variant": "base",
+        "frame": "coin",
+        "visible": 37,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 5,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/heart.png",
+        "variant": "base",
+        "frame": "heart",
+        "visible": 27,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 1,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          6
+        ]
+      },
+      {
+        "file": "base/frames/bolt.png",
+        "variant": "base",
+        "frame": "bolt",
+        "visible": 13,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 1,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          0,
+          5,
+          6
+        ]
+      },
+      {
+        "file": "base/frames/book.png",
+        "variant": "base",
+        "frame": "book",
+        "visible": 29,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 4,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          1,
+          6,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/bag.png",
+        "variant": "base",
+        "frame": "bag",
+        "visible": 39,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 5,
+        "orphans": 2,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/map.png",
+        "variant": "base",
+        "frame": "map",
+        "visible": 30,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 2,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          0,
+          7,
+          6
+        ]
+      },
+      {
+        "file": "base/frames/leaf.png",
+        "variant": "base",
+        "frame": "leaf",
+        "visible": 20,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 7,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/fish.png",
+        "variant": "base",
+        "frame": "fish",
+        "visible": 19,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 3,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          1,
+          6,
+          6
+        ]
+      },
+      {
+        "file": "base/frames/spark.png",
+        "variant": "base",
+        "frame": "spark",
+        "visible": 17,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 1,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/gear.png",
+        "variant": "base",
+        "frame": "gear",
+        "visible": 34,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 8,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/sword.png",
+        "variant": "base",
+        "frame": "sword",
+        "visible": 19,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 4,
+        "orphans": 16,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/letter.png",
+        "variant": "base",
+        "frame": "letter",
+        "visible": 24,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 3,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          1,
+          7,
+          5
+        ]
+      },
+      {
+        "file": "base/frames/cloud.png",
+        "variant": "base",
+        "frame": "cloud",
+        "visible": 26,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 1,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          1,
+          8,
+          6
+        ]
+      },
+      {
+        "file": "base/frames/lock.png",
+        "variant": "base",
+        "frame": "lock",
+        "visible": 28,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 1,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          6
+        ]
+      },
+      {
+        "file": "base/frames/clock.png",
+        "variant": "base",
+        "frame": "clock",
+        "visible": 37,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 4,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/hand.png",
+        "variant": "base",
+        "frame": "hand",
+        "visible": 26,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 1,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          1,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/pen.png",
+        "variant": "base",
+        "frame": "pen",
+        "visible": 17,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 7,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/flask.png",
+        "variant": "base",
+        "frame": "flask",
+        "visible": 21,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 4,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          0,
+          6,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/dialogue.png",
+        "variant": "base",
+        "frame": "dialogue",
+        "visible": 37,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 2,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          1,
+          8,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/history.png",
+        "variant": "base",
+        "frame": "history",
+        "visible": 38,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 4,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          0,
+          7,
+          7
+        ]
+      },
+      {
+        "file": "base/frames/calculator.png",
+        "variant": "base",
+        "frame": "calculator",
+        "visible": 35,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 4,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          1,
+          0,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  "pixelspec": {
+    "name": "icons",
+    "schema": "codeart2d.pixelspec.v1",
+    "canvas": [
+      8,
+      8
+    ],
+    "anchor_px": null,
+    "outline": "none",
+    "variants": {
+      "base": "base"
+    },
+    "frames": [
+      {
+        "index": 0,
+        "name": "sun",
+        "file": "frames/sun.png"
+      },
+      {
+        "index": 1,
+        "name": "coin",
+        "file": "frames/coin.png"
+      },
+      {
+        "index": 2,
+        "name": "heart",
+        "file": "frames/heart.png"
+      },
+      {
+        "index": 3,
+        "name": "bolt",
+        "file": "frames/bolt.png"
+      },
+      {
+        "index": 4,
+        "name": "book",
+        "file": "frames/book.png"
+      },
+      {
+        "index": 5,
+        "name": "bag",
+        "file": "frames/bag.png"
+      },
+      {
+        "index": 6,
+        "name": "map",
+        "file": "frames/map.png"
+      },
+      {
+        "index": 7,
+        "name": "leaf",
+        "file": "frames/leaf.png"
+      },
+      {
+        "index": 8,
+        "name": "fish",
+        "file": "frames/fish.png"
+      },
+      {
+        "index": 9,
+        "name": "spark",
+        "file": "frames/spark.png"
+      },
+      {
+        "index": 10,
+        "name": "gear",
+        "file": "frames/gear.png"
+      },
+      {
+        "index": 11,
+        "name": "sword",
+        "file": "frames/sword.png"
+      },
+      {
+        "index": 12,
+        "name": "letter",
+        "file": "frames/letter.png"
+      },
+      {
+        "index": 13,
+        "name": "cloud",
+        "file": "frames/cloud.png"
+      },
+      {
+        "index": 14,
+        "name": "lock",
+        "file": "frames/lock.png"
+      },
+      {
+        "index": 15,
+        "name": "clock",
+        "file": "frames/clock.png"
+      },
+      {
+        "index": 16,
+        "name": "hand",
+        "file": "frames/hand.png"
+      },
+      {
+        "index": 17,
+        "name": "pen",
+        "file": "frames/pen.png"
+      },
+      {
+        "index": 18,
+        "name": "flask",
+        "file": "frames/flask.png"
+      },
+      {
+        "index": 19,
+        "name": "dialogue",
+        "file": "frames/dialogue.png"
+      },
+      {
+        "index": 20,
+        "name": "history",
+        "file": "frames/history.png"
+      },
+      {
+        "index": 21,
+        "name": "calculator",
+        "file": "frames/calculator.png"
+      }
+    ]
+  }
+}

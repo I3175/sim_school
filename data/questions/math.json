@@ -1,0 +1,682 @@
+[
+  {
+    "id": "math_0001",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0001_PROMPT",
+    "answer": 5,
+    "hint_key": "Q_MATH_0001_HINT",
+    "explanation_key": "Q_MATH_0001_EXPLAIN"
+  },
+  {
+    "id": "math_0002",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0002_PROMPT",
+    "answer": 7,
+    "hint_key": "Q_MATH_0002_HINT",
+    "explanation_key": "Q_MATH_0002_EXPLAIN"
+  },
+  {
+    "id": "math_0003",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0003_PROMPT",
+    "answer": 9,
+    "hint_key": "Q_MATH_0003_HINT",
+    "explanation_key": "Q_MATH_0003_EXPLAIN"
+  },
+  {
+    "id": "math_0004",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0004_PROMPT",
+    "answer": 11,
+    "hint_key": "Q_MATH_0004_HINT",
+    "explanation_key": "Q_MATH_0004_EXPLAIN"
+  },
+  {
+    "id": "math_0005",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0005_PROMPT",
+    "answer": 13,
+    "hint_key": "Q_MATH_0005_HINT",
+    "explanation_key": "Q_MATH_0005_EXPLAIN"
+  },
+  {
+    "id": "math_0006",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0006_PROMPT",
+    "answer": 10,
+    "hint_key": "Q_MATH_0006_HINT",
+    "explanation_key": "Q_MATH_0006_EXPLAIN"
+  },
+  {
+    "id": "math_0007",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0007_PROMPT",
+    "answer": 12,
+    "hint_key": "Q_MATH_0007_HINT",
+    "explanation_key": "Q_MATH_0007_EXPLAIN"
+  },
+  {
+    "id": "math_0008",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0008_PROMPT",
+    "answer": 14,
+    "hint_key": "Q_MATH_0008_HINT",
+    "explanation_key": "Q_MATH_0008_EXPLAIN"
+  },
+  {
+    "id": "math_0009",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0009_PROMPT",
+    "answer": 16,
+    "hint_key": "Q_MATH_0009_HINT",
+    "explanation_key": "Q_MATH_0009_EXPLAIN"
+  },
+  {
+    "id": "math_0010",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0010_PROMPT",
+    "answer": 18,
+    "hint_key": "Q_MATH_0010_HINT",
+    "explanation_key": "Q_MATH_0010_EXPLAIN"
+  },
+  {
+    "id": "math_0011",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0011_PROMPT",
+    "answer": 9,
+    "hint_key": "Q_MATH_0011_HINT",
+    "explanation_key": "Q_MATH_0011_EXPLAIN"
+  },
+  {
+    "id": "math_0012",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0012_PROMPT",
+    "answer": 11,
+    "hint_key": "Q_MATH_0012_HINT",
+    "explanation_key": "Q_MATH_0012_EXPLAIN"
+  },
+  {
+    "id": "math_0013",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0013_PROMPT",
+    "answer": 13,
+    "hint_key": "Q_MATH_0013_HINT",
+    "explanation_key": "Q_MATH_0013_EXPLAIN"
+  },
+  {
+    "id": "math_0014",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0014_PROMPT",
+    "answer": 15,
+    "hint_key": "Q_MATH_0014_HINT",
+    "explanation_key": "Q_MATH_0014_EXPLAIN"
+  },
+  {
+    "id": "math_0015",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0015_PROMPT",
+    "answer": 17,
+    "hint_key": "Q_MATH_0015_HINT",
+    "explanation_key": "Q_MATH_0015_EXPLAIN"
+  },
+  {
+    "id": "math_0016",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0016_PROMPT",
+    "answer": 34,
+    "hint_key": "Q_MATH_0016_HINT",
+    "explanation_key": "Q_MATH_0016_EXPLAIN"
+  },
+  {
+    "id": "math_0017",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0017_PROMPT",
+    "answer": 36,
+    "hint_key": "Q_MATH_0017_HINT",
+    "explanation_key": "Q_MATH_0017_EXPLAIN"
+  },
+  {
+    "id": "math_0018",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0018_PROMPT",
+    "answer": 38,
+    "hint_key": "Q_MATH_0018_HINT",
+    "explanation_key": "Q_MATH_0018_EXPLAIN"
+  },
+  {
+    "id": "math_0019",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0019_PROMPT",
+    "answer": 40,
+    "hint_key": "Q_MATH_0019_HINT",
+    "explanation_key": "Q_MATH_0019_EXPLAIN"
+  },
+  {
+    "id": "math_0020",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0020_PROMPT",
+    "answer": 42,
+    "hint_key": "Q_MATH_0020_HINT",
+    "explanation_key": "Q_MATH_0020_EXPLAIN"
+  },
+  {
+    "id": "math_0021",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0021_PROMPT",
+    "answer": 6,
+    "hint_key": "Q_MATH_0021_HINT",
+    "explanation_key": "Q_MATH_0021_EXPLAIN"
+  },
+  {
+    "id": "math_0022",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0022_PROMPT",
+    "answer": 12,
+    "hint_key": "Q_MATH_0022_HINT",
+    "explanation_key": "Q_MATH_0022_EXPLAIN"
+  },
+  {
+    "id": "math_0023",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0023_PROMPT",
+    "answer": 20,
+    "hint_key": "Q_MATH_0023_HINT",
+    "explanation_key": "Q_MATH_0023_EXPLAIN"
+  },
+  {
+    "id": "math_0024",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0024_PROMPT",
+    "answer": 30,
+    "hint_key": "Q_MATH_0024_HINT",
+    "explanation_key": "Q_MATH_0024_EXPLAIN"
+  },
+  {
+    "id": "math_0025",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0025_PROMPT",
+    "answer": 42,
+    "hint_key": "Q_MATH_0025_HINT",
+    "explanation_key": "Q_MATH_0025_EXPLAIN"
+  },
+  {
+    "id": "math_0026",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0026_PROMPT",
+    "answer": 16,
+    "hint_key": "Q_MATH_0026_HINT",
+    "explanation_key": "Q_MATH_0026_EXPLAIN"
+  },
+  {
+    "id": "math_0027",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0027_PROMPT",
+    "answer": 27,
+    "hint_key": "Q_MATH_0027_HINT",
+    "explanation_key": "Q_MATH_0027_EXPLAIN"
+  },
+  {
+    "id": "math_0028",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0028_PROMPT",
+    "answer": 40,
+    "hint_key": "Q_MATH_0028_HINT",
+    "explanation_key": "Q_MATH_0028_EXPLAIN"
+  },
+  {
+    "id": "math_0029",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0029_PROMPT",
+    "answer": 55,
+    "hint_key": "Q_MATH_0029_HINT",
+    "explanation_key": "Q_MATH_0029_EXPLAIN"
+  },
+  {
+    "id": "math_0030",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0030_PROMPT",
+    "answer": 72,
+    "hint_key": "Q_MATH_0030_HINT",
+    "explanation_key": "Q_MATH_0030_EXPLAIN"
+  },
+  {
+    "id": "math_0031",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0031_PROMPT",
+    "answer": 6,
+    "hint_key": "Q_MATH_0031_HINT",
+    "explanation_key": "Q_MATH_0031_EXPLAIN"
+  },
+  {
+    "id": "math_0032",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0032_PROMPT",
+    "answer": 12,
+    "hint_key": "Q_MATH_0032_HINT",
+    "explanation_key": "Q_MATH_0032_EXPLAIN"
+  },
+  {
+    "id": "math_0033",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0033_PROMPT",
+    "answer": 20,
+    "hint_key": "Q_MATH_0033_HINT",
+    "explanation_key": "Q_MATH_0033_EXPLAIN"
+  },
+  {
+    "id": "math_0034",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0034_PROMPT",
+    "answer": 30,
+    "hint_key": "Q_MATH_0034_HINT",
+    "explanation_key": "Q_MATH_0034_EXPLAIN"
+  },
+  {
+    "id": "math_0035",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0035_PROMPT",
+    "answer": 42,
+    "hint_key": "Q_MATH_0035_HINT",
+    "explanation_key": "Q_MATH_0035_EXPLAIN"
+  },
+  {
+    "id": "math_0036",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0036_PROMPT",
+    "answer": 16,
+    "hint_key": "Q_MATH_0036_HINT",
+    "explanation_key": "Q_MATH_0036_EXPLAIN"
+  },
+  {
+    "id": "math_0037",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0037_PROMPT",
+    "answer": 27,
+    "hint_key": "Q_MATH_0037_HINT",
+    "explanation_key": "Q_MATH_0037_EXPLAIN"
+  },
+  {
+    "id": "math_0038",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0038_PROMPT",
+    "answer": 40,
+    "hint_key": "Q_MATH_0038_HINT",
+    "explanation_key": "Q_MATH_0038_EXPLAIN"
+  },
+  {
+    "id": "math_0039",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0039_PROMPT",
+    "answer": 55,
+    "hint_key": "Q_MATH_0039_HINT",
+    "explanation_key": "Q_MATH_0039_EXPLAIN"
+  },
+  {
+    "id": "math_0040",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0040_PROMPT",
+    "answer": 72,
+    "hint_key": "Q_MATH_0040_HINT",
+    "explanation_key": "Q_MATH_0040_EXPLAIN"
+  },
+  {
+    "id": "math_0041",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0041_PROMPT",
+    "answer": 270,
+    "hint_key": "Q_MATH_0041_HINT",
+    "explanation_key": "Q_MATH_0041_EXPLAIN"
+  },
+  {
+    "id": "math_0042",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0042_PROMPT",
+    "answer": 360,
+    "hint_key": "Q_MATH_0042_HINT",
+    "explanation_key": "Q_MATH_0042_EXPLAIN"
+  },
+  {
+    "id": "math_0043",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0043_PROMPT",
+    "answer": 450,
+    "hint_key": "Q_MATH_0043_HINT",
+    "explanation_key": "Q_MATH_0043_EXPLAIN"
+  },
+  {
+    "id": "math_0044",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0044_PROMPT",
+    "answer": 540,
+    "hint_key": "Q_MATH_0044_HINT",
+    "explanation_key": "Q_MATH_0044_EXPLAIN"
+  },
+  {
+    "id": "math_0045",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0045_PROMPT",
+    "answer": 630,
+    "hint_key": "Q_MATH_0045_HINT",
+    "explanation_key": "Q_MATH_0045_EXPLAIN"
+  },
+  {
+    "id": "math_0046",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0046_PROMPT",
+    "answer": 720,
+    "hint_key": "Q_MATH_0046_HINT",
+    "explanation_key": "Q_MATH_0046_EXPLAIN"
+  },
+  {
+    "id": "math_0047",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0047_PROMPT",
+    "answer": 810,
+    "hint_key": "Q_MATH_0047_HINT",
+    "explanation_key": "Q_MATH_0047_EXPLAIN"
+  },
+  {
+    "id": "math_0048",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0048_PROMPT",
+    "answer": 900,
+    "hint_key": "Q_MATH_0048_HINT",
+    "explanation_key": "Q_MATH_0048_EXPLAIN"
+  },
+  {
+    "id": "math_0049",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0049_PROMPT",
+    "answer": 990,
+    "hint_key": "Q_MATH_0049_HINT",
+    "explanation_key": "Q_MATH_0049_EXPLAIN"
+  },
+  {
+    "id": "math_0050",
+    "subject": "math",
+    "type": "numeric_input",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0050_PROMPT",
+    "answer": 1080,
+    "hint_key": "Q_MATH_0050_HINT",
+    "explanation_key": "Q_MATH_0050_EXPLAIN"
+  },
+  {
+    "id": "math_0051",
+    "subject": "math",
+    "type": "grid_puzzle",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_MATH_0051_PROMPT",
+    "answer": [
+      "0",
+      "2",
+      "4",
+      "6"
+    ],
+    "hint_key": "Q_MATH_0051_HINT",
+    "explanation_key": "Q_MATH_0051_EXPLAIN",
+    "cells": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "1"
+    ],
+    "columns": 3
+  }
+]

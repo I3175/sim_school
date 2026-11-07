@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MonsterData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/monster_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "stone_worm"
+display_name = "Sâu Đá"
+level = 2
+health = 45.0
+attack = 7.0
+defense = 3.0
+speed = 22.0
+base_xp = 12
+telegraph = 0.6
+behavior = "burrow"
+loot = Array[Dictionary]([{"id": "stone", "chance": 0.9, "amount": 1}, {"id": "copper_ore", "chance": 0.5, "amount": 1}, {"id": "coal", "chance": 0.2, "amount": 1}])

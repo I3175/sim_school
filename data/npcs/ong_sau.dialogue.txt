@@ -1,0 +1,9 @@
+~ start
+Ông Sáu: Chào cháu, rất vui được gặp cháu ở Sao Mai.
+=> END
+~ rain
+Ông Sáu: Mưa rồi, mình tìm chỗ trú nhé.
+=> END
+~ friendly
+Ông Sáu: Cảm ơn cháu đã ghé thăm!
+=> END

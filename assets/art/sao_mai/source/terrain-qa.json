@@ -1,0 +1,191 @@
+{
+  "status": "pass",
+  "method": "autotile_build: per set, an exhaustive seam proof and a seeded random-map proof (tiles assembled from the atlas against an independent global render, pixel for pixel), a detuned non-periodic control that the comparison must catch, a seam metric, a repetition index, and outer-ring, distinct-tile, alpha and palette censuses",
+  "notProven": [
+    "How the tiles look at game size: open review.png and the per-set review sheets.",
+    "The global render shares the corner-weight formula, band rules and texture code with the tile renderer; the proof shows that tiles assembled by key reproduce that map exactly, including look-ups across tile edges and noise at map coordinates, not that the art is pleasant.",
+    "Image textures are sampled per tile in both renders; whether they wrap is measured (texture_wrap and the seam metric), not proven.",
+    "Variants enter the exhaustive proof in rotations (every variant at every block position), not every combination of variants per block (flat sets do enumerate them); variants only change marks inside the outer ring, which no look-up reads.",
+    "Editor behaviour (Tiled terrain brushes, Godot or LDtk import) is not exercised here; wangid values follow Tiled's documented order but were not opened in the editor.",
+    "Collision rectangles approximate blocked pixels at the collision_cell resolution."
+  ],
+  "checks": [
+    {
+      "id": "spring-ground/seam_proof",
+      "status": "pass",
+      "value": {
+        "pixels_compared": 4194304,
+        "mismatches": 0
+      },
+      "threshold": 0,
+      "note": "Tiles assembled from the atlas by key, compared pixel for pixel (RGBA) with an independent global render: noise evaluated at map coordinates, every pixel classified from its own cell, band and face look-ups read at their true positions across tile edges. Cases: every 2x2 tile block (all 3x3 corner lattices) (512 configurations, 8 variant passes); a seeded random 30x20 map."
+    },
+    {
+      "id": "spring-ground/random_map",
+      "status": "pass",
+      "value": {
+        "map": "30x20",
+        "mismatches": 0
+      },
+      "threshold": 0
+    },
+    {
+      "id": "spring-ground/nonperiodic_control",
+      "status": "pass",
+      "value": 3917,
+      "threshold": "> 0",
+      "note": "a copy whose noise is detuned by half a cycle per tile (so it no longer wraps) must differ from its own global render; it does"
+    },
+    {
+      "id": "spring-ground/seam_metric_mask",
+      "status": "pass",
+      "value": 0.5964,
+      "threshold": 1.0,
+      "note": "material flips across seams over flips inside tiles"
+    },
+    {
+      "id": "spring-ground/seam_metric_rgb",
+      "status": "pass",
+      "value": 0.5077,
+      "threshold": 1.0,
+      "note": "colour steps across seams over steps inside tiles"
+    },
+    {
+      "id": "spring-ground/repetition_index",
+      "status": "pass",
+      "value": 0.1679,
+      "threshold": 0.35,
+      "note": "one-tile-shift luminance correlation of a 13x13 single-material area (larger of right and down shifts, worst material), mean of 8 arrangements with uniformly picked variants"
+    },
+    {
+      "id": "spring-ground/outer_rings_identical",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0,
+      "note": "keys whose variants differ on the 1 px outer ring"
+    },
+    {
+      "id": "spring-ground/distinct_tiles",
+      "status": "pass",
+      "value": 16,
+      "threshold": 16
+    },
+    {
+      "id": "spring-ground/partial_alpha",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    },
+    {
+      "id": "spring-ground/off_palette",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../assets/art/sao_mai/source/spring.material.json",
+      "sha256": "93ea2cc3aecdda490a2fc1bd24fc2147f8fd688c2093f2c9315688d7f574acab",
+      "bytes": 1738
+    }
+  ],
+  "outputs": [
+    {
+      "path": "spring-ground.png",
+      "sha256": "61ce34fbdce001e3d227d7eabfc1ed5fb09d4602d65dbd56acbb06661f6287b7",
+      "bytes": 2680
+    },
+    {
+      "path": "review-spring-ground.png",
+      "sha256": "be183c689e55df14046baa54ba5183ff776c02f5f2f5c514f3578fdb51898883",
+      "bytes": 27886
+    },
+    {
+      "path": "preview-map.png",
+      "sha256": "5d62067bbc2d7bf13f6699b78c0baf3ba1f04b2fd4e276ca9b31df4c041edf3d",
+      "bytes": 6408
+    },
+    {
+      "path": "review.png",
+      "sha256": "16952af77173eb9349e4f127704354ae87f93bdda141d636272f7f051e4fa99d",
+      "bytes": 26191
+    }
+  ],
+  "tool": {
+    "name": "codeart2d/autotile_build",
+    "version": "0.4.0"
+  },
+  "metrics": {
+    "spring-ground": {
+      "kind": "wang_corner",
+      "materials": [
+        "grass",
+        "dirt"
+      ],
+      "tiles": 128,
+      "keys": 16,
+      "variants": 8,
+      "plateau": 2,
+      "nonperiodic_control": {
+        "mismatches": 3917,
+        "seam_metric": {
+          "rgb_step_seam": 0.8626,
+          "rgb_step_interior": 2.9036,
+          "rgb_ratio": 0.2971
+        }
+      },
+      "seam_metric": {
+        "rgb_step_seam": 1.4355,
+        "rgb_step_interior": 2.8275,
+        "rgb_ratio": 0.5077,
+        "mask_flip_seam": 0.01914,
+        "mask_flip_interior": 0.0321,
+        "mask_ratio": 0.5964
+      },
+      "repetition": {
+        "grass": {
+          "horizontal": 0.1321,
+          "vertical": 0.1679,
+          "sample_range": [
+            0.1063,
+            0.2239
+          ]
+        },
+        "dirt": {
+          "horizontal": 0.1201,
+          "vertical": 0.1171,
+          "sample_range": [
+            0.0995,
+            0.159
+          ]
+        }
+      },
+      "repetition_index": 0.1679,
+      "colors": 10,
+      "seam_proof": {
+        "pixels_compared": 4347904,
+        "mismatches": 0,
+        "cases": [
+          {
+            "case": "every 2x2 tile block (all 3x3 corner lattices)",
+            "configurations": 512,
+            "pads": [
+              false
+            ],
+            "variant_passes": 8,
+            "pixels_compared": 4194304
+          }
+        ],
+        "examples": [],
+        "random_map": {
+          "size": [
+            30,
+            20
+          ],
+          "mismatches": 0
+        }
+      }
+    }
+  }
+}

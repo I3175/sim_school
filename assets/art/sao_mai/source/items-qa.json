@@ -1,0 +1,303 @@
+{
+  "schema": "codeart2d.codeart_meta.v1",
+  "art_source": "code",
+  "placeholder": false,
+  "disclosure": "code-drawn, no image model",
+  "generator": "render_pixelspec.py",
+  "spec_sha256": "05452604c68bd2ceafab3a50c0281849f62726eed1e21cd01b3ff4fefbb53646",
+  "renderer": {
+    "name": "codeart_core.render_pixelspec",
+    "version": "1.1"
+  },
+  "palette": {
+    "colors": {
+      "i": "#2b1b17",
+      "d": "#5a3a2a",
+      "w": "#8b5e3c",
+      "h": "#b98554",
+      "p": "#f4e4bc",
+      "c": "#fff6da",
+      "g": "#6db04a",
+      "G": "#3e7b3a",
+      "r": "#d94a4a",
+      "R": "#8e2d3a",
+      "y": "#f2c14e",
+      "b": "#4a86c5",
+      "v": "#8a64b8",
+      "o": "#e8884a",
+      "l": "#e58fa8",
+      "s": "#8c8578",
+      "a": "#5a3a2a",
+      "t": "#8b5e3c",
+      "u": "#8c8578",
+      "q": "#c9a24a"
+    },
+    "variants": {}
+  },
+  "outputs": [
+    {
+      "path": "base/frames/hoe.png",
+      "sha256": "27a64a7998b0cacd0830509a376502f68a9be38f9cb9f9716a4a5a509b25d5fd",
+      "bytes": 156
+    },
+    {
+      "path": "base/frames/watering_can.png",
+      "sha256": "919027bf3acd0a3649783aad0f0a084c730cdad51971e51d206ca74aa1e2e2fd",
+      "bytes": 197
+    },
+    {
+      "path": "base/frames/seed_greens.png",
+      "sha256": "6959813fca79784f2d840736f0127247a82f74236d67fc1ee28b2ae8df9f9795",
+      "bytes": 201
+    },
+    {
+      "path": "base/frames/crop_greens.png",
+      "sha256": "80be7c53eb352cc6f6b73c6bd674f54e852aee772ef05c2972595e68ab37ef26",
+      "bytes": 241
+    },
+    {
+      "path": "base/frames/stone.png",
+      "sha256": "8376e7abfc7c591113d74e0503f332b872aeb4b635f9891da20b877e504be49c",
+      "bytes": 181
+    },
+    {
+      "path": "base/frames/wood.png",
+      "sha256": "03a7aa75b4ca3ff404a81505a06dcaacba71587f7ee2eb5b495e1308060613ca",
+      "bytes": 241
+    }
+  ],
+  "qa": {
+    "status": "pass",
+    "method": "render_pixelspec.py: every published frame PNG is read back and measured with codeart_core.qa_pixels against the resolved palette of its variant (alpha census, exact palette lookup and, with an outline, 4-neighbour outline gaps and L-corners); each check is the worst frame against its gate in codeart_core.QA_PIXEL_GATES",
+    "notProven": [
+      "Readability, silhouette and appeal at game scale; check them on a review sheet (pixel_qa.py --review).",
+      "Motion, timing and spacing between frames; numbers do not judge animation quality.",
+      "That the art matches the brief and the intent of the spec.",
+      "Outline continuity and L-corners: the spec has no outline, so they were not measured."
+    ],
+    "checks": [
+      {
+        "id": "partial_alpha",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "off_palette",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "outline_gaps",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0
+      },
+      {
+        "id": "l_corners",
+        "status": "skipped",
+        "value": null,
+        "threshold": 10
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../../assets/art/sao_mai/source/items.pixelspec.json",
+        "sha256": "05452604c68bd2ceafab3a50c0281849f62726eed1e21cd01b3ff4fefbb53646",
+        "bytes": 3420
+      }
+    ],
+    "outputs": [
+      {
+        "path": "base/frames/hoe.png",
+        "sha256": "27a64a7998b0cacd0830509a376502f68a9be38f9cb9f9716a4a5a509b25d5fd",
+        "bytes": 156
+      },
+      {
+        "path": "base/frames/watering_can.png",
+        "sha256": "919027bf3acd0a3649783aad0f0a084c730cdad51971e51d206ca74aa1e2e2fd",
+        "bytes": 197
+      },
+      {
+        "path": "base/frames/seed_greens.png",
+        "sha256": "6959813fca79784f2d840736f0127247a82f74236d67fc1ee28b2ae8df9f9795",
+        "bytes": 201
+      },
+      {
+        "path": "base/frames/crop_greens.png",
+        "sha256": "80be7c53eb352cc6f6b73c6bd674f54e852aee772ef05c2972595e68ab37ef26",
+        "bytes": 241
+      },
+      {
+        "path": "base/frames/stone.png",
+        "sha256": "8376e7abfc7c591113d74e0503f332b872aeb4b635f9891da20b877e504be49c",
+        "bytes": 181
+      },
+      {
+        "path": "base/frames/wood.png",
+        "sha256": "03a7aa75b4ca3ff404a81505a06dcaacba71587f7ee2eb5b495e1308060613ca",
+        "bytes": 241
+      }
+    ],
+    "tool": {
+      "name": "render_pixelspec.py",
+      "version": "0.4.0"
+    },
+    "frames": [
+      {
+        "file": "base/frames/hoe.png",
+        "variant": "base",
+        "frame": "hoe",
+        "visible": 34,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 4,
+        "orphans": 21,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          2,
+          2,
+          13,
+          11
+        ]
+      },
+      {
+        "file": "base/frames/watering_can.png",
+        "variant": "base",
+        "frame": "watering_can",
+        "visible": 66,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 5,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          2,
+          2,
+          14,
+          13
+        ]
+      },
+      {
+        "file": "base/frames/seed_greens.png",
+        "variant": "base",
+        "frame": "seed_greens",
+        "visible": 91,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 8,
+        "orphans": 6,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          3,
+          2,
+          12,
+          13
+        ]
+      },
+      {
+        "file": "base/frames/crop_greens.png",
+        "variant": "base",
+        "frame": "crop_greens",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 5,
+        "orphans": 12,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          2,
+          2,
+          14,
+          12
+        ]
+      },
+      {
+        "file": "base/frames/stone.png",
+        "variant": "base",
+        "frame": "stone",
+        "visible": 67,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 5,
+        "orphans": 10,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          2,
+          2,
+          14,
+          10
+        ]
+      },
+      {
+        "file": "base/frames/wood.png",
+        "variant": "base",
+        "frame": "wood",
+        "visible": 71,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 5,
+        "orphans": 17,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          2,
+          2,
+          14,
+          10
+        ]
+      }
+    ]
+  },
+  "pixelspec": {
+    "name": "items",
+    "schema": "codeart2d.pixelspec.v1",
+    "canvas": [
+      16,
+      16
+    ],
+    "anchor_px": null,
+    "outline": "none",
+    "variants": {
+      "base": "base"
+    },
+    "frames": [
+      {
+        "index": 0,
+        "name": "hoe",
+        "file": "frames/hoe.png"
+      },
+      {
+        "index": 1,
+        "name": "watering_can",
+        "file": "frames/watering_can.png"
+      },
+      {
+        "index": 2,
+        "name": "seed_greens",
+        "file": "frames/seed_greens.png"
+      },
+      {
+        "index": 3,
+        "name": "crop_greens",
+        "file": "frames/crop_greens.png"
+      },
+      {
+        "index": 4,
+        "name": "stone",
+        "file": "frames/stone.png"
+      },
+      {
+        "index": 5,
+        "name": "wood",
+        "file": "frames/wood.png"
+      }
+    ]
+  }
+}

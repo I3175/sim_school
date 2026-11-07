@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cevmk23rhft3v"
+path="res://.godot/imported/sao-mai-12.fnt-3cfd5ace78a208b58d026fa3ddb44f53.fontdata"
+
+[deps]
+
+source_file="res://assets/art/sao_mai/ui/sao-mai-12.fnt"
+dest_files=["res://.godot/imported/sao-mai-12.fnt-3cfd5ace78a208b58d026fa3ddb44f53.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

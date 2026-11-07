@@ -1,0 +1,952 @@
+[
+  {
+    "id": "science_0001",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0001_PROMPT",
+    "answer": "Rễ",
+    "hint_key": "Q_SCIENCE_0001_HINT",
+    "explanation_key": "Q_SCIENCE_0001_EXPLAIN",
+    "options": [
+      "Hình cầu",
+      "Rễ",
+      "Cân",
+      "Vôn"
+    ]
+  },
+  {
+    "id": "science_0002",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0002_PROMPT",
+    "answer": "Lá",
+    "hint_key": "Q_SCIENCE_0002_HINT",
+    "explanation_key": "Q_SCIENCE_0002_EXPLAIN",
+    "options": [
+      "Lá",
+      "Mét",
+      "Ôm",
+      "Trọng lực"
+    ]
+  },
+  {
+    "id": "science_0003",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0003_PROMPT",
+    "answer": "Ánh sáng",
+    "hint_key": "Q_SCIENCE_0003_HINT",
+    "explanation_key": "Q_SCIENCE_0003_EXPLAIN",
+    "options": [
+      "Tái tạo",
+      "Ánh sáng",
+      "Kilôgam",
+      "Mưa"
+    ]
+  },
+  {
+    "id": "science_0004",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0004_PROMPT",
+    "answer": "Cacbon đioxit",
+    "hint_key": "Q_SCIENCE_0004_HINT",
+    "explanation_key": "Q_SCIENCE_0004_EXPLAIN",
+    "options": [
+      "Giây",
+      "Mặt Trời",
+      "Giữ đất",
+      "Cacbon đioxit"
+    ]
+  },
+  {
+    "id": "science_0005",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0005_PROMPT",
+    "answer": "Oxi",
+    "hint_key": "Q_SCIENCE_0005_HINT",
+    "explanation_key": "Q_SCIENCE_0005_EXPLAIN",
+    "options": [
+      "Mặt Trăng",
+      "Tái chế",
+      "Oxi",
+      "60"
+    ]
+  },
+  {
+    "id": "science_0006",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0006_PROMPT",
+    "answer": "Nước",
+    "hint_key": "Q_SCIENCE_0006_HINT",
+    "explanation_key": "Q_SCIENCE_0006_EXPLAIN",
+    "options": [
+      "Nước",
+      "Mùn",
+      "Tự quay quanh trục",
+      "60"
+    ]
+  },
+  {
+    "id": "science_0007",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0007_PROMPT",
+    "answer": "Nước đá",
+    "hint_key": "Q_SCIENCE_0007_HINT",
+    "explanation_key": "Q_SCIENCE_0007_EXPLAIN",
+    "options": [
+      "100",
+      "Nước đá",
+      "Hình cầu",
+      "Sinh vật sản xuất"
+    ]
+  },
+  {
+    "id": "science_0008",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0008_PROMPT",
+    "answer": "Bay hơi",
+    "hint_key": "Q_SCIENCE_0008_HINT",
+    "explanation_key": "Q_SCIENCE_0008_EXPLAIN",
+    "options": [
+      "Bay hơi",
+      "Sắt",
+      "Thực vật",
+      "Trọng lực"
+    ]
+  },
+  {
+    "id": "science_0009",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0009_PROMPT",
+    "answer": "Ngưng tụ",
+    "hint_key": "Q_SCIENCE_0009_HINT",
+    "explanation_key": "Q_SCIENCE_0009_EXPLAIN",
+    "options": [
+      "Mưa",
+      "Thụ phấn",
+      "Ngưng tụ",
+      "Đồng"
+    ]
+  },
+  {
+    "id": "science_0010",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0010_PROMPT",
+    "answer": "Nóng chảy",
+    "hint_key": "Q_SCIENCE_0010_HINT",
+    "explanation_key": "Q_SCIENCE_0010_EXPLAIN",
+    "options": [
+      "Giữ đất",
+      "Sâu bướm",
+      "Nhựa",
+      "Nóng chảy"
+    ]
+  },
+  {
+    "id": "science_0011",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0011_PROMPT",
+    "answer": "100",
+    "hint_key": "Q_SCIENCE_0011_HINT",
+    "explanation_key": "Q_SCIENCE_0011_EXPLAIN",
+    "options": [
+      "Tái chế",
+      "Không",
+      "Nòng nọc",
+      "100"
+    ]
+  },
+  {
+    "id": "science_0012",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0012_PROMPT",
+    "answer": "0",
+    "hint_key": "Q_SCIENCE_0012_HINT",
+    "explanation_key": "Q_SCIENCE_0012_EXPLAIN",
+    "options": [
+      "Trứng",
+      "0",
+      "Pin",
+      "Mùn"
+    ]
+  },
+  {
+    "id": "science_0013",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0013_PROMPT",
+    "answer": "Nhiệt kế",
+    "hint_key": "Q_SCIENCE_0013_HINT",
+    "explanation_key": "Q_SCIENCE_0013_EXPLAIN",
+    "options": [
+      "Nhiệt kế",
+      "Dễ",
+      "Sinh vật sản xuất",
+      "Công tắc"
+    ]
+  },
+  {
+    "id": "science_0014",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0014_PROMPT",
+    "answer": "Cân",
+    "hint_key": "Q_SCIENCE_0014_HINT",
+    "explanation_key": "Q_SCIENCE_0014_EXPLAIN",
+    "options": [
+      "Cân",
+      "Chặn lại",
+      "Thực vật",
+      "Ampe"
+    ]
+  },
+  {
+    "id": "science_0015",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0015_PROMPT",
+    "answer": "Mét",
+    "hint_key": "Q_SCIENCE_0015_HINT",
+    "explanation_key": "Q_SCIENCE_0015_EXPLAIN",
+    "options": [
+      "Thụ phấn",
+      "Mét",
+      "Dao động",
+      "Vôn"
+    ]
+  },
+  {
+    "id": "science_0016",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0016_PROMPT",
+    "answer": "Kilôgam",
+    "hint_key": "Q_SCIENCE_0016_HINT",
+    "explanation_key": "Q_SCIENCE_0016_EXPLAIN",
+    "options": [
+      "Kilôgam",
+      "Ôm",
+      "Sâu bướm",
+      "Phản xạ"
+    ]
+  },
+  {
+    "id": "science_0017",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0017_PROMPT",
+    "answer": "Giây",
+    "hint_key": "Q_SCIENCE_0017_HINT",
+    "explanation_key": "Q_SCIENCE_0017_EXPLAIN",
+    "options": [
+      "Nòng nọc",
+      "Tái tạo",
+      "Nóng sang lạnh",
+      "Giây"
+    ]
+  },
+  {
+    "id": "science_0018",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0018_PROMPT",
+    "answer": "60",
+    "hint_key": "Q_SCIENCE_0018_HINT",
+    "explanation_key": "Q_SCIENCE_0018_EXPLAIN",
+    "options": [
+      "Trứng",
+      "Mặt Trời",
+      "60",
+      "Rễ"
+    ]
+  },
+  {
+    "id": "science_0019",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0019_PROMPT",
+    "answer": "60",
+    "hint_key": "Q_SCIENCE_0019_HINT",
+    "explanation_key": "Q_SCIENCE_0019_EXPLAIN",
+    "options": [
+      "Lá",
+      "Dễ",
+      "Mặt Trăng",
+      "60"
+    ]
+  },
+  {
+    "id": "science_0020",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0020_PROMPT",
+    "answer": "100",
+    "hint_key": "Q_SCIENCE_0020_HINT",
+    "explanation_key": "Q_SCIENCE_0020_EXPLAIN",
+    "options": [
+      "Chặn lại",
+      "Ánh sáng",
+      "100",
+      "Tự quay quanh trục"
+    ]
+  },
+  {
+    "id": "science_0021",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0021_PROMPT",
+    "answer": "Sắt",
+    "hint_key": "Q_SCIENCE_0021_HINT",
+    "explanation_key": "Q_SCIENCE_0021_EXPLAIN",
+    "options": [
+      "Hình cầu",
+      "Sắt",
+      "Dao động",
+      "Cacbon đioxit"
+    ]
+  },
+  {
+    "id": "science_0022",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0022_PROMPT",
+    "answer": "Đồng",
+    "hint_key": "Q_SCIENCE_0022_HINT",
+    "explanation_key": "Q_SCIENCE_0022_EXPLAIN",
+    "options": [
+      "Oxi",
+      "Đồng",
+      "Trọng lực",
+      "Phản xạ"
+    ]
+  },
+  {
+    "id": "science_0023",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0023_PROMPT",
+    "answer": "Nhựa",
+    "hint_key": "Q_SCIENCE_0023_HINT",
+    "explanation_key": "Q_SCIENCE_0023_EXPLAIN",
+    "options": [
+      "Mưa",
+      "Nóng sang lạnh",
+      "Nhựa",
+      "Nước"
+    ]
+  },
+  {
+    "id": "science_0024",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0024_PROMPT",
+    "answer": "Không",
+    "hint_key": "Q_SCIENCE_0024_HINT",
+    "explanation_key": "Q_SCIENCE_0024_EXPLAIN",
+    "options": [
+      "Rễ",
+      "Giữ đất",
+      "Nước đá",
+      "Không"
+    ]
+  },
+  {
+    "id": "science_0025",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0025_PROMPT",
+    "answer": "Pin",
+    "hint_key": "Q_SCIENCE_0025_HINT",
+    "explanation_key": "Q_SCIENCE_0025_EXPLAIN",
+    "options": [
+      "Pin",
+      "Bay hơi",
+      "Lá",
+      "Tái chế"
+    ]
+  },
+  {
+    "id": "science_0026",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0026_PROMPT",
+    "answer": "Công tắc",
+    "hint_key": "Q_SCIENCE_0026_HINT",
+    "explanation_key": "Q_SCIENCE_0026_EXPLAIN",
+    "options": [
+      "Ngưng tụ",
+      "Công tắc",
+      "Ánh sáng",
+      "Mùn"
+    ]
+  },
+  {
+    "id": "science_0027",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0027_PROMPT",
+    "answer": "Ampe",
+    "hint_key": "Q_SCIENCE_0027_HINT",
+    "explanation_key": "Q_SCIENCE_0027_EXPLAIN",
+    "options": [
+      "Nóng chảy",
+      "Cacbon đioxit",
+      "Sinh vật sản xuất",
+      "Ampe"
+    ]
+  },
+  {
+    "id": "science_0028",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0028_PROMPT",
+    "answer": "Vôn",
+    "hint_key": "Q_SCIENCE_0028_HINT",
+    "explanation_key": "Q_SCIENCE_0028_EXPLAIN",
+    "options": [
+      "100",
+      "Thực vật",
+      "Oxi",
+      "Vôn"
+    ]
+  },
+  {
+    "id": "science_0029",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0029_PROMPT",
+    "answer": "Ôm",
+    "hint_key": "Q_SCIENCE_0029_HINT",
+    "explanation_key": "Q_SCIENCE_0029_EXPLAIN",
+    "options": [
+      "Ôm",
+      "0",
+      "Thụ phấn",
+      "Nước"
+    ]
+  },
+  {
+    "id": "science_0030",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0030_PROMPT",
+    "answer": "Tái tạo",
+    "hint_key": "Q_SCIENCE_0030_HINT",
+    "explanation_key": "Q_SCIENCE_0030_EXPLAIN",
+    "options": [
+      "Tái tạo",
+      "Nước đá",
+      "Sâu bướm",
+      "Nhiệt kế"
+    ]
+  },
+  {
+    "id": "science_0031",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0031_PROMPT",
+    "answer": "Mặt Trời",
+    "hint_key": "Q_SCIENCE_0031_HINT",
+    "explanation_key": "Q_SCIENCE_0031_EXPLAIN",
+    "options": [
+      "Bay hơi",
+      "Nòng nọc",
+      "Cân",
+      "Mặt Trời"
+    ]
+  },
+  {
+    "id": "science_0032",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0032_PROMPT",
+    "answer": "Mặt Trăng",
+    "hint_key": "Q_SCIENCE_0032_HINT",
+    "explanation_key": "Q_SCIENCE_0032_EXPLAIN",
+    "options": [
+      "Trứng",
+      "Mét",
+      "Mặt Trăng",
+      "Ngưng tụ"
+    ]
+  },
+  {
+    "id": "science_0033",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0033_PROMPT",
+    "answer": "Tự quay quanh trục",
+    "hint_key": "Q_SCIENCE_0033_HINT",
+    "explanation_key": "Q_SCIENCE_0033_EXPLAIN",
+    "options": [
+      "Tự quay quanh trục",
+      "Kilôgam",
+      "Nóng chảy",
+      "Dễ"
+    ]
+  },
+  {
+    "id": "science_0034",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0034_PROMPT",
+    "answer": "Hình cầu",
+    "hint_key": "Q_SCIENCE_0034_HINT",
+    "explanation_key": "Q_SCIENCE_0034_EXPLAIN",
+    "options": [
+      "Giây",
+      "Hình cầu",
+      "Chặn lại",
+      "100"
+    ]
+  },
+  {
+    "id": "science_0035",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0035_PROMPT",
+    "answer": "Trọng lực",
+    "hint_key": "Q_SCIENCE_0035_HINT",
+    "explanation_key": "Q_SCIENCE_0035_EXPLAIN",
+    "options": [
+      "Trọng lực",
+      "60",
+      "0",
+      "Dao động"
+    ]
+  },
+  {
+    "id": "science_0036",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0036_PROMPT",
+    "answer": "Mưa",
+    "hint_key": "Q_SCIENCE_0036_HINT",
+    "explanation_key": "Q_SCIENCE_0036_EXPLAIN",
+    "options": [
+      "Nhiệt kế",
+      "60",
+      "Mưa",
+      "Phản xạ"
+    ]
+  },
+  {
+    "id": "science_0037",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0037_PROMPT",
+    "answer": "Giữ đất",
+    "hint_key": "Q_SCIENCE_0037_HINT",
+    "explanation_key": "Q_SCIENCE_0037_EXPLAIN",
+    "options": [
+      "Nóng sang lạnh",
+      "100",
+      "Cân",
+      "Giữ đất"
+    ]
+  },
+  {
+    "id": "science_0038",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0038_PROMPT",
+    "answer": "Tái chế",
+    "hint_key": "Q_SCIENCE_0038_HINT",
+    "explanation_key": "Q_SCIENCE_0038_EXPLAIN",
+    "options": [
+      "Tái chế",
+      "Mét",
+      "Sắt",
+      "Rễ"
+    ]
+  },
+  {
+    "id": "science_0039",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0039_PROMPT",
+    "answer": "Mùn",
+    "hint_key": "Q_SCIENCE_0039_HINT",
+    "explanation_key": "Q_SCIENCE_0039_EXPLAIN",
+    "options": [
+      "Đồng",
+      "Kilôgam",
+      "Lá",
+      "Mùn"
+    ]
+  },
+  {
+    "id": "science_0040",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0040_PROMPT",
+    "answer": "Sinh vật sản xuất",
+    "hint_key": "Q_SCIENCE_0040_HINT",
+    "explanation_key": "Q_SCIENCE_0040_EXPLAIN",
+    "options": [
+      "Nhựa",
+      "Sinh vật sản xuất",
+      "Giây",
+      "Ánh sáng"
+    ]
+  },
+  {
+    "id": "science_0041",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0041_PROMPT",
+    "answer": "Thực vật",
+    "hint_key": "Q_SCIENCE_0041_HINT",
+    "explanation_key": "Q_SCIENCE_0041_EXPLAIN",
+    "options": [
+      "Cacbon đioxit",
+      "Thực vật",
+      "60",
+      "Không"
+    ]
+  },
+  {
+    "id": "science_0042",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0042_PROMPT",
+    "answer": "Thụ phấn",
+    "hint_key": "Q_SCIENCE_0042_HINT",
+    "explanation_key": "Q_SCIENCE_0042_EXPLAIN",
+    "options": [
+      "Oxi",
+      "Thụ phấn",
+      "Pin",
+      "60"
+    ]
+  },
+  {
+    "id": "science_0043",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0043_PROMPT",
+    "answer": "Sâu bướm",
+    "hint_key": "Q_SCIENCE_0043_HINT",
+    "explanation_key": "Q_SCIENCE_0043_EXPLAIN",
+    "options": [
+      "Nước",
+      "100",
+      "Công tắc",
+      "Sâu bướm"
+    ]
+  },
+  {
+    "id": "science_0044",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0044_PROMPT",
+    "answer": "Nòng nọc",
+    "hint_key": "Q_SCIENCE_0044_HINT",
+    "explanation_key": "Q_SCIENCE_0044_EXPLAIN",
+    "options": [
+      "Sắt",
+      "Nòng nọc",
+      "Ampe",
+      "Nước đá"
+    ]
+  },
+  {
+    "id": "science_0045",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0045_PROMPT",
+    "answer": "Trứng",
+    "hint_key": "Q_SCIENCE_0045_HINT",
+    "explanation_key": "Q_SCIENCE_0045_EXPLAIN",
+    "options": [
+      "Đồng",
+      "Trứng",
+      "Bay hơi",
+      "Vôn"
+    ]
+  },
+  {
+    "id": "science_0046",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0046_PROMPT",
+    "answer": "Dễ",
+    "hint_key": "Q_SCIENCE_0046_HINT",
+    "explanation_key": "Q_SCIENCE_0046_EXPLAIN",
+    "options": [
+      "Ngưng tụ",
+      "Ôm",
+      "Dễ",
+      "Nhựa"
+    ]
+  },
+  {
+    "id": "science_0047",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0047_PROMPT",
+    "answer": "Chặn lại",
+    "hint_key": "Q_SCIENCE_0047_HINT",
+    "explanation_key": "Q_SCIENCE_0047_EXPLAIN",
+    "options": [
+      "Tái tạo",
+      "Chặn lại",
+      "Không",
+      "Nóng chảy"
+    ]
+  },
+  {
+    "id": "science_0048",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0048_PROMPT",
+    "answer": "Dao động",
+    "hint_key": "Q_SCIENCE_0048_HINT",
+    "explanation_key": "Q_SCIENCE_0048_EXPLAIN",
+    "options": [
+      "Dao động",
+      "100",
+      "Mặt Trời",
+      "Pin"
+    ]
+  },
+  {
+    "id": "science_0049",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0049_PROMPT",
+    "answer": "Phản xạ",
+    "hint_key": "Q_SCIENCE_0049_HINT",
+    "explanation_key": "Q_SCIENCE_0049_EXPLAIN",
+    "options": [
+      "0",
+      "Mặt Trăng",
+      "Phản xạ",
+      "Công tắc"
+    ]
+  },
+  {
+    "id": "science_0050",
+    "subject": "science",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_SCIENCE_0050_PROMPT",
+    "answer": "Nóng sang lạnh",
+    "hint_key": "Q_SCIENCE_0050_HINT",
+    "explanation_key": "Q_SCIENCE_0050_EXPLAIN",
+    "options": [
+      "Nóng sang lạnh",
+      "Nhiệt kế",
+      "Ampe",
+      "Tự quay quanh trục"
+    ]
+  }
+]

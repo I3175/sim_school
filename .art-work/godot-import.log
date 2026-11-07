@@ -1,0 +1,584 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (4 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (445 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | farmhouse.png[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | fruit-tree.png[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | moss-rocks.png[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | shipping-chest.png[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | spring-ground.png[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | bag.png[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | bolt.png[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | book.png[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | calculator.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | clock.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | cloud.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | coin.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | dialogue.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | di_nam.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | farm-minimap.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | farm-preview.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | fish.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | flask.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | gear.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | hand.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | heart.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | history.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | leaf.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | letter.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | lock.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | map.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | panel_disabled.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | panel_focus.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | panel_hover.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | panel_paper.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | panel_pressed.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | panel_slot.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | panel_tab.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | panel_warning.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | panel_wood.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | pen.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sao-mai-8.fnt[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sao-mai-8.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sao-mai-10.fnt[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sao-mai-10.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sao-mai-12.fnt[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sao-mai-12.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sao-mai-digits.fnt[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sao-mai-digits.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | spark.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sun.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sword.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | title.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | ._spr_attack_strip10.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | ._spr_axe_strip10.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | ._spr_carry_strip8.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | ._spr_casting_strip15.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | ._spr_caught_strip10.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | ._spr_death_strip13.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | ._spr_dig_strip13.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | ._spr_doing_strip8.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | ._spr_hammering_strip23.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | ._spr_hurt_strip8.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | ._spr_idle_strip9.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | ._spr_jump_strip9.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | ._spr_mining_strip10.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | ._spr_reeling_strip13.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | ._spr_roll_strip10.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | ._spr_run_strip8.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | ._spr_swimming_strip12.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | ._spr_waiting_strip9.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | ._spr_walk_strip8.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | ._spr_watering_strip5.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | ._base_attack_strip10.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | ._bowlhair_attack_strip10.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | ._curlyhair_attack_strip10.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | ._longhair_attack_strip10.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | ._mophair_attack_strip10.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | ._shorthair_attack_strip10.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_attack_strip10.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | ._tools_attack_strip10.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | ._base_axe_strip10.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | ._bowlhair_axe_strip10.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | ._curlyhair_axe_strip10.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | ._longhair_axe_strip10.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | ._mophair_axe_strip10.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | ._shorthair_axe_strip10.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_axe_strip10.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | ._tools_axe_strip10.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | ._base_carry_strip8.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | ._bowlhair_carry_strip8.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | ._curlyhair_carry_strip8.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | ._longhair_carry_strip8.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | ._mophair_carry_strip8.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | ._shorthair_carry_strip8.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_carry_strip8.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | ._tools_carry_strip8.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | ._base_casting_strip15.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | ._bowlhair_casting_strip15.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | ._curlyhair_casting_strip15.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | ._longhair_casting_strip15.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | ._mophair_casting_strip15.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | ._shorthair_casting_strip15.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_casting_strip15.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | ._tools_casting_strip15.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | ._base_caught_strip10.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | ._bowlhair_caught_strip10.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | ._curlyhair_caught_strip10.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | ._longhair_caught_strip10.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | ._mophair_caught_strip10.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | ._shorthair_caught_strip10.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_caught_strip10.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | ._tools_caught_strip10.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | ._base_death_strip13.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | ._bowlhair_death_strip13.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | ._curlyhair_death_strip13.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | ._longhair_death_strip13.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | ._mophair_death_strip13.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | ._shorthair_death_strip13.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_death_strip13.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | ._tools_death_strip13.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | ._base_dig_strip13.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | ._bowlhair_dig_strip13.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | ._curlyhair_dig_strip13.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | ._longhair_dig_strip13.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | ._mophair_dig_strip13.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | ._shorthair_dig_strip13.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_dig_strip13.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | ._tools_dig_strip13.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | ._base_doing_strip8.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | ._bowlhair_doing_strip8.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | ._curlyhair_doing_strip8.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | ._longhair_doing_strip8.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | ._mophair_doing_strip8.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | ._shorthair_doing_strip8.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_doing_strip8.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | ._tools_doing_strip8.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | ._base_hamering_strip23.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | ._bowlhair_hamering_strip23.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | ._curlyhair_hamering_strip23.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | ._longhair_hamering_strip23.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | ._mophair_hamering_strip23.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | ._shorthair_hamering_strip23.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_hamering_strip23.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | ._tools_hamering_strip23.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | ._base_hurt_strip8.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | ._bowlhair_hurt_strip8.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | ._curlyhair_hurt_strip8.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | ._longhair_hurt_strip8.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | ._mophair_hurt_strip8.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | ._shorthair_hurt_strip8.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_hurt_strip8.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | ._tools_hurt_strip8.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | ._base_idle_strip9.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | ._bowlhair_idle_strip9.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | ._curlyhair_idle_strip9.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | ._longhair_idle_strip9.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | ._mophair_idle_strip9.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | ._shorthair_idle_strip9.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_idle_strip9.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | ._tools_idle_strip9.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | ._base_jump_strip9.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | ._bowlhair_jump_strip9.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | ._curlyhair_jump_strip9.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | ._longhair_jump_strip9.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | ._mophair_jump_strip9.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | ._shorthair_jump_strip9.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_jump_strip9.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | ._tools_jump_strip9.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | ._base_mining_strip10.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | ._bowlhair_mining_strip10.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | ._curlyhair_mining_strip10.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | ._longhair_mining_strip10.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | ._mophair_mining_strip10.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | ._shorthair_mining_strip10.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_mining_strip10.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | ._tools_mining_strip10.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | ._base_reeling_strip13.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | ._bowlhair_reeling_strip13.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | ._curlyhair_reeling_strip13.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | ._longhair_reeling_strip13.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | ._mophair_reeling_strip13.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | ._shorthair_reeling_strip13.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_reeling_strip13.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | ._tools_reeling_strip13.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | ._base_roll_strip10.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | ._bowlhair_roll_strip10.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | ._curlyhair_roll_strip10.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | ._longhair_roll_strip10.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | ._mophair_roll_strip10.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | ._shorthair_roll_strip10.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_roll_strip10.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | ._tools_roll_strip10.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | ._base_run_strip8.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | ._bowlhair_run_strip8.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | ._curlyhair_run_strip8.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | ._longhair_run_strip8.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | ._mophair_run_strip8.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | ._shorthair_run_strip8.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_run_strip8.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | ._tools_run_strip8.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | ._base_swimming_strip12.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | ._bowlhair_swimming_strip12.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | ._curlyhair_swimming_strip12.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | ._longhair_swimming_strip12.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | ._mophair_swimming_strip12.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | ._shorthair_swimming_strip12.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_swimming_strip12.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | ._tools_swimming_strip12.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | ._base_waiting_strip9.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | ._bowlhair_waiting_strip9.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | ._curlyhair_waiting_strip9.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | ._longhair_waiting_strip9.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | ._mophair_waiting_strip9.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | ._shorthair_waiting_strip9.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_waiting_strip9.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | ._tools_waiting_strip9.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | ._base_walk_strip8.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | ._bowlhair_walk_strip8.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | ._curlyhair_walk_strip8.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | ._longhair_walk_strip8.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | ._mophair_walk_strip8.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | ._shorthair_walk_strip8.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_walk_strip8.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | ._tools_walk_strip8.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | ._base_watering_strip5.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | ._bowlhair_watering_strip5.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | ._curlyhair_watering_strip5.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | ._longhair_watering_strip5.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | ._mophair_watering_strip5.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | ._shorthair_watering_strip5.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | ._spikeyhair_watering_strip5.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | ._tools_watering_strip5.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | ._skeleton_attack_strip7.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | ._skeleton_death_strip10.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | ._skeleton_hurt_strip7.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | ._skeleton_idle_strip6.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | ._skeleton_jump_strip10.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | ._skeleton_walk_strip8.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | ._spr_deco_bird_01_strip4.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | ._spr_deco_blinking_strip12.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | ._spr_deco_chicken_01_strip4.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | ._spr_deco_cow_strip4.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | ._spr_deco_duck_01_strip4.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | ._spr_deco_pig_01_strip4.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | ._spr_deco_sheep_01_strip4.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | ._beetroot_00.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | ._beetroot_01.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | ._beetroot_02.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | ._beetroot_03.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | ._beetroot_04.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | ._beetroot_05.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | ._cabbage_00.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | ._cabbage_01.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | ._cabbage_02.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | ._cabbage_03.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | ._cabbage_04.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | ._cabbage_05.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | ._carrot_00.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | ._carrot_01.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | ._carrot_02.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | ._carrot_03.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | ._carrot_04.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | ._carrot_05.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | ._cauliflower_00.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | ._cauliflower_01.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | ._cauliflower_02.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | ._cauliflower_03.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | ._cauliflower_04.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | ._cauliflower_05.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | ._crate_base.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | ._crate_top.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | ._egg.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | ._fish.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | ._kale_00.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | ._kale_01.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | ._kale_02.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | ._kale_03.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | ._kale_04.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | ._kale_05.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | ._milk.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | ._parsnip_00.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | ._parsnip_01.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | ._parsnip_02.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | ._parsnip_03.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | ._parsnip_04.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | ._parsnip_05.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | ._potato_00.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | ._potato_01.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | ._potato_02.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | ._potato_03.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | ._potato_04.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | ._potato_05.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | ._pumpkin_00.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | ._pumpkin_01.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | ._pumpkin_02.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | ._pumpkin_03.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | ._pumpkin_04.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | ._pumpkin_05.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | ._radish_00.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | ._radish_01.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | ._radish_02.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | ._radish_03.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | ._radish_04.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | ._radish_05.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | ._rock.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | ._seeds_generic.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | ._soil_00.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | ._soil_01.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | ._soil_03.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | ._soil_04.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | ._sunflower_00.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | ._sunflower_01.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | ._sunflower_02.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | ._sunflower_03.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | ._sunflower_04.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | ._sunflower_05.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | ._wheat_00.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | ._wheat_01.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | ._wheat_02.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | ._wheat_03.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | ._wheat_04.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | ._wheat_05.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | ._wood.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | ._spr_deco_coracle_land.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | ._spr_deco_coracle_strip4.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | ._spr_deco_windmillshadow_strip9.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | ._spr_deco_windmill_strip9.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | ._spr_deco_windmill_withshadow_strip9.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | ._spr_deco_mushroom_blue_01_strip4.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | ._spr_deco_mushroom_blue_02_strip4.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | ._spr_deco_mushroom_blue_03_strip4.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | ._spr_deco_mushroom_red_01_strip4.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | ._spr_deco_tree_01_strip4.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | ._spr_deco_tree_02_strip4.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | ._chimneysmoke_01_strip30.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | ._chimneysmoke_02_strip30.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | ._chimneysmoke_03_strip30.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | ._chimneysmoke_04_strip30.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | ._chimneysmoke_05_strip30.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | ._spr_deco_fire_01_strip4.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | ._spr_deco_fire_02_strip4.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | ._spr_deco_glint_01_strip6.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | ._spr_deco_glint_02_strip4.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | ._spr_tileset_sunnysideworld_16px.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | ._spr_tileset_sunnysideworld_forest_32px.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_bc.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_bl.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_br.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_c.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_lc.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_rc.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_tc.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_tl.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | ._dt_box_9slice_tr.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_bc.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_bl.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_br.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_c.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_lc.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_rc.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_tc.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_tl.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | ._lt_box_9slice_tr.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_bc.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_bl.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_br.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_c.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_lc.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_rc.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_tc.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_tl.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | ._w_box_9slice_tr.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | ._arrow_left.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | ._arrow_right.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | ._arrow_up-1.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | ._arrow_up.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | ._axe.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | ._basket.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | ._bluebar_00.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | ._bluebar_01.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | ._bluebar_02.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | ._bluebar_03.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | ._bluebar_04.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | ._bluebar_05.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | ._cancel.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | ._confirm.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | ._cursor_01.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | ._cursor_02.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | ._cursor_03.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | ._cursor_04.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | ._cursor_05.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | ._expression_alerted.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | ._expression_attack.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | ._expression_chat.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | ._expression_confused-1.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | ._expression_confused.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | ._expression_love.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | ._expression_stress.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | ._expression_working.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | ._greenbar_00.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | ._greenbar_01.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | ._greenbar_02.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | ._greenbar_03.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | ._greenbar_04.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | ._greenbar_05.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | ._greenbar_06-1.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | ._greenbar_06.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | ._hammer.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | ._hand_closed_01.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | ._hand_closed_02.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | ._hand_open_01.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | ._hand_open_02.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | ._happiness_01.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | ._happiness_02.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | ._happiness_03.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | ._happiness_04.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | ._indicator.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | ._itemdisc_01.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | ._itemdisc_02.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | ._label_left.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | ._label_middle.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | ._label_right.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | ._pickaxe.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | ._plan alt.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | ._plant.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | ._playercount.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | ._redbar_00.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | ._redbar_01.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | ._redbar_02.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | ._redbar_03.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | ._redbar_04.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | ._redbar_05.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | ._redbar_06.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | ._rod alt.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | ._rod.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | ._sandtimer.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | ._search.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ._selectbox_bl.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ._selectbox_br.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ._selectbox_tl.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ._selectbox_tr.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ._select_dots.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | ._select_dots_large.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | ._shovel.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | ._stopwatch.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | ._sword.png[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | ._water.png[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | ._Sunnyside_World_ExampleScene.png[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | m12-zero-encounter.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (49 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   2% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   4% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   6% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   8% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  10% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  12% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  14% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  16% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  18% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  20% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  22% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  24% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  26% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  28% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  30% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  32% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  34% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  36% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  38% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  40% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  42% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  44% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  46% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  48% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  52% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  54% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  56% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  58% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  60% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  62% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  68% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  70% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  72% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  74% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  76% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  78% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  80% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  82% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  84% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  86% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  88% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  90% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  92% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  94% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  96% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | sao-mai-digits.fnt[39m[0m
+[   2% ] [90m[1mreimport[22m | sao-mai-12.fnt[39m[0m
+[   4% ] [90m[1mreimport[22m | sao-mai-10.fnt[39m[0m
+[   6% ] [90m[1mreimport[22m | sao-mai-8.fnt[39m[0m
+[   8% ] [90m[1mreimport[22m | sao-mai-digits.fnt[39m[0m
+[  10% ] [90m[1mreimport[22m | sao-mai-12.fnt[39m[0m
+[  12% ] [90m[1mreimport[22m | sao-mai-10.fnt[39m[0m
+[  14% ] [90m[1mreimport[22m | sao-mai-8.fnt[39m[0m
+[  16% ] [90m[1mreimport[22m | map.png[39m[0m
+[  18% ] [90m[1mreimport[22m | panel_disabled.png[39m[0m
+[  20% ] [90m[1mreimport[22m | panel_focus.png[39m[0m
+[  22% ] [90m[1mreimport[22m | panel_hover.png[39m[0m
+[  24% ] [90m[1mreimport[22m | panel_paper.png[39m[0m
+[  26% ] [90m[1mreimport[22m | panel_pressed.png[39m[0m
+[  28% ] [90m[1mreimport[22m | panel_slot.png[39m[0m
+[  30% ] [90m[1mreimport[22m | panel_tab.png[39m[0m
+[  32% ] [90m[1mreimport[22m | panel_warning.png[39m[0m
+[  34% ] [90m[1mreimport[22m | panel_wood.png[39m[0m
+[  36% ] [90m[1mreimport[22m | pen.png[39m[0m
+[  38% ] [90m[1mreimport[22m | sao-mai-8.png[39m[0m
+[  40% ] [90m[1mreimport[22m | sao-mai-10.png[39m[0m
+[  42% ] [90m[1mreimport[22m | sao-mai-12.png[39m[0m
+[  44% ] [90m[1mreimport[22m | sao-mai-digits.png[39m[0m
+[  46% ] [90m[1mreimport[22m | spark.png[39m[0m
+[  48% ] [90m[1mreimport[22m | sun.png[39m[0m
+[  50% ] [90m[1mreimport[22m | sword.png[39m[0m
+[  52% ] [90m[1mreimport[22m | title.png[39m[0m
+[  54% ] [90m[1mreimport[22m | m12-zero-encounter.png[39m[0m
+[  56% ] [90m[1mreimport[22m | farmhouse.png[39m[0m
+[  58% ] [90m[1mreimport[22m | fruit-tree.png[39m[0m
+[  60% ] [90m[1mreimport[22m | moss-rocks.png[39m[0m
+[  62% ] [90m[1mreimport[22m | shipping-chest.png[39m[0m
+[  64% ] [90m[1mreimport[22m | spring-ground.png[39m[0m
+[  66% ] [90m[1mreimport[22m | bag.png[39m[0m
+[  68% ] [90m[1mreimport[22m | bolt.png[39m[0m
+[  70% ] [90m[1mreimport[22m | book.png[39m[0m
+[  72% ] [90m[1mreimport[22m | calculator.png[39m[0m
+[  74% ] [90m[1mreimport[22m | clock.png[39m[0m
+[  76% ] [90m[1mreimport[22m | cloud.png[39m[0m
+[  78% ] [90m[1mreimport[22m | coin.png[39m[0m
+[  80% ] [90m[1mreimport[22m | dialogue.png[39m[0m
+[  82% ] [90m[1mreimport[22m | di_nam.png[39m[0m
+[  84% ] [90m[1mreimport[22m | farm-minimap.png[39m[0m
+[  86% ] [90m[1mreimport[22m | farm-preview.png[39m[0m
+[  88% ] [90m[1mreimport[22m | fish.png[39m[0m
+[  90% ] [90m[1mreimport[22m | flask.png[39m[0m
+[  92% ] [90m[1mreimport[22m | gear.png[39m[0m
+[  94% ] [90m[1mreimport[22m | hand.png[39m[0m
+[  96% ] [90m[1mreimport[22m | heart.png[39m[0m
+[  98% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (49 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+ERROR: Parameter "t" is null.
+   at: texture_2d_initialize (./servers/rendering/dummy/storage/texture_storage.h:85)
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[  33% ] [90m[1mloading_editor_layout[22m | Reopening scenes...[39m[0m
+[  50% ] [90m[1mloading_editor_layout[22m | Loading central editor layout...[39m[0m
+[  66% ] [90m[1mloading_editor_layout[22m | Loading plugin window layout...[39m[0m
+[  83% ] [90m[1mloading_editor_layout[22m | Editor layout ready.[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

@@ -4,7 +4,7 @@ static func available(definition: Dictionary, minute: int, weekday: int, flags: 
 	var required: String = str(definition.get("required_flag", ""))
 	if required != "" and not flags.get(required, false):
 		return false
-	if weekday in definition.get("closed_weekdays", []):
+	if (definition.get("closed_weekdays", []) as Array).any(func(value: Variant) -> bool: return int(value) == weekday):
 		return false
 	var opening := int(definition.get("opening", 0))
 	var closing := int(definition.get("closing", 0))

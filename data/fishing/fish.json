@@ -1,0 +1,277 @@
+[
+  {
+    "id": "goby",
+    "name": "Cá bống",
+    "zones": [
+      "river"
+    ],
+    "seasons": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "start": 0,
+    "end": 0,
+    "weather": [
+      "rain",
+      "drizzle",
+      "storm"
+    ],
+    "difficulty": 1,
+    "price": 30,
+    "xp": 4,
+    "flag": ""
+  },
+  {
+    "id": "carp",
+    "name": "Cá chép",
+    "zones": [
+      "lake"
+    ],
+    "seasons": [
+      0,
+      1,
+      2
+    ],
+    "start": 0,
+    "end": 0,
+    "weather": [],
+    "difficulty": 2,
+    "price": 70,
+    "xp": 8,
+    "flag": ""
+  },
+  {
+    "id": "perch",
+    "name": "Cá rô",
+    "zones": [
+      "river"
+    ],
+    "seasons": [
+      0,
+      2
+    ],
+    "start": 360,
+    "end": 1140,
+    "weather": [
+      "sunny",
+      "cloudy"
+    ],
+    "difficulty": 2,
+    "price": 80,
+    "xp": 8,
+    "flag": ""
+  },
+  {
+    "id": "catfish",
+    "name": "Cá trê",
+    "zones": [
+      "river"
+    ],
+    "seasons": [
+      1,
+      2
+    ],
+    "start": 1080,
+    "end": 120,
+    "weather": [],
+    "difficulty": 3,
+    "price": 120,
+    "xp": 12,
+    "flag": ""
+  },
+  {
+    "id": "snakehead",
+    "name": "Cá lóc",
+    "zones": [
+      "lake"
+    ],
+    "seasons": [
+      1
+    ],
+    "start": 360,
+    "end": 720,
+    "weather": [
+      "sunny"
+    ],
+    "difficulty": 3,
+    "price": 150,
+    "xp": 14,
+    "flag": ""
+  },
+  {
+    "id": "rainbow_fish",
+    "name": "Cá cầu vồng",
+    "zones": [
+      "lake"
+    ],
+    "seasons": [
+      1
+    ],
+    "start": 600,
+    "end": 1080,
+    "weather": [
+      "sunny"
+    ],
+    "difficulty": 3,
+    "price": 200,
+    "xp": 16,
+    "flag": "rainbow"
+  },
+  {
+    "id": "ice_salmon",
+    "name": "Cá hồi băng",
+    "zones": [
+      "ice_lake"
+    ],
+    "seasons": [
+      3
+    ],
+    "start": 480,
+    "end": 1020,
+    "weather": [],
+    "difficulty": 3,
+    "price": 220,
+    "xp": 18,
+    "flag": ""
+  },
+  {
+    "id": "mackerel",
+    "name": "Cá thu",
+    "zones": [
+      "sea"
+    ],
+    "seasons": [
+      0,
+      1
+    ],
+    "start": 360,
+    "end": 1080,
+    "weather": [
+      "sunny"
+    ],
+    "difficulty": 3,
+    "price": 140,
+    "xp": 14,
+    "flag": ""
+  },
+  {
+    "id": "tuna",
+    "name": "Cá ngừ",
+    "zones": [
+      "sea"
+    ],
+    "seasons": [
+      1
+    ],
+    "start": 480,
+    "end": 960,
+    "weather": [
+      "sunny"
+    ],
+    "difficulty": 4,
+    "price": 260,
+    "xp": 20,
+    "flag": ""
+  },
+  {
+    "id": "squid",
+    "name": "Mực ống",
+    "zones": [
+      "sea"
+    ],
+    "seasons": [
+      2,
+      3
+    ],
+    "start": 1200,
+    "end": 120,
+    "weather": [],
+    "difficulty": 3,
+    "price": 160,
+    "xp": 15,
+    "flag": ""
+  },
+  {
+    "id": "eel",
+    "name": "Cá chình",
+    "zones": [
+      "river"
+    ],
+    "seasons": [
+      2
+    ],
+    "start": 1200,
+    "end": 120,
+    "weather": [
+      "rain",
+      "drizzle",
+      "storm"
+    ],
+    "difficulty": 4,
+    "price": 280,
+    "xp": 22,
+    "flag": ""
+  },
+  {
+    "id": "moon_fish",
+    "name": "Cá mặt trăng",
+    "zones": [
+      "sea"
+    ],
+    "seasons": [
+      3
+    ],
+    "start": 1320,
+    "end": 120,
+    "weather": [
+      "sunny"
+    ],
+    "difficulty": 5,
+    "price": 600,
+    "xp": 40,
+    "flag": "full_moon"
+  },
+  {
+    "id": "star_fish",
+    "name": "Cá Sao",
+    "zones": [
+      "waterfall"
+    ],
+    "seasons": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "start": 1200,
+    "end": 120,
+    "weather": [
+      "sunny"
+    ],
+    "difficulty": 5,
+    "price": 1200,
+    "xp": 70,
+    "flag": "meteor_shower"
+  },
+  {
+    "id": "mist_dragon",
+    "name": "Rồng Sương",
+    "zones": [
+      "lake"
+    ],
+    "seasons": [
+      2
+    ],
+    "start": 300,
+    "end": 540,
+    "weather": [
+      "fog"
+    ],
+    "difficulty": 5,
+    "price": 1500,
+    "xp": 80,
+    "flag": "fog_of_forgetting"
+  }
+]

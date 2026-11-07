@@ -3,6 +3,10 @@ var model := QuestModel.new()
 var discovered: Array[String] = []
 var friendships: Dictionary = {}
 func _ready() -> void:
+	EventBus.knowledge_session_finished.connect(func(subject: String, stars: int) -> void:
+		if stars > 0: _record("solve_puzzle", subject))
+	EventBus.fish_caught.connect(func(id: String) -> void: _record("fish", id))
+	EventBus.monster_killed.connect(func(id: String, _tier: int) -> void: _record("kill", id))
 	EventBus.state_validate_requested.connect(_validate_state)
 	EventBus.crop_harvested.connect(func(id: String, _quality: int) -> void: _record("harvest", id))
 	EventBus.npc_talked.connect(func(id: String) -> void: _record("talk", id))

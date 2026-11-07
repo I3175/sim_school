@@ -63,3 +63,79 @@ ITEM_SEED_SNOW_MUSHROOM_NAME,Hạt Nấm tuyết,seed_snow_mushroom
 ITEM_SEED_SNOW_MUSHROOM_DESC,Hạt Nấm tuyết,seed_snow_mushroom
 ITEM_CROP_SNOW_MUSHROOM_NAME,Nấm tuyết,crop_snow_mushroom
 ITEM_CROP_SNOW_MUSHROOM_DESC,Nấm tuyết,crop_snow_mushroom
+ITEM_FORGOTTEN_INK_NAME,forgotten ink,forgotten_ink
+ITEM_FORGOTTEN_INK_DESC,forgotten ink,forgotten_ink
+ITEM_GEL_NAME,gel,gel
+ITEM_GEL_DESC,gel,gel
+ITEM_RARE_SEED_NAME,rare seed,rare_seed
+ITEM_RARE_SEED_DESC,rare seed,rare_seed
+ITEM_COPPER_ORE_NAME,copper ore,copper_ore
+ITEM_COPPER_ORE_DESC,copper ore,copper_ore
+ITEM_COAL_NAME,coal,coal
+ITEM_COAL_DESC,coal,coal
+ITEM_OLD_PAPER_NAME,old paper,old_paper
+ITEM_OLD_PAPER_DESC,old paper,old_paper
+ITEM_TORN_PAGE_NAME,torn page,torn_page
+ITEM_TORN_PAGE_DESC,torn page,torn_page
+ITEM_SPORE_NAME,spore,spore
+ITEM_SPORE_DESC,spore,spore
+ITEM_MUSHROOM_NAME,mushroom,mushroom
+ITEM_MUSHROOM_DESC,mushroom,mushroom
+ITEM_HERB_NAME,herb,herb
+ITEM_HERB_DESC,herb,herb
+ITEM_CRAB_CLAW_NAME,crab claw,crab_claw
+ITEM_CRAB_CLAW_DESC,crab claw,crab_claw
+ITEM_SHELL_NAME,shell,shell
+ITEM_SHELL_DESC,shell,shell
+ITEM_SWORD_NAME,Kiếm gỗ,sword
+ITEM_SWORD_DESC,Kiếm gỗ,sword
+ITEM_SPEAR_NAME,Giáo gỗ,spear
+ITEM_SPEAR_DESC,Giáo gỗ,spear
+ITEM_HAMMER_NAME,Búa gỗ,hammer
+ITEM_HAMMER_DESC,Búa gỗ,hammer
+ITEM_EGG_NAME,Trứng gà,egg
+ITEM_EGG_DESC,Trứng gà,egg
+ITEM_MILK_NAME,Sữa bò,milk
+ITEM_MILK_DESC,Sữa bò,milk
+ITEM_HAY_NAME,Cỏ khô,hay
+ITEM_HAY_DESC,Cỏ khô,hay
+ITEM_FISH_GOBY_NAME,Cá bống,fish_goby
+ITEM_FISH_GOBY_DESC,Cá bống,fish_goby
+ITEM_FISH_CARP_NAME,Cá chép,fish_carp
+ITEM_FISH_CARP_DESC,Cá chép,fish_carp
+ITEM_FISH_PERCH_NAME,Cá rô,fish_perch
+ITEM_FISH_PERCH_DESC,Cá rô,fish_perch
+ITEM_FISH_CATFISH_NAME,Cá trê,fish_catfish
+ITEM_FISH_CATFISH_DESC,Cá trê,fish_catfish
+ITEM_FISH_SNAKEHEAD_NAME,Cá lóc,fish_snakehead
+ITEM_FISH_SNAKEHEAD_DESC,Cá lóc,fish_snakehead
+ITEM_FISH_RAINBOW_FISH_NAME,Cá cầu vồng,fish_rainbow_fish
+ITEM_FISH_RAINBOW_FISH_DESC,Cá cầu vồng,fish_rainbow_fish
+ITEM_FISH_ICE_SALMON_NAME,Cá hồi băng,fish_ice_salmon
+ITEM_FISH_ICE_SALMON_DESC,Cá hồi băng,fish_ice_salmon
+ITEM_FISH_MACKEREL_NAME,Cá thu,fish_mackerel
+ITEM_FISH_MACKEREL_DESC,Cá thu,fish_mackerel
+ITEM_FISH_TUNA_NAME,Cá ngừ,fish_tuna
+ITEM_FISH_TUNA_DESC,Cá ngừ,fish_tuna
+ITEM_FISH_SQUID_NAME,Mực ống,fish_squid
+ITEM_FISH_SQUID_DESC,Mực ống,fish_squid
+ITEM_FISH_EEL_NAME,Cá chình,fish_eel
+ITEM_FISH_EEL_DESC,Cá chình,fish_eel
+ITEM_FISH_MOON_FISH_NAME,Cá mặt trăng,fish_moon_fish
+ITEM_FISH_MOON_FISH_DESC,Cá mặt trăng,fish_moon_fish
+ITEM_FISH_STAR_FISH_NAME,Cá Sao,fish_star_fish
+ITEM_FISH_STAR_FISH_DESC,Cá Sao,fish_star_fish
+ITEM_FISH_MIST_DRAGON_NAME,Rồng Sương,fish_mist_dragon
+ITEM_FISH_MIST_DRAGON_DESC,Rồng Sương,fish_mist_dragon
+ITEM_BAMBOO_ROD_NAME,Cần câu tre,bamboo_rod
+ITEM_BAMBOO_ROD_DESC,Cần câu tre,bamboo_rod
+ITEM_CRAB_TRAP_NAME,Bẫy cua,crab_trap
+ITEM_CRAB_TRAP_DESC,Bẫy cua,crab_trap
+ITEM_BAIT_NAME,Mồi câu,bait
+ITEM_BAIT_DESC,Mồi câu,bait
+ITEM_CRAB_NAME,Cua,crab
+ITEM_CRAB_DESC,Cua,crab
+ITEM_SHRIMP_NAME,Tôm,shrimp
+ITEM_SHRIMP_DESC,Tôm,shrimp
+ITEM_CLAM_NAME,Sò,clam
+ITEM_CLAM_DESC,Sò,clam

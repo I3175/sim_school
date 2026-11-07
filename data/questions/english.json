@@ -1,0 +1,979 @@
+[
+  {
+    "id": "english_0001",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0001_PROMPT",
+    "answer": "quyển sách",
+    "hint_key": "Q_ENGLISH_0001_HINT",
+    "explanation_key": "Q_ENGLISH_0001_EXPLAIN",
+    "options": [
+      "nước",
+      "quyển sách",
+      "ghế",
+      "chó"
+    ]
+  },
+  {
+    "id": "english_0002",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0002_PROMPT",
+    "answer": "bút mực",
+    "hint_key": "Q_ENGLISH_0002_HINT",
+    "explanation_key": "Q_ENGLISH_0002_EXPLAIN",
+    "options": [
+      "chim",
+      "bút mực",
+      "bánh mì",
+      "cửa ra vào"
+    ]
+  },
+  {
+    "id": "english_0003",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0003_PROMPT",
+    "answer": "bút chì",
+    "hint_key": "Q_ENGLISH_0003_HINT",
+    "explanation_key": "Q_ENGLISH_0003_EXPLAIN",
+    "options": [
+      "cửa sổ",
+      "trứng",
+      "bò",
+      "bút chì"
+    ]
+  },
+  {
+    "id": "english_0004",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0004_PROMPT",
+    "answer": "trường học",
+    "hint_key": "Q_ENGLISH_0004_HINT",
+    "explanation_key": "Q_ENGLISH_0004_EXPLAIN",
+    "options": [
+      "gà",
+      "trường học",
+      "cá",
+      "quả táo"
+    ]
+  },
+  {
+    "id": "english_0005",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0005_PROMPT",
+    "answer": "giáo viên",
+    "hint_key": "Q_ENGLISH_0005_HINT",
+    "explanation_key": "Q_ENGLISH_0005_EXPLAIN",
+    "options": [
+      "cà rốt",
+      "giáo viên",
+      "vịt",
+      "gạo"
+    ]
+  },
+  {
+    "id": "english_0006",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0006_PROMPT",
+    "answer": "học sinh",
+    "hint_key": "Q_ENGLISH_0006_HINT",
+    "explanation_key": "Q_ENGLISH_0006_EXPLAIN",
+    "options": [
+      "học sinh",
+      "sữa",
+      "ngựa",
+      "khoai tây"
+    ]
+  },
+  {
+    "id": "english_0007",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0007_PROMPT",
+    "answer": "bàn học",
+    "hint_key": "Q_ENGLISH_0007_HINT",
+    "explanation_key": "Q_ENGLISH_0007_EXPLAIN",
+    "options": [
+      "cừu",
+      "cà chua",
+      "nước",
+      "bàn học"
+    ]
+  },
+  {
+    "id": "english_0008",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0008_PROMPT",
+    "answer": "ghế",
+    "hint_key": "Q_ENGLISH_0008_HINT",
+    "explanation_key": "Q_ENGLISH_0008_EXPLAIN",
+    "options": [
+      "dê",
+      "bánh mì",
+      "ghế",
+      "mèo"
+    ]
+  },
+  {
+    "id": "english_0009",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0009_PROMPT",
+    "answer": "cửa ra vào",
+    "hint_key": "Q_ENGLISH_0009_HINT",
+    "explanation_key": "Q_ENGLISH_0009_EXPLAIN",
+    "options": [
+      "cửa ra vào",
+      "chó",
+      "thỏ",
+      "trứng"
+    ]
+  },
+  {
+    "id": "english_0010",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0010_PROMPT",
+    "answer": "cửa sổ",
+    "hint_key": "Q_ENGLISH_0010_HINT",
+    "explanation_key": "Q_ENGLISH_0010_EXPLAIN",
+    "options": [
+      "cửa sổ",
+      "cá",
+      "chim",
+      "đọc"
+    ]
+  },
+  {
+    "id": "english_0011",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0011_PROMPT",
+    "answer": "quả táo",
+    "hint_key": "Q_ENGLISH_0011_HINT",
+    "explanation_key": "Q_ENGLISH_0011_EXPLAIN",
+    "options": [
+      "viết",
+      "bò",
+      "cà rốt",
+      "quả táo"
+    ]
+  },
+  {
+    "id": "english_0012",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0012_PROMPT",
+    "answer": "gạo",
+    "hint_key": "Q_ENGLISH_0012_HINT",
+    "explanation_key": "Q_ENGLISH_0012_EXPLAIN",
+    "options": [
+      "gạo",
+      "khoai tây",
+      "gà",
+      "lắng nghe"
+    ]
+  },
+  {
+    "id": "english_0013",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0013_PROMPT",
+    "answer": "sữa",
+    "hint_key": "Q_ENGLISH_0013_HINT",
+    "explanation_key": "Q_ENGLISH_0013_EXPLAIN",
+    "options": [
+      "sữa",
+      "vịt",
+      "cà chua",
+      "nói"
+    ]
+  },
+  {
+    "id": "english_0014",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0014_PROMPT",
+    "answer": "nước",
+    "hint_key": "Q_ENGLISH_0014_HINT",
+    "explanation_key": "Q_ENGLISH_0014_EXPLAIN",
+    "options": [
+      "học",
+      "nước",
+      "mèo",
+      "ngựa"
+    ]
+  },
+  {
+    "id": "english_0015",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0015_PROMPT",
+    "answer": "bánh mì",
+    "hint_key": "Q_ENGLISH_0015_HINT",
+    "explanation_key": "Q_ENGLISH_0015_EXPLAIN",
+    "options": [
+      "chó",
+      "trồng",
+      "cừu",
+      "bánh mì"
+    ]
+  },
+  {
+    "id": "english_0016",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0016_PROMPT",
+    "answer": "trứng",
+    "hint_key": "Q_ENGLISH_0016_HINT",
+    "explanation_key": "Q_ENGLISH_0016_EXPLAIN",
+    "options": [
+      "thu hoạch",
+      "dê",
+      "trứng",
+      "chim"
+    ]
+  },
+  {
+    "id": "english_0017",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0017_PROMPT",
+    "answer": "cá",
+    "hint_key": "Q_ENGLISH_0017_HINT",
+    "explanation_key": "Q_ENGLISH_0017_EXPLAIN",
+    "options": [
+      "cá",
+      "xây dựng",
+      "bò",
+      "thỏ"
+    ]
+  },
+  {
+    "id": "english_0018",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0018_PROMPT",
+    "answer": "cà rốt",
+    "hint_key": "Q_ENGLISH_0018_HINT",
+    "explanation_key": "Q_ENGLISH_0018_EXPLAIN",
+    "options": [
+      "cà rốt",
+      "đọc",
+      "gà",
+      "giúp đỡ"
+    ]
+  },
+  {
+    "id": "english_0019",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0019_PROMPT",
+    "answer": "khoai tây",
+    "hint_key": "Q_ENGLISH_0019_HINT",
+    "explanation_key": "Q_ENGLISH_0019_EXPLAIN",
+    "options": [
+      "viết",
+      "chia sẻ",
+      "khoai tây",
+      "vịt"
+    ]
+  },
+  {
+    "id": "english_0020",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 2,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0020_PROMPT",
+    "answer": "cà chua",
+    "hint_key": "Q_ENGLISH_0020_HINT",
+    "explanation_key": "Q_ENGLISH_0020_EXPLAIN",
+    "options": [
+      "ngựa",
+      "đẹp",
+      "lắng nghe",
+      "cà chua"
+    ]
+  },
+  {
+    "id": "english_0021",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0021_PROMPT",
+    "answer": "mèo",
+    "hint_key": "Q_ENGLISH_0021_HINT",
+    "explanation_key": "Q_ENGLISH_0021_EXPLAIN",
+    "options": [
+      "nói",
+      "mèo",
+      "cẩn thận",
+      "cừu"
+    ]
+  },
+  {
+    "id": "english_0022",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0022_PROMPT",
+    "answer": "chó",
+    "hint_key": "Q_ENGLISH_0022_HINT",
+    "explanation_key": "Q_ENGLISH_0022_EXPLAIN",
+    "options": [
+      "chó",
+      "học",
+      "thân thiện",
+      "dê"
+    ]
+  },
+  {
+    "id": "english_0023",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0023_PROMPT",
+    "answer": "chim",
+    "hint_key": "Q_ENGLISH_0023_HINT",
+    "explanation_key": "Q_ENGLISH_0023_EXPLAIN",
+    "options": [
+      "khỏe mạnh",
+      "trồng",
+      "chim",
+      "thỏ"
+    ]
+  },
+  {
+    "id": "english_0024",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0024_PROMPT",
+    "answer": "bò",
+    "hint_key": "Q_ENGLISH_0024_HINT",
+    "explanation_key": "Q_ENGLISH_0024_EXPLAIN",
+    "options": [
+      "đọc",
+      "kiên nhẫn",
+      "bò",
+      "thu hoạch"
+    ]
+  },
+  {
+    "id": "english_0025",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0025_PROMPT",
+    "answer": "gà",
+    "hint_key": "Q_ENGLISH_0025_HINT",
+    "explanation_key": "Q_ENGLISH_0025_EXPLAIN",
+    "options": [
+      "viết",
+      "gà",
+      "xây dựng",
+      "tò mò"
+    ]
+  },
+  {
+    "id": "english_0026",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0026_PROMPT",
+    "answer": "vịt",
+    "hint_key": "Q_ENGLISH_0026_HINT",
+    "explanation_key": "Q_ENGLISH_0026_EXPLAIN",
+    "options": [
+      "lắng nghe",
+      "giúp đỡ",
+      "vịt",
+      "yên tĩnh"
+    ]
+  },
+  {
+    "id": "english_0027",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0027_PROMPT",
+    "answer": "ngựa",
+    "hint_key": "Q_ENGLISH_0027_HINT",
+    "explanation_key": "Q_ENGLISH_0027_EXPLAIN",
+    "options": [
+      "sáng",
+      "ngựa",
+      "chia sẻ",
+      "nói"
+    ]
+  },
+  {
+    "id": "english_0028",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0028_PROMPT",
+    "answer": "cừu",
+    "hint_key": "Q_ENGLISH_0028_HINT",
+    "explanation_key": "Q_ENGLISH_0028_EXPLAIN",
+    "options": [
+      "cừu",
+      "học",
+      "đẹp",
+      "hữu ích"
+    ]
+  },
+  {
+    "id": "english_0029",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0029_PROMPT",
+    "answer": "dê",
+    "hint_key": "Q_ENGLISH_0029_HINT",
+    "explanation_key": "Q_ENGLISH_0029_EXPLAIN",
+    "options": [
+      "trồng",
+      "quan trọng",
+      "cẩn thận",
+      "dê"
+    ]
+  },
+  {
+    "id": "english_0030",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 3,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0030_PROMPT",
+    "answer": "thỏ",
+    "hint_key": "Q_ENGLISH_0030_HINT",
+    "explanation_key": "Q_ENGLISH_0030_EXPLAIN",
+    "options": [
+      "quyển sách",
+      "thân thiện",
+      "thu hoạch",
+      "thỏ"
+    ]
+  },
+  {
+    "id": "english_0031",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0031_PROMPT",
+    "answer": "đọc",
+    "hint_key": "Q_ENGLISH_0031_HINT",
+    "explanation_key": "Q_ENGLISH_0031_EXPLAIN",
+    "options": [
+      "xây dựng",
+      "đọc",
+      "bút mực",
+      "khỏe mạnh"
+    ]
+  },
+  {
+    "id": "english_0032",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0032_PROMPT",
+    "answer": "viết",
+    "hint_key": "Q_ENGLISH_0032_HINT",
+    "explanation_key": "Q_ENGLISH_0032_EXPLAIN",
+    "options": [
+      "kiên nhẫn",
+      "bút chì",
+      "giúp đỡ",
+      "viết"
+    ]
+  },
+  {
+    "id": "english_0033",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0033_PROMPT",
+    "answer": "lắng nghe",
+    "hint_key": "Q_ENGLISH_0033_HINT",
+    "explanation_key": "Q_ENGLISH_0033_EXPLAIN",
+    "options": [
+      "chia sẻ",
+      "tò mò",
+      "trường học",
+      "lắng nghe"
+    ]
+  },
+  {
+    "id": "english_0034",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0034_PROMPT",
+    "answer": "nói",
+    "hint_key": "Q_ENGLISH_0034_HINT",
+    "explanation_key": "Q_ENGLISH_0034_EXPLAIN",
+    "options": [
+      "giáo viên",
+      "nói",
+      "yên tĩnh",
+      "đẹp"
+    ]
+  },
+  {
+    "id": "english_0035",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0035_PROMPT",
+    "answer": "học",
+    "hint_key": "Q_ENGLISH_0035_HINT",
+    "explanation_key": "Q_ENGLISH_0035_EXPLAIN",
+    "options": [
+      "cẩn thận",
+      "học",
+      "học sinh",
+      "sáng"
+    ]
+  },
+  {
+    "id": "english_0036",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0036_PROMPT",
+    "answer": "trồng",
+    "hint_key": "Q_ENGLISH_0036_HINT",
+    "explanation_key": "Q_ENGLISH_0036_EXPLAIN",
+    "options": [
+      "bàn học",
+      "thân thiện",
+      "trồng",
+      "hữu ích"
+    ]
+  },
+  {
+    "id": "english_0037",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0037_PROMPT",
+    "answer": "thu hoạch",
+    "hint_key": "Q_ENGLISH_0037_HINT",
+    "explanation_key": "Q_ENGLISH_0037_EXPLAIN",
+    "options": [
+      "khỏe mạnh",
+      "ghế",
+      "thu hoạch",
+      "quan trọng"
+    ]
+  },
+  {
+    "id": "english_0038",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0038_PROMPT",
+    "answer": "xây dựng",
+    "hint_key": "Q_ENGLISH_0038_HINT",
+    "explanation_key": "Q_ENGLISH_0038_EXPLAIN",
+    "options": [
+      "kiên nhẫn",
+      "cửa ra vào",
+      "quyển sách",
+      "xây dựng"
+    ]
+  },
+  {
+    "id": "english_0039",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0039_PROMPT",
+    "answer": "giúp đỡ",
+    "hint_key": "Q_ENGLISH_0039_HINT",
+    "explanation_key": "Q_ENGLISH_0039_EXPLAIN",
+    "options": [
+      "bút mực",
+      "giúp đỡ",
+      "tò mò",
+      "cửa sổ"
+    ]
+  },
+  {
+    "id": "english_0040",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 4,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0040_PROMPT",
+    "answer": "chia sẻ",
+    "hint_key": "Q_ENGLISH_0040_HINT",
+    "explanation_key": "Q_ENGLISH_0040_EXPLAIN",
+    "options": [
+      "chia sẻ",
+      "bút chì",
+      "quả táo",
+      "yên tĩnh"
+    ]
+  },
+  {
+    "id": "english_0041",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0041_PROMPT",
+    "answer": "đẹp",
+    "hint_key": "Q_ENGLISH_0041_HINT",
+    "explanation_key": "Q_ENGLISH_0041_EXPLAIN",
+    "options": [
+      "sáng",
+      "đẹp",
+      "trường học",
+      "gạo"
+    ]
+  },
+  {
+    "id": "english_0042",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0042_PROMPT",
+    "answer": "cẩn thận",
+    "hint_key": "Q_ENGLISH_0042_HINT",
+    "explanation_key": "Q_ENGLISH_0042_EXPLAIN",
+    "options": [
+      "giáo viên",
+      "cẩn thận",
+      "hữu ích",
+      "sữa"
+    ]
+  },
+  {
+    "id": "english_0043",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0043_PROMPT",
+    "answer": "thân thiện",
+    "hint_key": "Q_ENGLISH_0043_HINT",
+    "explanation_key": "Q_ENGLISH_0043_EXPLAIN",
+    "options": [
+      "học sinh",
+      "quan trọng",
+      "nước",
+      "thân thiện"
+    ]
+  },
+  {
+    "id": "english_0044",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0044_PROMPT",
+    "answer": "khỏe mạnh",
+    "hint_key": "Q_ENGLISH_0044_HINT",
+    "explanation_key": "Q_ENGLISH_0044_EXPLAIN",
+    "options": [
+      "bàn học",
+      "bánh mì",
+      "quyển sách",
+      "khỏe mạnh"
+    ]
+  },
+  {
+    "id": "english_0045",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0045_PROMPT",
+    "answer": "kiên nhẫn",
+    "hint_key": "Q_ENGLISH_0045_HINT",
+    "explanation_key": "Q_ENGLISH_0045_EXPLAIN",
+    "options": [
+      "bút mực",
+      "kiên nhẫn",
+      "ghế",
+      "trứng"
+    ]
+  },
+  {
+    "id": "english_0046",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0046_PROMPT",
+    "answer": "tò mò",
+    "hint_key": "Q_ENGLISH_0046_HINT",
+    "explanation_key": "Q_ENGLISH_0046_EXPLAIN",
+    "options": [
+      "tò mò",
+      "cá",
+      "bút chì",
+      "cửa ra vào"
+    ]
+  },
+  {
+    "id": "english_0047",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0047_PROMPT",
+    "answer": "yên tĩnh",
+    "hint_key": "Q_ENGLISH_0047_HINT",
+    "explanation_key": "Q_ENGLISH_0047_EXPLAIN",
+    "options": [
+      "cửa sổ",
+      "cà rốt",
+      "trường học",
+      "yên tĩnh"
+    ]
+  },
+  {
+    "id": "english_0048",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0048_PROMPT",
+    "answer": "sáng",
+    "hint_key": "Q_ENGLISH_0048_HINT",
+    "explanation_key": "Q_ENGLISH_0048_EXPLAIN",
+    "options": [
+      "khoai tây",
+      "giáo viên",
+      "sáng",
+      "quả táo"
+    ]
+  },
+  {
+    "id": "english_0049",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0049_PROMPT",
+    "answer": "hữu ích",
+    "hint_key": "Q_ENGLISH_0049_HINT",
+    "explanation_key": "Q_ENGLISH_0049_EXPLAIN",
+    "options": [
+      "cà chua",
+      "học sinh",
+      "hữu ích",
+      "gạo"
+    ]
+  },
+  {
+    "id": "english_0050",
+    "subject": "english",
+    "type": "multiple_choice",
+    "difficulty": 5,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0050_PROMPT",
+    "answer": "quan trọng",
+    "hint_key": "Q_ENGLISH_0050_HINT",
+    "explanation_key": "Q_ENGLISH_0050_EXPLAIN",
+    "options": [
+      "mèo",
+      "sữa",
+      "bàn học",
+      "quan trọng"
+    ]
+  },
+  {
+    "id": "english_0051",
+    "subject": "english",
+    "type": "matching",
+    "difficulty": 1,
+    "tags": [
+      "seed_bank"
+    ],
+    "prompt_key": "Q_ENGLISH_0051_PROMPT",
+    "answer": {
+      "cat": "mèo",
+      "dog": "chó",
+      "bird": "chim"
+    },
+    "hint_key": "Q_ENGLISH_0051_HINT",
+    "explanation_key": "Q_ENGLISH_0051_EXPLAIN",
+    "left": [
+      "cat",
+      "dog",
+      "bird"
+    ],
+    "right": [
+      "chim",
+      "mèo",
+      "chó"
+    ]
+  }
+]

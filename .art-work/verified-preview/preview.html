@@ -1,0 +1,2457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N&#244;ng tr&#7841;i M&#7847;m Xanh - scene preview</title>
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #12171c; color: #dfe7ec; font: 14px/1.45 system-ui, sans-serif; }
+header { max-width: 1320px; margin: 0 auto; padding: 14px 16px 8px; display: flex; flex-wrap: wrap;
+  gap: 10px 24px; align-items: flex-end; justify-content: space-between; }
+h1 { font-size: 20px; margin: 0; font-weight: 600; }
+.sub { margin: 2px 0 0; color: #9fb0bb; font-size: 13px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+label { cursor: pointer; user-select: none; }
+button, select { background: #24313b; color: inherit; border: 1px solid #3c5262; border-radius: 4px;
+  padding: 4px 10px; font: inherit; cursor: pointer; }
+main { max-width: 1320px; margin: 0 auto; padding: 0 16px 24px; }
+canvas { display: block; max-width: 100%; height: auto; image-rendering: pixelated; border: 1px solid #33414c;
+  background: #0b0f12; outline: none; touch-action: none; }
+canvas:focus { border-color: #6fa8dc; }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; margin-top: 8px;
+  color: #9fb0bb; font-size: 13px; }
+#status { color: #dfe7ec; font-family: ui-monospace, monospace; }
+details { margin-top: 10px; }
+textarea { width: 100%; height: 260px; background: #0b0f12; color: #cfe3ee; border: 1px solid #33414c;
+  font: 12px ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<header>
+<div><h1>N&#244;ng tr&#7841;i M&#7847;m Xanh</h1><p class="sub">1280 x 960 px | objects 11 | exits 0 | spawns 1 | actor radius 4</p></div>
+<nav>
+<label><input type="checkbox" id="debug"> Debug</label>
+<label><input type="checkbox" id="grid"> Nav grid</label>
+<label><input type="checkbox" id="props" checked> Props</label>
+<label><input type="checkbox" id="actor" checked> Actor</label>
+<select id="spawn" aria-label="Spawn"></select>
+<button id="reset" type="button">Reset</button>
+<button id="routes" type="button">Check routes</button>
+<button id="snap" type="button">Snapshot</button>
+</nav>
+</header>
+<main>
+<canvas id="view" tabindex="0" aria-label="Scene preview"></canvas>
+<footer><span id="status">loading</span><span>Click the map, then WASD or arrow keys to walk; click to walk there; E interacts.</span></footer>
+<details id="snapshot-panel"><summary>window.__scene snapshot</summary><textarea id="snapshot" readonly></textarea></details>
+</main>
+<script type="module">
+/*
+ * map-runtime.mjs 1.1.2: collision query, navigation grid, walker and exits
+ * for generate2dmap scenes (map_bundle.v2).
+ *
+ * One dependency-free ES module for browsers, Node 18+ and bundlers. Games can
+ * import it as it is; build_scene_preview.py inlines it verbatim into
+ * preview.html. It reads the bundle fields it needs (world, collision,
+ * objects, props, portals, spawns, interactions, anchors, and whether there
+ * are tiles layers or a material_map) and never touches the DOM, the network,
+ * a clock or a random source: the same calls give the same results.
+ *
+ * RESOLVED INPUTS. This module reads no files, so two parts of the blocking
+ * set must come resolved, and createMapRuntime refuses a bundle without them
+ * (a TypeError, never a silent drop, D2):
+ *   - the per-tile collision (N7) of every tiles layer: options.tileSolids, or
+ *     the same solids already in collision.solids with collision.tilesResolved
+ *     set to true (build_scene_preview.py does this);
+ *   - the material map (N8): options.materialGrid, unless
+ *     options.ignoreMaterialMap is true.
+ * map_nav.py check writes both, read by forge_nav, into nav-grid.json as
+ * runtimeInputs {tileSolids, materialGrid}: pass that object as the options,
+ * createMapRuntime(bundle, navGrid.runtimeInputs).
+ *
+ * COLLISION mirrors forge_nav (shared/forge_nav.py, vendored as
+ * scripts/forge_nav.py) rule for rule: the rule book N1-N15 in its docstring
+ * (integration decisions D1-D7) is the specification, and every formula
+ * below keeps its operation order, so the answers are bit-identical except
+ * for the sine and cosine of a rotation (V8 and a C runtime can differ by one
+ * ulp, for example at sin(pi / 4); points exactly on a rotated edge may then
+ * fall on different sides). In short:
+ *   N1  world px, y down; theta = rotate * (PI / 180), no trigonometry at 0
+ *   N2  9 samples: P, then (rx,0) (dx,dy) (0,ry) (-dx,dy) (-rx,0) (-dx,-dy)
+ *       (0,-ry) (dx,-dy) with rx = r, ry = r * ySquash, dx = rx * SQRT1_2
+ *   N3  walk area: no regions = the closed box [0, W] x [0, H]; otherwise
+ *       inside some region (even-odd, edge a = p[i], b = p[i - 1], skipped
+ *       when a.y == b.y, toggle when (a.y > y) != (b.y > y) and
+ *       x < (b.x - a.x) * (y - a.y) / (b.y - a.y) + a.x) and none of its holes
+ *   N4  blockers: collision.solids, collision.rects, footprints of solid
+ *       objects, placed tiles' collision (options.tileSolids, or already in
+ *       collision.solids: see RESOLVED INPUTS) and blocking material pixels;
+ *       shapes without area are dropped
+ *   N5  solids are closed: rect x <= px <= x + w; ellipse nu*nu + nv*nv <= 1;
+ *       polygon interior or on an edge
+ *   N6  footprints: from the object, else from bundle.props[prop] (resolved
+ *       inline items; pack + label entries must be resolved first); basis
+ *       world_px is not scaled, prop_px and image_px are scaled once by the
+ *       instance scale; flip_x mirrors offset x and rotate
+ *   N7  tile collision: each placed tile's shapes moved to its cell, and a
+ *       tile without shapes whose walkable is false blocks its cell; forge_nav
+ *       reads the tileset files, so the result comes in as options.tileSolids
+ *       (or inside collision.solids; their source names the layer), closed
+ *       like every solid (N5)
+ *   N8  material grid: square pixels of s = W / width world px (a whole
+ *       number), half-open (right and bottom edges belong to the next pixel);
+ *       solid blocks; liquid and hazard block unless walkable; decor never;
+ *       one_way never blocks a point (N11)
+ *   N9  valid = all 9 samples in the walk area and on no blocker
+ *   N10 segmentClear: n = max(1, ceil(len / (cell / 2))) samples
+ *       a + d * k / n are valid; the one_way rule holds; and (thin-gap rule)
+ *       the centre stays in the walk area and off every blocker on the whole
+ *       segment, tested at the midpoint of every piece between boundary cuts
+ *       longer than 1e-9 px (a shorter piece is a rounding sliver at a single
+ *       touching point and is skipped); polygon edges cut where
+ *       -1e-12 <= u <= 1 + 1e-12, rect sides at (x0 - a.x) / dx and so on, an
+ *       ellipse cut with |disc| <= 1e-12 * b * b is a tangent: one double root
+ *   N11 one_way blocks moving down (+y) onto it: no footprint sample may step
+ *       from another pixel onto one_way between consecutive samples, and the
+ *       centre path may not enter it
+ *   N12 cell = max(1, floor(r / 2 + 0.5)); node centres (i + 0.5) * cell;
+ *       at most 2^24 nodes
+ *   N13 4-neighbour moves, open when segmentClear holds between the centres
+ *   N14 a point joins every valid node within two cells (of its clamped
+ *       cell) that it reaches by segmentClear, nearest first; starts seed the
+ *       search with every joined node; point targets must be valid and join a
+ *       reached node; reach targets need a reached centre with
+ *       dx*dx + dy*dy <= reach*reach; triggers are closed; intent exits need a
+ *       reached node within radius; crossing exits a reached node inside the
+ *       trigger, else one within two cells whose straight move to the
+ *       trigger's closest point is clear
+ *   N15 runtime duties (not in forge_nav): intent fires when the normalised
+ *       dot(intent, travelDirection) > 0.25 within radius; crossing fires
+ *       inside the trigger with movement unless requiresMovement is false;
+ *       latches (default true) hold until the actor leaves the zone
+ *
+ * Planned paths are walked as planned: findPath() flags its waypoints
+ * clear: true (each leg passed segmentClear when it was planned) and
+ * advanceAlongPath() follows those legs without re-testing tick positions;
+ * keyboard moves go through moveWithCollision().
+ */
+
+export const RUNTIME_VERSION = "1.1.2";
+export const TICK_HZ = 60;
+export const INTENT_MIN_COS = 0.25;
+export const SNAPSHOT_SCHEMA = "generate2dmap.scene_snapshot.v1";
+export const FREE = 0;
+export const BLOCK = 1;
+export const ONE_WAY = 2;
+export const MAX_GRID_NODES = 1 << 24;
+export const MATERIAL_CLASSES = Object.freeze(["solid", "one_way", "liquid", "hazard", "decor"]);
+export const FOOTPRINT_BASES = Object.freeze(["prop_px", "world_px", "image_px"]);
+
+const EPS = 1e-9;
+const SLIVER_PX = 1e-9; // N10: a thin-gap piece this long or shorter is a rounding sliver at a touching point
+const EDGE_U_SLACK = 1e-12; // N10: polygon edges are cut where -slack <= u <= 1 + slack (forge_nav _EDGE_U_SLACK)
+const SQRT1_2 = 0.7071067811865476; // Math.SQRT1_2, forge_nav.SQRT1_2
+const DEG = Math.PI / 180; // math.radians multiplies by this exact double
+const INDEX_BUCKET = 32;
+const MAX_INDEX_CELLS = 1 << 22;
+const SMOOTH_LOOKAHEAD = 64;
+const JOIN_RINGS = 2;
+const SNAP_RINGS = 4;
+const STAND_REASON = "the actor cannot stand here (footprint blocked)";
+
+/** Unit directions of the 8 footprint samples after the centre: E, SE, S, SW, W, NW, N, NE (y down). */
+export const FOOTPRINT_DIRECTIONS = Object.freeze([
+  [1, 0], [SQRT1_2, SQRT1_2], [0, 1], [-SQRT1_2, SQRT1_2],
+  [-1, 0], [-SQRT1_2, -SQRT1_2], [0, -1], [SQRT1_2, -SQRT1_2],
+].map((direction) => Object.freeze(direction)));
+
+const ACTIVATIONS = new Set(["crossing", "intent"]);
+const FACINGS = {
+  e: [1, 0], east: [1, 0], right: [1, 0], w: [-1, 0], west: [-1, 0], left: [-1, 0],
+  s: [0, 1], south: [0, 1], down: [0, 1], n: [0, -1], north: [0, -1], up: [0, -1],
+  ne: [SQRT1_2, -SQRT1_2], "north-east": [SQRT1_2, -SQRT1_2], northeast: [SQRT1_2, -SQRT1_2],
+  nw: [-SQRT1_2, -SQRT1_2], "north-west": [-SQRT1_2, -SQRT1_2], northwest: [-SQRT1_2, -SQRT1_2],
+  se: [SQRT1_2, SQRT1_2], "south-east": [SQRT1_2, SQRT1_2], southeast: [SQRT1_2, SQRT1_2],
+  sw: [-SQRT1_2, SQRT1_2], "south-west": [-SQRT1_2, SQRT1_2], southwest: [-SQRT1_2, SQRT1_2],
+};
+
+// --------------------------------------------------------------------------- input checks
+
+function finite(value, where) {
+  if (typeof value !== "number" || !Number.isFinite(value)) throw new TypeError(`${where} must be a finite number`);
+  return value;
+}
+
+function nonNegative(value, where) {
+  if (finite(value, where) < 0) throw new RangeError(`${where} must not be negative`);
+  return value;
+}
+
+function text(value, where) {
+  if (typeof value !== "string" || value.length === 0) throw new TypeError(`${where} must be a non-empty string`);
+  return value;
+}
+
+function flag(value, where) {
+  if (typeof value !== "boolean") throw new TypeError(`${where} must be true or false`);
+  return value;
+}
+
+function plainObject(value, where) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw new TypeError(`${where} must be an object`);
+  return value;
+}
+
+/** A point as [x, y], {x, y} or {point: [x, y]}. */
+function readPoint(value, where) {
+  if (Array.isArray(value)) {
+    if (value.length !== 2) throw new TypeError(`${where} must be [x, y]`);
+    return [finite(value[0], `${where}[0]`), finite(value[1], `${where}[1]`)];
+  }
+  if (value && typeof value === "object") {
+    if (value.point !== undefined) return readPoint(value.point, `${where}.point`);
+    return [finite(value.x, `${where}.x`), finite(value.y, `${where}.y`)];
+  }
+  throw new TypeError(`${where} must be [x, y]`);
+}
+
+/** One point, or a list of points (approach may be either). */
+function readPoints(value, where) {
+  if (value === undefined || value === null) return [];
+  if (Array.isArray(value) && value.length === 2 && typeof value[0] === "number") return [readPoint(value, where)];
+  if (!Array.isArray(value)) return [readPoint(value, where)];
+  return value.map((item, k) => readPoint(item, `${where}[${k}]`));
+}
+
+// --------------------------------------------------------------------------- shapes (N3, N5)
+
+function boundsOf(xs, ys) {
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  for (let k = 0; k < xs.length; k++) {
+    if (xs[k] < minX) minX = xs[k];
+    if (xs[k] > maxX) maxX = xs[k];
+    if (ys[k] < minY) minY = ys[k];
+    if (ys[k] > maxY) maxY = ys[k];
+  }
+  return {minX, minY, maxX, maxY};
+}
+
+/** Twice the signed shoelace area: sum(x[i] * y[i + 1]) - sum(y[i] * x[i + 1]) (N4). */
+function shoelace(xs, ys) {
+  let a = 0, b = 0;
+  for (let i = 0; i < xs.length; i++) {
+    const j = i + 1 === xs.length ? 0 : i + 1;
+    a += xs[i] * ys[j];
+    b += ys[i] * xs[j];
+  }
+  return a - b;
+}
+
+function polygonShape(points, where, source, closed) {
+  if (!Array.isArray(points) || points.length < 3) throw new TypeError(`${where} must list at least 3 [x, y] points`);
+  const xs = new Float64Array(points.length), ys = new Float64Array(points.length);
+  points.forEach((item, k) => {
+    const [x, y] = readPoint(item, `${where}[${k}]`);
+    xs[k] = x;
+    ys[k] = y;
+  });
+  return {kind: "polygon", xs, ys, closed, area2: shoelace(xs, ys), ...boundsOf(xs, ys), source};
+}
+
+function rectShape(x, y, w, h, source) {
+  const x1 = x + w, y1 = y + h;
+  return {kind: "rect", x, y, x1, y1, minX: x, minY: y, maxX: x1, maxY: y1, empty: !(w > 0 && h > 0), source};
+}
+
+function ellipseShape(cx, cy, rx, ry, rotate, source) {
+  const turned = rotate !== 0;
+  const theta = rotate * DEG;
+  const cos = turned ? Math.cos(theta) : 1, sin = turned ? Math.sin(theta) : 0;
+  const local = !(sin === 0 && cos === 1); // forge_nav evaluates the rotation unless c = 1 and s = 0 exactly
+  const ex = Math.sqrt(rx * cos * (rx * cos) + ry * sin * (ry * sin));
+  const ey = Math.sqrt(rx * sin * (rx * sin) + ry * cos * (ry * cos));
+  const pad = 1e-7 + 1e-9 * (ex + ey);
+  return {
+    kind: "ellipse", cx, cy, rx, ry, rotate, local, cos, sin, empty: !(rx > 0 && ry > 0),
+    minX: cx - ex - pad, minY: cy - ey - pad, maxX: cx + ex + pad, maxY: cy + ey + pad, source,
+  };
+}
+
+/** N3 even-odd crossing test (pnpoly), in forge_nav's operation order. */
+export function insidePolygon(xs, ys, px, py) {
+  let inside = false;
+  const n = xs.length;
+  for (let i = 0; i < n; i++) {
+    const j = i === 0 ? n - 1 : i - 1;
+    const ax = xs[i], ay = ys[i], bx = xs[j], by = ys[j];
+    if (ay === by) continue;
+    if ((ay > py) !== (by > py) && px < (bx - ax) * (py - ay) / (by - ay) + ax) inside = !inside;
+  }
+  return inside;
+}
+
+/** N5: the point lies on an edge a = p[i], b = p[i - 1] (exact for axis-aligned edges and vertices). */
+export function onPolygonEdge(xs, ys, px, py) {
+  const n = xs.length;
+  for (let i = 0; i < n; i++) {
+    const j = i === 0 ? n - 1 : i - 1;
+    const ax = xs[i], ay = ys[i], bx = xs[j], by = ys[j];
+    if (px >= Math.min(ax, bx) && px <= Math.max(ax, bx) && py >= Math.min(ay, by) && py <= Math.max(ay, by)
+        && (bx - ax) * (py - ay) - (by - ay) * (px - ax) === 0) return true;
+  }
+  return false;
+}
+
+/** True when (px, py) lies in a compiled solid; solids are closed sets (N5). */
+export function insideShape(shape, px, py) {
+  if (shape.kind === "rect") return px >= shape.x && px <= shape.x1 && py >= shape.y && py <= shape.y1;
+  if (shape.kind === "ellipse") {
+    const ex = px - shape.cx, ey = py - shape.cy;
+    let u = ex, v = ey;
+    if (shape.local) {
+      u = ex * shape.cos + ey * shape.sin;
+      v = ey * shape.cos - ex * shape.sin;
+    }
+    const nu = u / shape.rx, nv = v / shape.ry;
+    return nu * nu + nv * nv <= 1;
+  }
+  return insidePolygon(shape.xs, shape.ys, px, py) || (shape.closed && onPolygonEdge(shape.xs, shape.ys, px, py));
+}
+
+function compileSolid(solid, where) {
+  plainObject(solid, where);
+  const source = typeof solid.source === "string" ? solid.source : (typeof solid.id === "string" ? solid.id : where);
+  if (solid.shape === "rect") {
+    return rectShape(finite(solid.x, `${where}.x`), finite(solid.y, `${where}.y`),
+      finite(solid.w, `${where}.w`), finite(solid.h, `${where}.h`), source);
+  }
+  if (solid.shape === "ellipse") {
+    return ellipseShape(finite(solid.cx, `${where}.cx`), finite(solid.cy, `${where}.cy`),
+      finite(solid.rx, `${where}.rx`), finite(solid.ry, `${where}.ry`),
+      solid.rotate === undefined ? 0 : finite(solid.rotate, `${where}.rotate`), source);
+  }
+  if (solid.shape === "polygon") {
+    const shape = polygonShape(solid.points, `${where}.points`, source, true);
+    if (shape.area2 === 0) throw new RangeError(`${where}.points: polygon has zero area`);
+    return shape;
+  }
+  throw new TypeError(`${where}.shape must be rect, ellipse or polygon`);
+}
+
+/** N4: a shape without area blocks nothing. */
+function hasArea(shape) {
+  return shape.kind === "polygon" ? shape.area2 !== 0 : !shape.empty;
+}
+
+/**
+ * The world solid of a footprint anchored at (x, y) (N6), as a compiled shape, or null for shape none,
+ * a missing footprint or one without area. Basis world_px is not scaled; prop_px (the default) and its
+ * legacy alias image_px are scaled once by `scale`; flipX mirrors the footprint around x.
+ */
+export function footprintSolid(x, y, footprint, {scale = 1, flipX = false, source = "footprint"} = {}) {
+  if (!footprint || (footprint.shape !== "ellipse" && footprint.shape !== "rect")) return null;
+  const basis = footprint.basis === undefined ? "prop_px" : footprint.basis;
+  if (!FOOTPRINT_BASES.includes(basis)) {
+    throw new TypeError(`${source}: footprint basis ${JSON.stringify(basis)} is not one of ${FOOTPRINT_BASES.join(", ")}`);
+  }
+  const k = basis === "world_px" ? 1 : scale;
+  const offset = footprint.offset || [0, 0];
+  let ox = offset[0];
+  const oy = offset[1];
+  let rotate = Number(footprint.rotate || 0);
+  if (flipX) {
+    if (ox) ox = -ox;
+    if (rotate) rotate = -rotate;
+  }
+  const cx = x + k * ox, cy = y + k * oy;
+  const width = k * footprint.width, depth = k * footprint.depth;
+  if (width <= 0 || depth <= 0) return null;
+  if (footprint.shape === "ellipse") return ellipseShape(cx, cy, width / 2, depth / 2, rotate, source);
+  if (rotate === 0) return rectShape(cx - width / 2, cy - depth / 2, width, depth, source);
+  const theta = rotate * DEG, cos = Math.cos(theta), sin = Math.sin(theta);
+  const corners = [[-width / 2, -depth / 2], [width / 2, -depth / 2], [width / 2, depth / 2], [-width / 2, depth / 2]]
+    .map(([u, v]) => [cx + u * cos - v * sin, cy + u * sin + v * cos]);
+  return polygonShape(corners, source, source, true);
+}
+
+/**
+ * The blocking footprint of one bundle object (N6) or null. `prop` is the object's resolved
+ * props-registry item, if any: the object's own footprint and solid win, else the item's. Without a
+ * solid flag either way the object is solid exactly when its footprint is an ellipse or a rect.
+ */
+export function objectSolid(object, prop = null, where = "object") {
+  const footprint = object.footprint !== undefined ? object.footprint : (prop ? prop.footprint : undefined);
+  if (footprint !== undefined && footprint !== null && (typeof footprint !== "object" || Array.isArray(footprint))) {
+    throw new TypeError(`${where}: footprint must be an object`);
+  }
+  let solid = object.solid !== undefined ? object.solid
+    : (prop && prop.solid !== undefined && prop.solid !== null ? prop.solid : null);
+  if (solid === null) solid = Boolean(footprint) && (footprint.shape === "ellipse" || footprint.shape === "rect");
+  if (!flag(solid, `${where}.solid`) || !footprint || (footprint.shape !== "ellipse" && footprint.shape !== "rect")) {
+    return null;
+  }
+  for (const key of ["width", "depth"]) nonNegative(footprint[key], `${where}.footprint.${key}`);
+  if (footprint.offset !== undefined && footprint.offset !== null) {
+    if (!Array.isArray(footprint.offset) || footprint.offset.length !== 2) {
+      throw new TypeError(`${where}.footprint.offset must be [x, y]`);
+    }
+    footprint.offset.forEach((value, k) => finite(value, `${where}.footprint.offset[${k}]`));
+  }
+  if (footprint.rotate !== undefined) finite(footprint.rotate, `${where}.footprint.rotate`);
+  const x = finite(object.x, `${where}.x`), y = finite(object.y, `${where}.y`);
+  const scale = object.scale === undefined ? 1 : finite(object.scale, `${where}.scale`);
+  if (!(scale > 0)) throw new RangeError(`${where}.scale must be positive`);
+  const flipX = object.flip_x === undefined ? false : flag(object.flip_x, `${where}.flip_x`);
+  return footprintSolid(x, y, footprint, {scale, flipX, source: `object:${object.id}`});
+}
+
+/** The props registry of a bundle (N6): name -> inline item; pack + label entries must be resolved first. */
+function propsRegistry(bundle) {
+  const registry = bundle.props;
+  const found = new Map();
+  if (registry === undefined || registry === null) return found;
+  plainObject(registry, "props");
+  for (const [name, entry] of Object.entries(registry)) {
+    const where = `props.${name}`;
+    plainObject(entry, where);
+    if (entry.pack !== undefined) {
+      throw new TypeError(`${where} names a prop pack (pack + label); resolve it into an inline item first `
+        + "(build_scene_preview.py does)");
+    }
+    if (entry.solid !== undefined && entry.solid !== null) flag(entry.solid, `${where}.solid`);
+    found.set(name, entry);
+  }
+  return found;
+}
+
+// --------------------------------------------------------------------------- spatial indexes
+
+function bucketIndex(items) {
+  const live = [];
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  items.forEach((item, k) => {
+    live.push(k);
+    minX = Math.min(minX, item.minX - 1);
+    minY = Math.min(minY, item.minY - 1);
+    maxX = Math.max(maxX, item.maxX + 1);
+    maxY = Math.max(maxY, item.maxY + 1);
+  });
+  if (!live.length) return null;
+  let size = INDEX_BUCKET, x0, y0, cols, rows;
+  for (;;) {
+    x0 = Math.floor(minX / size);
+    y0 = Math.floor(minY / size);
+    cols = Math.floor(maxX / size) - x0 + 1;
+    rows = Math.floor(maxY / size) - y0 + 1;
+    if (cols * rows <= MAX_INDEX_CELLS) break;
+    size *= 2;
+  }
+  const cells = new Array(cols * rows);
+  for (const k of live) {
+    const item = items[k];
+    const i0 = Math.floor((item.minX - 1) / size) - x0, i1 = Math.floor((item.maxX + 1) / size) - x0;
+    const j0 = Math.floor((item.minY - 1) / size) - y0, j1 = Math.floor((item.maxY + 1) / size) - y0;
+    for (let j = j0; j <= j1; j++) {
+      for (let i = i0; i <= i1; i++) {
+        const c = j * cols + i;
+        (cells[c] || (cells[c] = [])).push(k);
+      }
+    }
+  }
+  return {size, x0, y0, cols, rows, cells, stamp: new Uint32Array(items.length), mark: 0};
+}
+
+function candidates(index, px, py) {
+  if (index === null) return null;
+  const i = Math.floor(px / index.size) - index.x0, j = Math.floor(py / index.size) - index.y0;
+  if (!(i >= 0 && j >= 0 && i < index.cols && j < index.rows)) return null;
+  return index.cells[j * index.cols + i] || null;
+}
+
+// Every indexed item whose buckets meet the box, once.
+function itemsInBox(index, minX, minY, maxX, maxY, visit) {
+  if (index === null) return;
+  index.mark = (index.mark + 1) >>> 0;
+  if (index.mark === 0) {
+    index.stamp.fill(0);
+    index.mark = 1;
+  }
+  const i0 = Math.max(0, Math.floor(minX / index.size) - index.x0), i1 = Math.min(index.cols - 1, Math.floor(maxX / index.size) - index.x0);
+  const j0 = Math.max(0, Math.floor(minY / index.size) - index.y0), j1 = Math.min(index.rows - 1, Math.floor(maxY / index.size) - index.y0);
+  for (let j = j0; j <= j1; j++) {
+    for (let i = i0; i <= i1; i++) {
+      const bucket = index.cells[j * index.cols + i];
+      if (!bucket) continue;
+      for (const k of bucket) {
+        if (index.stamp[k] === index.mark) continue;
+        index.stamp[k] = index.mark;
+        visit(k);
+      }
+    }
+  }
+}
+
+// Boundary elements for the thin-gap cuts of N10: polygon edges, rects (solids and the world box), ellipses.
+function boundaryElements(world) {
+  const elements = [];
+  const edge = (ax, ay, bx, by) => elements.push({kind: "edge", ax, ay, bx, by, minX: Math.min(ax, bx),
+    minY: Math.min(ay, by), maxX: Math.max(ax, bx), maxY: Math.max(ay, by)});
+  const polygon = (shape) => {
+    for (let i = 0; i < shape.xs.length; i++) {
+      const j = i === 0 ? shape.xs.length - 1 : i - 1;
+      edge(shape.xs[i], shape.ys[i], shape.xs[j], shape.ys[j]);
+    }
+  };
+  const rect = (x0, y0, x1, y1) => elements.push({kind: "rect", x0, y0, x1, y1, minX: x0, minY: y0, maxX: x1, maxY: y1});
+  for (const region of world.walkRegions) {
+    polygon(region.outer);
+    region.holes.forEach(polygon);
+  }
+  if (!world.walkRegions.length) rect(0, 0, world.width, world.height);
+  for (const shape of world.solids) {
+    if (shape.kind === "polygon") polygon(shape);
+    else if (shape.kind === "rect") rect(shape.x, shape.y, shape.x1, shape.y1);
+    else elements.push({kind: "ellipse", shape, minX: shape.minX, minY: shape.minY, maxX: shape.maxX, maxY: shape.maxY});
+  }
+  return elements;
+}
+
+// Parameters t in (0, 1) where p + t * d meets the edge a -> b (forge_nav _segment_edge_params).
+function edgeCuts(px, py, dx, dy, element, out) {
+  const ex = element.bx - element.ax, ey = element.by - element.ay;
+  const wx = element.ax - px, wy = element.ay - py;
+  const denom = dx * ey - dy * ex;
+  if (denom !== 0) {
+    const t = (wx * ey - wy * ex) / denom, u = (wx * dy - wy * dx) / denom;
+    if (u >= -EDGE_U_SLACK && u <= 1 + EDGE_U_SLACK && t > 0 && t < 1) out.push(t);
+    return;
+  }
+  const length = dx * dx + dy * dy;
+  if (wx * dy - wy * dx === 0 && length > 0) { // collinear overlap: the edge's ends split the segment
+    for (const t of [(wx * dx + wy * dy) / length, ((element.bx - px) * dx + (element.by - py) * dy) / length]) {
+      if (t > 0 && t < 1) out.push(t);
+    }
+  }
+}
+
+// The lines of a rect's sides that p + t * d crosses, wherever along the side (forge_nav _Rect.seg_breaks).
+function rectCuts(px, py, dx, dy, element, out) {
+  if (dx) {
+    for (const t of [(element.x0 - px) / dx, (element.x1 - px) / dx]) if (t > 0 && t < 1) out.push(t);
+  }
+  if (dy) {
+    for (const t of [(element.y0 - py) / dy, (element.y1 - py) / dy]) if (t > 0 && t < 1) out.push(t);
+  }
+}
+
+// N10 tangent tolerance of the ellipse quadratic (forge_nav _TANGENT_DISC).
+const TANGENT_DISC = 1e-12;
+
+// Both roots of |p + t d| on an ellipse boundary (forge_nav _Ellipse._roots).
+function ellipseCuts(px, py, dx, dy, shape, out) {
+  let u0 = px - shape.cx, v0 = py - shape.cy;
+  if (shape.local) {
+    const ex = u0, ey = v0;
+    u0 = ex * shape.cos + ey * shape.sin;
+    v0 = ey * shape.cos - ex * shape.sin;
+  }
+  const du = dx * shape.cos + dy * shape.sin, dv = dy * shape.cos - dx * shape.sin;
+  const rx2 = shape.rx * shape.rx, ry2 = shape.ry * shape.ry;
+  const a = (du / shape.rx) * (du / shape.rx) + (dv / shape.ry) * (dv / shape.ry);
+  const b = 2 * (u0 * du / rx2 + v0 * dv / ry2);
+  const c = (u0 / shape.rx) * (u0 / shape.rx) + (v0 / shape.ry) * (v0 / shape.ry) - 1;
+  let disc = b * b - 4 * a * c;
+  // A tangent line has a double root; rounding leaves disc a few ulp either side of 0, which would make the
+  // touching point a sliver piece in one direction only (N10): take it as 0, exactly as forge_nav does.
+  if (Math.abs(disc) <= TANGENT_DISC * (b * b)) disc = 0;
+  if (!(disc >= 0) || !(a > 0)) return;
+  const root = Math.sqrt(disc);
+  for (const t of [(-b - root) / (2 * a), (-b + root) / (2 * a)]) if (t > 0 && t < 1) out.push(t);
+}
+
+// Material pixel edges crossed by the segment (forge_nav _Materials.seg_breaks).
+function materialCuts(material, px, py, dx, dy, out) {
+  const s = material.scale;
+  for (const [start, delta, limit] of [[px, dx, material.width], [py, dy, material.height]]) {
+    if (!delta) continue;
+    const lo = Math.min(start, start + delta), hi = Math.max(start, start + delta);
+    const first = Math.max(0, Math.ceil(lo / s)), last = Math.min(limit, Math.floor(hi / s));
+    for (let m = first; m <= last; m++) {
+      const t = (m * s - start) / delta;
+      if (t > 0 && t < 1) out.push(t);
+    }
+  }
+}
+
+// --------------------------------------------------------------------------- material grid (N8)
+
+function decodeBase64(data) {
+  if (typeof atob === "function") {
+    const binary = atob(data);
+    const out = new Uint8Array(binary.length);
+    for (let k = 0; k < binary.length; k++) out[k] = binary.charCodeAt(k);
+    return out;
+  }
+  if (typeof globalThis.Buffer === "function") return new Uint8Array(globalThis.Buffer.from(data, "base64"));
+  throw new Error("no base64 decoder available");
+}
+
+function bitPlane(value, count, where) {
+  const bytes = typeof value === "string" ? decodeBase64(value) : value;
+  if (!(bytes instanceof Uint8Array) || bytes.length < Math.ceil(count / 8)) {
+    throw new TypeError(`${where} must hold width * height bits`);
+  }
+  return bytes;
+}
+
+/**
+ * Decode a material grid: {width, height, cellWidth, cellHeight, bits, oneWay?}. bits (base64 or
+ * Uint8Array, bit k LSB first for pixel k = j * width + i) marks BLOCK pixels, the optional oneWay plane
+ * ONE_WAY pixels; build_scene_preview.py writes this form. Pixels are squares of a whole number of world
+ * px (N8): cellWidth must equal cellHeight. Returns {width, height, scale, codes, hasOneWay}.
+ */
+export function decodeMaterialGrid(grid) {
+  plainObject(grid, "materialGrid");
+  const width = finite(grid.width, "materialGrid.width"), height = finite(grid.height, "materialGrid.height");
+  if (!(Number.isInteger(width) && Number.isInteger(height) && width > 0 && height > 0)) {
+    throw new RangeError("materialGrid width and height must be positive integers");
+  }
+  const cellWidth = finite(grid.cellWidth, "materialGrid.cellWidth"), cellHeight = finite(grid.cellHeight, "materialGrid.cellHeight");
+  if (!(Number.isInteger(cellWidth) && cellWidth >= 1 && cellHeight === cellWidth)) {
+    throw new RangeError("materialGrid pixels must be squares of a whole number of world px (cellWidth = cellHeight >= 1)");
+  }
+  const count = width * height;
+  const blocked = bitPlane(grid.bits, count, "materialGrid.bits");
+  const oneWay = grid.oneWay === undefined || grid.oneWay === null ? null : bitPlane(grid.oneWay, count, "materialGrid.oneWay");
+  const codes = new Uint8Array(count);
+  let hasOneWay = false;
+  for (let k = 0; k < count; k++) {
+    const block = (blocked[k >> 3] >> (k & 7)) & 1, up = oneWay === null ? 0 : (oneWay[k >> 3] >> (k & 7)) & 1;
+    if (block && up) throw new RangeError(`materialGrid pixel ${k} is both blocking and one_way`);
+    codes[k] = block ? BLOCK : up ? ONE_WAY : FREE;
+    hasOneWay = hasOneWay || up === 1;
+  }
+  return {width, height, scale: cellWidth, codes, hasOneWay};
+}
+
+/** The code of a material_map class (N8): BLOCK, ONE_WAY or FREE. */
+export function materialCode(spec) {
+  plainObject(spec, "material");
+  if (!MATERIAL_CLASSES.includes(spec.class)) throw new TypeError(`material class ${JSON.stringify(spec.class)} is not one of ${MATERIAL_CLASSES.join(", ")}`);
+  const walkable = spec.walkable === undefined ? false : flag(spec.walkable, "material walkable");
+  if (spec.class === "solid" || ((spec.class === "liquid" || spec.class === "hazard") && !walkable)) return BLOCK;
+  return spec.class === "one_way" ? ONE_WAY : FREE;
+}
+
+/** True when a material class blocks a point (N8): solid; liquid and hazard unless walkable. one_way never does. */
+export function materialBlocks(spec) {
+  return materialCode(spec) === BLOCK;
+}
+
+function materialColor(value, where) {
+  if (typeof value === "string" && /^#[0-9a-fA-F]{6}/.test(value)) return [1, 3, 5].map((k) => parseInt(value.slice(k, k + 2), 16));
+  if (Array.isArray(value) && value.length >= 3 && value.slice(0, 3).every((v) => Number.isInteger(v))) return value.slice(0, 3);
+  throw new TypeError(`${where} must be #rrggbb or [r, g, b]`);
+}
+
+function bitsOf(mask) {
+  const bytes = new Uint8Array(Math.ceil(mask.length / 8));
+  for (let k = 0; k < mask.length; k++) if (mask[k]) bytes[k >> 3] |= 1 << (k & 7);
+  return bytes;
+}
+
+/**
+ * The material grid of decoded straight-alpha RGBA pixels (a canvas getImageData result, for example)
+ * by exact colour (N8): alpha 0 is no material; any other pixel must match exactly one material colour.
+ * Materials given by palette `index` need the indices, which RGBA has lost: use the grid that
+ * build_scene_preview.py embeds instead.
+ */
+export function materialGridFromRGBA(rgba, width, height, materialMap, worldWidth, worldHeight) {
+  const materials = materialMap && materialMap.materials;
+  plainObject(materials, "material_map.materials");
+  const s = worldWidth / width;
+  if (!(Number.isInteger(s) && s >= 1 && s * height === worldHeight)) {
+    throw new RangeError(`material_map: ${width}x${height} px does not divide the ${worldWidth}x${worldHeight} world into whole squares`);
+  }
+  const entries = Object.entries(materials).map(([name, spec]) => {
+    const where = `material_map.materials.${name}`;
+    plainObject(spec, where);
+    if (spec.color === undefined) throw new TypeError(`${where}: every material needs a color (index materials need the embedded grid)`);
+    return {name, code: materialCode(spec), rgb: materialColor(spec.color, `${where}.color`)};
+  });
+  const keys = new Set(entries.map((entry) => entry.rgb.join(",")));
+  if (keys.size !== entries.length) throw new RangeError("material_map.materials: material colors must be unique");
+  const blocked = new Uint8Array(width * height), oneWay = new Uint8Array(width * height);
+  for (let k = 0; k < width * height; k++) {
+    const o = k * 4;
+    if (rgba[o + 3] === 0) continue;
+    const entry = entries.find(({rgb}) => rgba[o] === rgb[0] && rgba[o + 1] === rgb[1] && rgba[o + 2] === rgb[2]);
+    if (!entry) throw new RangeError(`material_map: pixel (${k % width}, ${Math.floor(k / width)}) matches no material`);
+    blocked[k] = entry.code === BLOCK ? 1 : 0;
+    oneWay[k] = entry.code === ONE_WAY ? 1 : 0;
+  }
+  return {width, height, cellWidth: s, cellHeight: s, bits: bitsOf(blocked), oneWay: bitsOf(oneWay)};
+}
+
+/** The material code under (px, py): FREE outside the image (N8). */
+export function materialAt(world, px, py) {
+  const material = world.material;
+  if (material === null) return FREE;
+  const mx = Math.floor(px / material.scale), my = Math.floor(py / material.scale);
+  if (!(mx >= 0 && mx < material.width && my >= 0 && my < material.height)) return FREE;
+  return material.codes[my * material.width + mx];
+}
+
+// --------------------------------------------------------------------------- world
+
+/**
+ * The resolved inputs of N7 and N8 (RESOLVED INPUTS in the header) as {tileSolids, materialGrid}. A tiles layer
+ * whose tile collision is not resolved, or a material_map without its grid, is a TypeError (D2: a blocker never
+ * drops silently).
+ */
+function resolvedInputs(bundle, collision, options) {
+  const layers = bundle.layers === undefined || bundle.layers === null ? [] : bundle.layers;
+  if (!Array.isArray(layers)) throw new TypeError("layers must be a list");
+  const tiles = layers.find((layer) => layer !== null && typeof layer === "object" && layer.kind === "tiles");
+  const given = options.tileSolids === undefined || options.tileSolids === null ? null : options.tileSolids;
+  if (given !== null && !Array.isArray(given)) throw new TypeError("options.tileSolids must be a list of solids");
+  const marked = collision.tilesResolved === undefined ? false : flag(collision.tilesResolved, "collision.tilesResolved");
+  if (tiles !== undefined && given === null && !marked) {
+    throw new TypeError(`layer ${JSON.stringify(String(tiles.name))} is a tiles layer, but its tile collision (N7) is not `
+      + "resolved: pass options.tileSolids (map_nav.py check writes them into nav-grid.json as runtimeInputs), or add "
+      + "them to collision.solids and set collision.tilesResolved to true");
+  }
+  const ignore = options.ignoreMaterialMap === undefined ? false : flag(options.ignoreMaterialMap, "options.ignoreMaterialMap");
+  const grid = options.materialGrid === undefined || options.materialGrid === null ? null : options.materialGrid;
+  if (bundle.material_map !== undefined && bundle.material_map !== null && grid === null && !ignore) {
+    throw new TypeError("material_map (N8) needs options.materialGrid: map_nav.py check writes it into nav-grid.json "
+      + "(runtimeInputs) and materialGridFromRGBA decodes a colour image; pass options.ignoreMaterialMap: true to walk "
+      + "without it");
+  }
+  return {tileSolids: given === null ? [] : given, materialGrid: ignore ? null : grid};
+}
+
+function compilePortal(portal, where) {
+  plainObject(portal, where);
+  const id = text(portal.id, `${where}.id`);
+  const to = portal.to === undefined ? "" : String(portal.to);
+  if ((portal.rect === undefined) === (portal.circle === undefined)) {
+    throw new TypeError(`${where} needs exactly one of rect [x, y, w, h] or circle [cx, cy, r]`);
+  }
+  let shape;
+  if (portal.rect !== undefined) {
+    const r = portal.rect;
+    if (!Array.isArray(r) || r.length !== 4) throw new TypeError(`${where}.rect must be [x, y, w, h]`);
+    const x = finite(r[0], `${where}.rect[0]`), y = finite(r[1], `${where}.rect[1]`);
+    const w = nonNegative(r[2], `${where}.rect[2]`), h = nonNegative(r[3], `${where}.rect[3]`);
+    shape = {kind: "rect", x, y, x1: x + w, y1: y + h, cx: x + w / 2, cy: y + h / 2};
+  } else {
+    const c = portal.circle;
+    if (!Array.isArray(c) || c.length !== 3) throw new TypeError(`${where}.circle must be [cx, cy, r]`);
+    shape = {kind: "circle", cx: finite(c[0], `${where}.circle[0]`), cy: finite(c[1], `${where}.circle[1]`),
+      r: nonNegative(c[2], `${where}.circle[2]`)};
+  }
+  const activation = portal.activation === undefined ? "crossing" : portal.activation;
+  if (!ACTIVATIONS.has(activation)) throw new TypeError(`${where}.activation must be crossing or intent`);
+  let dirX = 0, dirY = 0;
+  if (portal.travelDirection !== undefined) {
+    const [tx, ty] = readPoint(portal.travelDirection, `${where}.travelDirection`);
+    const length = Math.sqrt(tx * tx + ty * ty);
+    if (!(length > 0)) throw new RangeError(`${where}.travelDirection must not be zero`);
+    dirX = tx / length;
+    dirY = ty / length;
+  }
+  if (activation === "intent" && (portal.travelDirection === undefined || portal.radius === undefined)) {
+    throw new TypeError(`${where}: intent portals need travelDirection and radius`);
+  }
+  const radius = portal.radius === undefined ? 0 : nonNegative(portal.radius, `${where}.radius`);
+  const entranceByFrom = {};
+  if (portal.entranceByFrom !== undefined) {
+    plainObject(portal.entranceByFrom, `${where}.entranceByFrom`);
+    for (const [from, entry] of Object.entries(portal.entranceByFrom)) {
+      entranceByFrom[from] = typeof entry === "string" ? text(entry, `${where}.entranceByFrom.${from}`)
+        : readPoint(entry, `${where}.entranceByFrom.${from}`);
+    }
+  }
+  const colon = to.indexOf(":");
+  return {
+    id, to, toMap: colon < 0 ? to : to.slice(0, colon), toSpawn: colon < 0 ? null : to.slice(colon + 1),
+    activation, ...shape, dirX, dirY, hasDirection: portal.travelDirection !== undefined, radius,
+    latch: portal.latch === undefined ? true : flag(portal.latch, `${where}.latch`),
+    requiresMovement: portal.requiresMovement === undefined ? true : flag(portal.requiresMovement, `${where}.requiresMovement`),
+    entranceByFrom,
+  };
+}
+
+function facingVector(facing) {
+  if (typeof facing === "number" && Number.isFinite(facing)) {
+    const theta = facing * DEG;
+    return [Math.cos(theta), Math.sin(theta)];
+  }
+  if (typeof facing === "string") return FACINGS[facing.toLowerCase()] || null;
+  return null;
+}
+
+function uniqueIds(items, what) {
+  const byId = new Map();
+  for (const item of items) {
+    if (byId.has(item.id)) throw new TypeError(`duplicate ${what} id ${JSON.stringify(item.id)}`);
+    byId.set(item.id, item);
+  }
+  return byId;
+}
+
+/** Cell size of the navigation grid (N12): max(1, round half up (r / 2)). */
+export function navCellSize(actorRadius) {
+  return Math.max(1, Math.floor(actorRadius / 2 + 0.5));
+}
+
+/** The 9 sample offsets of N2, as [x, y] pairs, centre first. */
+export function footprintOffsets(radius, ySquash = 1) {
+  const rx = radius, ry = rx * ySquash;
+  const dx = rx * SQRT1_2, dy = ry * SQRT1_2;
+  return [[0, 0], [rx, 0], [dx, dy], [0, ry], [-dx, dy], [-rx, 0], [-dx, -dy], [0, -ry], [dx, -dy]];
+}
+
+/**
+ * Compile the map_bundle.v2 fields the runtime reads into a world object (N2-N8).
+ * options.tileSolids lists the world solids of every placed tile (N7, forge_nav tile_solids); a bundle with a
+ * tiles layer needs them, unless collision.tilesResolved says collision.solids already holds them.
+ * options.materialGrid is the material grid of material_map (see decodeMaterialGrid and
+ * materialGridFromRGBA); a bundle with a material_map needs it, unless options.ignoreMaterialMap is true.
+ * map_nav.py check writes both into nav-grid.json as runtimeInputs. Throws TypeError or RangeError on
+ * malformed data or a missing resolved input, as forge_nav raises NavError.
+ */
+export function createMapRuntime(bundle, options = {}) {
+  plainObject(bundle, "bundle");
+  const world = bundle.world || {};
+  const width = finite(world.width, "world.width"), height = finite(world.height, "world.height");
+  if (!(width > 0 && height > 0)) throw new RangeError("world.width and world.height must be positive");
+  const collision = bundle.collision;
+  if (!collision || typeof collision !== "object") throw new TypeError("collision must be an object");
+  const actorRadius = nonNegative(collision.actorRadius, "collision.actorRadius");
+  const ySquash = collision.ySquash === undefined ? 1 : finite(collision.ySquash, "collision.ySquash");
+  if (!(ySquash > 0)) throw new RangeError("collision.ySquash must be positive");
+  const cell = navCellSize(actorRadius);
+  const resolved = resolvedInputs(bundle, collision, plainObject(options, "options"));
+
+  const walkRegions = (collision.walkRegions || []).map((region, k) => {
+    const where = `collision.walkRegions[${k}]`;
+    plainObject(region, where);
+    const zeroArea = (shape, at) => {
+      if (shape.area2 === 0) throw new RangeError(`${at}: polygon has zero area`);
+      return shape;
+    };
+    return {
+      outer: zeroArea(polygonShape(region.polygon, `${where}.polygon`, where, false), `${where}.polygon`),
+      holes: (region.holes || []).map((hole, h) => zeroArea(polygonShape(hole, `${where}.holes[${h}]`, where, false),
+        `${where}.holes[${h}]`)),
+    };
+  });
+  const solids = [];
+  (collision.solids || []).forEach((solid, k) => {
+    const shape = compileSolid(solid, `collision.solids[${k}]`);
+    if (hasArea(shape)) solids.push(shape);
+  });
+  (collision.rects || []).forEach((rect, k) => {
+    const where = `collision.rects[${k}]`;
+    if (!Array.isArray(rect) || rect.length !== 4) throw new TypeError(`${where} must be [x, y, w, h]`);
+    const shape = rectShape(finite(rect[0], `${where}[0]`), finite(rect[1], `${where}[1]`),
+      finite(rect[2], `${where}[2]`), finite(rect[3], `${where}[3]`), where);
+    if (hasArea(shape)) solids.push(shape);
+  });
+  const props = propsRegistry(bundle);
+  (bundle.objects || []).forEach((object, k) => {
+    const where = `objects[${k}]`;
+    plainObject(object, where);
+    text(object.id, `${where}.id`);
+    const prop = props.get(object.prop);
+    if (props.size > 0 && prop === undefined) throw new TypeError(`${where} (${object.id}): unknown prop ${JSON.stringify(object.prop)}`);
+    const shape = objectSolid(object, prop || null, where);
+    if (shape && hasArea(shape)) {
+      shape.objectId = object.id;
+      solids.push(shape);
+    }
+  });
+  resolved.tileSolids.forEach((solid, k) => {
+    const shape = compileSolid(solid, `options.tileSolids[${k}]`);
+    if (hasArea(shape)) solids.push(shape);
+  });
+
+  const material = resolved.materialGrid === null ? null : decodeMaterialGrid(resolved.materialGrid);
+  if (material !== null && (material.width * material.scale !== width || material.height * material.scale !== height)) {
+    throw new RangeError(`material grid ${material.width}x${material.height} of ${material.scale} px squares does not cover `
+      + `the ${width}x${height} world`);
+  }
+  const portals = (bundle.portals || []).map((portal, k) => compilePortal(portal, `portals[${k}]`));
+  const spawns = (bundle.spawns || []).map((spawn, k) => {
+    const where = `spawns[${k}]`;
+    plainObject(spawn, where);
+    return {id: text(spawn.id, `${where}.id`), x: finite(spawn.x, `${where}.x`), y: finite(spawn.y, `${where}.y`),
+      facing: facingVector(spawn.facing)};
+  });
+  const interactions = (bundle.interactions || []).map((item, k) => {
+    const where = `interactions[${k}]`;
+    plainObject(item, where);
+    return {id: text(item.id, `${where}.id`), x: finite(item.x, `${where}.x`), y: finite(item.y, `${where}.y`),
+      reach: item.reach === undefined ? null : nonNegative(item.reach, `${where}.reach`)};
+  });
+  const anchors = Object.entries(bundle.anchors || {}).map(([name, anchor]) => {
+    const where = `anchors.${name}`;
+    plainObject(anchor, where);
+    return {name, point: readPoint(anchor.point, `${where}.point`),
+      slots: (anchor.slots || []).map((slot, k) => readPoint(slot, `${where}.slots[${k}]`)),
+      approach: readPoints(anchor.approach, `${where}.approach`)};
+  });
+  // Arrivals given as points are starts too (map_nav check: spawns and arrival points).
+  const arrivals = [];
+  for (const portal of portals) {
+    for (const [from, entry] of Object.entries(portal.entranceByFrom)) {
+      if (Array.isArray(entry)) arrivals.push({id: `${portal.id}<-${from}`, x: entry[0], y: entry[1], facing: null, arrival: true});
+    }
+  }
+
+  const compiled = {
+    version: RUNTIME_VERSION, width, height, actorRadius, ySquash, footprintRy: actorRadius * ySquash,
+    offsets: footprintOffsets(actorRadius, ySquash), cell, sampleSpacing: cell / 2, walkRegions, solids,
+    index: bucketIndex(solids), material, hasOneWay: material !== null && material.hasOneWay,
+    portals, portalById: uniqueIds(portals, "portal"), spawns, spawnById: uniqueIds(spawns, "spawn"), arrivals,
+    interactions, interactionById: uniqueIds(interactions, "interaction"), anchors, nav: null,
+  };
+  compiled.boundaries = bucketIndex(compiled.boundaryList = boundaryElements(compiled));
+  return compiled;
+}
+
+// --------------------------------------------------------------------------- collision query (N3-N11)
+
+/** In the walk area (N3). */
+export function inWalkArea(world, px, py) {
+  if (world.walkRegions.length === 0) return px >= 0 && px <= world.width && py >= 0 && py <= world.height;
+  for (const region of world.walkRegions) {
+    const outer = region.outer;
+    if (!(py >= outer.minY && py < outer.maxY)) continue; // pnpoly is false outside [minY, maxY)
+    if (!insidePolygon(outer.xs, outer.ys, px, py)) continue;
+    if (!region.holes.some((hole) => insidePolygon(hole.xs, hole.ys, px, py))) return true;
+  }
+  return false;
+}
+
+/** On a blocker: a solid or a blocking material pixel (N4). */
+export function blockedAt(world, px, py) {
+  const near = candidates(world.index, px, py);
+  if (near !== null) {
+    for (const k of near) if (insideShape(world.solids[k], px, py)) return true;
+  }
+  return world.material !== null && materialAt(world, px, py) === BLOCK;
+}
+
+/** One sample (forge_nav centre_ok): in the walk area and on no blocker. */
+export function pointFree(world, px, py) {
+  return inWalkArea(world, px, py) && !blockedAt(world, px, py);
+}
+
+/** The 9 samples of the actor footprint at (x, y) (N2): the centre, then E, SE, S, SW, W, NW, N, NE. */
+export function footprintSamples(world, x, y) {
+  return world.offsets.map(([ox, oy]) => [x + ox, y + oy]);
+}
+
+/** N9: true when the actor can stand at (x, y). */
+export function isValid(world, x, y) {
+  for (const [ox, oy] of world.offsets) if (!pointFree(world, x + ox, y + oy)) return false;
+  return true;
+}
+
+/** True when the actor cannot stand at (x, y). */
+export function isBlocked(world, x, y) {
+  return !isValid(world, x, y);
+}
+
+// Bit k set where footprint sample k lies on one_way.
+function oneWayBits(world, x, y) {
+  let bits = 0;
+  world.offsets.forEach(([ox, oy], k) => {
+    if (materialAt(world, x + ox, y + oy) === ONE_WAY) bits |= 1 << k;
+  });
+  return bits;
+}
+
+/** Sorted cut parameters in [0, 1] where any boundary may cross a -> b (0 and 1 included; N10). */
+export function segmentBreaks(world, ax, ay, bx, by) {
+  const dx = bx - ax, dy = by - ay, cuts = [0, 1];
+  if (dx !== 0 || dy !== 0) {
+    const pad = 1e-7;
+    itemsInBox(world.boundaries, Math.min(ax, bx) - pad, Math.min(ay, by) - pad, Math.max(ax, bx) + pad,
+      Math.max(ay, by) + pad, (k) => {
+        const element = world.boundaryList[k];
+        if (element.kind === "edge") edgeCuts(ax, ay, dx, dy, element, cuts);
+        else if (element.kind === "rect") rectCuts(ax, ay, dx, dy, element, cuts);
+        else ellipseCuts(ax, ay, dx, dy, element.shape, cuts);
+      });
+    if (world.material !== null) materialCuts(world.material, ax, ay, dx, dy, cuts);
+  }
+  cuts.sort((p, q) => p - q);
+  return cuts.filter((t, k) => k === 0 || t !== cuts[k - 1]);
+}
+
+/**
+ * Why the actor cannot move straight from a to b (forge_nav segment_status, N10/N11), or null when it
+ * can. thinGap false tests only the sampled rule and the sampled one_way rule.
+ */
+export function segmentStatus(world, ax, ay, bx, by, {thinGap = true} = {}) {
+  const dx = bx - ax, dy = by - ay;
+  const length = Math.sqrt(dx * dx + dy * dy);
+  const n = Math.max(1, Math.ceil(length / (world.cell / 2)));
+  for (let k = 0; k <= n; k++) {
+    const px = ax + dx * k / n, py = ay + dy * k / n;
+    if (!isValid(world, px, py)) return `actor footprint blocked at (${px}, ${py})`;
+  }
+  const downward = by > ay && world.hasOneWay;
+  if (downward) {
+    let before = oneWayBits(world, ax, ay);
+    for (let k = 1; k <= n; k++) {
+      const bits = oneWayBits(world, ax + dx * k / n, ay + dy * k / n);
+      if ((bits & ~before) !== 0) return "one_way material blocks moving down onto it";
+      before = bits;
+    }
+  }
+  if (!thinGap) return null;
+  const ts = segmentBreaks(world, ax, ay, bx, by);
+  let code = downward ? materialAt(world, ax, ay) : FREE;
+  for (let i = 1; i < ts.length; i++) {
+    if ((ts[i] - ts[i - 1]) * length <= SLIVER_PX) continue; // N10: a rounding sliver at a touching point
+    const mid = (ts[i - 1] + ts[i]) / 2, mx = ax + dx * mid, my = ay + dy * mid;
+    if (!pointFree(world, mx, my)) return `centre path leaves the walk area or crosses a blocker near (${mx}, ${my}) (thin-gap rule)`;
+    if (downward) {
+      const next = materialAt(world, mx, my);
+      if (next === ONE_WAY && code !== ONE_WAY) return "centre path enters one_way material from above";
+      code = next;
+    }
+  }
+  if (downward && materialAt(world, bx, by) === ONE_WAY && code !== ONE_WAY) return "centre path enters one_way material from above";
+  return null;
+}
+
+/** N10: the actor can move straight from a to b. */
+export function segmentClear(world, ax, ay, bx, by, options) {
+  return segmentStatus(world, ax, ay, bx, by, options) === null;
+}
+
+// --------------------------------------------------------------------------- navigation grid (N12, N13)
+
+/** The navigation grid: {cell, cols, rows} with lazily cached node validity and moves. */
+export function navGrid(world) {
+  if (world.nav === null) {
+    const cell = world.cell;
+    const cols = Math.max(1, Math.ceil(world.width / cell)), rows = Math.max(1, Math.ceil(world.height / cell));
+    if (cols * rows > MAX_GRID_NODES) {
+      throw new RangeError(`the navigation grid would have ${cols * rows} nodes (cell ${cell} px for actorRadius `
+        + `${world.actorRadius} on a ${world.width}x${world.height} world; the limit is ${MAX_GRID_NODES}): split the map `
+        + "into chunks or check the actor radius");
+    }
+    const total = cols * rows;
+    world.nav = {cell, cols, rows, state: new Uint8Array(total), east: new Uint8Array(total), south: new Uint8Array(total),
+      north: new Uint8Array(total)};
+  }
+  return world.nav;
+}
+
+/** Centre of node k as [x, y]. */
+export function cellCenter(nav, k) {
+  const i = k % nav.cols, j = (k - i) / nav.cols;
+  return [(i + 0.5) * nav.cell, (j + 0.5) * nav.cell];
+}
+
+/** True when node k's centre is a valid position (cached). */
+export function cellValid(world, k) {
+  const nav = navGrid(world);
+  let state = nav.state[k];
+  if (state === 0) {
+    const [x, y] = cellCenter(nav, k);
+    state = isValid(world, x, y) ? 1 : 2;
+    nav.state[k] = state;
+  }
+  return state === 1;
+}
+
+/** N13: the 4-neighbour move from node k to node next is open (cached; S and N differ through one_way). */
+export function moveOpen(world, k, next) {
+  const nav = navGrid(world);
+  if (!cellValid(world, k) || !cellValid(world, next)) return false;
+  let plane, slot, from, to;
+  if (next === k + 1 || next === k - 1) {
+    plane = nav.east;
+    slot = Math.min(k, next);
+    from = slot;
+    to = slot + 1;
+  } else if (next === k + nav.cols) {
+    plane = nav.south;
+    slot = k;
+    from = k;
+    to = next;
+  } else {
+    plane = nav.north;
+    slot = next;
+    from = k;
+    to = next;
+  }
+  let state = plane[slot];
+  if (state === 0) {
+    const [ax, ay] = cellCenter(nav, from), [bx, by] = cellCenter(nav, to);
+    state = segmentClear(world, ax, ay, bx, by) ? 1 : 2;
+    plane[slot] = state;
+  }
+  return state === 1;
+}
+
+function neighbours(nav, k) {
+  const i = k % nav.cols, out = [];
+  if (i + 1 < nav.cols) out.push(k + 1);
+  if (k + nav.cols < nav.cols * nav.rows) out.push(k + nav.cols);
+  if (i > 0) out.push(k - 1);
+  if (k >= nav.cols) out.push(k - nav.cols);
+  return out;
+}
+
+function clampedCell(nav, x, y) {
+  const col = Math.min(Math.max(Math.floor(x / nav.cell), 0), nav.cols - 1);
+  const row = Math.min(Math.max(Math.floor(y / nav.cell), 0), nav.rows - 1);
+  return [row, col];
+}
+
+/**
+ * N14 join: the valid nodes within two cells of the (clamped) cell holding (x, y) that a valid point
+ * reaches by segmentClear, nearest first (squared distance, then row, then column). Empty when the
+ * point is not a valid position.
+ */
+export function joinCells(world, x, y) {
+  if (!isValid(world, x, y)) return [];
+  const nav = navGrid(world), [row, col] = clampedCell(nav, x, y), found = [];
+  for (let r = Math.max(0, row - JOIN_RINGS); r < Math.min(nav.rows, row + JOIN_RINGS + 1); r++) {
+    for (let c = Math.max(0, col - JOIN_RINGS); c < Math.min(nav.cols, col + JOIN_RINGS + 1); c++) {
+      const k = r * nav.cols + c;
+      if (!cellValid(world, k)) continue;
+      const cx = (c + 0.5) * nav.cell, cy = (r + 0.5) * nav.cell;
+      found.push([(cx - x) * (cx - x) + (cy - y) * (cy - y), r, c, k, cx, cy]);
+    }
+  }
+  found.sort((p, q) => p[0] - q[0] || p[1] - q[1] || p[2] - q[2]);
+  return found.filter(([, , , , cx, cy]) => segmentClear(world, x, y, cx, cy)).map((item) => item[3]);
+}
+
+/** The first node (x, y) joins, or -1. */
+export function originCell(world, x, y) {
+  const joined = joinCells(world, x, y);
+  return joined.length ? joined[0] : -1;
+}
+
+/**
+ * Breadth-first search over open moves from every node the points join (N14 starts). Returns
+ * {nav, start, seeds, dist, parent, reached}: dist[k] is the move count to node k (-1 when unreachable),
+ * parent[k] its predecessor and start the first joined node (-1 when none).
+ */
+export function floodFrom(world, points) {
+  const nav = navGrid(world), total = nav.cols * nav.rows;
+  const dist = new Int32Array(total).fill(-1), parent = new Int32Array(total).fill(-1);
+  const queue = new Int32Array(total), seeds = [];
+  let tail = 0;
+  for (const [x, y] of points) {
+    for (const k of joinCells(world, x, y)) {
+      seeds.push(k);
+      if (dist[k] < 0) {
+        dist[k] = 0;
+        queue[tail++] = k;
+      }
+    }
+  }
+  for (let head = 0; head < tail; head++) {
+    const k = queue[head];
+    for (const next of neighbours(nav, k)) {
+      if (dist[next] >= 0 || !moveOpen(world, k, next)) continue;
+      dist[next] = dist[k] + 1;
+      parent[next] = k;
+      queue[tail++] = next;
+    }
+  }
+  return {nav, start: seeds.length ? seeds[0] : -1, seeds, dist, parent, reached: tail};
+}
+
+/** floodFrom one point. */
+export function flood(world, x, y) {
+  return floodFrom(world, [[x, y]]);
+}
+
+// The best reached node of a list: fewest moves, then lowest row, then lowest column (N14).
+function bestReached(field, nodes) {
+  let best = -1;
+  for (const k of nodes) {
+    if (field.dist[k] < 0) continue;
+    if (best < 0 || field.dist[k] < field.dist[best] || (field.dist[k] === field.dist[best] && k < best)) best = k;
+  }
+  return best;
+}
+
+// Nodes of the window around a box (forge_nav _nodes_within), in row-major order.
+function nodesWithin(nav, x0, y0, x1, y1) {
+  const c0 = Math.max(0, Math.floor(x0 / nav.cell) - 1), c1 = Math.min(nav.cols, Math.floor(x1 / nav.cell) + 2);
+  const r0 = Math.max(0, Math.floor(y0 / nav.cell) - 1), r1 = Math.min(nav.rows, Math.floor(y1 / nav.cell) + 2);
+  const out = [];
+  for (let r = r0; r < r1; r++) for (let c = c0; c < c1; c++) out.push(r * nav.cols + c);
+  return out;
+}
+
+/** N14 point target: the actor must stand at (x, y), joined to a reached node. {node, reason}. */
+export function pointTarget(world, field, x, y) {
+  if (!isValid(world, x, y)) return {node: -1, reason: STAND_REASON};
+  const nodes = joinCells(world, x, y);
+  const node = bestReached(field, nodes);
+  return {node, reason: node >= 0 ? null : nodes.length ? "no reachable node within two cells in a clear straight line"
+    : "valid but off the grid (no valid node within two cells in a clear straight line)"};
+}
+
+/** N14 reach target: a reached node centre with dx * dx + dy * dy <= reach * reach. {node, reason}. */
+export function reachTarget(world, field, x, y, reach) {
+  const nav = field.nav;
+  const close = nodesWithin(nav, x - reach, y - reach, x + reach, y + reach).filter((k) => {
+    const [cx, cy] = cellCenter(nav, k), dx = cx - x, dy = cy - y;
+    return dx * dx + dy * dy <= reach * reach;
+  });
+  const node = bestReached(field, close);
+  return {node, reason: node >= 0 ? null : `no reachable node within reach ${reach} px`};
+}
+
+/** Distance from (x, y) to a portal trigger: 0 inside the closed rect or circle (N14). */
+export function portalDistance(portal, x, y) {
+  if (portal.kind === "rect") {
+    const dx = Math.max(portal.x - x, 0, x - portal.x1), dy = Math.max(portal.y - y, 0, y - portal.y1);
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+  const dx = x - portal.cx, dy = y - portal.cy;
+  return Math.max(Math.sqrt(dx * dx + dy * dy) - portal.r, 0);
+}
+
+/** The trigger point closest to (x, y) (forge_nav Trigger.closest_point). */
+export function closestTriggerPoint(portal, x, y) {
+  if (portal.kind === "rect") return [Math.min(Math.max(x, portal.x), portal.x1), Math.min(Math.max(y, portal.y), portal.y1)];
+  const d = Math.hypot(x - portal.cx, y - portal.cy);
+  if (d <= portal.r) return [x, y];
+  return [portal.cx + (x - portal.cx) * portal.r / d, portal.cy + (y - portal.cy) * portal.r / d];
+}
+
+/**
+ * N14 exit: intent needs a reached node within radius of the trigger; crossing a reached node inside it,
+ * else (nearest first, ties in row-major order) a reached node within two cells whose straight move to the
+ * trigger's closest point is clear. {node, entry, reason}: entry is that closest point, or null.
+ */
+export function exitTarget(world, field, portal) {
+  const nav = field.nav;
+  const box = portal.kind === "rect" ? [portal.x, portal.y, portal.x1, portal.y1]
+    : [portal.cx - portal.r, portal.cy - portal.r, portal.cx + portal.r, portal.cy + portal.r];
+  const margin = portal.activation === "intent" ? portal.radius : 2 * nav.cell;
+  const window = nodesWithin(nav, box[0] - margin, box[1] - margin, box[2] + margin, box[3] + margin)
+    .map((k) => {
+      const [cx, cy] = cellCenter(nav, k);
+      return {k, cx, cy, gap: portalDistance(portal, cx, cy)};
+    });
+  if (portal.activation === "intent") {
+    const node = bestReached(field, window.filter((item) => item.gap <= portal.radius).map((item) => item.k));
+    return {node, entry: null, reason: node >= 0 ? null : `no reachable node within the activation radius ${portal.radius} px`};
+  }
+  const inside = bestReached(field, window.filter((item) => item.gap === 0).map((item) => item.k));
+  if (inside >= 0) return {node: inside, entry: null, reason: null};
+  const ordered = window.map((item, order) => ({...item, order})).sort((p, q) => p.gap - q.gap || p.order - q.order);
+  for (const item of ordered) {
+    if (field.dist[item.k] < 0 || !(item.gap <= margin)) continue;
+    const [ex, ey] = closestTriggerPoint(portal, item.cx, item.cy);
+    if (isValid(world, ex, ey) && segmentClear(world, item.cx, item.cy, ex, ey)) return {node: item.k, entry: [ex, ey], reason: null};
+  }
+  return {node: -1, entry: null, reason: "the actor's centre cannot enter the trigger from any reachable node"};
+}
+
+// --------------------------------------------------------------------------- paths
+
+function chain(field, goal) {
+  const cells = [];
+  for (let k = goal; k >= 0; k = field.parent[k]) cells.push(k);
+  cells.reverse();
+  return cells.map((k) => {
+    const [x, y] = cellCenter(field.nav, k);
+    return {x, y};
+  });
+}
+
+/**
+ * Greedy string pulling: from (x, y) jump to the farthest waypoint with a clear segment. The input
+ * must already be a chain of clear segments starting at (x, y); every output waypoint is flagged
+ * clear: true, meaning segmentClear() holds from the point before it.
+ */
+export function smoothPath(world, x, y, points) {
+  const out = [];
+  let hx = x, hy = y, i = 0;
+  while (i < points.length) {
+    let far = i;
+    const limit = Math.min(points.length - 1, i + SMOOTH_LOOKAHEAD);
+    while (far < limit && segmentClear(world, hx, hy, points[far + 1].x, points[far + 1].y)) far++;
+    out.push({x: points[far].x, y: points[far].y, clear: true});
+    hx = points[far].x;
+    hy = points[far].y;
+    i = far + 1;
+  }
+  return out;
+}
+
+// The reached node nearest (x, y) within `rings` cells that passes `accept`, or -1.
+function nearbyReached(field, x, y, rings, accept) {
+  const nav = field.nav, [row, col] = clampedCell(nav, x, y);
+  let best = -1, bestDistance = Infinity;
+  for (let r = Math.max(0, row - rings); r < Math.min(nav.rows, row + rings + 1); r++) {
+    for (let c = Math.max(0, col - rings); c < Math.min(nav.cols, col + rings + 1); c++) {
+      const k = r * nav.cols + c, cx = (c + 0.5) * nav.cell, cy = (r + 0.5) * nav.cell;
+      const distance = (cx - x) * (cx - x) + (cy - y) * (cy - y);
+      if (field.dist[k] >= 0 && distance < bestDistance && accept(k, cx, cy)) {
+        best = k;
+        bestDistance = distance;
+      }
+    }
+  }
+  return best;
+}
+
+/**
+ * Waypoints from the flood origin to (gx, gy): the exact point when the actor can stand there and a
+ * reached node within two cells walks onto it, otherwise the nearest reachable node centre within
+ * snapRings cells. Returns null when nothing is reachable.
+ */
+export function pathFromFlood(world, field, x, y, gx, gy, {snapRings = SNAP_RINGS} = {}) {
+  if (field.start < 0) return null;
+  let goal = -1, exact = false;
+  if (isValid(world, gx, gy)) {
+    goal = nearbyReached(field, gx, gy, JOIN_RINGS, (k, cx, cy) => segmentClear(world, cx, cy, gx, gy));
+    exact = goal >= 0;
+  }
+  if (goal < 0) goal = nearbyReached(field, gx, gy, snapRings, () => true);
+  if (goal < 0) return null;
+  const points = chain(field, goal);
+  if (exact) points.push({x: gx, y: gy});
+  return smoothPath(world, x, y, points);
+}
+
+/** Click-to-walk: waypoints from (sx, sy) towards (gx, gy), or null. */
+export function findPath(world, sx, sy, gx, gy, options) {
+  return pathFromFlood(world, flood(world, sx, sy), sx, sy, gx, gy, options);
+}
+
+// --------------------------------------------------------------------------- movement
+
+// One keyboard part: segmentClear from a valid position; from an invalid one (a teleport into a wall),
+// any valid end, so the actor can walk out.
+function partClear(world, x, y, nx, ny) {
+  return isValid(world, x, y) ? segmentClear(world, x, y, nx, ny) : isValid(world, nx, ny);
+}
+
+/**
+ * Move by (dx, dy) in parts no longer than cell / 2. A part that would break segmentClear slides along
+ * x, then along y, else the walker stops there: a blocked walker stays put and never moves further than
+ * asked.
+ */
+export function moveWithCollision(world, x, y, dx, dy) {
+  const length = Math.sqrt(dx * dx + dy * dy);
+  if (!(length > 0)) return {x, y};
+  const parts = Math.max(1, Math.ceil(length / world.sampleSpacing));
+  const sx = dx / parts, sy = dy / parts;
+  for (let k = 0; k < parts; k++) {
+    if (partClear(world, x, y, x + sx, y + sy)) {
+      x += sx;
+      y += sy;
+    } else if (sx !== 0 && partClear(world, x, y, x + sx, y)) {
+      x += sx;
+    } else if (sy !== 0 && partClear(world, x, y, x, y + sy)) {
+      y += sy;
+    } else {
+      break;
+    }
+  }
+  return {x, y};
+}
+
+/**
+ * Spend one tick's movement budget along waypoints, carrying what is left at a
+ * waypoint into the next segment, so reaching a corner never costs an idle
+ * tick and the distance moved never exceeds the budget. A waypoint flagged
+ * clear: true (findPath and smoothPath output) ends a segment that passed
+ * segmentClear() when it was planned, so the walker follows it as planned;
+ * other waypoints are approached with moveWithCollision(). The input path is
+ * not changed; `path` in the result holds the waypoints still ahead.
+ * Returns {x, y, travelled, dirX, dirY, wishX, wishY, blocked, path}.
+ */
+export function advanceAlongPath(world, start, path, budget) {
+  let x = start.x, y = start.y, remaining = Math.max(0, budget), travelled = 0;
+  let dirX = 0, dirY = 0, wishX = 0, wishY = 0, blocked = false, i = 0;
+  // Each pass reaches a waypoint, spends the rest of the budget or slides; the
+  // guard only bounds pathological slides that keep approaching a waypoint.
+  for (let guard = 2 * path.length + 16; i < path.length && guard > 0; guard--) {
+    const goal = path[i], gx = goal.x - x, gy = goal.y - y;
+    const distance = Math.sqrt(gx * gx + gy * gy);
+    if (distance <= EPS) {
+      x = goal.x;
+      y = goal.y;
+      i++;
+      continue;
+    }
+    wishX = gx / distance;
+    wishY = gy / distance;
+    if (remaining <= EPS) break;
+    const amount = Math.min(distance, remaining);
+    const tx = x + wishX * amount, ty = y + wishY * amount;
+    const next = goal.clear === true ? {x: tx, y: ty} : moveWithCollision(world, x, y, wishX * amount, wishY * amount);
+    const mx = next.x - x, my = next.y - y, moved = Math.sqrt(mx * mx + my * my);
+    if (moved > EPS) {
+      dirX = mx / moved;
+      dirY = my / moved;
+      travelled += moved;
+    }
+    remaining -= amount;
+    if (amount === distance && Math.abs(next.x - tx) <= EPS && Math.abs(next.y - ty) <= EPS) {
+      x = goal.x;
+      y = goal.y;
+      i++;
+    } else {
+      x = next.x;
+      y = next.y;
+    }
+    if (moved <= EPS) {
+      blocked = true;
+      break;
+    }
+  }
+  return {x, y, travelled, dirX, dirY, wishX, wishY, blocked, path: path.slice(i)};
+}
+
+// --------------------------------------------------------------------------- exits (N15, runtime duties)
+
+/** True inside the closed trigger (portalDistance 0). */
+export function insideTrigger(portal, x, y) {
+  return portalDistance(portal, x, y) === 0;
+}
+
+/** The activation zone: within radius of the trigger (intent) or inside it (crossing). */
+export function inPortalZone(portal, x, y) {
+  return portal.activation === "intent" ? portalDistance(portal, x, y) <= portal.radius : insideTrigger(portal, x, y);
+}
+
+/**
+ * The portal an input fires at (x, y), or null. intent is the input direction
+ * (any length; zero means no input); latched is a Set of portal ids that may
+ * not fire. Ties go to the nearest trigger, then to bundle order.
+ */
+export function exitCandidate(world, x, y, intentX, intentY, latched = null) {
+  const length = Math.sqrt(intentX * intentX + intentY * intentY);
+  let best = null, bestDistance = Infinity;
+  for (const portal of world.portals) {
+    if (latched !== null && latched.has(portal.id)) continue;
+    let distance;
+    if (portal.activation === "intent") {
+      if (!(length > 0)) continue;
+      distance = portalDistance(portal, x, y);
+      if (distance > portal.radius) continue;
+      if ((intentX * portal.dirX + intentY * portal.dirY) / length <= INTENT_MIN_COS) continue;
+    } else {
+      if (!insideTrigger(portal, x, y)) continue;
+      if (portal.requiresMovement && !(length > 0)) continue;
+      distance = 0;
+    }
+    if (distance < bestDistance) {
+      best = portal;
+      bestDistance = distance;
+    }
+  }
+  return best;
+}
+
+// --------------------------------------------------------------------------- actor
+
+/** A walker at (x, y), arrived there: portals whose zone holds it start latched. */
+export function createActor(world, x, y, facing = null) {
+  const actor = {x, y, facingX: facing ? facing[0] : 0, facingY: facing ? facing[1] : 1,
+    latched: new Set(), path: null, travelled: 0};
+  arrive(world, actor, x, y);
+  return actor;
+}
+
+/** Place the actor (spawn, reset or return through an exit) and arm arrival latches. */
+export function arrive(world, actor, x, y) {
+  actor.x = x;
+  actor.y = y;
+  actor.path = null;
+  actor.latched = new Set();
+  for (const portal of world.portals) if (portal.latch && inPortalZone(portal, x, y)) actor.latched.add(portal.id);
+  return actor.latched;
+}
+
+/** Release the latch of every portal whose zone the actor has left. */
+export function releaseLatches(world, actor) {
+  for (const id of [...actor.latched]) {
+    const portal = world.portalById.get(id);
+    if (!portal || !inPortalZone(portal, actor.x, actor.y)) actor.latched.delete(id);
+  }
+}
+
+/**
+ * One tick. intent {x, y} (keyboard; any length) moves budget pixels and
+ * cancels a path; a null or zero intent follows actor.path. Then latches are
+ * released, exits are checked and a portal that fires is latched until the
+ * actor leaves its zone. Returns {travelled, intentX, intentY, blocked, arrived, fired}.
+ */
+export function stepActor(world, actor, intent, budget) {
+  let intentX = 0, intentY = 0, travelled = 0, blocked = false, arrived = false;
+  const length = intent ? Math.sqrt(intent.x * intent.x + intent.y * intent.y) : 0;
+  if (length > 0) {
+    actor.path = null;
+    intentX = intent.x / length;
+    intentY = intent.y / length;
+    const next = moveWithCollision(world, actor.x, actor.y, intentX * budget, intentY * budget);
+    const mx = next.x - actor.x, my = next.y - actor.y;
+    travelled = Math.sqrt(mx * mx + my * my);
+    blocked = travelled <= EPS;
+    actor.x = next.x;
+    actor.y = next.y;
+  } else if (actor.path !== null && actor.path.length > 0) {
+    const step = advanceAlongPath(world, actor, actor.path, budget);
+    intentX = step.wishX;
+    intentY = step.wishY;
+    travelled = step.travelled;
+    blocked = step.blocked;
+    actor.x = step.x;
+    actor.y = step.y;
+    arrived = step.path.length === 0;
+    actor.path = step.path.length > 0 && !blocked ? step.path : null;
+  }
+  if (intentX !== 0 || intentY !== 0) {
+    actor.facingX = intentX;
+    actor.facingY = intentY;
+  }
+  actor.travelled += travelled;
+  releaseLatches(world, actor);
+  const fired = exitCandidate(world, actor.x, actor.y, intentX, intentY, actor.latched);
+  if (fired !== null) actor.latched.add(fired.id);
+  return {travelled, intentX, intentY, blocked, arrived, fired};
+}
+
+/**
+ * Where an actor returns after `portal` fired: entranceByFrom[toMap], a spawn of this map or a point, as
+ * {id, x, y, facing}; null when there is none.
+ */
+export function returnSpawn(world, portal) {
+  const entry = portal.entranceByFrom[portal.toMap];
+  if (entry === undefined) return null;
+  if (Array.isArray(entry)) return {id: `${portal.id}<-${portal.toMap}`, x: entry[0], y: entry[1], facing: null};
+  return world.spawnById.get(entry) || null;
+}
+
+// --------------------------------------------------------------------------- draw order
+
+/** Draw key of a placed object: [sortY or y, x, id, index]. */
+export function drawKey(object, index) {
+  return [object.sortY === undefined ? object.y : object.sortY, object.x, String(object.id), index];
+}
+
+/** Compare draw keys: sortY, then x, then id (UTF-16 order), then bundle order. */
+export function compareDrawKeys(a, b) {
+  if (a[0] !== b[0]) return a[0] - b[0];
+  if (a[1] !== b[1]) return a[1] - b[1];
+  if (a[2] !== b[2]) return a[2] < b[2] ? -1 : 1;
+  return a[3] - b[3];
+}
+
+/** Objects in draw order (back to front). */
+export function sortForDrawing(objects) {
+  return objects.map((object, index) => ({object, key: drawKey(object, index)}))
+    .sort((a, b) => compareDrawKeys(a.key, b.key)).map((item) => item.object);
+}
+
+/** Where the actor goes in a sorted list: after every object whose sort y is <= its feet. */
+export function actorDrawIndex(sortedKeys, actorY) {
+  let lo = 0, hi = sortedKeys.length;
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1;
+    if (sortedKeys[mid] <= actorY) lo = mid + 1;
+    else hi = mid;
+  }
+  return lo;
+}
+
+// --------------------------------------------------------------------------- route check
+
+function round3(value) {
+  return Math.round(value * 1000) / 1000;
+}
+
+/** Spawns, then arrivals given as points: the starts of the route check (map_nav check). */
+export function routeStarts(world) {
+  return [...world.spawns, ...world.arrivals];
+}
+
+function targetsOf(world) {
+  const targets = world.portals.map((portal) => ({kind: "exit", id: portal.id, portal}));
+  for (const item of world.interactions) targets.push({kind: "interaction", id: item.id, x: item.x, y: item.y, reach: item.reach});
+  for (const anchor of world.anchors) {
+    anchor.approach.forEach(([x, y], k) => targets.push({kind: "approach", id: `${anchor.name}.approach[${k}]`, x, y}));
+    anchor.slots.forEach(([x, y], k) => targets.push({kind: "slot", id: `${anchor.name}.slot[${k}]`, x, y}));
+  }
+  return targets;
+}
+
+// The N14 answer for one target on one flood: {node, entry, exact, reason}.
+function targetGoal(world, field, target) {
+  if (target.kind === "exit") {
+    const portal = target.portal;
+    if (portal.activation === "intent") {
+      // The verdict is N14's; the walk goes to the reached node nearest the trigger (then fewest moves).
+      const answer = exitTarget(world, field, portal);
+      if (answer.node < 0) return answer;
+      let best = -1, bestGap = Infinity;
+      for (let k = 0; k < field.dist.length; k++) {
+        if (field.dist[k] < 0) continue;
+        const [x, y] = cellCenter(field.nav, k), gap = portalDistance(portal, x, y);
+        if (gap <= portal.radius && (gap < bestGap || (gap === bestGap && field.dist[k] < field.dist[best]))) {
+          best = k;
+          bestGap = gap;
+        }
+      }
+      return {node: best, entry: null, reason: null};
+    }
+    return exitTarget(world, field, portal);
+  }
+  if (target.kind === "interaction" && target.reach !== null) return reachTarget(world, field, target.x, target.y, target.reach);
+  const answer = pointTarget(world, field, target.x, target.y);
+  return {...answer, exact: true};
+}
+
+// A reachable node outside the portal's zone, fewest moves first (to leave an arrival latch).
+function departureCell(field, portal) {
+  let best = -1;
+  for (let k = 0; k < field.dist.length; k++) {
+    if (field.dist[k] < 0 || (best >= 0 && field.dist[k] >= field.dist[best])) continue;
+    const [x, y] = cellCenter(field.nav, k);
+    if (!inPortalZone(portal, x, y)) best = k;
+  }
+  return best;
+}
+
+function pathLength(x, y, path) {
+  let length = 0;
+  for (const point of path) {
+    length += Math.sqrt((point.x - x) * (point.x - x) + (point.y - y) * (point.y - y));
+    x = point.x;
+    y = point.y;
+  }
+  return length;
+}
+
+// Follow actor.path tick by tick; onFire(portal) returns true to stop.
+function walk(world, actor, budget, onFire, stats) {
+  const limit = 2 * Math.ceil(pathLength(actor.x, actor.y, actor.path) / budget) + 120;
+  for (let ticks = 0; actor.path !== null; ticks++) {
+    if (ticks >= limit) {
+      stats.limitHit = true;
+      return false;
+    }
+    const step = stepActor(world, actor, null, budget);
+    stats.ticks++;
+    stats.distance += step.travelled;
+    stats.maxStep = Math.max(stats.maxStep, step.travelled);
+    if (step.travelled <= EPS && !step.arrived) stats.zeroMotionTicks++;
+    if (step.blocked) {
+      stats.blocked = true;
+      return false;
+    }
+    if (step.fired !== null && onFire(step.fired)) return true;
+  }
+  return true;
+}
+
+// Hold one keyboard direction for `ticks` ticks; true when onFire stopped it.
+function push(world, actor, dirX, dirY, budget, ticks, onFire) {
+  for (let k = 0; k < ticks; k++) {
+    const step = stepActor(world, actor, {x: dirX, y: dirY}, budget);
+    if (step.fired !== null && onFire(step.fired)) return true;
+  }
+  return false;
+}
+
+function routeTo(world, starts, floods, target, budget) {
+  const result = {target: target.id, kind: target.kind, from: null, ok: false, reachable: false, reason: null,
+    ticks: 0, distance: 0, maxStep: 0, zeroMotionTicks: 0, blocked: false, firedEnRoute: [], end: null};
+  let start = null, field = null, goal = null, why = null;
+  for (const candidate of starts) {
+    const answer = targetGoal(world, floods.get(candidate.id), target);
+    if (answer.node >= 0) {
+      start = candidate;
+      field = floods.get(candidate.id);
+      goal = answer;
+      break;
+    }
+    why = why || answer.reason;
+  }
+  if (start === null) {
+    result.reason = starts.length === 0 ? "no spawns" : `unreachable from every start${why ? ` (${why})` : ""}`;
+    return result;
+  }
+  result.from = start.id;
+  result.reachable = true;
+  const stats = {ticks: 0, distance: 0, maxStep: 0, zeroMotionTicks: 0, blocked: false, limitHit: false};
+  const enRoute = new Set();
+  let fired = false;
+  const onFire = (portal) => {
+    if (target.kind === "exit" && portal.id === target.id) {
+      fired = true;
+      return true;
+    }
+    enRoute.add(portal.id);
+    return false;
+  };
+  const actor = createActor(world, start.x, start.y, start.facing);
+  const reasons = [];
+  let walking = true;
+  if (target.kind === "exit" && actor.latched.has(target.id)) {
+    // The start lies in this exit's zone and latched it: leave the zone first, as a player must.
+    const away = departureCell(field, target.portal);
+    if (away < 0) {
+      reasons.push("the start latches this exit and no reachable node lies outside its zone");
+      walking = false;
+    } else {
+      actor.path = smoothPath(world, actor.x, actor.y, chain(field, away));
+      walking = walk(world, actor, budget, onFire, stats);
+      field = walking ? flood(world, actor.x, actor.y) : field;
+      goal = walking ? targetGoal(world, field, target) : null;
+      if (walking && goal.node < 0) {
+        reasons.push("unreachable after leaving the arrival zone");
+        walking = false;
+      }
+    }
+  }
+  const node = goal !== null && goal.node >= 0 ? goal.node : -1;
+  const [gx, gy] = node >= 0 ? cellCenter(field.nav, node) : [actor.x, actor.y];
+  const finalPoint = goal !== null && goal.exact ? [target.x, target.y] : goal !== null && goal.entry ? goal.entry : null;
+  if (walking && finalPoint !== null && !segmentClear(world, gx, gy, finalPoint[0], finalPoint[1])) {
+    reasons.push("the last step from the grid onto the point is blocked (one_way)");
+    walking = false;
+  }
+  if (walking) {
+    const points = chain(field, node);
+    if (finalPoint !== null) points.push({x: finalPoint[0], y: finalPoint[1]});
+    actor.path = smoothPath(world, actor.x, actor.y, points);
+    walk(world, actor, budget, onFire, stats);
+  }
+  if (target.kind === "exit") {
+    const portal = target.portal;
+    const pushTicks = Math.min(600, Math.ceil(portal.radius / budget) + Math.ceil(2 * world.cell / budget) + 4);
+    if (walking && !fired && !stats.blocked && !stats.limitHit && portal.hasDirection) {
+      push(world, actor, portal.dirX, portal.dirY, budget, pushTicks, onFire);
+    }
+    result.fired = fired;
+    if (portal.activation === "intent" && node >= 0) {
+      // From the same spot, holding the opposite direction must never leave the map.
+      const inward = createActor(world, gx, gy);
+      inward.latched.clear();
+      let inwardFired = false;
+      push(world, inward, -portal.dirX, -portal.dirY, budget, pushTicks, (other) => {
+        inwardFired = inwardFired || other.id === portal.id;
+        return inwardFired;
+      });
+      result.inwardFired = inwardFired;
+    }
+  }
+  Object.assign(result, {ticks: stats.ticks, distance: round3(stats.distance), maxStep: round3(stats.maxStep),
+    zeroMotionTicks: stats.zeroMotionTicks, blocked: stats.blocked, firedEnRoute: [...enRoute],
+    end: [round3(actor.x), round3(actor.y)]});
+  const exact = goal !== null && goal.exact;
+  const ex = actor.x - (exact || target.kind === "interaction" ? target.x : gx);
+  const ey = actor.y - (exact || target.kind === "interaction" ? target.y : gy);
+  const arrived = target.kind === "exit" ? fired
+    : target.kind === "interaction" && target.reach !== null ? Math.sqrt(ex * ex + ey * ey) <= target.reach + EPS
+      : Math.abs(ex) <= 1e-6 && Math.abs(ey) <= 1e-6;
+  if (stats.blocked) reasons.push("walker blocked on the planned path");
+  if (stats.limitHit) reasons.push("tick limit reached");
+  if (stats.zeroMotionTicks > 0) reasons.push("zero-motion ticks");
+  if (stats.maxStep > budget + EPS) reasons.push("movement budget exceeded");
+  if (walking && !arrived) reasons.push(target.kind === "exit" ? "exit did not fire" : "did not arrive");
+  if (result.inwardFired) reasons.push("walking inward fired the exit");
+  result.ok = reasons.length === 0;
+  result.reason = reasons.length ? reasons.join("; ") : null;
+  return result;
+}
+
+/**
+ * The arrivals of each portal (entranceByFrom: a spawn id or a point): found, valid, joined to the grid
+ * and outside every trigger (bounceBack lists the closed triggers that hold it, as map_nav checks).
+ */
+export function portalArrivals(world) {
+  return world.portals.map((portal) => ({
+    id: portal.id, activation: portal.activation, to: portal.to,
+    arrivals: Object.entries(portal.entranceByFrom).map(([from, entry]) => {
+      const point = Array.isArray(entry) ? {x: entry[0], y: entry[1]} : world.spawnById.get(entry);
+      const label = Array.isArray(entry) ? `${portal.id}<-${from}` : entry;
+      if (!point) return {from, spawn: label, found: false, insideTrigger: null, inZone: null, latchedOnArrival: null};
+      return {from, spawn: label, found: true, ...(Array.isArray(entry) ? {point: [entry[0], entry[1]]} : {}),
+        insideTrigger: insideTrigger(portal, point.x, point.y), inZone: inPortalZone(portal, point.x, point.y),
+        latchedOnArrival: portal.latch && inPortalZone(portal, point.x, point.y),
+        valid: isValid(world, point.x, point.y), joined: joinCells(world, point.x, point.y).length > 0,
+        bounceBack: world.portals.filter((other) => insideTrigger(other, point.x, point.y)).map((other) => other.id)};
+    }),
+  }));
+}
+
+/**
+ * Walk from the starts (spawns, then arrival points) to every exit, interaction, anchor approach point
+ * and slot with the same stepActor() a game tick uses: each target is walked from the first start that
+ * reaches it (N14 decides reachability). Exits must fire with their travel direction and must not fire
+ * when walking inward; the walk may never stall, idle or exceed the per-tick budget. speed is in world px
+ * per second.
+ */
+export function traverseRoutes(world, {speed} = {}) {
+  const pxPerSecond = finite(speed, "speed");
+  if (!(pxPerSecond > 0)) throw new RangeError("speed must be positive");
+  const budget = pxPerSecond / TICK_HZ;
+  const starts = routeStarts(world);
+  const floods = new Map(starts.map((start) => [start.id, flood(world, start.x, start.y)]));
+  const spawns = starts.map((start) => ({id: start.id, ...(start.arrival ? {kind: "arrival"} : {}),
+    valid: isValid(world, start.x, start.y), reachableCells: floods.get(start.id).reached}));
+  const results = targetsOf(world).map((target) => routeTo(world, starts, floods, target, budget));
+  const portals = portalArrivals(world);
+  const arrivalsOk = portals.every((portal) => portal.arrivals.every((item) => item.found && item.valid && item.joined
+    && item.bounceBack.length === 0));
+  return {
+    ok: spawns.length > 0 && spawns.every((spawn) => spawn.valid && spawn.reachableCells > 0)
+      && results.every((item) => item.ok) && arrivalsOk,
+    speed: pxPerSecond, budget: round3(budget), tickHz: TICK_HZ, cell: world.cell, spawns, results, portals,
+  };
+}
+
+// --------------------------------------------------------------------------- snapshot
+
+/** Plain JSON state of a world and actor; callers add their own fields. */
+export function runtimeSnapshot(world, actor, extra = {}) {
+  return {
+    schema: SNAPSHOT_SCHEMA,
+    runtime: {name: "map-runtime", version: RUNTIME_VERSION},
+    world: {width: world.width, height: world.height, actorRadius: world.actorRadius, ySquash: world.ySquash,
+      cell: world.cell, tickHz: TICK_HZ, solids: world.solids.length, portals: world.portals.length,
+      oneWay: world.hasOneWay},
+    actor: actor === null ? null : {
+      x: round3(actor.x), y: round3(actor.y), valid: isValid(world, actor.x, actor.y),
+      facing: [round3(actor.facingX), round3(actor.facingY)], latched: [...actor.latched].sort(),
+      travelled: round3(actor.travelled), pathLength: actor.path === null ? 0 : actor.path.length,
+    },
+    ...extra,
+  };
+}
+// ---- scene preview (build_scene_preview.py); the runtime above is map-runtime.mjs, inlined verbatim ----
+const SCENE = {"title":"N\u00f4ng tr\u1ea1i M\u1ea7m Xanh","source":{"file":"map-bundle.json","sha256":"4a88554b95a261b4ab6ab24010b2a17242a8ac7edc61a4f8482b954fb276da67","schema":"generate2dmap.map_bundle.v2"},"world":{"width":1280,"height":960},"zoom":1,"speed":60.0,"start":"new-game","actor":{"height":18.0},"layers":[{"name":"ground","kind":"image","image":"i4","source":"tiles","size":[1280,960]},{"name":"props","kind":"objects","source":"objects"}],"objects":[{"id":"farmhouse-1","prop":"farmhouse","x":608,"y":336,"scale":1,"flipX":false,"anchor":[27,44],"sortY":336,"image":"i0","size":[56,44],"art":"props"},{"id":"fruit-tree-1","prop":"fruit-tree","x":560,"y":440,"scale":1,"flipX":false,"anchor":[16,29],"sortY":440,"image":"i1","size":[32,29],"art":"props"},{"id":"fruit-tree-2","prop":"fruit-tree","x":592,"y":440,"scale":1,"flipX":false,"anchor":[16,29],"sortY":440,"image":"i1","size":[32,29],"art":"props"},{"id":"fruit-tree-3","prop":"fruit-tree","x":704,"y":464,"scale":1,"flipX":false,"anchor":[16,29],"sortY":464,"image":"i1","size":[32,29],"art":"props"},{"id":"fruit-tree-4","prop":"fruit-tree","x":736,"y":464,"scale":1,"flipX":false,"anchor":[16,29],"sortY":464,"image":"i1","size":[32,29],"art":"props"},{"id":"shipping-chest-1","prop":"shipping-chest","x":680,"y":480,"scale":1,"flipX":false,"anchor":[8,10],"sortY":480,"image":"i3","size":[16,10],"art":"props"},{"id":"fruit-tree-5","prop":"fruit-tree","x":480,"y":520,"scale":1,"flipX":false,"anchor":[16,29],"sortY":520,"image":"i1","size":[32,29],"art":"props"},{"id":"fruit-tree-6","prop":"fruit-tree","x":784,"y":536,"scale":1,"flipX":false,"anchor":[16,29],"sortY":536,"image":"i1","size":[32,29],"art":"props"},{"id":"moss-rocks-1","prop":"moss-rocks","x":576,"y":560,"scale":1,"flipX":false,"anchor":[9,11],"sortY":560,"image":"i2","size":[18,11],"art":"props"},{"id":"moss-rocks-2","prop":"moss-rocks","x":704,"y":592,"scale":1,"flipX":false,"anchor":[9,11],"sortY":592,"image":"i2","size":[18,11],"art":"props"},{"id":"fruit-tree-7","prop":"fruit-tree","x":528,"y":600,"scale":1,"flipX":false,"anchor":[16,29],"sortY":600,"image":"i1","size":[32,29],"art":"props"}],"bundle":{"world":{"width":1280,"height":960},"collision":{"actorRadius":4,"ySquash":0.625,"rects":[[0,0,1280,8],[0,952,1280,8],[0,0,8,960],[1272,0,8,960]],"tilesResolved":true},"objects":[{"id":"farmhouse-1","x":608,"y":336,"scale":1,"prop":"farmhouse","footprint":{"shape":"rect","width":44,"depth":14,"offset":[0,-7.0],"basis":"world_px"}},{"id":"fruit-tree-1","x":560,"y":440,"scale":1,"prop":"fruit-tree","footprint":{"shape":"rect","width":8,"depth":6,"offset":[0,-3.0],"basis":"world_px"}},{"id":"fruit-tree-2","x":592,"y":440,"scale":1,"prop":"fruit-tree","footprint":{"shape":"rect","width":8,"depth":6,"offset":[0,-3.0],"basis":"world_px"}},{"id":"fruit-tree-3","x":704,"y":464,"scale":1,"prop":"fruit-tree","footprint":{"shape":"rect","width":8,"depth":6,"offset":[0,-3.0],"basis":"world_px"}},{"id":"fruit-tree-4","x":736,"y":464,"scale":1,"prop":"fruit-tree","footprint":{"shape":"rect","width":8,"depth":6,"offset":[0,-3.0],"basis":"world_px"}},{"id":"fruit-tree-5","x":480,"y":520,"scale":1,"prop":"fruit-tree","footprint":{"shape":"rect","width":8,"depth":6,"offset":[0,-3.0],"basis":"world_px"}},{"id":"fruit-tree-6","x":784,"y":536,"scale":1,"prop":"fruit-tree","footprint":{"shape":"rect","width":8,"depth":6,"offset":[0,-3.0],"basis":"world_px"}},{"id":"fruit-tree-7","x":528,"y":600,"scale":1,"prop":"fruit-tree","footprint":{"shape":"rect","width":8,"depth":6,"offset":[0,-3.0],"basis":"world_px"}},{"id":"moss-rocks-1","x":576,"y":560,"scale":1,"prop":"moss-rocks","footprint":{"shape":"rect","width":12,"depth":8,"offset":[0,-4.0],"basis":"world_px"}},{"id":"moss-rocks-2","x":704,"y":592,"scale":1,"prop":"moss-rocks","footprint":{"shape":"rect","width":12,"depth":8,"offset":[0,-4.0],"basis":"world_px"}},{"id":"shipping-chest-1","x":680,"y":480,"scale":1,"prop":"shipping-chest","footprint":{"shape":"rect","width":14,"depth":8,"offset":[0,-4.0],"basis":"world_px"}}],"props":{"farmhouse":{},"fruit-tree":{},"moss-rocks":{},"shipping-chest":{}},"portals":[],"spawns":[{"id":"new-game","x":640,"y":480,"facing":"down"}],"interactions":[{"id":"to-market_street","x":532,"y":544,"reach":12},{"id":"to-ranch","x":604,"y":544,"reach":12},{"id":"to-whispering_forest","x":676,"y":544,"reach":12},{"id":"to-player_house","x":748,"y":544,"reach":12},{"id":"to-coop","x":532,"y":592,"reach":12},{"id":"to-barn","x":604,"y":592,"reach":12},{"id":"to-greenhouse","x":676,"y":592,"reach":12},{"id":"shipping","x":712,"y":480,"reach":28}],"anchors":{}},"materialGrid":null};
+const IMAGE_DATA = {"i0":["image/png","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"],"i1":["image/png","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"],"i2":["image/png","iVBORw0KGgoAAAANSUhEUgAAABIAAAALCAYAAAByF90EAAACjklEQVR4nHWOT0hTcQDHv7/3fnvubW5zrpqTUnMqYVYkKSSFoYSHqCSEgiIjwopOHeoa1KWOnbpEBR4DL10N6iAEBVpiU0Yu56b749ub2/v/7xcFQkR+z9/Phw/BLns0PEz3HeVPDw123eVEdXS9/MUvF1k6m3VeL3y3pt9+ylX+/pP/SV49PDc2NND5PNG6p4s5jNTqBUhmBktrKXgOgVzkK/NfrZE3s7nFHYb7V/L02smhgd62mXA40G1YJtRtA34hBM1UEG32IEkcK0o06hcD93ctujd6KHb1/ImU5fAx2/WQSIisIUDJ/NocNgoKlDqPEEmiptqsrurepiSdnf6w/PE3S3ckk5Pt/hYrPCErRsw2OXS0N4FyAsmva9CLnfAZNlpECsIoMoV1QuBwflEYf/ysI5LdYNk/RVeuxw8f6yMzSiooRIO0LcIlEW0MQFZN2DZAKY9oKAjKc1gtbLKfUpbU6oAbsq3WXtvVTe8mBQPpe0IfiMbeZDwpkHhoPxylAelMCZargLmN4CnPVN0immVDUqrkSL+NRIxHWYKwkCWuxAijU2d6YhfvjB1v7xJIWVkBp7UhlzHQFmeYS21BaJYhek1kuypCVnTcutQPTlCwvPkNWyUHcUJ5K0dG6KnBnheOavStzOvQzQRW1/KM43WSrazCAYEh1uHyGrRCnEUCApaWiyQcDkKVuxEXfNjSKnCc8gQtyvJwZb4E5oQQawwjvbEBUJ1V6xyJHKwx1++xH2veoqFsvbR8vttZVevzSXEwBiimDd3Q4XosTT+nixfCQTIl+vSelJtLuq7De56woBjOYr1J38zXyML7mdLs5RutBzp6zPF8XsloebfEXKK7jDDLMlNVTXv3C2xMTIDtJz7eAAAAAElFTkSuQmCC"],"i3":["image/png","iVBORw0KGgoAAAANSUhEUgAAABAAAAAKCAYAAAC9vt6cAAACA0lEQVR4nC2SzWoTYRiFn/ebb/IzSfoDrU1qcSHFoigixdJFt16HiF0UFy5cufMKvBDdCdKNeAVascWfWpEK1rTEGPPTZGa+mfleibh8FofzHDgC8PrxrXvFSHaO+/bm5qV8rxwYNxwILgWXKUY8XmEcF/JuXFony05WbPri/svPj+XJeiu6u736tdfWZmdYsHEjQAe5ng9UXAKpE4wqsVOMUfZ7wlli2ZiZ5LsfO6tm887Kdj00zTQv6Vzk8U7IvRHvoRSiAhQeVP8xl+c91aiKLQX2+sXGA7MwEz46/p5w9CeXRqTE44J4ovSd8rYjcjAwtBNPFEGtJloWJfGObiZcmA137O5ue/aXM7SJON4fUQunjYYfqdAPq4wTT0NTrlT91EKSXPmiNb5pQo1C7VFeO7CB37odjIgMmABVk8uCWDIbEruMGYG5Eiw0hKhiWOqOeTOJOEv9K9tidFg3ZmutWSIpYGk+EOdy3GnB+96EvFCimqc1bzTzgVQqhsW60TUXy8/Uf7LLkc21gOFImasq6dDjCs9yuWCz7nSSqazOhGTOUwrg5DTTOA+ohwF167Efssq10ASsxDFYw/gcylYQCWg1kHEKcaHEfrp/+hor3VzoBhV+a3bVdjr9Z8vVcOPQ5ZO9U/+wYc0gBQTUgBTTzH9WkCTT5mJkngYmLfWG7vlfxAYKRmvA6JEAAAAASUVORK5CYII="],"i4":["image/png","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"]};
+
+const view = document.getElementById("view");
+const ctx = view.getContext("2d");
+const statusLine = document.getElementById("status");
+const W = SCENE.world.width, H = SCENE.world.height, Z = SCENE.zoom;
+const BUDGET = SCENE.speed / TICK_HZ;
+const KEY_DIRECTIONS = {
+  arrowup: [0, -1], w: [0, -1], arrowdown: [0, 1], s: [0, 1],
+  arrowleft: [-1, 0], a: [-1, 0], arrowright: [1, 0], d: [1, 0],
+};
+const MAX_EVENTS = 200;
+const sortKeys = SCENE.objects.map((object) => object.sortY);
+const images = {};
+const alphaCache = {};
+const state = {
+  ready: false, error: null, tick: 0, debug: false, grid: false, props: true, actorVisible: true,
+  keys: new Set(), events: [], exitsFired: [], reached: new Set(), routes: null, message: "",
+  waiters: [], assets: {total: 0, loaded: 0, failed: []}, gridCanvas: null, materialCanvas: null,
+};
+let world = null, actor = null, startSpawn = null;
+
+view.width = Math.ceil(W * Z);
+view.height = Math.ceil(H * Z);
+
+function control(id) { return document.getElementById(id); }
+
+function record(event) {
+  state.events.push({tick: state.tick, ...event});
+  if (state.events.length > MAX_EVENTS) state.events.splice(0, state.events.length - MAX_EVENTS);
+}
+
+function say(message) { state.message = message; }
+
+function fail(error) {
+  state.error = String((error && error.message) || error);
+  statusLine.textContent = "error: " + state.error;
+}
+
+function needReady() {
+  if (!state.ready) throw new Error(state.error || "the scene is still loading");
+}
+
+// ---- simulation ----
+
+function keyIntent() {
+  let x = 0, y = 0;
+  for (const key of state.keys) {
+    const direction = KEY_DIRECTIONS[key];
+    if (direction) {
+      x += direction[0];
+      y += direction[1];
+    }
+  }
+  return {x: Math.sign(x), y: Math.sign(y)};
+}
+
+// Interactions without reach are point targets (N14); the page treats one nav cell around them as in reach.
+function reachOf(item) { return item.reach === null ? world.cell : item.reach; }
+
+function exitFired(portal) {
+  record({type: "exit", id: portal.id, to: portal.to});
+  if (!state.exitsFired.includes(portal.id)) state.exitsFired.push(portal.id);
+  state.keys.clear();
+  actor.path = null;
+  const back = returnSpawn(world, portal);
+  if (back) {
+    arrive(world, actor, back.x, back.y);
+    record({type: "arrive", id: back.id, via: portal.id});
+    say(`exit ${portal.id} -> ${portal.to}; back through spawn ${back.id}`);
+  } else {
+    say(`exit ${portal.id} -> ${portal.to}; no entrance back from ${portal.toMap || "there"}`);
+  }
+}
+
+function tick() {
+  const intent = keyIntent();
+  const step = stepActor(world, actor, intent.x || intent.y ? intent : null, BUDGET);
+  state.tick += 1;
+  if (step.fired) exitFired(step.fired);
+  for (const item of world.interactions) {
+    if (state.reached.has(item.id)) continue;
+    const dx = actor.x - item.x, dy = actor.y - item.y;
+    if (Math.sqrt(dx * dx + dy * dy) <= reachOf(item)) {
+      state.reached.add(item.id);
+      record({type: "reach", id: item.id});
+    }
+  }
+  if (state.waiters.length) {
+    const due = state.waiters.filter((waiter) => waiter.tick <= state.tick);
+    state.waiters = state.waiters.filter((waiter) => waiter.tick > state.tick);
+    for (const waiter of due) waiter.resolve(state.tick);
+  }
+}
+
+function interact() {
+  let best = null, bestDistance = Infinity;
+  for (const item of world.interactions) {
+    const distance = Math.hypot(actor.x - item.x, actor.y - item.y);
+    if (distance <= reachOf(item) && distance < bestDistance) {
+      best = item;
+      bestDistance = distance;
+    }
+  }
+  if (best) {
+    record({type: "interact", id: best.id});
+    say(`interact ${best.id}`);
+  } else {
+    say("nothing in reach");
+  }
+}
+
+// ---- drawing ----
+
+function tracePolygon(shape) {
+  ctx.beginPath();
+  ctx.moveTo(shape.xs[0], shape.ys[0]);
+  for (let k = 1; k < shape.xs.length; k++) ctx.lineTo(shape.xs[k], shape.ys[k]);
+  ctx.closePath();
+}
+
+function traceShape(shape) {
+  if (shape.kind === "rect") {
+    ctx.beginPath();
+    ctx.rect(shape.x, shape.y, shape.x1 - shape.x, shape.y1 - shape.y);
+  } else if (shape.kind === "ellipse") {
+    ctx.beginPath();
+    ctx.ellipse(shape.cx, shape.cy, Math.max(shape.rx, 0), Math.max(shape.ry, 0), shape.rotate * Math.PI / 180, 0, Math.PI * 2);
+  } else {
+    tracePolygon(shape);
+  }
+}
+
+function dot(x, y, radius, color) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2);
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+function square(x, y, half, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x - half, y - half, 2 * half, 2 * half);
+}
+
+function ring(x, y, radius, color) {
+  ctx.setLineDash([4 / Z, 3 / Z]);
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2);
+  ctx.strokeStyle = color;
+  ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+function roundedRect(x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function arrow(x, y, dx, dy, length, color) {
+  const tx = x + dx * length, ty = y + dy * length, head = Math.max(3 / Z, length * 0.3);
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(tx, ty);
+  ctx.lineTo(tx - head * (dx - dy * 0.5), ty - head * (dy + dx * 0.5));
+  ctx.moveTo(tx, ty);
+  ctx.lineTo(tx - head * (dx + dy * 0.5), ty - head * (dy - dx * 0.5));
+  ctx.strokeStyle = color;
+  ctx.stroke();
+}
+
+function drawPortal(portal) {
+  ctx.beginPath();
+  if (portal.kind === "rect") ctx.rect(portal.x, portal.y, portal.x1 - portal.x, portal.y1 - portal.y);
+  else ctx.arc(portal.cx, portal.cy, portal.r, 0, Math.PI * 2);
+  ctx.fillStyle = "rgba(255, 159, 67, 0.22)";
+  ctx.strokeStyle = "#ff9f43";
+  ctx.fill();
+  ctx.stroke();
+  if (portal.activation === "intent" && portal.radius > 0) {
+    ctx.setLineDash([4 / Z, 3 / Z]);
+    const r = portal.radius;
+    if (portal.kind === "rect") {
+      roundedRect(portal.x - r, portal.y - r, portal.x1 - portal.x + 2 * r, portal.y1 - portal.y + 2 * r, r);
+    } else {
+      ctx.beginPath();
+      ctx.arc(portal.cx, portal.cy, portal.r + r, 0, Math.PI * 2);
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  if (portal.hasDirection) arrow(portal.cx, portal.cy, portal.dirX, portal.dirY, Math.max(10, portal.radius), "#ff9f43");
+}
+
+// flip_x mirrors the art around the anchor x (D6): the mirrored image ends where the anchor column lands.
+function objectLeft(object) {
+  const s = object.scale;
+  return object.flipX ? Math.round(object.x + object.anchor[0] * s) : Math.round(object.x - object.anchor[0] * s);
+}
+
+function drawObject(object) {
+  const image = object.image === null ? null : images[object.image];
+  if (image) {
+    const s = object.scale, top = Math.round(object.y - object.anchor[1] * s);
+    if (object.flipX) {
+      ctx.save();
+      ctx.scale(-1, 1);
+      ctx.drawImage(image, -objectLeft(object), top, image.width * s, image.height * s);
+      ctx.restore();
+    } else {
+      ctx.drawImage(image, objectLeft(object), top, image.width * s, image.height * s);
+    }
+  } else {
+    ctx.fillStyle = "rgba(255, 0, 255, 0.85)";
+    ctx.fillRect(object.x - 2, object.y - 12, 4, 12);
+  }
+}
+
+function drawActor() {
+  const r = world.actorRadius, ry = world.footprintRy, h = SCENE.actor.height;
+  const bw = Math.max(2, Math.round(r * 1.2)), x = actor.x, y = actor.y;
+  ctx.beginPath();
+  ctx.ellipse(x, y, Math.max(r, 1), Math.max(ry, 0.5), 0, 0, Math.PI * 2);
+  ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
+  ctx.fill();
+  ctx.fillStyle = "#1b2a33";
+  ctx.fillRect(x - bw / 2 - 1, y - h - 1, bw + 2, h - 1);
+  ctx.fillStyle = "#f2f5ea";
+  ctx.fillRect(x - bw / 2, y - h, bw, h - 3);
+  ctx.fillStyle = "#e0623a";
+  ctx.fillRect(x + actor.facingX * bw / 2 - 1, y - h * 0.8 + actor.facingY * 2 - 1, 2, 2);
+}
+
+function drawObjects() {
+  const at = state.actorVisible ? actorDrawIndex(sortKeys, actor.y) : -1;
+  for (let k = 0; k <= SCENE.objects.length; k++) {
+    if (k === at) drawActor();
+    if (k < SCENE.objects.length && state.props) drawObject(SCENE.objects[k]);
+  }
+}
+
+function buildMaterialCanvas() {
+  const grid = world.material;
+  if (grid === null) return null;
+  const canvas = document.createElement("canvas");
+  canvas.width = grid.width;
+  canvas.height = grid.height;
+  const g = canvas.getContext("2d"), image = g.createImageData(grid.width, grid.height);
+  for (let k = 0; k < grid.width * grid.height; k++) {
+    if (grid.codes[k] === BLOCK) image.data.set([52, 152, 219, 150], k * 4);
+    else if (grid.codes[k] === ONE_WAY) image.data.set([241, 196, 15, 150], k * 4);
+  }
+  g.putImageData(image, 0, 0);
+  return canvas;
+}
+
+function buildGridCanvas() {
+  const field = flood(world, actor.x, actor.y), nav = field.nav;
+  const canvas = document.createElement("canvas");
+  canvas.width = nav.cols;
+  canvas.height = nav.rows;
+  const g = canvas.getContext("2d"), image = g.createImageData(nav.cols, nav.rows);
+  for (let k = 0; k < nav.cols * nav.rows; k++) {
+    if (field.dist[k] >= 0) image.data.set([62, 224, 122, 90], k * 4);
+    else if (cellValid(world, k)) image.data.set([244, 208, 63, 90], k * 4);
+    else image.data.set([255, 59, 48, 70], k * 4);
+  }
+  g.putImageData(image, 0, 0);
+  return {canvas, width: nav.cols * nav.cell, height: nav.rows * nav.cell};
+}
+
+function drawDebug() {
+  ctx.lineWidth = 1.5 / Z;
+  if (state.materialCanvas) ctx.drawImage(state.materialCanvas, 0, 0, W, H);
+  if (state.grid && state.gridCanvas) ctx.drawImage(state.gridCanvas.canvas, 0, 0, state.gridCanvas.width, state.gridCanvas.height);
+  ctx.strokeStyle = "#3ee07a";
+  if (!world.walkRegions.length) ctx.strokeRect(0, 0, W, H);
+  for (const region of world.walkRegions) {
+    tracePolygon(region.outer);
+    ctx.strokeStyle = "#3ee07a";
+    ctx.stroke();
+    for (const hole of region.holes) {
+      tracePolygon(hole);
+      ctx.strokeStyle = "#f4d03f";
+      ctx.stroke();
+    }
+  }
+  for (const shape of world.solids) {
+    traceShape(shape);
+    const prop = shape.objectId !== undefined, tile = String(shape.source).startsWith("tiles:");
+    ctx.fillStyle = prop ? "rgba(255, 77, 255, 0.30)" : tile ? "rgba(230, 126, 34, 0.30)" : "rgba(231, 76, 60, 0.30)";
+    ctx.strokeStyle = prop ? "#ff4dff" : tile ? "#e67e22" : "#e74c3c";
+    ctx.fill();
+    ctx.stroke();
+  }
+  for (const portal of world.portals) drawPortal(portal);
+  for (const spawn of world.spawns) dot(spawn.x, spawn.y, 3.5 / Z, "#4aa3ff");
+  for (const item of world.interactions) {
+    ring(item.x, item.y, reachOf(item), "#1abc9c");
+    dot(item.x, item.y, 3 / Z, "#1abc9c");
+  }
+  for (const anchor of world.anchors) {
+    dot(anchor.point[0], anchor.point[1], 3.5 / Z, "#b36bff");
+    for (const [x, y] of anchor.slots) square(x, y, 2.5 / Z, "#b36bff");
+    for (const [x, y] of anchor.approach) square(x, y, 2.5 / Z, "#f4d03f");
+  }
+  if (actor.path) {
+    ctx.beginPath();
+    ctx.moveTo(actor.x, actor.y);
+    for (const point of actor.path) ctx.lineTo(point.x, point.y);
+    ctx.strokeStyle = "#ffe066";
+    ctx.stroke();
+  }
+  for (const [x, y] of footprintSamples(world, actor.x, actor.y)) {
+    dot(x, y, 1.6 / Z, pointFree(world, x, y) ? "#3ee07a" : "#ff3b30");
+  }
+}
+
+function drawLabels() {
+  ctx.font = "11px ui-monospace, monospace";
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = "rgba(0, 0, 0, 0.8)";
+  ctx.fillStyle = "#ffffff";
+  const label = (text, x, y) => {
+    ctx.strokeText(text, x * Z + 5, y * Z - 5);
+    ctx.fillText(text, x * Z + 5, y * Z - 5);
+  };
+  for (const spawn of world.spawns) label(spawn.id, spawn.x, spawn.y);
+  for (const portal of world.portals) label(`${portal.id} -> ${portal.to}`, portal.cx, portal.cy);
+  for (const item of world.interactions) label(item.id, item.x, item.y);
+  for (const anchor of world.anchors) label(anchor.name, anchor.point[0], anchor.point[1]);
+}
+
+function render() {
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.fillStyle = "#0b0f12";
+  ctx.fillRect(0, 0, view.width, view.height);
+  ctx.setTransform(Z, 0, 0, Z, 0, 0);
+  ctx.imageSmoothingEnabled = false;
+  for (const layer of SCENE.layers) {
+    if (layer.kind === "objects") drawObjects();
+    else if (images[layer.image]) ctx.drawImage(images[layer.image], 0, 0);
+  }
+  if (state.debug) drawDebug();
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  if (state.debug) drawLabels();
+}
+
+function updateStatus() {
+  const parts = [`x ${actor.x.toFixed(1)} y ${actor.y.toFixed(1)}`, isBlocked(world, actor.x, actor.y) ? "BLOCKED" : "free"];
+  if (actor.latched.size) parts.push("latched " + [...actor.latched].join(","));
+  const near = world.interactions.filter((item) => Math.hypot(actor.x - item.x, actor.y - item.y) <= reachOf(item));
+  if (near.length) parts.push("in reach " + near.map((item) => item.id).join(",") + " (E)");
+  if (state.message) parts.push(state.message);
+  statusLine.textContent = parts.join(" | ");
+}
+
+// ---- checks used by window.__scene and the buttons ----
+
+function alphaAt(imageId, ix, iy) {
+  let cache = alphaCache[imageId];
+  if (!cache) {
+    const image = images[imageId], canvas = document.createElement("canvas");
+    canvas.width = image.width;
+    canvas.height = image.height;
+    const g = canvas.getContext("2d");
+    g.drawImage(image, 0, 0);
+    cache = alphaCache[imageId] = {width: image.width, height: image.height,
+      alpha: g.getImageData(0, 0, image.width, image.height).data};
+  }
+  if (ix < 0 || iy < 0 || ix >= cache.width || iy >= cache.height) return 0;
+  return cache.alpha[(iy * cache.width + ix) * 4 + 3];
+}
+
+function objectAlpha(object, wx, wy) {
+  const s = object.scale, left = objectLeft(object), top = Math.round(object.y - object.anchor[1] * s);
+  const column = object.flipX ? Math.floor((left - (wx + 0.5)) / s) : Math.floor((wx + 0.5 - left) / s);
+  return alphaAt(object.image, column, Math.floor((wy + 0.5 - top) / s));
+}
+
+function canvasPixel(wx, wy) {
+  return [...ctx.getImageData(Math.floor((wx + 0.5) * Z), Math.floor((wy + 0.5) * Z), 1, 1).data];
+}
+
+// Put the marker just behind and just in front of an object's sort line where the object's
+// art is opaque: behind, the pixel must not change; in front, it must.
+function probeYSort() {
+  needReady();
+  const saved = {x: actor.x, y: actor.y, debug: state.debug, props: state.props, visible: state.actorVisible};
+  const h = SCENE.actor.height;
+  let result = {status: "skipped", reason: "no object art is opaque where the marker would stand behind it"};
+  state.debug = false;
+  state.props = true;
+  const sample = (y, wx, wy, visible) => {
+    actor.y = y;
+    state.actorVisible = visible;
+    render();
+    return canvasPixel(wx, wy);
+  };
+  try {
+    for (const object of SCENE.objects) {
+      if (object.image === null || !images[object.image]) continue;
+      const wx = Math.round(object.x), behind = object.sortY - 1, front = object.sortY + 1;
+      const by = Math.floor(behind - h / 2), fy = Math.floor(front - h / 2);
+      if (objectAlpha(object, wx, by) < 255) continue;
+      actor.x = object.x;
+      const hiddenWith = sample(behind, wx, by, true), hiddenWithout = sample(behind, wx, by, false);
+      const shownWith = sample(front, wx, fy, true), shownWithout = sample(front, wx, fy, false);
+      const hidden = hiddenWith.join() === hiddenWithout.join(), shown = shownWith.join() !== shownWithout.join();
+      if (hidden && !shown) continue;  // something drawn later also covers the marker in front: try another object
+      result = {status: hidden && shown ? "pass" : "fail", object: object.id, pixel: [wx, by, fy],
+        behind: {withActor: hiddenWith, withoutActor: hiddenWithout}, front: {withActor: shownWith, withoutActor: shownWithout}};
+      break;
+    }
+  } finally {
+    Object.assign(state, {debug: saved.debug, props: saved.props, actorVisible: saved.visible});
+    actor.x = saved.x;
+    actor.y = saved.y;
+    render();
+  }
+  return result;
+}
+
+function snapshot() {
+  const extra = {
+    ready: state.ready, error: state.error, tick: state.tick, title: SCENE.title, source: SCENE.source,
+    start: SCENE.start, speed: SCENE.speed, zoom: Z, debug: state.debug, assets: state.assets,
+    drawOrder: SCENE.objects.map((object) => object.id), exitsFired: [...state.exitsFired],
+    interactionsReached: [...state.reached], events: state.events.slice(), routes: state.routes,
+  };
+  if (world === null || actor === null) return {schema: SNAPSHOT_SCHEMA, runtime: {name: "map-runtime", version: RUNTIME_VERSION}, ...extra};
+  return runtimeSnapshot(world, actor, extra);
+}
+
+function showSnapshot() {
+  control("snapshot").value = JSON.stringify(snapshot(), null, 2);
+  control("snapshot-panel").open = true;
+}
+
+function traverseAll() {
+  needReady();
+  state.routes = traverseRoutes(world, {speed: SCENE.speed});
+  const failing = state.routes.results.filter((item) => !item.ok).length;
+  record({type: "routes", ok: state.routes.ok, failing});
+  say(state.routes.ok ? `routes: all ${state.routes.results.length} targets passed` : `routes: ${failing} failing (see snapshot)`);
+  return state.routes;
+}
+
+function reset(spawnId) {
+  needReady();
+  const spawn = spawnId === undefined ? startSpawn : world.spawnById.get(spawnId);
+  if (!spawn) throw new Error(`no spawn ${spawnId}`);
+  state.keys.clear();
+  arrive(world, actor, spawn.x, spawn.y);
+  if (spawn.facing) [actor.facingX, actor.facingY] = spawn.facing;
+  record({type: "arrive", id: spawn.id});
+  say(`at spawn ${spawn.id}`);
+  return {x: actor.x, y: actor.y};
+}
+
+function teleport(x, y) {
+  needReady();
+  arrive(world, actor, x, y);
+  record({type: "teleport", x, y});
+  return {x: actor.x, y: actor.y, blocked: isBlocked(world, x, y)};
+}
+
+function walkTo(x, y) {
+  needReady();
+  const path = findPath(world, actor.x, actor.y, x, y);
+  actor.path = path && path.length ? path : null;
+  say(path ? `walking to ${x.toFixed(1)}, ${y.toFixed(1)}` : `no path to ${x.toFixed(1)}, ${y.toFixed(1)}`);
+  return path !== null;
+}
+
+function setDebug(on) {
+  state.debug = Boolean(on);
+  control("debug").checked = state.debug;
+}
+
+function setGrid(on) {
+  state.grid = Boolean(on);
+  control("grid").checked = state.grid;
+  state.gridCanvas = state.grid && state.ready ? buildGridCanvas() : null;
+}
+
+window.__scene = Object.freeze({
+  version: RUNTIME_VERSION,
+  get ready() { return state.ready; },
+  get error() { return state.error; },
+  get tick() { return state.tick; },
+  snapshot,
+  position: () => (actor === null ? null : {x: actor.x, y: actor.y}),
+  reset, teleport, walkTo, traverseAll, probeYSort, setDebug, setGrid,
+  hold: (key) => { state.keys.add(String(key).toLowerCase()); },
+  release: (key) => { state.keys.delete(String(key).toLowerCase()); },
+  step: (count = 1) => {
+    needReady();
+    for (let k = 0; k < count; k++) tick();
+    render();
+    return {x: actor.x, y: actor.y, tick: state.tick};
+  },
+  waitTicks: (count = 1) => new Promise((resolve) => state.waiters.push({tick: state.tick + count, resolve})),
+  canMove: (dx, dy) => {
+    needReady();
+    const next = moveWithCollision(world, actor.x, actor.y, dx * BUDGET, dy * BUDGET);
+    return next.x !== actor.x || next.y !== actor.y;
+  },
+  isBlocked: (x, y) => isBlocked(world, x, y),
+  segmentClear: (ax, ay, bx, by) => segmentClear(world, ax, ay, bx, by),
+  findPath: (x, y) => findPath(world, actor.x, actor.y, x, y),
+});
+
+// ---- input ----
+
+view.addEventListener("keydown", (event) => {
+  const key = event.key.toLowerCase();
+  if (KEY_DIRECTIONS[key]) {
+    event.preventDefault();
+    if (state.ready) actor.path = null;
+    state.keys.add(key);
+  } else if (key === "e" && !event.repeat && state.ready) {
+    interact();
+  }
+});
+view.addEventListener("keyup", (event) => state.keys.delete(event.key.toLowerCase()));
+view.addEventListener("blur", () => state.keys.clear());
+view.addEventListener("pointerdown", (event) => {
+  if (!state.ready || event.button > 0) return;
+  view.focus();
+  const rect = view.getBoundingClientRect();
+  walkTo((event.clientX - rect.left) / rect.width * W, (event.clientY - rect.top) / rect.height * H);
+});
+control("debug").addEventListener("change", (event) => setDebug(event.target.checked));
+control("grid").addEventListener("change", (event) => setGrid(event.target.checked));
+control("props").addEventListener("change", (event) => { state.props = event.target.checked; });
+control("actor").addEventListener("change", (event) => { state.actorVisible = event.target.checked; });
+control("reset").addEventListener("click", () => { reset(control("spawn").value); view.focus(); });
+control("spawn").addEventListener("change", () => { reset(control("spawn").value); view.focus(); });
+control("routes").addEventListener("click", () => { traverseAll(); showSnapshot(); });
+control("snap").addEventListener("click", showSnapshot);
+
+// ---- start ----
+
+let last = null, accumulated = 0;
+function frame(time) {
+  try {
+    if (last === null) last = time;
+    accumulated += Math.min(0.25, (time - last) / 1000);
+    last = time;
+    let ticks = 0;
+    while (accumulated >= 1 / TICK_HZ && ticks < 8) {
+      tick();
+      accumulated -= 1 / TICK_HZ;
+      ticks += 1;
+    }
+    if (ticks === 8) accumulated = 0;
+    render();
+    updateStatus();
+    requestAnimationFrame(frame);
+  } catch (error) {
+    fail(error);
+  }
+}
+
+function loadImage(id, [mime, payload]) {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.onload = () => {
+      images[id] = image;
+      state.assets.loaded += 1;
+      resolve();
+    };
+    image.onerror = () => {
+      state.assets.failed.push(id);
+      resolve();
+    };
+    image.src = "data" + String.fromCharCode(58) + mime + ";base64," + payload;
+  });
+}
+
+try {
+  world = createMapRuntime(SCENE.bundle, {materialGrid: SCENE.materialGrid});
+  startSpawn = world.spawnById.get(SCENE.start);
+  actor = createActor(world, startSpawn.x, startSpawn.y, startSpawn.facing);
+  for (const spawn of world.spawns) control("spawn").add(new Option(spawn.id, spawn.id, false, spawn.id === SCENE.start));
+  state.materialCanvas = buildMaterialCanvas();
+  const entries = Object.entries(IMAGE_DATA);
+  state.assets.total = entries.length;
+  Promise.all(entries.map(([id, item]) => loadImage(id, item))).then(() => {
+    state.ready = true;
+    record({type: "arrive", id: startSpawn.id});
+    say(state.assets.failed.length ? `${state.assets.failed.length} images failed to load` : `at spawn ${startSpawn.id}`);
+    requestAnimationFrame(frame);
+  });
+} catch (error) {
+  fail(error);
+}
+</script>
+</body>
+</html>

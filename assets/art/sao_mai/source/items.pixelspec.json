@@ -1,0 +1,163 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "items",
+  "canvas": [
+    16,
+    16
+  ],
+  "palette": {
+    "i": "#2B1B17",
+    "d": "#5A3A2A",
+    "w": "#8B5E3C",
+    "h": "#B98554",
+    "p": "#F4E4BC",
+    "c": "#FFF6DA",
+    "g": "#6DB04A",
+    "G": "#3E7B3A",
+    "r": "#D94A4A",
+    "R": "#8E2D3A",
+    "y": "#F2C14E",
+    "b": "#4A86C5",
+    "v": "#8A64B8",
+    "o": "#E8884A",
+    "l": "#E58FA8",
+    "s": "#8C8578",
+    "a": "#5A3A2A",
+    "t": "#8B5E3C",
+    "u": "#8C8578",
+    "q": "#C9A24A"
+  },
+  "layers": [
+    {
+      "name": "ink",
+      "rows": [
+        "."
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "name": "hoe",
+      "layers": {
+        "ink": {
+          "rows": [
+            "",
+            "",
+            "........iii...",
+            ".......issssi.",
+            "......ihiii...",
+            ".....ihwi.....",
+            "....ihwi......",
+            "...ihwi.......",
+            "..ihwi........",
+            "..iwi.........",
+            "...i.........."
+          ]
+        }
+      }
+    },
+    {
+      "name": "watering_can",
+      "layers": {
+        "ink": {
+          "rows": [
+            "",
+            "",
+            ".....iii......",
+            "....ibci..ii..",
+            "....ibciiibbi.",
+            "..iiibbbbibbbi",
+            "..ibbccccibbbi",
+            "...ibbbbbibbi.",
+            "....ibbbiiii..",
+            "....iiii......",
+            "..............",
+            ".......b......",
+            "........b....."
+          ]
+        }
+      }
+    },
+    {
+      "name": "seed_greens",
+      "layers": {
+        "ink": {
+          "rows": [
+            "",
+            "",
+            "....iiiiiii...",
+            "....icpppci...",
+            "....idwwwdi...",
+            "...ihhhhhhhi..",
+            "...ihppppphi..",
+            "...ihppgpphi..",
+            "...ihpggpphi..",
+            "...ihppGpphi..",
+            "...ihppppphi..",
+            "...ihwwwwwdi..",
+            "....iiiiiii..."
+          ]
+        }
+      }
+    },
+    {
+      "name": "crop_greens",
+      "layers": {
+        "ink": {
+          "rows": [
+            "",
+            "",
+            "....iii.......",
+            "...igggi..ii..",
+            "..igcggiiiggi.",
+            "..igggGiggggGi",
+            "...iGggggcggGi",
+            "...iggGggggGii",
+            "....iGGgggGi..",
+            ".....icpGGi...",
+            ".....icppi....",
+            "......iii....."
+          ]
+        }
+      }
+    },
+    {
+      "name": "stone",
+      "layers": {
+        "ink": {
+          "rows": [
+            "",
+            "",
+            ".......iii....",
+            "......isssi...",
+            "....iisssssi..",
+            "...isssspsssi.",
+            "..issspssswssi",
+            "..isssssswwdsi",
+            "...iisssdddsi.",
+            ".....iiiiiii.."
+          ]
+        }
+      }
+    },
+    {
+      "name": "wood",
+      "layers": {
+        "ink": {
+          "rows": [
+            "",
+            "",
+            ".....iiiii....",
+            "....ihwwhii...",
+            "...ihwwwdwpi..",
+            "..ihhwwdwphwi.",
+            "..ihhwddwphhwi",
+            "...iwdwphdhhwi",
+            "....iwwphhhwi.",
+            ".....iiiiiii.."
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "schema": "generate2dmap.scene_snapshot.v1",
+  "runtime": {
+    "name": "map-runtime",
+    "version": "1.1.2"
+  },
+  "world": {
+    "width": 1280,
+    "height": 960,
+    "actorRadius": 4,
+    "ySquash": 0.625,
+    "cell": 2,
+    "tickHz": 60,
+    "solids": 15,
+    "portals": 0,
+    "oneWay": false
+  },
+  "actor": {
+    "x": 640,
+    "y": 480,
+    "valid": true,
+    "facing": [
+      0,
+      1
+    ],
+    "latched": [],
+    "travelled": 48,
+    "pathLength": 0
+  },
+  "ready": true,
+  "error": null,
+  "tick": 79,
+  "title": "Nông trại Mầm Xanh",
+  "source": {
+    "file": "map-bundle.json",
+    "sha256": "4a88554b95a261b4ab6ab24010b2a17242a8ac7edc61a4f8482b954fb276da67",
+    "schema": "generate2dmap.map_bundle.v2"
+  },
+  "start": "new-game",
+  "speed": 60,
+  "zoom": 1,
+  "debug": false,
+  "assets": {
+    "total": 5,
+    "loaded": 5,
+    "failed": []
+  },
+  "drawOrder": [
+    "farmhouse-1",
+    "fruit-tree-1",
+    "fruit-tree-2",
+    "fruit-tree-3",
+    "fruit-tree-4",
+    "shipping-chest-1",
+    "fruit-tree-5",
+    "fruit-tree-6",
+    "moss-rocks-1",
+    "moss-rocks-2",
+    "fruit-tree-7"
+  ],
+  "exitsFired": [],
+  "interactionsReached": [],
+  "events": [
+    {
+      "tick": 0,
+      "type": "arrive",
+      "id": "new-game"
+    },
+    {
+      "tick": 1,
+      "type": "arrive",
+      "id": "new-game"
+    },
+    {
+      "tick": 13,
+      "type": "arrive",
+      "id": "new-game"
+    },
+    {
+      "tick": 25,
+      "type": "arrive",
+      "id": "new-game"
+    },
+    {
+      "tick": 37,
+      "type": "arrive",
+      "id": "new-game"
+    },
+    {
+      "tick": 49,
+      "type": "arrive",
+      "id": "new-game"
+    },
+    {
+      "tick": 49,
+      "type": "routes",
+      "ok": true,
+      "failing": 0
+    },
+    {
+      "tick": 60,
+      "type": "arrive",
+      "id": "new-game"
+    }
+  ],
+  "routes": {
+    "ok": true,
+    "speed": 60,
+    "budget": 1,
+    "tickHz": 60,
+    "cell": 2,
+    "spawns": [
+      {
+        "id": "new-game",
+        "valid": true,
+        "reachableCells": 294498
+      }
+    ],
+    "results": [
+      {
+        "target": "to-market_street",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 118,
+        "distance": 117.908,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          539,
+          535
+        ]
+      },
+      {
+        "target": "to-ranch",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 63,
+        "distance": 62.177,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          611,
+          535
+        ]
+      },
+      {
+        "target": "to-whispering_forest",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 63,
+        "distance": 62.177,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          669,
+          535
+        ]
+      },
+      {
+        "target": "to-player_house",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 127,
+        "distance": 126.804,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          741,
+          535
+        ]
+      },
+      {
+        "target": "to-coop",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 177,
+        "distance": 176.157,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          539,
+          583
+        ]
+      },
+      {
+        "target": "to-barn",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 108,
+        "distance": 107.005,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          611,
+          583
+        ]
+      },
+      {
+        "target": "to-greenhouse",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 108,
+        "distance": 107.005,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          669,
+          583
+        ]
+      },
+      {
+        "target": "shipping",
+        "kind": "interaction",
+        "from": "new-game",
+        "ok": true,
+        "reachable": true,
+        "reason": null,
+        "ticks": 46,
+        "distance": 45.115,
+        "maxStep": 1,
+        "zeroMotionTicks": 0,
+        "blocked": false,
+        "firedEnRoute": [],
+        "end": [
+          685,
+          483
+        ]
+      }
+    ],
+    "portals": []
+  }
+}

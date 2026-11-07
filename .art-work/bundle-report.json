@@ -1,0 +1,224 @@
+{
+  "schema": "generate2dmap.map_bundle_report.v1",
+  "status": "fail",
+  "method": "JSON Schema map.schema.json#/$defs/map_bundle_v2 (vendored copy, built-in Draft 2020-12 evaluator), file existence and sha256 of every referenced file, and cross-field rules: unique ids, tile indices against tilesets, wang/blob topology, material colours, portal targets and arrivals, slots and approach points",
+  "notProven": [
+    "reachability, portal arrivals and collision geometry (run map_nav.py check)",
+    "that collision and footprints match the painted art",
+    "engine or editor import (Tiled GUI, Godot, LDtk not verified)"
+  ],
+  "checks": [
+    {
+      "id": "schema",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "files",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "sha256",
+      "status": "fail",
+      "value": {
+        "errors": 4,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "tilesets",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "layers",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "props_and_objects",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "collision",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "material_map",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "portals",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "spawns_anchors_interactions",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "document",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../assets/art/sao_mai/farm/map-bundle.json",
+      "sha256": "0938859f9a000be29d1dc98330faa487e6d805b88eaa73445cf352142f59b7b8",
+      "bytes": 7977
+    },
+    {
+      "path": "../assets/art/sao_mai/farm/spring-ground.tileset.json",
+      "sha256": "dbf3f56bdfefa6d249de7741beeb457b12ad70635729023a1d3c31d2b2485db9",
+      "bytes": 41379
+    },
+    {
+      "path": "../assets/art/sao_mai/farm/spring-ground.png",
+      "sha256": "9332ba00006b189bbf488872e978e20f8d6a76491cfe6fc4c58f86937a60d26d",
+      "bytes": 2654
+    },
+    {
+      "path": "../assets/art/sao_mai/farm/ground-tiles.json",
+      "sha256": "b3fcbbd11d1e5a355ffc721b7d90e397bbb09108a529ac33e5309a550a39004c",
+      "bytes": 15155
+    },
+    {
+      "path": "../assets/art/sao_mai/farm/farmhouse.png",
+      "sha256": "90cea6179b9148ba7eef0ea102237b40c2c7e9e4a47330f7a40c0b152bc9a9a7",
+      "bytes": 6500
+    },
+    {
+      "path": "../assets/art/sao_mai/farm/fruit-tree.png",
+      "sha256": "2ba7050d6546c81f896e927520146bfa3e0ec8f3aaa7c300dc6bedef3b985555",
+      "bytes": 2410
+    },
+    {
+      "path": "../assets/art/sao_mai/farm/moss-rocks.png",
+      "sha256": "d944e2e27acb4d6517aae32aac6167cce3088b9bc3e0a11511882237127181a9",
+      "bytes": 711
+    },
+    {
+      "path": "../assets/art/sao_mai/farm/shipping-chest.png",
+      "sha256": "6415638e24eb7f48e94c0fb546bd1c5cbae72d9a23211d380ed53a6c9a647789",
+      "bytes": 572
+    }
+  ],
+  "outputs": [],
+  "tool": {
+    "name": "map_bundle.py",
+    "version": "0.4.0"
+  },
+  "bundle": {
+    "id": "farm_main",
+    "version": 2,
+    "world": [
+      1280.0,
+      960.0
+    ],
+    "counts": {
+      "tilesets": 1,
+      "layers": 2,
+      "props": 4,
+      "objects": 11,
+      "portals": 0,
+      "spawns": 1,
+      "anchors": 0,
+      "interactions": 8
+    }
+  },
+  "problems": [
+    {
+      "severity": "error",
+      "path": "$.props.farmhouse.image",
+      "message": "no sha256 recorded for farmhouse.png",
+      "code": "sha256"
+    },
+    {
+      "severity": "error",
+      "path": "$.props['fruit-tree'].image",
+      "message": "no sha256 recorded for fruit-tree.png",
+      "code": "sha256"
+    },
+    {
+      "severity": "error",
+      "path": "$.props['moss-rocks'].image",
+      "message": "no sha256 recorded for moss-rocks.png",
+      "code": "sha256"
+    },
+    {
+      "severity": "error",
+      "path": "$.props['shipping-chest'].image",
+      "message": "no sha256 recorded for shipping-chest.png",
+      "code": "sha256"
+    }
+  ]
+}

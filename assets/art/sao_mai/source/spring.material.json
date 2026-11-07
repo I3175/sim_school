@@ -1,0 +1,102 @@
+{
+  "schema": "codeart2d.material_spec.v1",
+  "tile_size": 16,
+  "seed": 337,
+  "variants": 8,
+  "materials": {
+    "grass": {
+      "ramp": [
+        "#668748",
+        "#7D9E56",
+        "#91AC61",
+        "#A2B970",
+        "#D6CD86",
+        "#FAE4AB"
+      ],
+      "texture": {
+        "base": 2,
+        "marks": [
+          {
+            "rows": [
+              "1.1",
+              ".0."
+            ],
+            "weight": 3
+          },
+          {
+            "rows": [
+              "33",
+              ".3"
+            ],
+            "weight": 5
+          },
+          {
+            "rows": [
+              "4.",
+              ".1"
+            ]
+          },
+          {
+            "rows": [
+              ".5.",
+              "541",
+              ".1."
+            ],
+            "weight": 0.5
+          }
+        ],
+        "marks_per_tile": [
+          1,
+          3
+        ]
+      }
+    },
+    "dirt": {
+      "ramp": [
+        "#99734E",
+        "#B78C60",
+        "#CCA576",
+        "#D8B786"
+      ],
+      "texture": {
+        "base": 2,
+        "marks": [
+          {
+            "rows": [
+              "1.1"
+            ]
+          },
+          {
+            "rows": [
+              "33"
+            ]
+          }
+        ],
+        "marks_per_tile": [
+          1,
+          3
+        ]
+      },
+      "edge": {
+        "colors": [
+          0,
+          1
+        ],
+        "against": [
+          "grass"
+        ]
+      }
+    }
+  },
+  "sets": [
+    {
+      "id": "spring-ground",
+      "kind": "wang_corner",
+      "materials": [
+        "grass",
+        "dirt"
+      ],
+      "wobble": 0.4
+    }
+  ]
+}

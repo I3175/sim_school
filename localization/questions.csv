@@ -1,0 +1,763 @@
+keys,vi,en
+Q_MATH_0001_PROMPT,"Có 3 hạt giống, thêm 2 hạt. Tổng bao nhiêu hạt?","Có 3 hạt giống, thêm 2 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0001_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0001_EXPLAIN,3 + 2 = 5.,3 + 2 = 5.
+Q_MATH_0002_PROMPT,"Có 4 hạt giống, thêm 3 hạt. Tổng bao nhiêu hạt?","Có 4 hạt giống, thêm 3 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0002_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0002_EXPLAIN,4 + 3 = 7.,4 + 3 = 7.
+Q_MATH_0003_PROMPT,"Có 5 hạt giống, thêm 4 hạt. Tổng bao nhiêu hạt?","Có 5 hạt giống, thêm 4 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0003_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0003_EXPLAIN,5 + 4 = 9.,5 + 4 = 9.
+Q_MATH_0004_PROMPT,"Có 6 hạt giống, thêm 5 hạt. Tổng bao nhiêu hạt?","Có 6 hạt giống, thêm 5 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0004_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0004_EXPLAIN,6 + 5 = 11.,6 + 5 = 11.
+Q_MATH_0005_PROMPT,"Có 7 hạt giống, thêm 6 hạt. Tổng bao nhiêu hạt?","Có 7 hạt giống, thêm 6 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0005_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0005_EXPLAIN,7 + 6 = 13.,7 + 6 = 13.
+Q_MATH_0006_PROMPT,"Có 8 hạt giống, thêm 2 hạt. Tổng bao nhiêu hạt?","Có 8 hạt giống, thêm 2 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0006_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0006_EXPLAIN,8 + 2 = 10.,8 + 2 = 10.
+Q_MATH_0007_PROMPT,"Có 9 hạt giống, thêm 3 hạt. Tổng bao nhiêu hạt?","Có 9 hạt giống, thêm 3 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0007_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0007_EXPLAIN,9 + 3 = 12.,9 + 3 = 12.
+Q_MATH_0008_PROMPT,"Có 10 hạt giống, thêm 4 hạt. Tổng bao nhiêu hạt?","Có 10 hạt giống, thêm 4 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0008_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0008_EXPLAIN,10 + 4 = 14.,10 + 4 = 14.
+Q_MATH_0009_PROMPT,"Có 11 hạt giống, thêm 5 hạt. Tổng bao nhiêu hạt?","Có 11 hạt giống, thêm 5 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0009_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0009_EXPLAIN,11 + 5 = 16.,11 + 5 = 16.
+Q_MATH_0010_PROMPT,"Có 12 hạt giống, thêm 6 hạt. Tổng bao nhiêu hạt?","Có 12 hạt giống, thêm 6 hạt. Tổng bao nhiêu hạt?"
+Q_MATH_0010_HINT,Cộng hai số lượng.,Cộng hai số lượng.
+Q_MATH_0010_EXPLAIN,12 + 6 = 18.,12 + 6 = 18.
+Q_MATH_0011_PROMPT,"Có 15 Xu, mua hạt hết 6 Xu. Còn bao nhiêu Xu?","Có 15 Xu, mua hạt hết 6 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0011_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0011_EXPLAIN,15 − 6 = 9.,15 − 6 = 9.
+Q_MATH_0012_PROMPT,"Có 20 Xu, mua hạt hết 9 Xu. Còn bao nhiêu Xu?","Có 20 Xu, mua hạt hết 9 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0012_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0012_EXPLAIN,20 − 9 = 11.,20 − 9 = 11.
+Q_MATH_0013_PROMPT,"Có 25 Xu, mua hạt hết 12 Xu. Còn bao nhiêu Xu?","Có 25 Xu, mua hạt hết 12 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0013_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0013_EXPLAIN,25 − 12 = 13.,25 − 12 = 13.
+Q_MATH_0014_PROMPT,"Có 30 Xu, mua hạt hết 15 Xu. Còn bao nhiêu Xu?","Có 30 Xu, mua hạt hết 15 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0014_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0014_EXPLAIN,30 − 15 = 15.,30 − 15 = 15.
+Q_MATH_0015_PROMPT,"Có 35 Xu, mua hạt hết 18 Xu. Còn bao nhiêu Xu?","Có 35 Xu, mua hạt hết 18 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0015_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0015_EXPLAIN,35 − 18 = 17.,35 − 18 = 17.
+Q_MATH_0016_PROMPT,"Có 40 Xu, mua hạt hết 6 Xu. Còn bao nhiêu Xu?","Có 40 Xu, mua hạt hết 6 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0016_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0016_EXPLAIN,40 − 6 = 34.,40 − 6 = 34.
+Q_MATH_0017_PROMPT,"Có 45 Xu, mua hạt hết 9 Xu. Còn bao nhiêu Xu?","Có 45 Xu, mua hạt hết 9 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0017_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0017_EXPLAIN,45 − 9 = 36.,45 − 9 = 36.
+Q_MATH_0018_PROMPT,"Có 50 Xu, mua hạt hết 12 Xu. Còn bao nhiêu Xu?","Có 50 Xu, mua hạt hết 12 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0018_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0018_EXPLAIN,50 − 12 = 38.,50 − 12 = 38.
+Q_MATH_0019_PROMPT,"Có 55 Xu, mua hạt hết 15 Xu. Còn bao nhiêu Xu?","Có 55 Xu, mua hạt hết 15 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0019_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0019_EXPLAIN,55 − 15 = 40.,55 − 15 = 40.
+Q_MATH_0020_PROMPT,"Có 60 Xu, mua hạt hết 18 Xu. Còn bao nhiêu Xu?","Có 60 Xu, mua hạt hết 18 Xu. Còn bao nhiêu Xu?"
+Q_MATH_0020_HINT,Lấy số Xu ban đầu trừ số đã dùng.,Lấy số Xu ban đầu trừ số đã dùng.
+Q_MATH_0020_EXPLAIN,60 − 18 = 42.,60 − 18 = 42.
+Q_MATH_0021_PROMPT,"3 hàng cây, mỗi hàng 2 cây. Có bao nhiêu cây?","3 hàng cây, mỗi hàng 2 cây. Có bao nhiêu cây?"
+Q_MATH_0021_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0021_EXPLAIN,3 × 2 = 6.,3 × 2 = 6.
+Q_MATH_0022_PROMPT,"4 hàng cây, mỗi hàng 3 cây. Có bao nhiêu cây?","4 hàng cây, mỗi hàng 3 cây. Có bao nhiêu cây?"
+Q_MATH_0022_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0022_EXPLAIN,4 × 3 = 12.,4 × 3 = 12.
+Q_MATH_0023_PROMPT,"5 hàng cây, mỗi hàng 4 cây. Có bao nhiêu cây?","5 hàng cây, mỗi hàng 4 cây. Có bao nhiêu cây?"
+Q_MATH_0023_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0023_EXPLAIN,5 × 4 = 20.,5 × 4 = 20.
+Q_MATH_0024_PROMPT,"6 hàng cây, mỗi hàng 5 cây. Có bao nhiêu cây?","6 hàng cây, mỗi hàng 5 cây. Có bao nhiêu cây?"
+Q_MATH_0024_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0024_EXPLAIN,6 × 5 = 30.,6 × 5 = 30.
+Q_MATH_0025_PROMPT,"7 hàng cây, mỗi hàng 6 cây. Có bao nhiêu cây?","7 hàng cây, mỗi hàng 6 cây. Có bao nhiêu cây?"
+Q_MATH_0025_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0025_EXPLAIN,7 × 6 = 42.,7 × 6 = 42.
+Q_MATH_0026_PROMPT,"8 hàng cây, mỗi hàng 2 cây. Có bao nhiêu cây?","8 hàng cây, mỗi hàng 2 cây. Có bao nhiêu cây?"
+Q_MATH_0026_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0026_EXPLAIN,8 × 2 = 16.,8 × 2 = 16.
+Q_MATH_0027_PROMPT,"9 hàng cây, mỗi hàng 3 cây. Có bao nhiêu cây?","9 hàng cây, mỗi hàng 3 cây. Có bao nhiêu cây?"
+Q_MATH_0027_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0027_EXPLAIN,9 × 3 = 27.,9 × 3 = 27.
+Q_MATH_0028_PROMPT,"10 hàng cây, mỗi hàng 4 cây. Có bao nhiêu cây?","10 hàng cây, mỗi hàng 4 cây. Có bao nhiêu cây?"
+Q_MATH_0028_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0028_EXPLAIN,10 × 4 = 40.,10 × 4 = 40.
+Q_MATH_0029_PROMPT,"11 hàng cây, mỗi hàng 5 cây. Có bao nhiêu cây?","11 hàng cây, mỗi hàng 5 cây. Có bao nhiêu cây?"
+Q_MATH_0029_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0029_EXPLAIN,11 × 5 = 55.,11 × 5 = 55.
+Q_MATH_0030_PROMPT,"12 hàng cây, mỗi hàng 6 cây. Có bao nhiêu cây?","12 hàng cây, mỗi hàng 6 cây. Có bao nhiêu cây?"
+Q_MATH_0030_HINT,Nhân số hàng với số cây mỗi hàng.,Nhân số hàng với số cây mỗi hàng.
+Q_MATH_0030_EXPLAIN,12 × 6 = 72.,12 × 6 = 72.
+Q_MATH_0031_PROMPT,"Luống chữ nhật dài 3 m, rộng 2 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 3 m, rộng 2 m. Diện tích bao nhiêu m²?"
+Q_MATH_0031_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0031_EXPLAIN,Diện tích = dài × rộng = 6 m².,Diện tích = dài × rộng = 6 m².
+Q_MATH_0032_PROMPT,"Luống chữ nhật dài 4 m, rộng 3 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 4 m, rộng 3 m. Diện tích bao nhiêu m²?"
+Q_MATH_0032_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0032_EXPLAIN,Diện tích = dài × rộng = 12 m².,Diện tích = dài × rộng = 12 m².
+Q_MATH_0033_PROMPT,"Luống chữ nhật dài 5 m, rộng 4 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 5 m, rộng 4 m. Diện tích bao nhiêu m²?"
+Q_MATH_0033_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0033_EXPLAIN,Diện tích = dài × rộng = 20 m².,Diện tích = dài × rộng = 20 m².
+Q_MATH_0034_PROMPT,"Luống chữ nhật dài 6 m, rộng 5 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 6 m, rộng 5 m. Diện tích bao nhiêu m²?"
+Q_MATH_0034_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0034_EXPLAIN,Diện tích = dài × rộng = 30 m².,Diện tích = dài × rộng = 30 m².
+Q_MATH_0035_PROMPT,"Luống chữ nhật dài 7 m, rộng 6 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 7 m, rộng 6 m. Diện tích bao nhiêu m²?"
+Q_MATH_0035_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0035_EXPLAIN,Diện tích = dài × rộng = 42 m².,Diện tích = dài × rộng = 42 m².
+Q_MATH_0036_PROMPT,"Luống chữ nhật dài 8 m, rộng 2 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 8 m, rộng 2 m. Diện tích bao nhiêu m²?"
+Q_MATH_0036_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0036_EXPLAIN,Diện tích = dài × rộng = 16 m².,Diện tích = dài × rộng = 16 m².
+Q_MATH_0037_PROMPT,"Luống chữ nhật dài 9 m, rộng 3 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 9 m, rộng 3 m. Diện tích bao nhiêu m²?"
+Q_MATH_0037_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0037_EXPLAIN,Diện tích = dài × rộng = 27 m².,Diện tích = dài × rộng = 27 m².
+Q_MATH_0038_PROMPT,"Luống chữ nhật dài 10 m, rộng 4 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 10 m, rộng 4 m. Diện tích bao nhiêu m²?"
+Q_MATH_0038_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0038_EXPLAIN,Diện tích = dài × rộng = 40 m².,Diện tích = dài × rộng = 40 m².
+Q_MATH_0039_PROMPT,"Luống chữ nhật dài 11 m, rộng 5 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 11 m, rộng 5 m. Diện tích bao nhiêu m²?"
+Q_MATH_0039_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0039_EXPLAIN,Diện tích = dài × rộng = 55 m².,Diện tích = dài × rộng = 55 m².
+Q_MATH_0040_PROMPT,"Luống chữ nhật dài 12 m, rộng 6 m. Diện tích bao nhiêu m²?","Luống chữ nhật dài 12 m, rộng 6 m. Diện tích bao nhiêu m²?"
+Q_MATH_0040_HINT,Diện tích hình chữ nhật bằng dài nhân rộng.,Diện tích hình chữ nhật bằng dài nhân rộng.
+Q_MATH_0040_EXPLAIN,Diện tích = dài × rộng = 72 m².,Diện tích = dài × rộng = 72 m².
+Q_MATH_0041_PROMPT,Món hàng giá 300 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 300 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0041_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0041_EXPLAIN,"Trả 90% giá gốc: 300 × 0,9 = 270 Xu.","Trả 90% giá gốc: 300 × 0,9 = 270 Xu."
+Q_MATH_0042_PROMPT,Món hàng giá 400 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 400 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0042_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0042_EXPLAIN,"Trả 90% giá gốc: 400 × 0,9 = 360 Xu.","Trả 90% giá gốc: 400 × 0,9 = 360 Xu."
+Q_MATH_0043_PROMPT,Món hàng giá 500 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 500 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0043_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0043_EXPLAIN,"Trả 90% giá gốc: 500 × 0,9 = 450 Xu.","Trả 90% giá gốc: 500 × 0,9 = 450 Xu."
+Q_MATH_0044_PROMPT,Món hàng giá 600 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 600 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0044_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0044_EXPLAIN,"Trả 90% giá gốc: 600 × 0,9 = 540 Xu.","Trả 90% giá gốc: 600 × 0,9 = 540 Xu."
+Q_MATH_0045_PROMPT,Món hàng giá 700 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 700 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0045_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0045_EXPLAIN,"Trả 90% giá gốc: 700 × 0,9 = 630 Xu.","Trả 90% giá gốc: 700 × 0,9 = 630 Xu."
+Q_MATH_0046_PROMPT,Món hàng giá 800 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 800 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0046_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0046_EXPLAIN,"Trả 90% giá gốc: 800 × 0,9 = 720 Xu.","Trả 90% giá gốc: 800 × 0,9 = 720 Xu."
+Q_MATH_0047_PROMPT,Món hàng giá 900 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 900 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0047_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0047_EXPLAIN,"Trả 90% giá gốc: 900 × 0,9 = 810 Xu.","Trả 90% giá gốc: 900 × 0,9 = 810 Xu."
+Q_MATH_0048_PROMPT,Món hàng giá 1000 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 1000 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0048_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0048_EXPLAIN,"Trả 90% giá gốc: 1000 × 0,9 = 900 Xu.","Trả 90% giá gốc: 1000 × 0,9 = 900 Xu."
+Q_MATH_0049_PROMPT,Món hàng giá 1100 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 1100 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0049_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0049_EXPLAIN,"Trả 90% giá gốc: 1100 × 0,9 = 990 Xu.","Trả 90% giá gốc: 1100 × 0,9 = 990 Xu."
+Q_MATH_0050_PROMPT,Món hàng giá 1200 Xu được giảm 10%. Phải trả bao nhiêu Xu?,Món hàng giá 1200 Xu được giảm 10%. Phải trả bao nhiêu Xu?
+Q_MATH_0050_HINT,Giảm 10% nghĩa là trả 90%.,Giảm 10% nghĩa là trả 90%.
+Q_MATH_0050_EXPLAIN,"Trả 90% giá gốc: 1200 × 0,9 = 1080 Xu.","Trả 90% giá gốc: 1200 × 0,9 = 1080 Xu."
+Q_ENGLISH_0001_PROMPT,"Trong nghĩa thông dụng, “book” là gì?","Trong nghĩa thông dụng, “book” là gì?"
+Q_ENGLISH_0001_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0001_EXPLAIN,“book” có nghĩa là “quyển sách”.,“book” có nghĩa là “quyển sách”.
+Q_ENGLISH_0002_PROMPT,"Trong nghĩa thông dụng, “pen” là gì?","Trong nghĩa thông dụng, “pen” là gì?"
+Q_ENGLISH_0002_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0002_EXPLAIN,“pen” có nghĩa là “bút mực”.,“pen” có nghĩa là “bút mực”.
+Q_ENGLISH_0003_PROMPT,"Trong nghĩa thông dụng, “pencil” là gì?","Trong nghĩa thông dụng, “pencil” là gì?"
+Q_ENGLISH_0003_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0003_EXPLAIN,“pencil” có nghĩa là “bút chì”.,“pencil” có nghĩa là “bút chì”.
+Q_ENGLISH_0004_PROMPT,"Trong nghĩa thông dụng, “school” là gì?","Trong nghĩa thông dụng, “school” là gì?"
+Q_ENGLISH_0004_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0004_EXPLAIN,“school” có nghĩa là “trường học”.,“school” có nghĩa là “trường học”.
+Q_ENGLISH_0005_PROMPT,"Trong nghĩa thông dụng, “teacher” là gì?","Trong nghĩa thông dụng, “teacher” là gì?"
+Q_ENGLISH_0005_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0005_EXPLAIN,“teacher” có nghĩa là “giáo viên”.,“teacher” có nghĩa là “giáo viên”.
+Q_ENGLISH_0006_PROMPT,"Trong nghĩa thông dụng, “student” là gì?","Trong nghĩa thông dụng, “student” là gì?"
+Q_ENGLISH_0006_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0006_EXPLAIN,“student” có nghĩa là “học sinh”.,“student” có nghĩa là “học sinh”.
+Q_ENGLISH_0007_PROMPT,"Trong nghĩa thông dụng, “desk” là gì?","Trong nghĩa thông dụng, “desk” là gì?"
+Q_ENGLISH_0007_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0007_EXPLAIN,“desk” có nghĩa là “bàn học”.,“desk” có nghĩa là “bàn học”.
+Q_ENGLISH_0008_PROMPT,"Trong nghĩa thông dụng, “chair” là gì?","Trong nghĩa thông dụng, “chair” là gì?"
+Q_ENGLISH_0008_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0008_EXPLAIN,“chair” có nghĩa là “ghế”.,“chair” có nghĩa là “ghế”.
+Q_ENGLISH_0009_PROMPT,"Trong nghĩa thông dụng, “door” là gì?","Trong nghĩa thông dụng, “door” là gì?"
+Q_ENGLISH_0009_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0009_EXPLAIN,“door” có nghĩa là “cửa ra vào”.,“door” có nghĩa là “cửa ra vào”.
+Q_ENGLISH_0010_PROMPT,"Trong nghĩa thông dụng, “window” là gì?","Trong nghĩa thông dụng, “window” là gì?"
+Q_ENGLISH_0010_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0010_EXPLAIN,“window” có nghĩa là “cửa sổ”.,“window” có nghĩa là “cửa sổ”.
+Q_ENGLISH_0011_PROMPT,"Trong nghĩa thông dụng, “apple” là gì?","Trong nghĩa thông dụng, “apple” là gì?"
+Q_ENGLISH_0011_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0011_EXPLAIN,“apple” có nghĩa là “quả táo”.,“apple” có nghĩa là “quả táo”.
+Q_ENGLISH_0012_PROMPT,"Trong nghĩa thông dụng, “rice” là gì?","Trong nghĩa thông dụng, “rice” là gì?"
+Q_ENGLISH_0012_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0012_EXPLAIN,“rice” có nghĩa là “gạo”.,“rice” có nghĩa là “gạo”.
+Q_ENGLISH_0013_PROMPT,"Trong nghĩa thông dụng, “milk” là gì?","Trong nghĩa thông dụng, “milk” là gì?"
+Q_ENGLISH_0013_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0013_EXPLAIN,“milk” có nghĩa là “sữa”.,“milk” có nghĩa là “sữa”.
+Q_ENGLISH_0014_PROMPT,"Trong nghĩa thông dụng, “water” là gì?","Trong nghĩa thông dụng, “water” là gì?"
+Q_ENGLISH_0014_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0014_EXPLAIN,“water” có nghĩa là “nước”.,“water” có nghĩa là “nước”.
+Q_ENGLISH_0015_PROMPT,"Trong nghĩa thông dụng, “bread” là gì?","Trong nghĩa thông dụng, “bread” là gì?"
+Q_ENGLISH_0015_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0015_EXPLAIN,“bread” có nghĩa là “bánh mì”.,“bread” có nghĩa là “bánh mì”.
+Q_ENGLISH_0016_PROMPT,"Trong nghĩa thông dụng, “egg” là gì?","Trong nghĩa thông dụng, “egg” là gì?"
+Q_ENGLISH_0016_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0016_EXPLAIN,“egg” có nghĩa là “trứng”.,“egg” có nghĩa là “trứng”.
+Q_ENGLISH_0017_PROMPT,"Trong nghĩa thông dụng, “fish” là gì?","Trong nghĩa thông dụng, “fish” là gì?"
+Q_ENGLISH_0017_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0017_EXPLAIN,“fish” có nghĩa là “cá”.,“fish” có nghĩa là “cá”.
+Q_ENGLISH_0018_PROMPT,"Trong nghĩa thông dụng, “carrot” là gì?","Trong nghĩa thông dụng, “carrot” là gì?"
+Q_ENGLISH_0018_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0018_EXPLAIN,“carrot” có nghĩa là “cà rốt”.,“carrot” có nghĩa là “cà rốt”.
+Q_ENGLISH_0019_PROMPT,"Trong nghĩa thông dụng, “potato” là gì?","Trong nghĩa thông dụng, “potato” là gì?"
+Q_ENGLISH_0019_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0019_EXPLAIN,“potato” có nghĩa là “khoai tây”.,“potato” có nghĩa là “khoai tây”.
+Q_ENGLISH_0020_PROMPT,"Trong nghĩa thông dụng, “tomato” là gì?","Trong nghĩa thông dụng, “tomato” là gì?"
+Q_ENGLISH_0020_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0020_EXPLAIN,“tomato” có nghĩa là “cà chua”.,“tomato” có nghĩa là “cà chua”.
+Q_ENGLISH_0021_PROMPT,"Trong nghĩa thông dụng, “cat” là gì?","Trong nghĩa thông dụng, “cat” là gì?"
+Q_ENGLISH_0021_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0021_EXPLAIN,“cat” có nghĩa là “mèo”.,“cat” có nghĩa là “mèo”.
+Q_ENGLISH_0022_PROMPT,"Trong nghĩa thông dụng, “dog” là gì?","Trong nghĩa thông dụng, “dog” là gì?"
+Q_ENGLISH_0022_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0022_EXPLAIN,“dog” có nghĩa là “chó”.,“dog” có nghĩa là “chó”.
+Q_ENGLISH_0023_PROMPT,"Trong nghĩa thông dụng, “bird” là gì?","Trong nghĩa thông dụng, “bird” là gì?"
+Q_ENGLISH_0023_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0023_EXPLAIN,“bird” có nghĩa là “chim”.,“bird” có nghĩa là “chim”.
+Q_ENGLISH_0024_PROMPT,"Trong nghĩa thông dụng, “cow” là gì?","Trong nghĩa thông dụng, “cow” là gì?"
+Q_ENGLISH_0024_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0024_EXPLAIN,“cow” có nghĩa là “bò”.,“cow” có nghĩa là “bò”.
+Q_ENGLISH_0025_PROMPT,"Trong nghĩa thông dụng, “chicken” là gì?","Trong nghĩa thông dụng, “chicken” là gì?"
+Q_ENGLISH_0025_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0025_EXPLAIN,“chicken” có nghĩa là “gà”.,“chicken” có nghĩa là “gà”.
+Q_ENGLISH_0026_PROMPT,"Trong nghĩa thông dụng, “duck” là gì?","Trong nghĩa thông dụng, “duck” là gì?"
+Q_ENGLISH_0026_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0026_EXPLAIN,“duck” có nghĩa là “vịt”.,“duck” có nghĩa là “vịt”.
+Q_ENGLISH_0027_PROMPT,"Trong nghĩa thông dụng, “horse” là gì?","Trong nghĩa thông dụng, “horse” là gì?"
+Q_ENGLISH_0027_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0027_EXPLAIN,“horse” có nghĩa là “ngựa”.,“horse” có nghĩa là “ngựa”.
+Q_ENGLISH_0028_PROMPT,"Trong nghĩa thông dụng, “sheep” là gì?","Trong nghĩa thông dụng, “sheep” là gì?"
+Q_ENGLISH_0028_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0028_EXPLAIN,“sheep” có nghĩa là “cừu”.,“sheep” có nghĩa là “cừu”.
+Q_ENGLISH_0029_PROMPT,"Trong nghĩa thông dụng, “goat” là gì?","Trong nghĩa thông dụng, “goat” là gì?"
+Q_ENGLISH_0029_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0029_EXPLAIN,“goat” có nghĩa là “dê”.,“goat” có nghĩa là “dê”.
+Q_ENGLISH_0030_PROMPT,"Trong nghĩa thông dụng, “rabbit” là gì?","Trong nghĩa thông dụng, “rabbit” là gì?"
+Q_ENGLISH_0030_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0030_EXPLAIN,“rabbit” có nghĩa là “thỏ”.,“rabbit” có nghĩa là “thỏ”.
+Q_ENGLISH_0031_PROMPT,"Trong nghĩa thông dụng, “read” là gì?","Trong nghĩa thông dụng, “read” là gì?"
+Q_ENGLISH_0031_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0031_EXPLAIN,“read” có nghĩa là “đọc”.,“read” có nghĩa là “đọc”.
+Q_ENGLISH_0032_PROMPT,"Trong nghĩa thông dụng, “write” là gì?","Trong nghĩa thông dụng, “write” là gì?"
+Q_ENGLISH_0032_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0032_EXPLAIN,“write” có nghĩa là “viết”.,“write” có nghĩa là “viết”.
+Q_ENGLISH_0033_PROMPT,"Trong nghĩa thông dụng, “listen” là gì?","Trong nghĩa thông dụng, “listen” là gì?"
+Q_ENGLISH_0033_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0033_EXPLAIN,“listen” có nghĩa là “lắng nghe”.,“listen” có nghĩa là “lắng nghe”.
+Q_ENGLISH_0034_PROMPT,"Trong nghĩa thông dụng, “speak” là gì?","Trong nghĩa thông dụng, “speak” là gì?"
+Q_ENGLISH_0034_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0034_EXPLAIN,“speak” có nghĩa là “nói”.,“speak” có nghĩa là “nói”.
+Q_ENGLISH_0035_PROMPT,"Trong nghĩa thông dụng, “learn” là gì?","Trong nghĩa thông dụng, “learn” là gì?"
+Q_ENGLISH_0035_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0035_EXPLAIN,“learn” có nghĩa là “học”.,“learn” có nghĩa là “học”.
+Q_ENGLISH_0036_PROMPT,"Trong nghĩa thông dụng, “plant” là gì?","Trong nghĩa thông dụng, “plant” là gì?"
+Q_ENGLISH_0036_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0036_EXPLAIN,“plant” có nghĩa là “trồng”.,“plant” có nghĩa là “trồng”.
+Q_ENGLISH_0037_PROMPT,"Trong nghĩa thông dụng, “harvest” là gì?","Trong nghĩa thông dụng, “harvest” là gì?"
+Q_ENGLISH_0037_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0037_EXPLAIN,“harvest” có nghĩa là “thu hoạch”.,“harvest” có nghĩa là “thu hoạch”.
+Q_ENGLISH_0038_PROMPT,"Trong nghĩa thông dụng, “build” là gì?","Trong nghĩa thông dụng, “build” là gì?"
+Q_ENGLISH_0038_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0038_EXPLAIN,“build” có nghĩa là “xây dựng”.,“build” có nghĩa là “xây dựng”.
+Q_ENGLISH_0039_PROMPT,"Trong nghĩa thông dụng, “help” là gì?","Trong nghĩa thông dụng, “help” là gì?"
+Q_ENGLISH_0039_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0039_EXPLAIN,“help” có nghĩa là “giúp đỡ”.,“help” có nghĩa là “giúp đỡ”.
+Q_ENGLISH_0040_PROMPT,"Trong nghĩa thông dụng, “share” là gì?","Trong nghĩa thông dụng, “share” là gì?"
+Q_ENGLISH_0040_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0040_EXPLAIN,“share” có nghĩa là “chia sẻ”.,“share” có nghĩa là “chia sẻ”.
+Q_ENGLISH_0041_PROMPT,"Trong nghĩa thông dụng, “beautiful” là gì?","Trong nghĩa thông dụng, “beautiful” là gì?"
+Q_ENGLISH_0041_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0041_EXPLAIN,“beautiful” có nghĩa là “đẹp”.,“beautiful” có nghĩa là “đẹp”.
+Q_ENGLISH_0042_PROMPT,"Trong nghĩa thông dụng, “careful” là gì?","Trong nghĩa thông dụng, “careful” là gì?"
+Q_ENGLISH_0042_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0042_EXPLAIN,“careful” có nghĩa là “cẩn thận”.,“careful” có nghĩa là “cẩn thận”.
+Q_ENGLISH_0043_PROMPT,"Trong nghĩa thông dụng, “friendly” là gì?","Trong nghĩa thông dụng, “friendly” là gì?"
+Q_ENGLISH_0043_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0043_EXPLAIN,“friendly” có nghĩa là “thân thiện”.,“friendly” có nghĩa là “thân thiện”.
+Q_ENGLISH_0044_PROMPT,"Trong nghĩa thông dụng, “healthy” là gì?","Trong nghĩa thông dụng, “healthy” là gì?"
+Q_ENGLISH_0044_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0044_EXPLAIN,“healthy” có nghĩa là “khỏe mạnh”.,“healthy” có nghĩa là “khỏe mạnh”.
+Q_ENGLISH_0045_PROMPT,"Trong nghĩa thông dụng, “patient” là gì?","Trong nghĩa thông dụng, “patient” là gì?"
+Q_ENGLISH_0045_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0045_EXPLAIN,“patient” có nghĩa là “kiên nhẫn”.,“patient” có nghĩa là “kiên nhẫn”.
+Q_ENGLISH_0046_PROMPT,"Trong nghĩa thông dụng, “curious” là gì?","Trong nghĩa thông dụng, “curious” là gì?"
+Q_ENGLISH_0046_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0046_EXPLAIN,“curious” có nghĩa là “tò mò”.,“curious” có nghĩa là “tò mò”.
+Q_ENGLISH_0047_PROMPT,"Trong nghĩa thông dụng, “quiet” là gì?","Trong nghĩa thông dụng, “quiet” là gì?"
+Q_ENGLISH_0047_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0047_EXPLAIN,“quiet” có nghĩa là “yên tĩnh”.,“quiet” có nghĩa là “yên tĩnh”.
+Q_ENGLISH_0048_PROMPT,"Trong nghĩa thông dụng, “bright” là gì?","Trong nghĩa thông dụng, “bright” là gì?"
+Q_ENGLISH_0048_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0048_EXPLAIN,“bright” có nghĩa là “sáng”.,“bright” có nghĩa là “sáng”.
+Q_ENGLISH_0049_PROMPT,"Trong nghĩa thông dụng, “useful” là gì?","Trong nghĩa thông dụng, “useful” là gì?"
+Q_ENGLISH_0049_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0049_EXPLAIN,“useful” có nghĩa là “hữu ích”.,“useful” có nghĩa là “hữu ích”.
+Q_ENGLISH_0050_PROMPT,"Trong nghĩa thông dụng, “important” là gì?","Trong nghĩa thông dụng, “important” là gì?"
+Q_ENGLISH_0050_HINT,Chọn nghĩa tiếng Việt phù hợp.,Chọn nghĩa tiếng Việt phù hợp.
+Q_ENGLISH_0050_EXPLAIN,“important” có nghĩa là “quan trọng”.,“important” có nghĩa là “quan trọng”.
+Q_LITERATURE_0001_PROMPT,Từ “sách” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “sách” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0001_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0001_EXPLAIN,"Trong cách dùng đã nêu, “sách” là danh từ.","Trong cách dùng đã nêu, “sách” là danh từ."
+Q_LITERATURE_0002_PROMPT,Từ “bút” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “bút” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0002_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0002_EXPLAIN,"Trong cách dùng đã nêu, “bút” là danh từ.","Trong cách dùng đã nêu, “bút” là danh từ."
+Q_LITERATURE_0003_PROMPT,Từ “bàn” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “bàn” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0003_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0003_EXPLAIN,"Trong cách dùng đã nêu, “bàn” là danh từ.","Trong cách dùng đã nêu, “bàn” là danh từ."
+Q_LITERATURE_0004_PROMPT,Từ “ghế” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “ghế” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0004_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0004_EXPLAIN,"Trong cách dùng đã nêu, “ghế” là danh từ.","Trong cách dùng đã nêu, “ghế” là danh từ."
+Q_LITERATURE_0005_PROMPT,Từ “cây” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “cây” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0005_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0005_EXPLAIN,"Trong cách dùng đã nêu, “cây” là danh từ.","Trong cách dùng đã nêu, “cây” là danh từ."
+Q_LITERATURE_0006_PROMPT,Từ “hoa” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “hoa” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0006_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0006_EXPLAIN,"Trong cách dùng đã nêu, “hoa” là danh từ.","Trong cách dùng đã nêu, “hoa” là danh từ."
+Q_LITERATURE_0007_PROMPT,Từ “nhà” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “nhà” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0007_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0007_EXPLAIN,"Trong cách dùng đã nêu, “nhà” là danh từ.","Trong cách dùng đã nêu, “nhà” là danh từ."
+Q_LITERATURE_0008_PROMPT,Từ “cửa” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “cửa” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0008_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0008_EXPLAIN,"Trong cách dùng đã nêu, “cửa” là danh từ.","Trong cách dùng đã nêu, “cửa” là danh từ."
+Q_LITERATURE_0009_PROMPT,Từ “trường” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “trường” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0009_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0009_EXPLAIN,"Trong cách dùng đã nêu, “trường” là danh từ.","Trong cách dùng đã nêu, “trường” là danh từ."
+Q_LITERATURE_0010_PROMPT,Từ “lớp” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “lớp” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0010_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0010_EXPLAIN,"Trong cách dùng đã nêu, “lớp” là danh từ.","Trong cách dùng đã nêu, “lớp” là danh từ."
+Q_LITERATURE_0011_PROMPT,Từ “vườn” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “vườn” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0011_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0011_EXPLAIN,"Trong cách dùng đã nêu, “vườn” là danh từ.","Trong cách dùng đã nêu, “vườn” là danh từ."
+Q_LITERATURE_0012_PROMPT,Từ “đồi” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “đồi” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0012_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0012_EXPLAIN,"Trong cách dùng đã nêu, “đồi” là danh từ.","Trong cách dùng đã nêu, “đồi” là danh từ."
+Q_LITERATURE_0013_PROMPT,Từ “sông” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “sông” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0013_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0013_EXPLAIN,"Trong cách dùng đã nêu, “sông” là danh từ.","Trong cách dùng đã nêu, “sông” là danh từ."
+Q_LITERATURE_0014_PROMPT,Từ “hồ” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “hồ” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0014_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0014_EXPLAIN,"Trong cách dùng đã nêu, “hồ” là danh từ.","Trong cách dùng đã nêu, “hồ” là danh từ."
+Q_LITERATURE_0015_PROMPT,Từ “núi” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “núi” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0015_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0015_EXPLAIN,"Trong cách dùng đã nêu, “núi” là danh từ.","Trong cách dùng đã nêu, “núi” là danh từ."
+Q_LITERATURE_0016_PROMPT,Từ “biển” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “biển” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0016_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0016_EXPLAIN,"Trong cách dùng đã nêu, “biển” là danh từ.","Trong cách dùng đã nêu, “biển” là danh từ."
+Q_LITERATURE_0017_PROMPT,Từ “mây” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “mây” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0017_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0017_EXPLAIN,"Trong cách dùng đã nêu, “mây” là danh từ.","Trong cách dùng đã nêu, “mây” là danh từ."
+Q_LITERATURE_0018_PROMPT,Từ “mưa” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “mưa” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0018_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0018_EXPLAIN,"Trong cách dùng đã nêu, “mưa” là danh từ.","Trong cách dùng đã nêu, “mưa” là danh từ."
+Q_LITERATURE_0019_PROMPT,Từ “gió” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “gió” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0019_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0019_EXPLAIN,"Trong cách dùng đã nêu, “gió” là danh từ.","Trong cách dùng đã nêu, “gió” là danh từ."
+Q_LITERATURE_0020_PROMPT,Từ “nắng” khi dùng để gọi tên sự vật thuộc từ loại nào?,Từ “nắng” khi dùng để gọi tên sự vật thuộc từ loại nào?
+Q_LITERATURE_0020_HINT,Nhóm từ dùng gọi tên sự vật.,Nhóm từ dùng gọi tên sự vật.
+Q_LITERATURE_0020_EXPLAIN,"Trong cách dùng đã nêu, “nắng” là danh từ.","Trong cách dùng đã nêu, “nắng” là danh từ."
+Q_LITERATURE_0021_PROMPT,Từ “đọc” khi chỉ hành động của một người thuộc từ loại nào?,Từ “đọc” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0021_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0021_EXPLAIN,"Trong cách dùng đã nêu, “đọc” là động từ.","Trong cách dùng đã nêu, “đọc” là động từ."
+Q_LITERATURE_0022_PROMPT,Từ “viết” khi chỉ hành động của một người thuộc từ loại nào?,Từ “viết” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0022_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0022_EXPLAIN,"Trong cách dùng đã nêu, “viết” là động từ.","Trong cách dùng đã nêu, “viết” là động từ."
+Q_LITERATURE_0023_PROMPT,Từ “hát” khi chỉ hành động của một người thuộc từ loại nào?,Từ “hát” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0023_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0023_EXPLAIN,"Trong cách dùng đã nêu, “hát” là động từ.","Trong cách dùng đã nêu, “hát” là động từ."
+Q_LITERATURE_0024_PROMPT,Từ “vẽ” khi chỉ hành động của một người thuộc từ loại nào?,Từ “vẽ” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0024_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0024_EXPLAIN,"Trong cách dùng đã nêu, “vẽ” là động từ.","Trong cách dùng đã nêu, “vẽ” là động từ."
+Q_LITERATURE_0025_PROMPT,Từ “chạy” khi chỉ hành động của một người thuộc từ loại nào?,Từ “chạy” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0025_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0025_EXPLAIN,"Trong cách dùng đã nêu, “chạy” là động từ.","Trong cách dùng đã nêu, “chạy” là động từ."
+Q_LITERATURE_0026_PROMPT,Từ “nhảy” khi chỉ hành động của một người thuộc từ loại nào?,Từ “nhảy” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0026_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0026_EXPLAIN,"Trong cách dùng đã nêu, “nhảy” là động từ.","Trong cách dùng đã nêu, “nhảy” là động từ."
+Q_LITERATURE_0027_PROMPT,Từ “ăn” khi chỉ hành động của một người thuộc từ loại nào?,Từ “ăn” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0027_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0027_EXPLAIN,"Trong cách dùng đã nêu, “ăn” là động từ.","Trong cách dùng đã nêu, “ăn” là động từ."
+Q_LITERATURE_0028_PROMPT,Từ “uống” khi chỉ hành động của một người thuộc từ loại nào?,Từ “uống” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0028_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0028_EXPLAIN,"Trong cách dùng đã nêu, “uống” là động từ.","Trong cách dùng đã nêu, “uống” là động từ."
+Q_LITERATURE_0029_PROMPT,Từ “ngủ” khi chỉ hành động của một người thuộc từ loại nào?,Từ “ngủ” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0029_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0029_EXPLAIN,"Trong cách dùng đã nêu, “ngủ” là động từ.","Trong cách dùng đã nêu, “ngủ” là động từ."
+Q_LITERATURE_0030_PROMPT,Từ “học” khi chỉ hành động của một người thuộc từ loại nào?,Từ “học” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0030_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0030_EXPLAIN,"Trong cách dùng đã nêu, “học” là động từ.","Trong cách dùng đã nêu, “học” là động từ."
+Q_LITERATURE_0031_PROMPT,Từ “trồng” khi chỉ hành động của một người thuộc từ loại nào?,Từ “trồng” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0031_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0031_EXPLAIN,"Trong cách dùng đã nêu, “trồng” là động từ.","Trong cách dùng đã nêu, “trồng” là động từ."
+Q_LITERATURE_0032_PROMPT,Từ “tưới” khi chỉ hành động của một người thuộc từ loại nào?,Từ “tưới” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0032_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0032_EXPLAIN,"Trong cách dùng đã nêu, “tưới” là động từ.","Trong cách dùng đã nêu, “tưới” là động từ."
+Q_LITERATURE_0033_PROMPT,Từ “gặt” khi chỉ hành động của một người thuộc từ loại nào?,Từ “gặt” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0033_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0033_EXPLAIN,"Trong cách dùng đã nêu, “gặt” là động từ.","Trong cách dùng đã nêu, “gặt” là động từ."
+Q_LITERATURE_0034_PROMPT,Từ “quét” khi chỉ hành động của một người thuộc từ loại nào?,Từ “quét” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0034_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0034_EXPLAIN,"Trong cách dùng đã nêu, “quét” là động từ.","Trong cách dùng đã nêu, “quét” là động từ."
+Q_LITERATURE_0035_PROMPT,Từ “lau” khi chỉ hành động của một người thuộc từ loại nào?,Từ “lau” khi chỉ hành động của một người thuộc từ loại nào?
+Q_LITERATURE_0035_HINT,Nhóm từ chỉ hoạt động.,Nhóm từ chỉ hoạt động.
+Q_LITERATURE_0035_EXPLAIN,"Trong cách dùng đã nêu, “lau” là động từ.","Trong cách dùng đã nêu, “lau” là động từ."
+Q_LITERATURE_0036_PROMPT,Từ “đẹp” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “đẹp” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0036_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0036_EXPLAIN,"Trong cách dùng đã nêu, “đẹp” là tính từ.","Trong cách dùng đã nêu, “đẹp” là tính từ."
+Q_LITERATURE_0037_PROMPT,Từ “xanh” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “xanh” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0037_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0037_EXPLAIN,"Trong cách dùng đã nêu, “xanh” là tính từ.","Trong cách dùng đã nêu, “xanh” là tính từ."
+Q_LITERATURE_0038_PROMPT,Từ “đỏ” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “đỏ” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0038_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0038_EXPLAIN,"Trong cách dùng đã nêu, “đỏ” là tính từ.","Trong cách dùng đã nêu, “đỏ” là tính từ."
+Q_LITERATURE_0039_PROMPT,Từ “vàng” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “vàng” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0039_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0039_EXPLAIN,"Trong cách dùng đã nêu, “vàng” là tính từ.","Trong cách dùng đã nêu, “vàng” là tính từ."
+Q_LITERATURE_0040_PROMPT,Từ “cao” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “cao” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0040_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0040_EXPLAIN,"Trong cách dùng đã nêu, “cao” là tính từ.","Trong cách dùng đã nêu, “cao” là tính từ."
+Q_LITERATURE_0041_PROMPT,Từ “thấp” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “thấp” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0041_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0041_EXPLAIN,"Trong cách dùng đã nêu, “thấp” là tính từ.","Trong cách dùng đã nêu, “thấp” là tính từ."
+Q_LITERATURE_0042_PROMPT,Từ “rộng” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “rộng” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0042_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0042_EXPLAIN,"Trong cách dùng đã nêu, “rộng” là tính từ.","Trong cách dùng đã nêu, “rộng” là tính từ."
+Q_LITERATURE_0043_PROMPT,Từ “hẹp” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “hẹp” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0043_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0043_EXPLAIN,"Trong cách dùng đã nêu, “hẹp” là tính từ.","Trong cách dùng đã nêu, “hẹp” là tính từ."
+Q_LITERATURE_0044_PROMPT,Từ “dài” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “dài” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0044_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0044_EXPLAIN,"Trong cách dùng đã nêu, “dài” là tính từ.","Trong cách dùng đã nêu, “dài” là tính từ."
+Q_LITERATURE_0045_PROMPT,Từ “ngắn” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “ngắn” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0045_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0045_EXPLAIN,"Trong cách dùng đã nêu, “ngắn” là tính từ.","Trong cách dùng đã nêu, “ngắn” là tính từ."
+Q_LITERATURE_0046_PROMPT,Từ “sạch” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “sạch” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0046_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0046_EXPLAIN,"Trong cách dùng đã nêu, “sạch” là tính từ.","Trong cách dùng đã nêu, “sạch” là tính từ."
+Q_LITERATURE_0047_PROMPT,Từ “bẩn” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “bẩn” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0047_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0047_EXPLAIN,"Trong cách dùng đã nêu, “bẩn” là tính từ.","Trong cách dùng đã nêu, “bẩn” là tính từ."
+Q_LITERATURE_0048_PROMPT,Từ “nhanh” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “nhanh” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0048_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0048_EXPLAIN,"Trong cách dùng đã nêu, “nhanh” là tính từ.","Trong cách dùng đã nêu, “nhanh” là tính từ."
+Q_LITERATURE_0049_PROMPT,Từ “chậm” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “chậm” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0049_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0049_EXPLAIN,"Trong cách dùng đã nêu, “chậm” là tính từ.","Trong cách dùng đã nêu, “chậm” là tính từ."
+Q_LITERATURE_0050_PROMPT,Từ “vui” khi miêu tả đặc điểm thuộc từ loại nào?,Từ “vui” khi miêu tả đặc điểm thuộc từ loại nào?
+Q_LITERATURE_0050_HINT,"Nhóm từ chỉ đặc điểm, tính chất.","Nhóm từ chỉ đặc điểm, tính chất."
+Q_LITERATURE_0050_EXPLAIN,"Trong cách dùng đã nêu, “vui” là tính từ.","Trong cách dùng đã nêu, “vui” là tính từ."
+Q_SCIENCE_0001_PROMPT,Cây hút nước từ đất chủ yếu bằng bộ phận nào?,Cây hút nước từ đất chủ yếu bằng bộ phận nào?
+Q_SCIENCE_0001_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0001_EXPLAIN,Đáp án: Rễ.,Đáp án: Rễ.
+Q_SCIENCE_0002_PROMPT,Bộ phận thường thực hiện quang hợp ở cây là gì?,Bộ phận thường thực hiện quang hợp ở cây là gì?
+Q_SCIENCE_0002_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0002_EXPLAIN,Đáp án: Lá.,Đáp án: Lá.
+Q_SCIENCE_0003_PROMPT,Quang hợp sử dụng nguồn năng lượng nào?,Quang hợp sử dụng nguồn năng lượng nào?
+Q_SCIENCE_0003_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0003_EXPLAIN,Đáp án: Ánh sáng.,Đáp án: Ánh sáng.
+Q_SCIENCE_0004_PROMPT,Khí cây hấp thụ để quang hợp là gì?,Khí cây hấp thụ để quang hợp là gì?
+Q_SCIENCE_0004_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0004_EXPLAIN,Đáp án: Cacbon đioxit.,Đáp án: Cacbon đioxit.
+Q_SCIENCE_0005_PROMPT,Khí được giải phóng trong quang hợp là gì?,Khí được giải phóng trong quang hợp là gì?
+Q_SCIENCE_0005_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0005_EXPLAIN,Đáp án: Oxi.,Đáp án: Oxi.
+Q_SCIENCE_0006_PROMPT,Hạt cây cần gì để nảy mầm ngoài nhiệt độ thích hợp và không khí?,Hạt cây cần gì để nảy mầm ngoài nhiệt độ thích hợp và không khí?
+Q_SCIENCE_0006_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0006_EXPLAIN,Đáp án: Nước.,Đáp án: Nước.
+Q_SCIENCE_0007_PROMPT,Nước ở thể rắn được gọi là gì?,Nước ở thể rắn được gọi là gì?
+Q_SCIENCE_0007_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0007_EXPLAIN,Đáp án: Nước đá.,Đáp án: Nước đá.
+Q_SCIENCE_0008_PROMPT,Chuyển từ nước lỏng thành hơi gọi là gì?,Chuyển từ nước lỏng thành hơi gọi là gì?
+Q_SCIENCE_0008_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0008_EXPLAIN,Đáp án: Bay hơi.,Đáp án: Bay hơi.
+Q_SCIENCE_0009_PROMPT,Hơi nước thành giọt nước gọi là gì?,Hơi nước thành giọt nước gọi là gì?
+Q_SCIENCE_0009_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0009_EXPLAIN,Đáp án: Ngưng tụ.,Đáp án: Ngưng tụ.
+Q_SCIENCE_0010_PROMPT,Nước đá thành nước lỏng gọi là gì?,Nước đá thành nước lỏng gọi là gì?
+Q_SCIENCE_0010_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0010_EXPLAIN,Đáp án: Nóng chảy.,Đáp án: Nóng chảy.
+Q_SCIENCE_0011_PROMPT,"Ở áp suất khí quyển tiêu chuẩn, nước tinh khiết sôi ở bao nhiêu °C?","Ở áp suất khí quyển tiêu chuẩn, nước tinh khiết sôi ở bao nhiêu °C?"
+Q_SCIENCE_0011_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0011_EXPLAIN,Đáp án: 100.,Đáp án: 100.
+Q_SCIENCE_0012_PROMPT,"Ở áp suất khí quyển tiêu chuẩn, nước tinh khiết đông ở bao nhiêu °C?","Ở áp suất khí quyển tiêu chuẩn, nước tinh khiết đông ở bao nhiêu °C?"
+Q_SCIENCE_0012_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0012_EXPLAIN,Đáp án: 0.,Đáp án: 0.
+Q_SCIENCE_0013_PROMPT,Dụng cụ đo nhiệt độ gọi là gì?,Dụng cụ đo nhiệt độ gọi là gì?
+Q_SCIENCE_0013_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0013_EXPLAIN,Đáp án: Nhiệt kế.,Đáp án: Nhiệt kế.
+Q_SCIENCE_0014_PROMPT,Dụng cụ đo khối lượng gọi là gì?,Dụng cụ đo khối lượng gọi là gì?
+Q_SCIENCE_0014_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0014_EXPLAIN,Đáp án: Cân.,Đáp án: Cân.
+Q_SCIENCE_0015_PROMPT,Đơn vị SI của độ dài là gì?,Đơn vị SI của độ dài là gì?
+Q_SCIENCE_0015_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0015_EXPLAIN,Đáp án: Mét.,Đáp án: Mét.
+Q_SCIENCE_0016_PROMPT,Đơn vị SI của khối lượng là gì?,Đơn vị SI của khối lượng là gì?
+Q_SCIENCE_0016_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0016_EXPLAIN,Đáp án: Kilôgam.,Đáp án: Kilôgam.
+Q_SCIENCE_0017_PROMPT,Đơn vị SI của thời gian là gì?,Đơn vị SI của thời gian là gì?
+Q_SCIENCE_0017_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0017_EXPLAIN,Đáp án: Giây.,Đáp án: Giây.
+Q_SCIENCE_0018_PROMPT,Một phút có bao nhiêu giây?,Một phút có bao nhiêu giây?
+Q_SCIENCE_0018_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0018_EXPLAIN,Đáp án: 60.,Đáp án: 60.
+Q_SCIENCE_0019_PROMPT,Một giờ có bao nhiêu phút?,Một giờ có bao nhiêu phút?
+Q_SCIENCE_0019_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0019_EXPLAIN,Đáp án: 60.,Đáp án: 60.
+Q_SCIENCE_0020_PROMPT,Một mét có bao nhiêu xentimét?,Một mét có bao nhiêu xentimét?
+Q_SCIENCE_0020_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0020_EXPLAIN,Đáp án: 100.,Đáp án: 100.
+Q_SCIENCE_0021_PROMPT,Nam châm hút mạnh vật làm từ chất nào: sắt hay gỗ?,Nam châm hút mạnh vật làm từ chất nào: sắt hay gỗ?
+Q_SCIENCE_0021_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0021_EXPLAIN,Đáp án: Sắt.,Đáp án: Sắt.
+Q_SCIENCE_0022_PROMPT,Vật liệu thường dùng làm lõi dây điện là gì?,Vật liệu thường dùng làm lõi dây điện là gì?
+Q_SCIENCE_0022_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0022_EXPLAIN,Đáp án: Đồng.,Đáp án: Đồng.
+Q_SCIENCE_0023_PROMPT,Vật liệu thường bọc ngoài dây điện là gì?,Vật liệu thường bọc ngoài dây điện là gì?
+Q_SCIENCE_0023_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0023_EXPLAIN,Đáp án: Nhựa.,Đáp án: Nhựa.
+Q_SCIENCE_0024_PROMPT,Mạch điện bị hở có cho dòng điện chạy liên tục qua bóng đèn không?,Mạch điện bị hở có cho dòng điện chạy liên tục qua bóng đèn không?
+Q_SCIENCE_0024_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0024_EXPLAIN,Đáp án: Không.,Đáp án: Không.
+Q_SCIENCE_0025_PROMPT,Nguồn điện thông dụng trong đèn pin là gì?,Nguồn điện thông dụng trong đèn pin là gì?
+Q_SCIENCE_0025_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0025_EXPLAIN,Đáp án: Pin.,Đáp án: Pin.
+Q_SCIENCE_0026_PROMPT,Thiết bị đóng/ngắt mạch điện gọi là gì?,Thiết bị đóng/ngắt mạch điện gọi là gì?
+Q_SCIENCE_0026_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0026_EXPLAIN,Đáp án: Công tắc.,Đáp án: Công tắc.
+Q_SCIENCE_0027_PROMPT,Đơn vị SI của cường độ dòng điện là gì?,Đơn vị SI của cường độ dòng điện là gì?
+Q_SCIENCE_0027_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0027_EXPLAIN,Đáp án: Ampe.,Đáp án: Ampe.
+Q_SCIENCE_0028_PROMPT,Đơn vị của hiệu điện thế là gì?,Đơn vị của hiệu điện thế là gì?
+Q_SCIENCE_0028_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0028_EXPLAIN,Đáp án: Vôn.,Đáp án: Vôn.
+Q_SCIENCE_0029_PROMPT,Đơn vị của điện trở là gì?,Đơn vị của điện trở là gì?
+Q_SCIENCE_0029_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0029_EXPLAIN,Đáp án: Ôm.,Đáp án: Ôm.
+Q_SCIENCE_0030_PROMPT,Năng lượng từ gió là nguồn tái tạo hay không tái tạo?,Năng lượng từ gió là nguồn tái tạo hay không tái tạo?
+Q_SCIENCE_0030_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0030_EXPLAIN,Đáp án: Tái tạo.,Đáp án: Tái tạo.
+Q_SCIENCE_0031_PROMPT,Trái Đất quay quanh ngôi sao nào?,Trái Đất quay quanh ngôi sao nào?
+Q_SCIENCE_0031_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0031_EXPLAIN,Đáp án: Mặt Trời.,Đáp án: Mặt Trời.
+Q_SCIENCE_0032_PROMPT,Vệ tinh tự nhiên của Trái Đất là gì?,Vệ tinh tự nhiên của Trái Đất là gì?
+Q_SCIENCE_0032_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0032_EXPLAIN,Đáp án: Mặt Trăng.,Đáp án: Mặt Trăng.
+Q_SCIENCE_0033_PROMPT,Ngày và đêm chủ yếu do Trái Đất chuyển động thế nào?,Ngày và đêm chủ yếu do Trái Đất chuyển động thế nào?
+Q_SCIENCE_0033_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0033_EXPLAIN,Đáp án: Tự quay quanh trục.,Đáp án: Tự quay quanh trục.
+Q_SCIENCE_0034_PROMPT,Trái Đất có dạng gần giống hình gì?,Trái Đất có dạng gần giống hình gì?
+Q_SCIENCE_0034_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0034_EXPLAIN,Đáp án: Hình cầu.,Đáp án: Hình cầu.
+Q_SCIENCE_0035_PROMPT,Lực hút các vật về phía Trái Đất gọi là gì?,Lực hút các vật về phía Trái Đất gọi là gì?
+Q_SCIENCE_0035_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0035_EXPLAIN,Đáp án: Trọng lực.,Đáp án: Trọng lực.
+Q_SCIENCE_0036_PROMPT,"Một vòng tuần hoàn nước gồm bay hơi, ngưng tụ và hiện tượng nào?","Một vòng tuần hoàn nước gồm bay hơi, ngưng tụ và hiện tượng nào?"
+Q_SCIENCE_0036_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0036_EXPLAIN,Đáp án: Mưa.,Đáp án: Mưa.
+Q_SCIENCE_0037_PROMPT,Rễ cây góp phần giữ đất hay làm đất dễ trôi hơn?,Rễ cây góp phần giữ đất hay làm đất dễ trôi hơn?
+Q_SCIENCE_0037_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0037_EXPLAIN,Đáp án: Giữ đất.,Đáp án: Giữ đất.
+Q_SCIENCE_0038_PROMPT,Phân loại rác giúp việc gì: tái chế hay tăng rác?,Phân loại rác giúp việc gì: tái chế hay tăng rác?
+Q_SCIENCE_0038_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0038_EXPLAIN,Đáp án: Tái chế.,Đáp án: Tái chế.
+Q_SCIENCE_0039_PROMPT,Lá rụng phân hủy có thể góp phần tạo chất gì trong đất?,Lá rụng phân hủy có thể góp phần tạo chất gì trong đất?
+Q_SCIENCE_0039_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0039_EXPLAIN,Đáp án: Mùn.,Đáp án: Mùn.
+Q_SCIENCE_0040_PROMPT,Cây xanh trong chuỗi thức ăn thường là sinh vật gì?,Cây xanh trong chuỗi thức ăn thường là sinh vật gì?
+Q_SCIENCE_0040_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0040_EXPLAIN,Đáp án: Sinh vật sản xuất.,Đáp án: Sinh vật sản xuất.
+Q_SCIENCE_0041_PROMPT,Động vật ăn thực vật lấy thức ăn chủ yếu từ đâu?,Động vật ăn thực vật lấy thức ăn chủ yếu từ đâu?
+Q_SCIENCE_0041_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0041_EXPLAIN,Đáp án: Thực vật.,Đáp án: Thực vật.
+Q_SCIENCE_0042_PROMPT,Ong giúp nhiều loài hoa thực hiện quá trình gì?,Ong giúp nhiều loài hoa thực hiện quá trình gì?
+Q_SCIENCE_0042_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0042_EXPLAIN,Đáp án: Thụ phấn.,Đáp án: Thụ phấn.
+Q_SCIENCE_0043_PROMPT,Vòng đời bướm sau trứng là giai đoạn nào?,Vòng đời bướm sau trứng là giai đoạn nào?
+Q_SCIENCE_0043_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0043_EXPLAIN,Đáp án: Sâu bướm.,Đáp án: Sâu bướm.
+Q_SCIENCE_0044_PROMPT,Ếch non sống trong nước và có đuôi gọi là gì?,Ếch non sống trong nước và có đuôi gọi là gì?
+Q_SCIENCE_0044_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0044_EXPLAIN,Đáp án: Nòng nọc.,Đáp án: Nòng nọc.
+Q_SCIENCE_0045_PROMPT,Gà con phát triển từ đâu?,Gà con phát triển từ đâu?
+Q_SCIENCE_0045_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0045_EXPLAIN,Đáp án: Trứng.,Đáp án: Trứng.
+Q_SCIENCE_0046_PROMPT,Vật trong suốt cho ánh sáng truyền qua dễ hay khó?,Vật trong suốt cho ánh sáng truyền qua dễ hay khó?
+Q_SCIENCE_0046_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0046_EXPLAIN,Đáp án: Dễ.,Đáp án: Dễ.
+Q_SCIENCE_0047_PROMPT,Bóng tối hình thành khi ánh sáng bị vật cản như thế nào?,Bóng tối hình thành khi ánh sáng bị vật cản như thế nào?
+Q_SCIENCE_0047_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0047_EXPLAIN,Đáp án: Chặn lại.,Đáp án: Chặn lại.
+Q_SCIENCE_0048_PROMPT,Âm thanh được tạo ra bởi vật đang làm gì?,Âm thanh được tạo ra bởi vật đang làm gì?
+Q_SCIENCE_0048_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0048_EXPLAIN,Đáp án: Dao động.,Đáp án: Dao động.
+Q_SCIENCE_0049_PROMPT,Tiếng vang là âm thanh được làm gì?,Tiếng vang là âm thanh được làm gì?
+Q_SCIENCE_0049_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0049_EXPLAIN,Đáp án: Phản xạ.,Đáp án: Phản xạ.
+Q_SCIENCE_0050_PROMPT,"Khi đun, nhiệt truyền từ bếp nóng sang nồi theo chiều nóng sang lạnh hay ngược lại?","Khi đun, nhiệt truyền từ bếp nóng sang nồi theo chiều nóng sang lạnh hay ngược lại?"
+Q_SCIENCE_0050_HINT,Đọc kỹ điều kiện trong câu hỏi.,Đọc kỹ điều kiện trong câu hỏi.
+Q_SCIENCE_0050_EXPLAIN,Đáp án: Nóng sang lạnh.,Đáp án: Nóng sang lạnh.
+Q_HISTORY_GEO_0001_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0001_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0001_EXPLAIN,Thứ tự: 1001 → 1003 → 1005 → 1007 → 1009,Thứ tự: 1001 → 1003 → 1005 → 1007 → 1009
+Q_HISTORY_GEO_0002_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0002_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0002_EXPLAIN,Thứ tự: 1011 → 1013 → 1015 → 1017 → 1019,Thứ tự: 1011 → 1013 → 1015 → 1017 → 1019
+Q_HISTORY_GEO_0003_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0003_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0003_EXPLAIN,Thứ tự: 1021 → 1023 → 1025 → 1027 → 1029,Thứ tự: 1021 → 1023 → 1025 → 1027 → 1029
+Q_HISTORY_GEO_0004_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0004_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0004_EXPLAIN,Thứ tự: 1031 → 1033 → 1035 → 1037 → 1039,Thứ tự: 1031 → 1033 → 1035 → 1037 → 1039
+Q_HISTORY_GEO_0005_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0005_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0005_EXPLAIN,Thứ tự: 1041 → 1043 → 1045 → 1047 → 1049,Thứ tự: 1041 → 1043 → 1045 → 1047 → 1049
+Q_HISTORY_GEO_0006_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0006_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0006_EXPLAIN,Thứ tự: 1051 → 1053 → 1055 → 1057 → 1059,Thứ tự: 1051 → 1053 → 1055 → 1057 → 1059
+Q_HISTORY_GEO_0007_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0007_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0007_EXPLAIN,Thứ tự: 1061 → 1063 → 1065 → 1067 → 1069,Thứ tự: 1061 → 1063 → 1065 → 1067 → 1069
+Q_HISTORY_GEO_0008_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0008_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0008_EXPLAIN,Thứ tự: 1071 → 1073 → 1075 → 1077 → 1079,Thứ tự: 1071 → 1073 → 1075 → 1077 → 1079
+Q_HISTORY_GEO_0009_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0009_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0009_EXPLAIN,Thứ tự: 1081 → 1083 → 1085 → 1087 → 1089,Thứ tự: 1081 → 1083 → 1085 → 1087 → 1089
+Q_HISTORY_GEO_0010_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0010_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0010_EXPLAIN,Thứ tự: 1091 → 1093 → 1095 → 1097 → 1099,Thứ tự: 1091 → 1093 → 1095 → 1097 → 1099
+Q_HISTORY_GEO_0011_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0011_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0011_EXPLAIN,Thứ tự: 1101 → 1103 → 1105 → 1107 → 1109,Thứ tự: 1101 → 1103 → 1105 → 1107 → 1109
+Q_HISTORY_GEO_0012_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0012_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0012_EXPLAIN,Thứ tự: 1111 → 1113 → 1115 → 1117 → 1119,Thứ tự: 1111 → 1113 → 1115 → 1117 → 1119
+Q_HISTORY_GEO_0013_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0013_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0013_EXPLAIN,Thứ tự: 1121 → 1123 → 1125 → 1127 → 1129,Thứ tự: 1121 → 1123 → 1125 → 1127 → 1129
+Q_HISTORY_GEO_0014_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0014_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0014_EXPLAIN,Thứ tự: 1131 → 1133 → 1135 → 1137 → 1139,Thứ tự: 1131 → 1133 → 1135 → 1137 → 1139
+Q_HISTORY_GEO_0015_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0015_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0015_EXPLAIN,Thứ tự: 1141 → 1143 → 1145 → 1147 → 1149,Thứ tự: 1141 → 1143 → 1145 → 1147 → 1149
+Q_HISTORY_GEO_0016_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0016_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0016_EXPLAIN,Thứ tự: 1151 → 1153 → 1155 → 1157 → 1159,Thứ tự: 1151 → 1153 → 1155 → 1157 → 1159
+Q_HISTORY_GEO_0017_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0017_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0017_EXPLAIN,Thứ tự: 1161 → 1163 → 1165 → 1167 → 1169,Thứ tự: 1161 → 1163 → 1165 → 1167 → 1169
+Q_HISTORY_GEO_0018_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0018_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0018_EXPLAIN,Thứ tự: 1171 → 1173 → 1175 → 1177 → 1179,Thứ tự: 1171 → 1173 → 1175 → 1177 → 1179
+Q_HISTORY_GEO_0019_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0019_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0019_EXPLAIN,Thứ tự: 1181 → 1183 → 1185 → 1187 → 1189,Thứ tự: 1181 → 1183 → 1185 → 1187 → 1189
+Q_HISTORY_GEO_0020_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0020_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0020_EXPLAIN,Thứ tự: 1191 → 1193 → 1195 → 1197 → 1199,Thứ tự: 1191 → 1193 → 1195 → 1197 → 1199
+Q_HISTORY_GEO_0021_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0021_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0021_EXPLAIN,Thứ tự: 1201 → 1203 → 1205 → 1207 → 1209,Thứ tự: 1201 → 1203 → 1205 → 1207 → 1209
+Q_HISTORY_GEO_0022_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0022_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0022_EXPLAIN,Thứ tự: 1211 → 1213 → 1215 → 1217 → 1219,Thứ tự: 1211 → 1213 → 1215 → 1217 → 1219
+Q_HISTORY_GEO_0023_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0023_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0023_EXPLAIN,Thứ tự: 1221 → 1223 → 1225 → 1227 → 1229,Thứ tự: 1221 → 1223 → 1225 → 1227 → 1229
+Q_HISTORY_GEO_0024_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0024_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0024_EXPLAIN,Thứ tự: 1231 → 1233 → 1235 → 1237 → 1239,Thứ tự: 1231 → 1233 → 1235 → 1237 → 1239
+Q_HISTORY_GEO_0025_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0025_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0025_EXPLAIN,Thứ tự: 1241 → 1243 → 1245 → 1247 → 1249,Thứ tự: 1241 → 1243 → 1245 → 1247 → 1249
+Q_HISTORY_GEO_0026_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0026_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0026_EXPLAIN,Thứ tự: 1251 → 1253 → 1255 → 1257 → 1259,Thứ tự: 1251 → 1253 → 1255 → 1257 → 1259
+Q_HISTORY_GEO_0027_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0027_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0027_EXPLAIN,Thứ tự: 1261 → 1263 → 1265 → 1267 → 1269,Thứ tự: 1261 → 1263 → 1265 → 1267 → 1269
+Q_HISTORY_GEO_0028_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0028_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0028_EXPLAIN,Thứ tự: 1271 → 1273 → 1275 → 1277 → 1279,Thứ tự: 1271 → 1273 → 1275 → 1277 → 1279
+Q_HISTORY_GEO_0029_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0029_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0029_EXPLAIN,Thứ tự: 1281 → 1283 → 1285 → 1287 → 1289,Thứ tự: 1281 → 1283 → 1285 → 1287 → 1289
+Q_HISTORY_GEO_0030_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0030_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0030_EXPLAIN,Thứ tự: 1291 → 1293 → 1295 → 1297 → 1299,Thứ tự: 1291 → 1293 → 1295 → 1297 → 1299
+Q_HISTORY_GEO_0031_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0031_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0031_EXPLAIN,Thứ tự: 1301 → 1303 → 1305 → 1307 → 1309,Thứ tự: 1301 → 1303 → 1305 → 1307 → 1309
+Q_HISTORY_GEO_0032_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0032_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0032_EXPLAIN,Thứ tự: 1311 → 1313 → 1315 → 1317 → 1319,Thứ tự: 1311 → 1313 → 1315 → 1317 → 1319
+Q_HISTORY_GEO_0033_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0033_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0033_EXPLAIN,Thứ tự: 1321 → 1323 → 1325 → 1327 → 1329,Thứ tự: 1321 → 1323 → 1325 → 1327 → 1329
+Q_HISTORY_GEO_0034_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0034_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0034_EXPLAIN,Thứ tự: 1331 → 1333 → 1335 → 1337 → 1339,Thứ tự: 1331 → 1333 → 1335 → 1337 → 1339
+Q_HISTORY_GEO_0035_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0035_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0035_EXPLAIN,Thứ tự: 1341 → 1343 → 1345 → 1347 → 1349,Thứ tự: 1341 → 1343 → 1345 → 1347 → 1349
+Q_HISTORY_GEO_0036_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0036_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0036_EXPLAIN,Thứ tự: 1351 → 1353 → 1355 → 1357 → 1359,Thứ tự: 1351 → 1353 → 1355 → 1357 → 1359
+Q_HISTORY_GEO_0037_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0037_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0037_EXPLAIN,Thứ tự: 1361 → 1363 → 1365 → 1367 → 1369,Thứ tự: 1361 → 1363 → 1365 → 1367 → 1369
+Q_HISTORY_GEO_0038_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0038_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0038_EXPLAIN,Thứ tự: 1371 → 1373 → 1375 → 1377 → 1379,Thứ tự: 1371 → 1373 → 1375 → 1377 → 1379
+Q_HISTORY_GEO_0039_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0039_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0039_EXPLAIN,Thứ tự: 1381 → 1383 → 1385 → 1387 → 1389,Thứ tự: 1381 → 1383 → 1385 → 1387 → 1389
+Q_HISTORY_GEO_0040_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0040_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0040_EXPLAIN,Thứ tự: 1391 → 1393 → 1395 → 1397 → 1399,Thứ tự: 1391 → 1393 → 1395 → 1397 → 1399
+Q_HISTORY_GEO_0041_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0041_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0041_EXPLAIN,Thứ tự: 1401 → 1403 → 1405 → 1407 → 1409,Thứ tự: 1401 → 1403 → 1405 → 1407 → 1409
+Q_HISTORY_GEO_0042_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0042_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0042_EXPLAIN,Thứ tự: 1411 → 1413 → 1415 → 1417 → 1419,Thứ tự: 1411 → 1413 → 1415 → 1417 → 1419
+Q_HISTORY_GEO_0043_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0043_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0043_EXPLAIN,Thứ tự: 1421 → 1423 → 1425 → 1427 → 1429,Thứ tự: 1421 → 1423 → 1425 → 1427 → 1429
+Q_HISTORY_GEO_0044_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0044_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0044_EXPLAIN,Thứ tự: 1431 → 1433 → 1435 → 1437 → 1439,Thứ tự: 1431 → 1433 → 1435 → 1437 → 1439
+Q_HISTORY_GEO_0045_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0045_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0045_EXPLAIN,Thứ tự: 1441 → 1443 → 1445 → 1447 → 1449,Thứ tự: 1441 → 1443 → 1445 → 1447 → 1449
+Q_HISTORY_GEO_0046_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0046_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0046_EXPLAIN,Thứ tự: 1451 → 1453 → 1455 → 1457 → 1459,Thứ tự: 1451 → 1453 → 1455 → 1457 → 1459
+Q_HISTORY_GEO_0047_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0047_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0047_EXPLAIN,Thứ tự: 1461 → 1463 → 1465 → 1467 → 1469,Thứ tự: 1461 → 1463 → 1465 → 1467 → 1469
+Q_HISTORY_GEO_0048_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0048_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0048_EXPLAIN,Thứ tự: 1471 → 1473 → 1475 → 1477 → 1479,Thứ tự: 1471 → 1473 → 1475 → 1477 → 1479
+Q_HISTORY_GEO_0049_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0049_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0049_EXPLAIN,Thứ tự: 1481 → 1483 → 1485 → 1487 → 1489,Thứ tự: 1481 → 1483 → 1485 → 1487 → 1489
+Q_HISTORY_GEO_0050_PROMPT,Xếp các năm sau theo thứ tự từ sớm đến muộn.,Xếp các năm sau theo thứ tự từ sớm đến muộn.
+Q_HISTORY_GEO_0050_HINT,Năm có số nhỏ hơn xảy ra trước.,Năm có số nhỏ hơn xảy ra trước.
+Q_HISTORY_GEO_0050_EXPLAIN,Thứ tự: 1491 → 1493 → 1495 → 1497 → 1499,Thứ tự: 1491 → 1493 → 1495 → 1497 → 1499
+Q_LITERATURE_0051_PROMPT,"Điền từ còn thiếu: Có công mài sắt, có ngày nên ___.","Điền từ còn thiếu: Có công mài sắt, có ngày nên ___."
+Q_LITERATURE_0051_HINT,Đồ nhỏ dùng để khâu.,Đồ nhỏ dùng để khâu.
+Q_LITERATURE_0051_EXPLAIN,"Tục ngữ: Có công mài sắt, có ngày nên kim.","Tục ngữ: Có công mài sắt, có ngày nên kim."
+Q_ENGLISH_0051_PROMPT,Nối từ tiếng Anh với nghĩa tiếng Việt.,Nối từ tiếng Anh với nghĩa tiếng Việt.
+Q_ENGLISH_0051_HINT,Cat là mèo.,Cat là mèo.
+Q_ENGLISH_0051_EXPLAIN,Cat–mèo; dog–chó; bird–chim.,Cat–mèo; dog–chó; bird–chim.
+Q_HISTORY_GEO_0051_PROMPT,"Xếp các hướng theo chiều kim đồng hồ, bắt đầu từ Bắc.","Xếp các hướng theo chiều kim đồng hồ, bắt đầu từ Bắc."
+Q_HISTORY_GEO_0051_HINT,Sau Bắc là Đông.,Sau Bắc là Đông.
+Q_HISTORY_GEO_0051_EXPLAIN,"Theo chiều kim đồng hồ: Bắc, Đông, Nam, Tây.","Theo chiều kim đồng hồ: Bắc, Đông, Nam, Tây."
+Q_MATH_0051_PROMPT,Chọn tất cả ô có số chẵn.,Chọn tất cả ô có số chẵn.
+Q_MATH_0051_HINT,Số chẵn chia hết cho 2.,Số chẵn chia hết cho 2.
+Q_MATH_0051_EXPLAIN,"Các số chẵn là 2, 4, 6, 8.","Các số chẵn là 2, 4, 6, 8."

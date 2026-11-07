@@ -1,0 +1,385 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "icons",
+  "canvas": [
+    8,
+    8
+  ],
+  "palette": {
+    "i": "#2B1B17",
+    "d": "#5A3A2A",
+    "w": "#8B5E3C",
+    "h": "#B98554",
+    "p": "#F4E4BC",
+    "c": "#FFF6DA",
+    "g": "#6DB04A",
+    "G": "#3E7B3A",
+    "r": "#D94A4A",
+    "R": "#8E2D3A",
+    "y": "#F2C14E",
+    "b": "#4A86C5",
+    "v": "#8A64B8",
+    "o": "#E8884A",
+    "l": "#E58FA8",
+    "s": "#8C8578",
+    "a": "#5A3A2A",
+    "t": "#8B5E3C",
+    "u": "#8C8578",
+    "q": "#C9A24A"
+  },
+  "layers": [
+    {
+      "name": "ink",
+      "rows": [
+        "."
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "name": "sun",
+      "layers": {
+        "ink": {
+          "rows": [
+            "...y....",
+            ".y.y.y..",
+            "..yyy...",
+            "yyyyyyy.",
+            "..yyy...",
+            ".y.y.y..",
+            "...y...."
+          ]
+        }
+      }
+    },
+    {
+      "name": "coin",
+      "layers": {
+        "ink": {
+          "rows": [
+            "..yyy...",
+            ".yoooy..",
+            "yooyoyy.",
+            "yoyyoyy.",
+            "yoyoyoy.",
+            ".yoooy..",
+            "..yyy..."
+          ]
+        }
+      }
+    },
+    {
+      "name": "heart",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".rr.rr..",
+            "rllrrlr.",
+            "rllrrrr.",
+            ".rrrrr..",
+            "..rrr...",
+            "...r...."
+          ]
+        }
+      }
+    },
+    {
+      "name": "bolt",
+      "layers": {
+        "ink": {
+          "rows": [
+            "...yy...",
+            "..yy....",
+            ".yyyy...",
+            "..yy....",
+            ".yy.....",
+            ".y......"
+          ]
+        }
+      }
+    },
+    {
+      "name": "book",
+      "layers": {
+        "ink": {
+          "rows": [
+            "........",
+            ".yhhhy..",
+            ".ydpdy..",
+            ".ydpdy..",
+            ".ydpdy..",
+            ".yhhhy..",
+            "..pppp.."
+          ]
+        }
+      }
+    },
+    {
+      "name": "bag",
+      "layers": {
+        "ink": {
+          "rows": [
+            "..iii...",
+            ".iwcwi..",
+            ".iwwwi..",
+            "ihhhhhi.",
+            "iwwpwwi.",
+            "iwwwwwi.",
+            ".iiiii.."
+          ]
+        }
+      }
+    },
+    {
+      "name": "map",
+      "layers": {
+        "ink": {
+          "rows": [
+            "..p..p..",
+            ".pbppbp.",
+            ".pbbpbp.",
+            ".pbbpbp.",
+            ".pbppbp.",
+            ".pp..pp."
+          ]
+        }
+      }
+    },
+    {
+      "name": "leaf",
+      "layers": {
+        "ink": {
+          "rows": [
+            "....ggg.",
+            "...ggGg.",
+            "..ggGg..",
+            ".ggGg...",
+            ".gGg....",
+            "..G.....",
+            ".G......"
+          ]
+        }
+      }
+    },
+    {
+      "name": "fish",
+      "layers": {
+        "ink": {
+          "rows": [
+            "........",
+            "..bb.b..",
+            ".bccbb..",
+            "bcbccb..",
+            ".bbb.b..",
+            "..b....."
+          ]
+        }
+      }
+    },
+    {
+      "name": "spark",
+      "layers": {
+        "ink": {
+          "rows": [
+            "...y....",
+            "...y....",
+            "..yyy...",
+            "yyyyyyy.",
+            "..yyy...",
+            "...y....",
+            "...y...."
+          ]
+        }
+      }
+    },
+    {
+      "name": "gear",
+      "layers": {
+        "ink": {
+          "rows": [
+            "..s.s...",
+            ".ssssss.",
+            "sscpcss.",
+            ".sp.ps..",
+            "sscpcss.",
+            ".ssssss.",
+            "..s.s..."
+          ]
+        }
+      }
+    },
+    {
+      "name": "sword",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".....pp.",
+            "....pbp.",
+            "...pbp..",
+            ".opbp...",
+            "..op....",
+            ".odo....",
+            "od......"
+          ]
+        }
+      }
+    },
+    {
+      "name": "letter",
+      "layers": {
+        "ink": {
+          "rows": [
+            "........",
+            ".pppppp.",
+            ".pippip.",
+            ".ppippp.",
+            ".pppppp.",
+            "........"
+          ]
+        }
+      }
+    },
+    {
+      "name": "cloud",
+      "layers": {
+        "ink": {
+          "rows": [
+            "........",
+            "...cc...",
+            "..cccc..",
+            ".cccccc.",
+            "cccccccc",
+            ".cccccc."
+          ]
+        }
+      }
+    },
+    {
+      "name": "lock",
+      "layers": {
+        "ink": {
+          "rows": [
+            "..iii...",
+            ".i...i..",
+            ".i...i..",
+            "yyyyyyy.",
+            "yyyiyyy.",
+            "yyyyyyy."
+          ]
+        }
+      }
+    },
+    {
+      "name": "clock",
+      "layers": {
+        "ink": {
+          "rows": [
+            "..ppp...",
+            ".pcccp..",
+            "pcciicp.",
+            "pcciccp.",
+            "pcccccp.",
+            ".pcccp..",
+            "..ppp..."
+          ]
+        }
+      }
+    },
+    {
+      "name": "hand",
+      "layers": {
+        "ink": {
+          "rows": [
+            "........",
+            "..cc....",
+            "..cc....",
+            "..ccccc.",
+            "ccccccc.",
+            ".cccccc.",
+            "..cccc.."
+          ]
+        }
+      }
+    },
+    {
+      "name": "pen",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".....oo.",
+            "....opp.",
+            "...opp..",
+            "..opp...",
+            ".opp....",
+            "oi......",
+            "i......."
+          ]
+        }
+      }
+    },
+    {
+      "name": "flask",
+      "layers": {
+        "ink": {
+          "rows": [
+            "..ppp...",
+            "...p....",
+            "...p....",
+            "..pgp...",
+            ".pgGgp..",
+            ".pgggp..",
+            "..ppp..."
+          ]
+        }
+      }
+    },
+    {
+      "name": "dialogue",
+      "layers": {
+        "ink": {
+          "rows": [
+            "........",
+            ".vvvvvv.",
+            "vccccccv",
+            "vcvcvcvv",
+            "vccccccv",
+            ".vvvvvv.",
+            "..v....."
+          ]
+        }
+      }
+    },
+    {
+      "name": "history",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".qqqqqp.",
+            ".qppppq.",
+            ".qddpq..",
+            ".qpppq..",
+            ".qddpq..",
+            ".qpppq..",
+            ".pqqqqp."
+          ]
+        }
+      }
+    },
+    {
+      "name": "calculator",
+      "layers": {
+        "ink": {
+          "rows": [
+            ".bbbbb..",
+            ".bcccb..",
+            ".bbbbb..",
+            ".bcbcb..",
+            ".bbbbb..",
+            ".bcbcb..",
+            ".bbbbb.."
+          ]
+        }
+      }
+    }
+  ]
+}

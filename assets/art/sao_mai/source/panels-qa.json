@@ -1,0 +1,402 @@
+{
+  "schema": "codeart2d.codeart_meta.v1",
+  "art_source": "code",
+  "placeholder": false,
+  "disclosure": "code-drawn, no image model",
+  "generator": "render_pixelspec.py",
+  "spec_sha256": "b6de38bbb5901077bf8fb6e03b21aa2fcb8173527c260d1ed7bbb198a8760738",
+  "renderer": {
+    "name": "codeart_core.render_pixelspec",
+    "version": "1.1"
+  },
+  "palette": {
+    "colors": {
+      "i": "#2b1b17",
+      "d": "#5a3a2a",
+      "w": "#8b5e3c",
+      "h": "#b98554",
+      "p": "#f4e4bc",
+      "c": "#fff6da",
+      "g": "#6db04a",
+      "G": "#3e7b3a",
+      "r": "#d94a4a",
+      "R": "#8e2d3a",
+      "y": "#f2c14e",
+      "b": "#4a86c5",
+      "v": "#8a64b8",
+      "o": "#e8884a",
+      "l": "#e58fa8",
+      "s": "#8c8578",
+      "a": "#5a3a2a",
+      "t": "#8b5e3c",
+      "u": "#8c8578",
+      "q": "#c9a24a"
+    },
+    "variants": {}
+  },
+  "outputs": [
+    {
+      "path": "base/frames/panel_wood.png",
+      "sha256": "c18291ec791e83d93ef6654e8f0e2fd6af6d6b0e7e96fe9419b764801a013a45",
+      "bytes": 128
+    },
+    {
+      "path": "base/frames/panel_paper.png",
+      "sha256": "cf309c64de4124573d33966d037bc73b4abdab7cec8cb3b2c213a3cac6965543",
+      "bytes": 124
+    },
+    {
+      "path": "base/frames/panel_slot.png",
+      "sha256": "e783706e3163b7ef5ad6ff46ac47752882aae0030fc2b1f17d78d399ad1bf882",
+      "bytes": 119
+    },
+    {
+      "path": "base/frames/panel_tab.png",
+      "sha256": "c9fcda69c3263c375285338e071d16055c6ec6ad2613e1512c0940ae324f2410",
+      "bytes": 135
+    },
+    {
+      "path": "base/frames/panel_pressed.png",
+      "sha256": "4fd3b0b50c9c047939af2cfed5431ea09d592165a7449894d07f5eefd522bb7c",
+      "bytes": 103
+    },
+    {
+      "path": "base/frames/panel_disabled.png",
+      "sha256": "cf1162d2575f0d9d37dce59f17848967a5b2713c3bbbfe4395a5c1d48e857b17",
+      "bytes": 107
+    },
+    {
+      "path": "base/frames/panel_hover.png",
+      "sha256": "4a11adcde88771465a13a8a0f591dfc14228a7efe9670e60e1c3f82362461653",
+      "bytes": 115
+    },
+    {
+      "path": "base/frames/panel_focus.png",
+      "sha256": "723373b5d7d28feade4e65dd93b59d2ccbec1c601cdcf802de0e558d6f4e2091",
+      "bytes": 129
+    },
+    {
+      "path": "base/frames/panel_warning.png",
+      "sha256": "01a6da34f55c9114e3f99a7db29ee66b97f04a24798bcc4c3dc91f0ee4f3c021",
+      "bytes": 129
+    }
+  ],
+  "qa": {
+    "status": "pass",
+    "method": "render_pixelspec.py: every published frame PNG is read back and measured with codeart_core.qa_pixels against the resolved palette of its variant (alpha census, exact palette lookup and, with an outline, 4-neighbour outline gaps and L-corners); each check is the worst frame against its gate in codeart_core.QA_PIXEL_GATES",
+    "notProven": [
+      "Readability, silhouette and appeal at game scale; check them on a review sheet (pixel_qa.py --review).",
+      "Motion, timing and spacing between frames; numbers do not judge animation quality.",
+      "That the art matches the brief and the intent of the spec.",
+      "Outline continuity and L-corners: the spec has no outline, so they were not measured."
+    ],
+    "checks": [
+      {
+        "id": "partial_alpha",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "off_palette",
+        "status": "pass",
+        "value": 0,
+        "threshold": 0
+      },
+      {
+        "id": "outline_gaps",
+        "status": "skipped",
+        "value": null,
+        "threshold": 0
+      },
+      {
+        "id": "l_corners",
+        "status": "skipped",
+        "value": null,
+        "threshold": 10
+      }
+    ],
+    "inputs": [
+      {
+        "path": "../../assets/art/sao_mai/source/panels.pixelspec.json",
+        "sha256": "b6de38bbb5901077bf8fb6e03b21aa2fcb8173527c260d1ed7bbb198a8760738",
+        "bytes": 3982
+      }
+    ],
+    "outputs": [
+      {
+        "path": "base/frames/panel_wood.png",
+        "sha256": "c18291ec791e83d93ef6654e8f0e2fd6af6d6b0e7e96fe9419b764801a013a45",
+        "bytes": 128
+      },
+      {
+        "path": "base/frames/panel_paper.png",
+        "sha256": "cf309c64de4124573d33966d037bc73b4abdab7cec8cb3b2c213a3cac6965543",
+        "bytes": 124
+      },
+      {
+        "path": "base/frames/panel_slot.png",
+        "sha256": "e783706e3163b7ef5ad6ff46ac47752882aae0030fc2b1f17d78d399ad1bf882",
+        "bytes": 119
+      },
+      {
+        "path": "base/frames/panel_tab.png",
+        "sha256": "c9fcda69c3263c375285338e071d16055c6ec6ad2613e1512c0940ae324f2410",
+        "bytes": 135
+      },
+      {
+        "path": "base/frames/panel_pressed.png",
+        "sha256": "4fd3b0b50c9c047939af2cfed5431ea09d592165a7449894d07f5eefd522bb7c",
+        "bytes": 103
+      },
+      {
+        "path": "base/frames/panel_disabled.png",
+        "sha256": "cf1162d2575f0d9d37dce59f17848967a5b2713c3bbbfe4395a5c1d48e857b17",
+        "bytes": 107
+      },
+      {
+        "path": "base/frames/panel_hover.png",
+        "sha256": "4a11adcde88771465a13a8a0f591dfc14228a7efe9670e60e1c3f82362461653",
+        "bytes": 115
+      },
+      {
+        "path": "base/frames/panel_focus.png",
+        "sha256": "723373b5d7d28feade4e65dd93b59d2ccbec1c601cdcf802de0e558d6f4e2091",
+        "bytes": 129
+      },
+      {
+        "path": "base/frames/panel_warning.png",
+        "sha256": "01a6da34f55c9114e3f99a7db29ee66b97f04a24798bcc4c3dc91f0ee4f3c021",
+        "bytes": 129
+      }
+    ],
+    "tool": {
+      "name": "render_pixelspec.py",
+      "version": "0.4.0"
+    },
+    "frames": [
+      {
+        "file": "base/frames/panel_wood.png",
+        "variant": "base",
+        "frame": "panel_wood",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 4,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_paper.png",
+        "variant": "base",
+        "frame": "panel_paper",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_slot.png",
+        "variant": "base",
+        "frame": "panel_slot",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_tab.png",
+        "variant": "base",
+        "frame": "panel_tab",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 5,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_pressed.png",
+        "variant": "base",
+        "frame": "panel_pressed",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_disabled.png",
+        "variant": "base",
+        "frame": "panel_disabled",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 2,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_hover.png",
+        "variant": "base",
+        "frame": "panel_hover",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 3,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_focus.png",
+        "variant": "base",
+        "frame": "panel_focus",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 4,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      },
+      {
+        "file": "base/frames/panel_warning.png",
+        "variant": "base",
+        "frame": "panel_warning",
+        "visible": 77,
+        "partial_alpha": 0,
+        "off_palette": 0,
+        "colors": 4,
+        "orphans": 0,
+        "l_corners": null,
+        "outline_gaps": null,
+        "bbox": [
+          0,
+          0,
+          9,
+          9
+        ]
+      }
+    ]
+  },
+  "pixelspec": {
+    "name": "panels",
+    "schema": "codeart2d.pixelspec.v1",
+    "canvas": [
+      9,
+      9
+    ],
+    "anchor_px": null,
+    "outline": "none",
+    "variants": {
+      "base": "base"
+    },
+    "frames": [
+      {
+        "index": 0,
+        "name": "panel_wood",
+        "file": "frames/panel_wood.png"
+      },
+      {
+        "index": 1,
+        "name": "panel_paper",
+        "file": "frames/panel_paper.png"
+      },
+      {
+        "index": 2,
+        "name": "panel_slot",
+        "file": "frames/panel_slot.png"
+      },
+      {
+        "index": 3,
+        "name": "panel_tab",
+        "file": "frames/panel_tab.png"
+      },
+      {
+        "index": 4,
+        "name": "panel_pressed",
+        "file": "frames/panel_pressed.png"
+      },
+      {
+        "index": 5,
+        "name": "panel_disabled",
+        "file": "frames/panel_disabled.png"
+      },
+      {
+        "index": 6,
+        "name": "panel_hover",
+        "file": "frames/panel_hover.png"
+      },
+      {
+        "index": 7,
+        "name": "panel_focus",
+        "file": "frames/panel_focus.png"
+      },
+      {
+        "index": 8,
+        "name": "panel_warning",
+        "file": "frames/panel_warning.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "schema": "generate2dmap.scene_preview_qa.v1",
+  "status": "pass",
+  "method": "build_scene_preview: bundle files resolved relative to the bundle and checked against their sha256 when given; collision read through forge_nav (the D2 blocking set; tile collision converted into world solids, material classes into BLOCK and one_way pixel planes); tiles layers pre-rendered from tileset manifests; art found in the D6 order and embedded as data URIs; map-runtime.mjs inlined verbatim; the page scanned for anything that loads from outside it; size gate; optional headless-Chromium run (--verify).",
+  "notProven": [
+    "Collision is forge_nav's D2 blocking set and the page walks it with map-runtime.mjs, which mirrors forge_nav rule for rule; their agreement is tested on synthetic fixtures (tests/test_map_runtime_js.py), not on this map. Rotated shapes can differ by one ulp of sin and cos between a browser and Python.",
+    "Without --verify, or when it prints SKIPPED, the page was assembled and scanned but never run in a browser.",
+    "The actor is a debug marker sized from collision.actorRadius, not character art; animation, lights, atmosphere, stage data, camera bounds and occluder masks are not drawn.",
+    "Draw order is whole-object Y-sort by (sortY, x, id); per-pixel occlusion, fades and cut-aways are not simulated.",
+    "Route checks walk the forge_nav grid with the runtime walker at --speed; an engine controller (acceleration, physics colliders, other speeds) may behave differently. one_way material blocks moving down onto it on every map (N11); a top-down map should not use it.",
+    "Footprint samples lie half a nav cell apart (N10): a solid thinner than that can fall between the samples of the footprint's rim; the actor's centre path is tested exactly (thin-gap rule).",
+    "Only headless Chromium is exercised (with --verify); other browsers, devices and touch input are not tested."
+  ],
+  "checks": [
+    {
+      "id": "html-size",
+      "status": "pass",
+      "value": 184314,
+      "threshold": 16000000
+    },
+    {
+      "id": "external-references",
+      "status": "pass",
+      "value": [],
+      "threshold": []
+    },
+    {
+      "id": "ascii-only",
+      "status": "pass",
+      "value": true,
+      "threshold": true
+    },
+    {
+      "id": "single-inline-script",
+      "status": "pass",
+      "value": true,
+      "threshold": true
+    },
+    {
+      "id": "runtime-inlined",
+      "status": "pass",
+      "value": "map-runtime.mjs",
+      "threshold": null
+    },
+    {
+      "id": "object-art",
+      "status": "pass",
+      "value": [],
+      "threshold": []
+    },
+    {
+      "id": "browser-verify",
+      "status": "skipped",
+      "value": "chromium did not launch: browserType.launch: Executable doesn't exist at C:\\Users\\SKYSOFT\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+      "threshold": null
+    },
+    {
+      "id": "build-warnings",
+      "status": "pass",
+      "value": 0,
+      "threshold": 0
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../../assets/art/sao_mai/farm/map-bundle.json",
+      "sha256": "0938859f9a000be29d1dc98330faa487e6d805b88eaa73445cf352142f59b7b8",
+      "bytes": 7977
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/farmhouse.png",
+      "sha256": "90cea6179b9148ba7eef0ea102237b40c2c7e9e4a47330f7a40c0b152bc9a9a7",
+      "bytes": 6500
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/fruit-tree.png",
+      "sha256": "2ba7050d6546c81f896e927520146bfa3e0ec8f3aaa7c300dc6bedef3b985555",
+      "bytes": 2410
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/moss-rocks.png",
+      "sha256": "d944e2e27acb4d6517aae32aac6167cce3088b9bc3e0a11511882237127181a9",
+      "bytes": 711
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/shipping-chest.png",
+      "sha256": "6415638e24eb7f48e94c0fb546bd1c5cbae72d9a23211d380ed53a6c9a647789",
+      "bytes": 572
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/spring-ground.tileset.json",
+      "sha256": "dbf3f56bdfefa6d249de7741beeb457b12ad70635729023a1d3c31d2b2485db9",
+      "bytes": 41379
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/spring-ground.png",
+      "sha256": "9332ba00006b189bbf488872e978e20f8d6a76491cfe6fc4c58f86937a60d26d",
+      "bytes": 2654
+    },
+    {
+      "path": "../../assets/art/sao_mai/farm/ground-tiles.json",
+      "sha256": "b3fcbbd11d1e5a355ffc721b7d90e397bbb09108a529ac33e5309a550a39004c",
+      "bytes": 15155
+    }
+  ],
+  "outputs": [
+    {
+      "path": "preview.html",
+      "sha256": "389502d12314ad365b253cb727e0b5837ddb514f66c50d61026efaa79ea52ed2",
+      "bytes": 184314
+    }
+  ],
+  "tool": {
+    "name": "build_scene_preview",
+    "version": "0.4.0"
+  },
+  "preview": {
+    "file": "preview.html",
+    "bytes": 184314,
+    "sha256": "389502d12314ad365b253cb727e0b5837ddb514f66c50d61026efaa79ea52ed2",
+    "runtime": {
+      "file": "map-runtime.mjs",
+      "version": "1.1.2",
+      "sha256": "c1fc3d9bf15cfa53fdfeb050ce4252f7ace4c923066ca4e135dea576e7445273"
+    },
+    "world": [
+      1280,
+      960
+    ],
+    "zoom": 1,
+    "speed": 60.0,
+    "actorHeight": 18.0,
+    "actorRadius": 4,
+    "ySquash": 0.625,
+    "start": "new-game",
+    "layers": [
+      {
+        "name": "ground",
+        "source": "tiles",
+        "size": [
+          1280,
+          960
+        ]
+      },
+      {
+        "name": "props",
+        "source": "objects"
+      }
+    ],
+    "drawOrder": [
+      "farmhouse-1",
+      "fruit-tree-1",
+      "fruit-tree-2",
+      "fruit-tree-3",
+      "fruit-tree-4",
+      "shipping-chest-1",
+      "fruit-tree-5",
+      "fruit-tree-6",
+      "moss-rocks-1",
+      "moss-rocks-2",
+      "fruit-tree-7"
+    ],
+    "objectArt": {
+      "object.image": 0,
+      "props": 11,
+      "prop-pack": 0,
+      "occluder.source": 0,
+      "missing": []
+    },
+    "counts": {
+      "objects": 11,
+      "portals": 0,
+      "spawns": 1,
+      "interactions": 8,
+      "anchors": 0
+    },
+    "images": {
+      "count": 5,
+      "bytes": 53555
+    },
+    "materialMap": null,
+    "collision": {
+      "collisionSolids": 0,
+      "rects": 4,
+      "footprints": 11,
+      "tileSolids": 0,
+      "blockingMaterialClasses": []
+    },
+    "hashes": {
+      "checked": 3,
+      "unchecked": 11
+    }
+  },
+  "warnings": [],
+  "verify": {
+    "status": "SKIPPED",
+    "reason": "chromium did not launch: browserType.launch: Executable doesn't exist at C:\\Users\\SKYSOFT\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe"
+  }
+}

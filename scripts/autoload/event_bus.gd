@@ -31,3 +31,14 @@ signal dialogue_requested(npc_id: String, cue: String)
 signal quests_changed
 signal friendship_changed(values: Dictionary)
 signal resident_xp_awarded(amount: int)
+signal monster_defeated(persistent_id: String, monster_id: String, position: Vector2)
+signal monster_killed(monster_id: String, tier: int)
+signal player_damage_requested(amount: int, status: String)
+signal combat_xp_awarded(amount: int)
+signal player_fainted
+signal animal_panel_requested
+signal fish_caught(fish_id: String)
+signal study_requested(practice: bool)
+signal knowledge_session_finished(subject: String, stars: int)
+signal farm_action_completed(kind: String)
+signal story_changed
