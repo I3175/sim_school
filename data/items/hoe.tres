@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/resources/item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/items/hoe.svg" id="2"]
+[resource]
+script = ExtResource("1")
+id = "hoe"
+name_key = "ITEM_HOE_NAME"
+description_key = "ITEM_HOE_DESC"
+category = "tool"
+stack_size = 1
+sell_price = 0
+buy_price = 0
+icon = ExtResource("2")
+quality_enabled = false

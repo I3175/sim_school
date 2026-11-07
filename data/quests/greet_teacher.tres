@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/quest_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "greet_teacher"
+title_key = "QUEST_GREET_TEACHER"
+quest_type = "side"
+prerequisites = {"flag": "chapter_1"}
+objectives = Array[Dictionary]([{"type": "talk", "target": "co_lan", "amount": 1, "optional": false}])
+time_limit_days = 7
+rewards = {"coins": 300, "xp": 60, "items": [], "flags": []}
+repeatable = false

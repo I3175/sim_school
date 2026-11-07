@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=2 format=3]
+[sub_resource type="StyleBoxFlat" id="slot"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0.16, 0.22, 0.20, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.62, 0.45, 1)
+[resource]
+default_font_size = 8
+Button/styles/normal = SubResource("slot")
+Button/styles/hover = SubResource("slot")
+Button/styles/pressed = SubResource("slot")
+Button/styles/focus = SubResource("slot")
+PanelContainer/styles/panel = SubResource("slot")

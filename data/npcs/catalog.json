@@ -1,0 +1,58 @@
+{
+  "di_nam": {
+    "name": "Dì Năm",
+    "shop": "grocery",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "chu_ba": {
+    "name": "Chú Ba",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "bac_si_minh": {
+    "name": "Bác sĩ Minh",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "chi_vy": {
+    "name": "Chị Vy",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "co_lan": {
+    "name": "Cô Lan",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "co_mai": {
+    "name": "Cô Mai",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "lao_quang": {
+    "name": "Lão Quang",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  },
+  "thu_thu": {
+    "name": "Thủ thư",
+    "shop": "",
+    "loved": [],
+    "liked": [],
+    "hated": []
+  }
+}

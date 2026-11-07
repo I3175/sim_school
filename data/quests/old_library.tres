@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/quest_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "old_library"
+title_key = "QUEST_OLD_LIBRARY"
+quest_type = "hidden"
+prerequisites = {"discover": "library_hill"}
+objectives = Array[Dictionary]([{"type": "reach", "target": "library_hill", "amount": 1, "optional": false}])
+time_limit_days = 0
+rewards = {"coins": 500, "xp": 150, "items": [], "flags": []}
+repeatable = false

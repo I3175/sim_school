@@ -1,0 +1,25 @@
+{
+  "field_origin": [
+    28,
+    34
+  ],
+  "field_size": [
+    24,
+    16
+  ],
+  "dry_days_to_wilt": 3,
+  "hoe_cost": 2.0,
+  "water_cost": 2.0,
+  "seed_cost": 0.5,
+  "quality_multipliers": [
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "shipping_position": [
+    712,
+    480
+  ],
+  "quality_status": "awaiting user formula; harvest quality stays normal"
+}

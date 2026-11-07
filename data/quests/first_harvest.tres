@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/quest_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "first_harvest"
+title_key = "QUEST_FIRST_HARVEST"
+quest_type = "main"
+prerequisites = {}
+objectives = Array[Dictionary]([{"type": "harvest", "target": "greens", "amount": 1, "optional": false}])
+time_limit_days = 0
+rewards = {"coins": 800, "xp": 200, "items": [], "flags": ["chapter_1"]}
+repeatable = false

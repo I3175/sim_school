@@ -1,0 +1,101 @@
+{
+  "ids": [
+    "sunny",
+    "cloudy",
+    "drizzle",
+    "rain",
+    "storm",
+    "fog",
+    "wind",
+    "heat",
+    "snow",
+    "blizzard"
+  ],
+  "names": [
+    "Nắng",
+    "Nhiều mây",
+    "Mưa phùn",
+    "Mưa",
+    "Giông bão",
+    "Sương mù",
+    "Gió lớn",
+    "Nóng gay gắt",
+    "Tuyết",
+    "Bão tuyết"
+  ],
+  "weights": [
+    [
+      45,
+      15,
+      15,
+      15,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      55,
+      10,
+      5,
+      12,
+      13,
+      0,
+      0,
+      5,
+      0,
+      0
+    ],
+    [
+      35,
+      20,
+      10,
+      20,
+      5,
+      10,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      25,
+      25,
+      0,
+      5,
+      0,
+      5,
+      0,
+      0,
+      30,
+      10
+    ]
+  ],
+  "heavy": [
+    "storm",
+    "blizzard",
+    "heat"
+  ],
+  "forecast_accuracy": 0.9,
+  "neighbors": {
+    "sunny": "cloudy",
+    "cloudy": "sunny",
+    "rain": "storm",
+    "storm": "rain",
+    "drizzle": "rain",
+    "fog": "cloudy",
+    "heat": "sunny",
+    "snow": "blizzard",
+    "blizzard": "snow"
+  },
+  "wetness_rain_per_hour": 0.1,
+  "wetness_sun_per_hour": -0.05,
+  "snow_per_hour": 0.15,
+  "melt_per_hour": -0.1,
+  "wind_chance": 0.15,
+  "forgetting_fog_chance": 0.075,
+  "meteor_chance": 0.04,
+  "rainbow_chance": 0.1
+}

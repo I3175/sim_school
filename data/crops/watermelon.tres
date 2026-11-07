@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CropData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/crop_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "watermelon"
+seasons = Array[int]([1])
+growth_days = 6
+regrow_days = 0
+seed_id = "seed_watermelon"
+harvest_id = "crop_watermelon"
+farming_xp = 22
+requires_shelter = false

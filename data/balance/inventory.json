@@ -1,0 +1,20 @@
+{
+  "bag_slots": 36,
+  "chest_slots": 36,
+  "hotbar_slots": 12,
+  "starting_items": [
+    {
+      "id": "hoe",
+      "amount": 1
+    },
+    {
+      "id": "watering_can",
+      "amount": 1
+    },
+    {
+      "id": "seed_greens",
+      "amount": 15
+    }
+  ],
+  "starting_coins": 500
+}

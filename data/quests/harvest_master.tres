@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/quest_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "harvest_master"
+title_key = "QUEST_HARVEST_MASTER"
+quest_type = "special"
+prerequisites = {}
+objectives = Array[Dictionary]([{"type": "harvest", "target": "greens", "amount": 20, "optional": false}])
+time_limit_days = 0
+rewards = {"coins": 1500, "xp": 300, "items": [], "flags": []}
+repeatable = false

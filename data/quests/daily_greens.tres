@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/quest_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "daily_greens"
+title_key = "QUEST_DAILY_GREENS"
+quest_type = "daily"
+prerequisites = {"flag": "chapter_1"}
+objectives = Array[Dictionary]([{"type": "harvest", "target": "greens", "amount": 3, "optional": false}])
+time_limit_days = 1
+rewards = {"coins": 80, "xp": 20, "items": [], "flags": []}
+repeatable = true

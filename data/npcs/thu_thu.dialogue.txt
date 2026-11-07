@@ -1,0 +1,13 @@
+~ start
+Thủ thư: Chào cháu. Một ngày mới ở Sao Mai đang chờ mình đấy.
+- Hôm nay có gì mới?
+	Thủ thư: Hãy ghé quảng trường và chăm luống cây trước khi đi xa nhé.
+- Hẹn gặp lại.
+	=> END
+=> END
+~ rain
+Thủ thư: Trời mưa rồi, vào trong nhà cho ấm nhé. Cây ngoài vườn được tưới giúp đấy.
+=> END
+~ friendly
+Thủ thư: Gặp cháu là thấy ngày hôm nay vui hơn rồi!
+=> END

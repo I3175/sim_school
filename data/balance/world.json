@@ -1,0 +1,455 @@
+{
+  "farm_main": {
+    "name": "Nông trại Mầm Xanh",
+    "size": [
+      80,
+      60
+    ],
+    "links": [
+      "market_street",
+      "ranch",
+      "whispering_forest"
+    ],
+    "buildings": [
+      "player_house",
+      "coop",
+      "barn",
+      "greenhouse"
+    ],
+    "spawn": [
+      640,
+      480
+    ],
+    "indoors": false,
+    "required_flag": ""
+  },
+  "ranch": {
+    "name": "Đồng Cỏ Cỏ Xanh",
+    "size": [
+      60,
+      44
+    ],
+    "links": [
+      "farm_main"
+    ],
+    "buildings": [],
+    "spawn": [
+      480,
+      352
+    ],
+    "indoors": false,
+    "required_flag": ""
+  },
+  "market_street": {
+    "name": "Phố Chợ",
+    "size": [
+      56,
+      32
+    ],
+    "links": [
+      "farm_main",
+      "town_square"
+    ],
+    "buildings": [
+      "grocery",
+      "blacksmith",
+      "clinic",
+      "restaurant"
+    ],
+    "spawn": [
+      448,
+      256
+    ],
+    "indoors": false,
+    "required_flag": ""
+  },
+  "town_square": {
+    "name": "Quảng Trường Sao Mai",
+    "size": [
+      64,
+      48
+    ],
+    "links": [
+      "market_street",
+      "school_grounds",
+      "library_hill",
+      "golden_beach"
+    ],
+    "buildings": [],
+    "spawn": [
+      512,
+      384
+    ],
+    "indoors": false,
+    "required_flag": ""
+  },
+  "school_grounds": {
+    "name": "Trường Ánh Dương",
+    "size": [
+      48,
+      36
+    ],
+    "links": [
+      "town_square"
+    ],
+    "buildings": [
+      "school"
+    ],
+    "spawn": [
+      384,
+      288
+    ],
+    "indoors": false,
+    "required_flag": ""
+  },
+  "library_hill": {
+    "name": "Đồi Thư Viện",
+    "size": [
+      40,
+      32
+    ],
+    "links": [
+      "town_square",
+      "whispering_forest",
+      "mirror_lake",
+      "cloud_mountain"
+    ],
+    "buildings": [
+      "library"
+    ],
+    "spawn": [
+      320,
+      256
+    ],
+    "indoors": false,
+    "required_flag": ""
+  },
+  "whispering_forest": {
+    "name": "Rừng Thì Thầm",
+    "size": [
+      90,
+      70
+    ],
+    "links": [
+      "farm_main",
+      "library_hill",
+      "stone_mine"
+    ],
+    "buildings": [],
+    "spawn": [
+      720,
+      560
+    ],
+    "indoors": false,
+    "required_flag": "chapter_1"
+  },
+  "stone_mine": {
+    "name": "Hầm Đá Thì Thầm",
+    "size": [
+      40,
+      30
+    ],
+    "links": [
+      "whispering_forest"
+    ],
+    "buildings": [],
+    "spawn": [
+      320,
+      240
+    ],
+    "indoors": false,
+    "required_flag": "mine_unlocked"
+  },
+  "mirror_lake": {
+    "name": "Hồ Gương và Sông Bạc",
+    "size": [
+      60,
+      44
+    ],
+    "links": [
+      "library_hill",
+      "golden_beach"
+    ],
+    "buildings": [],
+    "spawn": [
+      480,
+      352
+    ],
+    "indoors": false,
+    "required_flag": ""
+  },
+  "golden_beach": {
+    "name": "Bãi Biển Sóng Vàng",
+    "size": [
+      70,
+      40
+    ],
+    "links": [
+      "mirror_lake",
+      "town_square"
+    ],
+    "buildings": [],
+    "spawn": [
+      560,
+      320
+    ],
+    "indoors": false,
+    "required_flag": "bridge_repaired"
+  },
+  "cloud_mountain": {
+    "name": "Núi Mây",
+    "size": [
+      80,
+      80
+    ],
+    "links": [
+      "library_hill"
+    ],
+    "buildings": [
+      "observatory"
+    ],
+    "spawn": [
+      640,
+      640
+    ],
+    "indoors": false,
+    "required_flag": "mountain_unlocked"
+  },
+  "player_house": {
+    "name": "Nhà của bạn",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "farm_main"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "farm_main",
+    "opening": 0,
+    "closing": 0,
+    "closed_weekdays": [],
+    "required_flag": ""
+  },
+  "coop": {
+    "name": "Chuồng gà",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "farm_main"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "farm_main",
+    "opening": 0,
+    "closing": 0,
+    "closed_weekdays": [],
+    "required_flag": ""
+  },
+  "barn": {
+    "name": "Chuồng bò",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "farm_main"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "farm_main",
+    "opening": 0,
+    "closing": 0,
+    "closed_weekdays": [],
+    "required_flag": ""
+  },
+  "greenhouse": {
+    "name": "Nhà kính",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "farm_main"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "farm_main",
+    "opening": 0,
+    "closing": 0,
+    "closed_weekdays": [],
+    "required_flag": ""
+  },
+  "school": {
+    "name": "Lớp học",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "school_grounds"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "school_grounds",
+    "opening": 0,
+    "closing": 0,
+    "closed_weekdays": [],
+    "required_flag": ""
+  },
+  "library": {
+    "name": "Thư viện cổ",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "library_hill"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "library_hill",
+    "opening": 540,
+    "closing": 1080,
+    "closed_weekdays": [
+      0
+    ],
+    "required_flag": ""
+  },
+  "grocery": {
+    "name": "Tiệm Dì Năm",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "market_street"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "market_street",
+    "opening": 540,
+    "closing": 1140,
+    "closed_weekdays": [
+      6
+    ],
+    "required_flag": ""
+  },
+  "blacksmith": {
+    "name": "Lò rèn Chú Ba",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "market_street"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "market_street",
+    "opening": 600,
+    "closing": 1020,
+    "closed_weekdays": [
+      5
+    ],
+    "required_flag": ""
+  },
+  "clinic": {
+    "name": "Phòng khám",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "market_street"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "market_street",
+    "opening": 480,
+    "closing": 960,
+    "closed_weekdays": [],
+    "required_flag": ""
+  },
+  "restaurant": {
+    "name": "Quán Hương Lúa",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "market_street"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "market_street",
+    "opening": 660,
+    "closing": 1320,
+    "closed_weekdays": [],
+    "required_flag": ""
+  },
+  "observatory": {
+    "name": "Đài thiên văn",
+    "size": [
+      24,
+      16
+    ],
+    "links": [
+      "cloud_mountain"
+    ],
+    "buildings": [],
+    "spawn": [
+      192,
+      208
+    ],
+    "indoors": true,
+    "parent_map": "cloud_mountain",
+    "opening": 1140,
+    "closing": 120,
+    "closed_weekdays": [],
+    "required_flag": ""
+  }
+}

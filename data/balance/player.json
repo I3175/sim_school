@@ -1,0 +1,17 @@
+{
+  "walk_speed": 64.0,
+  "run_speed": 96.0,
+  "stamina_max": 200.0,
+  "run_cost_per_second": 0.5,
+  "exhausted_multiplier": 0.6,
+  "idle_recovery_delay": 5.0,
+  "recovery_interval": 10.0,
+  "recovery_amount": 2.0,
+  "resident_max_level": 30,
+  "xp_base": 80,
+  "xp_linear": 45,
+  "xp_quadratic": 5,
+  "stamina_per_level": 3,
+  "health_base": 100,
+  "health_per_level": 5
+}

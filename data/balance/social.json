@@ -1,0 +1,11 @@
+{
+  "max_friendship": 1000,
+  "talk_points": 20,
+  "gift_points": {
+    "loved": 80,
+    "liked": 45,
+    "neutral": 20,
+    "hated": -40
+  },
+  "npc_speed": 32.0
+}

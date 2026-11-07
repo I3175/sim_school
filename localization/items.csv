@@ -1,0 +1,65 @@
+keys,vi,en
+ITEM_HOE_NAME,Cuốc,hoe
+ITEM_HOE_DESC,Vật phẩm Cuốc,hoe
+ITEM_WATERING_CAN_NAME,Bình tưới,watering can
+ITEM_WATERING_CAN_DESC,Vật phẩm Bình tưới,watering can
+ITEM_SEED_GREENS_NAME,Hạt cải,seed greens
+ITEM_SEED_GREENS_DESC,Vật phẩm Hạt cải,seed greens
+ITEM_CROP_GREENS_NAME,Cải xanh,crop greens
+ITEM_CROP_GREENS_DESC,Vật phẩm Cải xanh,crop greens
+ITEM_WOOD_NAME,Gỗ,wood
+ITEM_WOOD_DESC,Vật phẩm Gỗ,wood
+ITEM_STONE_NAME,Đá,stone
+ITEM_STONE_DESC,Vật phẩm Đá,stone
+ITEM_SEED_CARROT_NAME,Hạt Cà rốt,seed_carrot
+ITEM_SEED_CARROT_DESC,Hạt Cà rốt,seed_carrot
+ITEM_CROP_CARROT_NAME,Cà rốt,crop_carrot
+ITEM_CROP_CARROT_DESC,Cà rốt,crop_carrot
+ITEM_SEED_POTATO_NAME,Hạt Khoai tây,seed_potato
+ITEM_SEED_POTATO_DESC,Hạt Khoai tây,seed_potato
+ITEM_CROP_POTATO_NAME,Khoai tây,crop_potato
+ITEM_CROP_POTATO_DESC,Khoai tây,crop_potato
+ITEM_SEED_STRAWBERRY_NAME,Hạt Dâu tây,seed_strawberry
+ITEM_SEED_STRAWBERRY_DESC,Hạt Dâu tây,seed_strawberry
+ITEM_CROP_STRAWBERRY_NAME,Dâu tây,crop_strawberry
+ITEM_CROP_STRAWBERRY_DESC,Dâu tây,crop_strawberry
+ITEM_SEED_PEPPER_NAME,Hạt Ớt,seed_pepper
+ITEM_SEED_PEPPER_DESC,Hạt Ớt,seed_pepper
+ITEM_CROP_PEPPER_NAME,Ớt,crop_pepper
+ITEM_CROP_PEPPER_DESC,Ớt,crop_pepper
+ITEM_SEED_TOMATO_NAME,Hạt Cà chua,seed_tomato
+ITEM_SEED_TOMATO_DESC,Hạt Cà chua,seed_tomato
+ITEM_CROP_TOMATO_NAME,Cà chua,crop_tomato
+ITEM_CROP_TOMATO_DESC,Cà chua,crop_tomato
+ITEM_SEED_CORN_NAME,Hạt Bắp,seed_corn
+ITEM_SEED_CORN_DESC,Hạt Bắp,seed_corn
+ITEM_CROP_CORN_NAME,Bắp,crop_corn
+ITEM_CROP_CORN_DESC,Bắp,crop_corn
+ITEM_SEED_WATERMELON_NAME,Hạt Dưa hấu,seed_watermelon
+ITEM_SEED_WATERMELON_DESC,Hạt Dưa hấu,seed_watermelon
+ITEM_CROP_WATERMELON_NAME,Dưa hấu,crop_watermelon
+ITEM_CROP_WATERMELON_DESC,Dưa hấu,crop_watermelon
+ITEM_SEED_SWEET_POTATO_NAME,Hạt Khoai lang,seed_sweet_potato
+ITEM_SEED_SWEET_POTATO_DESC,Hạt Khoai lang,seed_sweet_potato
+ITEM_CROP_SWEET_POTATO_NAME,Khoai lang,crop_sweet_potato
+ITEM_CROP_SWEET_POTATO_DESC,Khoai lang,crop_sweet_potato
+ITEM_SEED_EGGPLANT_NAME,Hạt Cà tím,seed_eggplant
+ITEM_SEED_EGGPLANT_DESC,Hạt Cà tím,seed_eggplant
+ITEM_CROP_EGGPLANT_NAME,Cà tím,crop_eggplant
+ITEM_CROP_EGGPLANT_DESC,Cà tím,crop_eggplant
+ITEM_SEED_GRAPE_NAME,Hạt Nho,seed_grape
+ITEM_SEED_GRAPE_DESC,Hạt Nho,seed_grape
+ITEM_CROP_GRAPE_NAME,Nho,crop_grape
+ITEM_CROP_GRAPE_DESC,Nho,crop_grape
+ITEM_SEED_PUMPKIN_NAME,Hạt Bí ngô,seed_pumpkin
+ITEM_SEED_PUMPKIN_DESC,Hạt Bí ngô,seed_pumpkin
+ITEM_CROP_PUMPKIN_NAME,Bí ngô,crop_pumpkin
+ITEM_CROP_PUMPKIN_DESC,Bí ngô,crop_pumpkin
+ITEM_SEED_SNOW_TURNIP_NAME,Hạt Củ cải tuyết,seed_snow_turnip
+ITEM_SEED_SNOW_TURNIP_DESC,Hạt Củ cải tuyết,seed_snow_turnip
+ITEM_CROP_SNOW_TURNIP_NAME,Củ cải tuyết,crop_snow_turnip
+ITEM_CROP_SNOW_TURNIP_DESC,Củ cải tuyết,crop_snow_turnip
+ITEM_SEED_SNOW_MUSHROOM_NAME,Hạt Nấm tuyết,seed_snow_mushroom
+ITEM_SEED_SNOW_MUSHROOM_DESC,Hạt Nấm tuyết,seed_snow_mushroom
+ITEM_CROP_SNOW_MUSHROOM_NAME,Nấm tuyết,crop_snow_mushroom
+ITEM_CROP_SNOW_MUSHROOM_DESC,Nấm tuyết,crop_snow_mushroom

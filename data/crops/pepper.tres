@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CropData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/resources/crop_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "pepper"
+seasons = Array[int]([1])
+growth_days = 3
+regrow_days = 1
+seed_id = "seed_pepper"
+harvest_id = "crop_pepper"
+farming_xp = 5
+requires_shelter = false

@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/entities/player.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/prototype/shadow.svg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/prototype/body.svg" id="3"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/prototype/bottom.svg" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/prototype/shoes.svg" id="5"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/prototype/top.svg" id="6"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/prototype/eyes.svg" id="7"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/prototype/hair.svg" id="8"]
+
+[sub_resource type="RectangleShape2D" id="Feet"]
+size = Vector2(8, 5)
+
+[sub_resource type="RectangleShape2D" id="Detector"]
+size = Vector2(20, 20)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="ShadowSprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2")
+hframes = 6
+vframes = 3
+position = Vector2(0, -14)
+
+[node name="BodySprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("3")
+hframes = 6
+vframes = 3
+position = Vector2(0, -14)
+
+[node name="BottomSprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("4")
+hframes = 6
+vframes = 3
+position = Vector2(0, -14)
+
+[node name="ShoesSprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("5")
+hframes = 6
+vframes = 3
+position = Vector2(0, -14)
+
+[node name="TopSprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("6")
+hframes = 6
+vframes = 3
+position = Vector2(0, -14)
+
+[node name="EyesSprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("7")
+hframes = 6
+vframes = 3
+position = Vector2(0, -14)
+
+[node name="HairSprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("8")
+hframes = 6
+vframes = 3
+position = Vector2(0, -14)
+
+[node name="HatSprite" type="Sprite2D" parent="Visuals"]
+[node name="AccessorySprite" type="Sprite2D" parent="Visuals"]
+[node name="HandItem" type="Node2D" parent="Visuals"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("Feet")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 960
+
+[node name="InteractionDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector"]
+shape = SubResource("Detector")

@@ -1,0 +1,83 @@
+{
+  "weekday": [
+    {
+      "start_minute": 360,
+      "map_id": "library_hill",
+      "position_marker": [
+        288,
+        232
+      ],
+      "activity": "Đi dạo"
+    },
+    {
+      "start_minute": 540,
+      "map_id": "library",
+      "position_marker": [
+        160,
+        184
+      ],
+      "activity": "Làm việc"
+    },
+    {
+      "start_minute": 1020,
+      "map_id": "library",
+      "position_marker": [
+        224,
+        184
+      ],
+      "activity": "Sắp xếp"
+    },
+    {
+      "start_minute": 1140,
+      "map_id": "library_hill",
+      "position_marker": [
+        352,
+        232
+      ],
+      "activity": "Nghỉ ngơi"
+    }
+  ],
+  "weekend": [
+    {
+      "start_minute": 360,
+      "map_id": "library_hill",
+      "position_marker": [
+        288,
+        232
+      ],
+      "activity": "Nghỉ cuối tuần"
+    }
+  ],
+  "rain": [
+    {
+      "start_minute": 360,
+      "map_id": "library",
+      "position_marker": [
+        160,
+        184
+      ],
+      "activity": "Trú mưa"
+    },
+    {
+      "start_minute": 900,
+      "map_id": "library",
+      "position_marker": [
+        224,
+        184
+      ],
+      "activity": "Sắp xếp"
+    }
+  ],
+  "festival": [
+    {
+      "start_minute": 360,
+      "map_id": "town_square",
+      "position_marker": [
+        480,
+        360
+      ],
+      "activity": "Lễ hội"
+    }
+  ],
+  "special": []
+}
